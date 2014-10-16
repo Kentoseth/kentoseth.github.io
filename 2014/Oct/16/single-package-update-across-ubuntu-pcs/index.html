@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Single Package Update across Ubuntu PCs
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="http://kentoseth.github.io"><h2><i class="fa fa-hand-o-up"></i> Kentoseth Blog</h2></a>
+        <p id="site-desc"> Coding. Linux. Data Science. Python. Web. </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+                <li><a href="/categories.html">Categories</a></li>
+                <li><a href="/pages/about-me.html">About me</a></li>
+                <li><a href="/pages/projects.html">Projects</a></li>
+            <li>
+            <a href="http://github.com/Kentoseth" target="_blank">
+                GitHub
+            </a>
+            </li>
+            <li>
+            <a href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+                Email
+            </a>
+            </li>
+        </ul>
+    </nav>
+<footer id="site-info">
+    <!--<p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>.
+    </p>
+	-->
+</footer></header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2014-10-16T02:00:00" pubdate>
+                            Thu 16 October 2014
+                        </time>
+                        <a href="/2014/Oct/16/single-package-update-across-ubuntu-pcs/" rel="bookmark"><h1>Single Package Update across Ubuntu PCs</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>If you live in a country with a slow internet connection, have limited bandwidth capacity, have multiple machines or would like to conserve your bandwidth by not doing repeat downloads, this tutorial will be useful to you.</p>
+<p>I recently came across a rather simple method for keeping my machines updated with the latest packages by downloading the updates once and then using those packages to update the other machines/PCs.</p>
+<p>Here is a checklist before attempting this:</p>
+<ul>
+<li>All machines should be using the same version of Linux on the same processor-type (eg. Ubuntu 12.04, 32-bit)</li>
+<li>The machine where you do the initial updates requires SSH to be installed</li>
+<li>All the machines should be connected via a router/LAN</li>
+<li>Passwords for all the machines will be required</li>
+</ul>
+<p><em>The steps provided below will be done on Ubuntu machines. Similar commands from other distros should be applied where Ubuntu-commands are used. (paths for the packages may differ though)</em></p>
+<h3>Step 1 - Installing SSH:</h3>
+<p>Getting SSH installed on your main download machine can be done in a single command:</p>
+<div class="highlight"><pre>sudo apt-get install openssh-server
+</pre></div>
+
+
+<p>If you'd like more info on SSH (maybe for installing on a remote server),  <a href="http://www.ihaveapc.com/2012/02/how-to-install-ssh-server-on-ubuntu/">click here</a>.</p>
+<h3>Step 2 - Updating packages for main machine + IP address:</h3>
+<p>First do your updates on the main machine (either through Terminal or via the Update Manager). Once that is done, you will now (mostly) be doing everything else on your other machines (I will refer to them as <em>"client"</em> machines).</p>
+<p>Let's first get the IP address of the <strong>main</strong> machine. Type this command in Terminal/CLI:</p>
+<div class="highlight"><pre>ifconfig
+</pre></div>
+
+
+<p>You should be looking for a line like this:</p>
+<blockquote>
+<p>inet addr:192.$$$.$.$  Bcast:192.$$$.$.$$$  Mask:255.$$$.$$$.$</p>
+</blockquote>
+<p>($ = numbers)</p>
+<p>After typing the command above, let us use an example IP address of:</p>
+<blockquote>
+<p>192.168.1.102</p>
+</blockquote>
+<p>You need to remember this IP address, as this is what you will use to connect from client machines to your updated/main machine.</p>
+<h3>Step 3 - Updating client machines:</h3>
+<p>Take one of your client laptops/desktops (which is connected to the same router as the main machine) and open Terminal/CLI. In the Terminal, type this:</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">scp</span> <span class="n">kent</span><span class="mf">@192.168.1.102</span><span class="o">:/</span><span class="n">var</span><span class="o">/</span><span class="n">cache</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">archives</span><span class="o">/*</span><span class="p">.</span><span class="n">deb</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">cache</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">archives</span><span class="o">/</span>
+</pre></div>
+
+
+<p>"kent" is the name of the main machine. You need to specify the name you are using on your main machine where "kent" is.</p>
+<p>This command is "secure copy" (scp) which transfers the archives of the updated machine to your client machines. You can read from the command how it is copying archives from one folder to another.</p>
+<p>You will likely be asked for the passwords of both machines (client and main machine) after using the command above. If everything was successful, you should see a transfer or files being done.</p>
+<p>Your client machine should now have the updated .deb files, so let's do the actual update on the client machine. Type this (still in Terminal):</p>
+<div class="highlight"><pre>sudo apt-get update
+</pre></div>
+
+
+<p>Then:</p>
+<div class="highlight"><pre>sudo apt-get upgrade
+</pre></div>
+
+
+<p>You should now have all your packages updated.</p>
+<p><em>Note 1: The linux system files don't seem to update after running "<strong>sudo apt-get upgrade</strong>", but you can update them through the update manager</em></p>
+<p><em>Note 2: Even if you have different packages on your machines (like extra packages on the main machine), the other packages that weren't previously installed on your client machine will <em>not</em> be installed</em></p>
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/linux.html">Linux</a></p>
+                        <p>Tags: <a href="/tag/ubuntu.html">ubuntu</a>, <a href="/tag/updates.html">updates</a>, <a href="/tag/ssh.html">ssh</a>, </p>
+                    </aside>
+                    <hr/>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+
+        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

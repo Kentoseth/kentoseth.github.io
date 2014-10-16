@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kentoseth Blog</title><link>/</link><description>Coding. Linux. Data Science. Python. Web.</description><atom:link href="/feeds/moe-h.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 16 Oct 2014 02:00:00 +0200</lastBuildDate><item><title>Single Package Update across Ubuntu PCs</title><link>/2014/Oct/16/single-package-update-across-ubuntu-pcs/</link><description>&lt;p&gt;If you live in a country with a slow internet connection, have limited bandwidth capacity, have multiple machines or would like to conserve your bandwidth by not doing repeat downloads, this tutorial will be useful to you.&lt;/p&gt;
+&lt;p&gt;I recently came across a rather simple method for keeping my machines updated with the latest packages by downloading the updates once and then using those packages to update the other machines/PCs.&lt;/p&gt;
+&lt;p&gt;Here is a checklist before attempting this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;All machines should be using the same version of Linux on the same processor-type (eg. Ubuntu 12.04, 32-bit)&lt;/li&gt;
+&lt;li&gt;The machine where you do the initial updates requires SSH to be installed&lt;/li&gt;
+&lt;li&gt;All the machines should be connected via a router/LAN&lt;/li&gt;
+&lt;li&gt;Passwords for all the machines will be required&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;The steps provided below will be done on Ubuntu machines. Similar commands from other distros should be applied where Ubuntu-commands are used. (paths for the packages may differ though)&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Step 1 - Installing SSH:&lt;/h3&gt;
+&lt;p&gt;Getting SSH installed on your main download machine can be done in a single command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get install openssh-server
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you'd like more info on SSH (maybe for installing on a remote server),  &lt;a href="http://www.ihaveapc.com/2012/02/how-to-install-ssh-server-on-ubuntu/"&gt;click here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Step 2 - Updating packages for main machine + IP address:&lt;/h3&gt;
+&lt;p&gt;First do your updates on the main machine (either through Terminal or via the Update Manager). Once that is done, you will now (mostly) be doing everything else on your other machines (I will refer to them as &lt;em&gt;"client"&lt;/em&gt; machines).&lt;/p&gt;
+&lt;p&gt;Let's first get the IP address of the &lt;strong&gt;main&lt;/strong&gt; machine. Type this command in Terminal/CLI:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;ifconfig
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You should be looking for a line like this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;inet addr:192.$$$.$.$  Bcast:192.$$$.$.$$$  Mask:255.$$$.$$$.$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;($ = numbers)&lt;/p&gt;
+&lt;p&gt;After typing the command above, let us use an example IP address of:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;192.168.1.102&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You need to remember this IP address, as this is what you will use to connect from client machines to your updated/main machine.&lt;/p&gt;
+&lt;h3&gt;Step 3 - Updating client machines:&lt;/h3&gt;
+&lt;p&gt;Take one of your client laptops/desktops (which is connected to the same router as the main machine) and open Terminal/CLI. In the Terminal, type this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;scp&lt;/span&gt; &lt;span class="n"&gt;kent&lt;/span&gt;&lt;span class="mf"&gt;@192.168.1.102&lt;/span&gt;&lt;span class="o"&gt;:/&lt;/span&gt;&lt;span class="n"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cache&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;archives&lt;/span&gt;&lt;span class="o"&gt;/*&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;deb&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cache&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;archives&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;"kent" is the name of the main machine. You need to specify the name you are using on your main machine where "kent" is.&lt;/p&gt;
+&lt;p&gt;This command is "secure copy" (scp) which transfers the archives of the updated machine to your client machines. You can read from the command how it is copying archives from one folder to another.&lt;/p&gt;
+&lt;p&gt;You will likely be asked for the passwords of both machines (client and main machine) after using the command above. If everything was successful, you should see a transfer or files being done.&lt;/p&gt;
+&lt;p&gt;Your client machine should now have the updated .deb files, so let's do the actual update on the client machine. Type this (still in Terminal):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get update
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get upgrade
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You should now have all your packages updated.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note 1: The linux system files don't seem to update after running "&lt;strong&gt;sudo apt-get upgrade&lt;/strong&gt;", but you can update them through the update manager&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note 2: Even if you have different packages on your machines (like extra packages on the main machine), the other packages that weren't previously installed on your client machine will &lt;em&gt;not&lt;/em&gt; be installed&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Moe. H</dc:creator><pubDate>Thu, 16 Oct 2014 02:00:00 +0200</pubDate><guid>tag:,2014-10-16:2014/Oct/16/single-package-update-across-ubuntu-pcs/</guid><category>ubuntu</category><category>updates</category><category>ssh</category></item><item><title>Install Ubuntu Server using Wubi</title><link>/2014/Jul/01/install-ubuntu-server-using-wubi/</link><description>&lt;p&gt;If you're somebody that has tinkered with linux a while back, you may have come across something called &lt;a href="https://wiki.ubuntu.com/WubiGuide"&gt;Wubi&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Wubi basically allows you to install linux &lt;em&gt;within&lt;/em&gt; windows.&lt;/p&gt;
+&lt;p&gt;You will probably want to install Ubuntu Server with Wubi if you have a Windows system that you feel you still need, but you'd also like to tinker/test-out a server-version of Ubuntu.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;This install method is recommended for hobbyists and shouldn't be used for any production-critical matters&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;With that said, let's install ubuntu-server within windows using Wubi.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Requirements:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A PC with Ubuntu/Xubuntu/Lubuntu Desktop installed (preferably 12.04 and nothing above this version)&lt;/li&gt;
+&lt;li&gt;Internet access (a decent speed broadband speed)&lt;/li&gt;
+&lt;li&gt;A router (if you'd like to SSH from another PC into your server - useful for remote installations)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The process of converting the desktop to server is made very simple, using a tool called &lt;a href="https://help.ubuntu.com/community/Tasksel"&gt;Tasksel&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Open a terminal/console window in your Ubuntu Desktop and type in the following commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;sudo apt-get install tasksel&lt;/li&gt;
+&lt;li&gt;sudo tasksel remove ubuntu-desktop (Note: this may take a few minutes to complete)&lt;/li&gt;
+&lt;li&gt;sudo tasksel install server&lt;/li&gt;
+&lt;li&gt;apt-get install linux-server linux-image-server&lt;/li&gt;
+&lt;li&gt;apt-get –purge remove lightdm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Remember to type in each command (as listed by the each point) separately and wait for it to complete, before typing in the next command.&lt;/p&gt;
+&lt;p&gt;Also, for this line:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo tasksel remove ubuntu-desktop
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Make sure you specify the correct desktop you are using (which could be Lubuntu or Kubuntu or Xubuntu).&lt;/p&gt;
+&lt;p&gt;Once this is done, you will officially have Ubuntu Server installed on your PC using Wubi.&lt;/p&gt;
+&lt;p&gt;You can test this out by restarting the PC and booting into Ubuntu. Give it some time, depending on your system.&lt;/p&gt;
+&lt;p&gt;The next part is to fix the bootloader on Windows, so that you can operate your Ubuntu Server without a screen (and just be able to SSH into it).&lt;/p&gt;
+&lt;h3&gt;Modifying the Windows bootloader&lt;/h3&gt;
+&lt;p&gt;I have Win XP installed, so the instructions I found was for this OS. I initially followed these instructions &lt;a href="http://support.microsoft.com/kb/289022"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It didn't seem to work though. So I basically just went through the process of first backing up the boot.ini file (very important that you do this).&lt;/p&gt;
+&lt;p&gt;The process:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Right-click My Computer, and then click Properties.
+    -or-
+   Click Start, click Run, type sysdm.cpl, and then click OK.&lt;/li&gt;
+&lt;li&gt;On the Advanced tab, click Settings under Startup and Recovery.&lt;/li&gt;
+&lt;li&gt;Under System Startup, click Edit. This opens the file in Notepad ready for editing.&lt;/li&gt;
+&lt;li&gt;In Notepad, click File on the Menu bar, and then click Save As.&lt;/li&gt;
+&lt;li&gt;Right click in an empty area of the Save As dialog box, point to New in the context menu, and then click Folder.&lt;/li&gt;
+&lt;li&gt;Type a name for the new folder, for example temp, and then press the ENTER key to create the folder named temp.&lt;/li&gt;
+&lt;li&gt;Double-click the new folder named temp, and then click the Save button to save a backup copy of the Boot.ini file.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You could do this process any way you feel that will ensure that a boot.ini file is saved somewhere accessible.&lt;/p&gt;
+&lt;p&gt;Now under point 3 above, you will see that you visited the "&lt;em&gt;System Startup&lt;/em&gt;" window, which shows the current boot order of your system.&lt;/p&gt;
+&lt;p&gt;What I did was to simply select the Ubuntu Server option (it may still have a Desktop name to it) as the first boot choice, and it mariculously allowed me to have Ubuntu as the first option when booting (remember that when booting using Wubi, the first boot is the windows boot and when changing the bootloader on Windows, you are changing this bootloader and not the GRUB bootloader normally used on Ubuntu).&lt;/p&gt;
+&lt;p&gt;Having the first option for booting means that I just need to switch the PC on and wait around 60 seconds (without a screen).&lt;/p&gt;
+&lt;p&gt;After waiting for 60 seconds, I can SSH into the server successfully (using another PC through my router).&lt;/p&gt;
+&lt;p&gt;I'm not going to explain how to SSH in this tutorial, as there are plenty of examples out there.&lt;/p&gt;
+&lt;p&gt;Just remember that you will need:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;IP address of the Ubuntu Server machine&lt;/li&gt;
+&lt;li&gt;Your old username and password (from when you installed Ubuntu Desktop)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you have any trouble getting Ubuntu-server installed, feel free to drop me an email and I will try to assist.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Moe. H</dc:creator><pubDate>Tue, 01 Jul 2014 02:00:00 +0200</pubDate><guid>tag:,2014-07-01:2014/Jul/01/install-ubuntu-server-using-wubi/</guid><category>ubuntu-server</category><category>wubi</category></item></channel></rss>
