@@ -1,5 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kentoseth Blog</title><link>/</link><description>Coding. Linux. Data Science. Python. Web.</description><atom:link href="/feeds/moe-h.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 16 Oct 2014 02:00:00 +0200</lastBuildDate><item><title>Single Package Update across Ubuntu PCs</title><link>/2014/Oct/16/single-package-update-across-ubuntu-pcs/</link><description>&lt;p&gt;If you live in a country with a slow internet connection, have limited bandwidth capacity, have multiple machines or would like to conserve your bandwidth by not doing repeat downloads, this tutorial will be useful to you.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kentoseth Blog</title><link>/</link><description>Coding. Linux. Data Science. Python. Web.</description><atom:link href="/feeds/moe-h.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 19 May 2015 02:00:00 +0200</lastBuildDate><item><title>Guerrilla guide to using Docker</title><link>/2015/May/19/guerrilla-guide-to-using-docker/</link><description>&lt;p&gt;This is a quick-start intro to using Docker. For the long-form version of "Getting Started with Docker" please see: &lt;a href="https://docs.docker.com/installation/#installation"&gt;Docker Basics&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This tutorial should take you &lt;em&gt;less than 15 minutes&lt;/em&gt; to get up and running with Docker (this excludes the time it takes to install Docker itself and downloading of the source files). Also note that this tutorial assumes you are using Ubuntu (or a variant thereof).&lt;/p&gt;
+&lt;p&gt;If you haven't installed Docker already, go ahead and use the link above to install it.&lt;/p&gt;
+&lt;h3&gt;Images, Containers and Dockerfiles&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Image:&lt;/em&gt; Think of this as a static snapshot of your Docker setup. Images are layered on top of each other like an onion, so that it does not duplicate the same core files repeatedly (for example, creating many different "stacks" on top of an Ubuntu image will not recreate Ubuntu each time). Images are never used explicitly and are used as the base for creating Containers. &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Container:&lt;/em&gt; Containers are dynamic versions of Images. Think of a Container as the fake version of priceless art. You would never touch or damage the original (Image) but you can do whatever you like with a fake (Container). Containers can be made, modified and destroyed very easily (they also act as the tool for building on images)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Dockerfile:&lt;/em&gt; This is the formal method of building Images. Think of the Dockerfile as a Shell Script for installing something (it works almost exactly the same).&lt;/p&gt;
+&lt;h3&gt;Building an Image: Ubuntu + Python&lt;/h3&gt;
+&lt;p&gt;Let us first create a Docker folder. Open up your File Manager and create a folder so that you get this path:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;/home/[USER]/Docker/&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now, I will walk you through my simple Dockerfile for this (you can download it here: &lt;a href="https://registry.hub.docker.com/u/dockops/ubuntupy/"&gt;File&lt;/a&gt; )&lt;/p&gt;
+&lt;p&gt;Here is the output:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;# 
+# Dockerfile to use as a base for python
+#
+# Combines Ubuntu + Python
+#
+# https://github.com/Kentoseth/Docker/tree/master/UbuntuPy
+
+FROM ubuntu:14.04
+MAINTAINER &amp;quot;Moe&amp;quot; &amp;lt;kentoseth@devcroo.com&amp;gt;
+
+# Prerequisites
+
+RUN \
+  sudo apt-get update &amp;amp;&amp;amp; \
+  sudo apt-get -y upgrade &amp;amp;&amp;amp; \
+  sudo apt-get install -y python2.7 python2.7-dev python-pip &amp;amp;&amp;amp; \
+  sudo apt-get clean &amp;amp;&amp;amp; \
+  sudo rm -rf /var/lib/apt/lists/*
+
+# END
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Save a file called "Dockerfile" in: /home/[USER]/Docker/&lt;/p&gt;
+&lt;p&gt;I will just tell you 2 important things from the above code:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Where you see the word "FROM", what this is doing is "pulling" the Ubuntu image from the remote Docker registry&lt;/li&gt;
+&lt;li&gt;For everything after the line "RUN \", you should notice this as basic Ubuntu install commands&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now let's build our first Docker image.&lt;/p&gt;
+&lt;p&gt;Open your Terminal where the Dockerfile is (/home/[USER]/Docker/) and run this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sudo docker build -t pybuntu .&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You can rename "myapp" to anything you wish, as this is the name of your image. In this case, because it is Ubuntu + Python, you can call it something like "pybuntu" or whatever helps you recognize the image (only lowercase works). Also, you will see a ' . ' in my command above. This isn't an error, so please include it as well (you can learn about about "complex" build-procedures from the link above).&lt;/p&gt;
+&lt;p&gt;After the build process is complete, let's view our new Docker image. Run this command:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sudo docker images&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;and you should get this output:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Photo1" src="/images/docker/docker2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;From the above image, you can see I have 3 images. We haven't yet got to the "pelicanpy" yet, but if you've followed my instructions and everything worked, you should have something similar to "ubuntupy" (or myapp/image-name).&lt;/p&gt;
+&lt;h3&gt;Creating a container: from 'pybuntu' image&lt;/h3&gt;
+&lt;p&gt;Now that we have our image, lets use this image ( &lt;em&gt;static&lt;/em&gt; ) to make our container ( &lt;em&gt;dynamic&lt;/em&gt; ).&lt;/p&gt;
+&lt;p&gt;First, we can create a directory where we can "mount" files into the container from our filesystem (so that we can run them in the container).&lt;/p&gt;
+&lt;p&gt;You can create your directory here(with subdirectory called "mount/test"):&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;/home/[USER]/Docker/mount/test/&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now let's create a container that has a 'mounted' path from your Ubuntu/linux system.&lt;/p&gt;
+&lt;p&gt;Open your commandline (in any directory) and run the following command:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sudo docker run -i -t -v /home/[USER]/Docker/mount/test/:/test pybuntu&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A quick walk-through of the line above is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Every "-[LETTER]" command corresponds to some commandline specification (more info on the site)&lt;/li&gt;
+&lt;li&gt;Some commands, like "-v" have instructions that follow them. In this case, "-v" is used for mounting. First we declare the system path (.../mount/test/), then we declare the folder within the container(:/test). Note that the path in the container &lt;strong&gt;has&lt;/strong&gt; to be declared&lt;/li&gt;
+&lt;li&gt;Lastly, you call on "pybuntu", which is basically telling the container which image to use as the "dynamic" version of that "static" screenshot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After you're done creating the container, you should see something similar to this:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Photo2" src="/images/docker/con1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;From the image above, you can now see that you are a "root" user in your container.&lt;/p&gt;
+&lt;p&gt;Let's go into our mounted directory:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;cd test&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Once in, let's create a test python file. We will call it "hello.py". Here is the code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;#This is our test Python file
+
+print(&amp;quot;Hello World!&amp;quot;)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Save your file in your mounted directory (.../mount/test/hello.py)&lt;/p&gt;
+&lt;p&gt;Now, within the container terminal, run this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;python hello.py&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;Hello World!&lt;/em&gt; should be printed out in the terminal now.&lt;/p&gt;
+&lt;p&gt;Once done, you have now successfully created your Docker Image and a Container of that Image.&lt;/p&gt;
+&lt;p&gt;I will follow up this tutorial with how to use Docker as a drop-in replacement for virtualenv (or any programming virtual environment for that matter) soon.&lt;/p&gt;
+&lt;p&gt;Enjoy containerizing everything!&lt;/p&gt;
+&lt;p&gt;(&amp;lt;- Email me if you find any faults or can make any improvements)&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Moe. H</dc:creator><pubDate>Tue, 19 May 2015 02:00:00 +0200</pubDate><guid>tag:,2015-05-19:2015/May/19/guerrilla-guide-to-using-docker/</guid><category>ubuntu</category><category>python</category><category>docker</category></item><item><title>Single Package Update across Ubuntu PCs</title><link>/2014/Oct/16/single-package-update-across-ubuntu-pcs/</link><description>&lt;p&gt;If you live in a country with a slow internet connection, have limited bandwidth capacity, have multiple machines or would like to conserve your bandwidth by not doing repeat downloads, this tutorial will be useful to you.&lt;/p&gt;
 &lt;p&gt;I recently came across a rather simple method for keeping my machines updated with the latest packages by downloading the updates once and then using those packages to update the other machines/PCs.&lt;/p&gt;
 &lt;p&gt;Here is a checklist before attempting this:&lt;/p&gt;
 &lt;ul&gt;

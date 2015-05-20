@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Guerrilla guide to using Docker
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="http://kentoseth.github.io"><h2><i class="fa fa-hand-o-up"></i> Kentoseth Blog</h2></a>
+        <p id="site-desc"> Coding. Linux. Data Science. Python. Web. </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+                <li><a href="/categories.html">Categories</a></li>
+                <li><a href="/pages/about-me.html">About me</a></li>
+                <li><a href="/pages/projects.html">Projects</a></li>
+            <li>
+            <a href="http://github.com/Kentoseth" target="_blank">
+                GitHub
+            </a>
+            </li>
+            <li>
+            <a href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+                Email
+            </a>
+            </li>
+        </ul>
+    </nav>
+<footer id="site-info">
+    <!--<p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>.
+    </p>
+	-->
+</footer></header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-05-19T02:00:00+02:00" pubdate>
+                            Tue 19 May 2015
+                        </time>
+                        <a href="/2015/May/19/guerrilla-guide-to-using-docker/" rel="bookmark"><h1>Guerrilla guide to using Docker</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>This is a quick-start intro to using Docker. For the long-form version of "Getting Started with Docker" please see: <a href="https://docs.docker.com/installation/#installation">Docker Basics</a></p>
+<p>This tutorial should take you <em>less than 15 minutes</em> to get up and running with Docker (this excludes the time it takes to install Docker itself and downloading of the source files). Also note that this tutorial assumes you are using Ubuntu (or a variant thereof).</p>
+<p>If you haven't installed Docker already, go ahead and use the link above to install it.</p>
+<h3>Images, Containers and Dockerfiles</h3>
+<p><em>Image:</em> Think of this as a static snapshot of your Docker setup. Images are layered on top of each other like an onion, so that it does not duplicate the same core files repeatedly (for example, creating many different "stacks" on top of an Ubuntu image will not recreate Ubuntu each time). Images are never used explicitly and are used as the base for creating Containers. </p>
+<p><em>Container:</em> Containers are dynamic versions of Images. Think of a Container as the fake version of priceless art. You would never touch or damage the original (Image) but you can do whatever you like with a fake (Container). Containers can be made, modified and destroyed very easily (they also act as the tool for building on images)</p>
+<p><em>Dockerfile:</em> This is the formal method of building Images. Think of the Dockerfile as a Shell Script for installing something (it works almost exactly the same).</p>
+<h3>Building an Image: Ubuntu + Python</h3>
+<p>Let us first create a Docker folder. Open up your File Manager and create a folder so that you get this path:</p>
+<blockquote>
+<p>/home/[USER]/Docker/</p>
+</blockquote>
+<p>Now, I will walk you through my simple Dockerfile for this (you can download it here: <a href="https://registry.hub.docker.com/u/dockops/ubuntupy/">File</a> )</p>
+<p>Here is the output:</p>
+<div class="highlight"><pre># 
+# Dockerfile to use as a base for python
+#
+# Combines Ubuntu + Python
+#
+# https://github.com/Kentoseth/Docker/tree/master/UbuntuPy
+
+FROM ubuntu:14.04
+MAINTAINER &quot;Moe&quot; &lt;kentoseth@devcroo.com&gt;
+
+# Prerequisites
+
+RUN \
+  sudo apt-get update &amp;&amp; \
+  sudo apt-get -y upgrade &amp;&amp; \
+  sudo apt-get install -y python2.7 python2.7-dev python-pip &amp;&amp; \
+  sudo apt-get clean &amp;&amp; \
+  sudo rm -rf /var/lib/apt/lists/*
+
+# END
+</pre></div>
+
+
+<p>Save a file called "Dockerfile" in: /home/[USER]/Docker/</p>
+<p>I will just tell you 2 important things from the above code:</p>
+<ol>
+<li>Where you see the word "FROM", what this is doing is "pulling" the Ubuntu image from the remote Docker registry</li>
+<li>For everything after the line "RUN \", you should notice this as basic Ubuntu install commands</li>
+</ol>
+<p>Now let's build our first Docker image.</p>
+<p>Open your Terminal where the Dockerfile is (/home/[USER]/Docker/) and run this:</p>
+<blockquote>
+<p>sudo docker build -t pybuntu .</p>
+</blockquote>
+<p>You can rename "myapp" to anything you wish, as this is the name of your image. In this case, because it is Ubuntu + Python, you can call it something like "pybuntu" or whatever helps you recognize the image (only lowercase works). Also, you will see a ' . ' in my command above. This isn't an error, so please include it as well (you can learn about about "complex" build-procedures from the link above).</p>
+<p>After the build process is complete, let's view our new Docker image. Run this command:</p>
+<blockquote>
+<p>sudo docker images</p>
+</blockquote>
+<p>and you should get this output:</p>
+<p><img alt="Photo1" src="/images/docker/docker2.png" /></p>
+<p>From the above image, you can see I have 3 images. We haven't yet got to the "pelicanpy" yet, but if you've followed my instructions and everything worked, you should have something similar to "ubuntupy" (or myapp/image-name).</p>
+<h3>Creating a container: from 'pybuntu' image</h3>
+<p>Now that we have our image, lets use this image ( <em>static</em> ) to make our container ( <em>dynamic</em> ).</p>
+<p>First, we can create a directory where we can "mount" files into the container from our filesystem (so that we can run them in the container).</p>
+<p>You can create your directory here(with subdirectory called "mount/test"):</p>
+<blockquote>
+<p>/home/[USER]/Docker/mount/test/</p>
+</blockquote>
+<p>Now let's create a container that has a 'mounted' path from your Ubuntu/linux system.</p>
+<p>Open your commandline (in any directory) and run the following command:</p>
+<blockquote>
+<p>sudo docker run -i -t -v /home/[USER]/Docker/mount/test/:/test pybuntu</p>
+</blockquote>
+<p>A quick walk-through of the line above is:</p>
+<ul>
+<li>Every "-[LETTER]" command corresponds to some commandline specification (more info on the site)</li>
+<li>Some commands, like "-v" have instructions that follow them. In this case, "-v" is used for mounting. First we declare the system path (.../mount/test/), then we declare the folder within the container(:/test). Note that the path in the container <strong>has</strong> to be declared</li>
+<li>Lastly, you call on "pybuntu", which is basically telling the container which image to use as the "dynamic" version of that "static" screenshot</li>
+</ul>
+<p>After you're done creating the container, you should see something similar to this:</p>
+<p><img alt="Photo2" src="/images/docker/con1.png" /></p>
+<p>From the image above, you can now see that you are a "root" user in your container.</p>
+<p>Let's go into our mounted directory:</p>
+<blockquote>
+<p>cd test</p>
+</blockquote>
+<p>Once in, let's create a test python file. We will call it "hello.py". Here is the code:</p>
+<div class="highlight"><pre>#This is our test Python file
+
+print(&quot;Hello World!&quot;)
+</pre></div>
+
+
+<p>Save your file in your mounted directory (.../mount/test/hello.py)</p>
+<p>Now, within the container terminal, run this:</p>
+<blockquote>
+<p>python hello.py</p>
+</blockquote>
+<p><em>Hello World!</em> should be printed out in the terminal now.</p>
+<p>Once done, you have now successfully created your Docker Image and a Container of that Image.</p>
+<p>I will follow up this tutorial with how to use Docker as a drop-in replacement for virtualenv (or any programming virtual environment for that matter) soon.</p>
+<p>Enjoy containerizing everything!</p>
+<p>(&lt;- Email me if you find any faults or can make any improvements)</p>
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/docker.html">Docker</a></p>
+                        <p>Tags: <a href="/tag/ubuntu.html">ubuntu</a>, <a href="/tag/python.html">python</a>, <a href="/tag/docker.html">docker</a>, </p>
+                    </aside>
+                    <hr/>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+
+        <script src="/theme/js/main.js"></script>
+    </body>
+</html>
