@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Moving from Docker to LXC: 1 of 3 (The why)
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="http://kentoseth.github.io"><h2><i class="fa fa-hand-o-up"></i> Kentoseth Blog</h2></a>
+        <p id="site-desc"> Coding. Linux. Data Science. Python. Web. </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+                <li><a href="/categories.html">Categories</a></li>
+                <li><a href="/pages/about-me.html">About me</a></li>
+                <li><a href="/pages/projects.html">Projects</a></li>
+            <li>
+            <a href="http://github.com/Kentoseth" target="_blank">
+                GitHub
+            </a>
+            </li>
+            <li>
+            <a href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+                Email
+            </a>
+            </li>
+        </ul>
+    </nav>
+<footer id="site-info">
+    <!--<p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>.
+    </p>
+	-->
+</footer></header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-03-14T02:00:00+02:00" pubdate>
+                            Mon 14 March 2016
+                        </time>
+                        <a href="/2016/Mar/14/moving-from-docker-to-lxc-1-of-3-the-why/" rel="bookmark"><h1>Moving from Docker to LXC: 1 of 3 (The why)</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>Ever since discovering Docker, I've been a huge fan of the whole concept of containers and how they separate concerns.</p>
+<p>Up until recently, I always saw a container as a "container", and did not understand that Docker is very specific about what they interpret a container to be. Then 1 day, I wished to try to install a bunch of different applications to get a mail-server running (namely: Postfix, Dovecot and Roundcube).</p>
+<p>Much to my dismay, I discovered that it was a real PITA to install these things into a single Docker container. Digging deeper into my issues, I was led to the discovery that Dockers philosophy is driven by the whole "micro-services" concept. What this means is that Docker views each container as something that does a single process and a single process alone. You can make the process as big (or small) as you wish, but the goal of this philosophy is to encourage small services vs. a monolith (or so I interpreted it as that). Think about it as: confining your single search box into its own process vs. the big box of bad that is "WordPress, Apache, MySQL and PHP combined".</p>
+<p>Well things weren't going too great, so after wrangling lots of minds on #Docker and asking a few friends/colleagues via various mediums, it was brought to my attention that perhaps LXC would be a better option for what I wished to do. I could dump entire monoliths into LXC and that would be fine.</p>
+<p>During my research time, I also found this really cool infographic (with detailed article) that everyone learning about containers should see:</p>
+<p><a href="https://www.flockport.com/wp-content/uploads/2014/08/lxc-vs-docker5.png">Flockport: Docker vs. LXC</a></p>
+<p>Being able to understand this fully will probably save you (and likely myself) lots of headaches in the future, especially as we all move to the containerized world in 2016 and beyond. Just like many developers out there in the far reaches of the world, I am but a small fry. I used to use Docker as a drop-in replacement for virtualenv for separating my Python projects. This did work reasonably well, but when I decided that I'd like to get my Postfix/Dovecot monolith up, the not-so-obvious warts crept in. I'm no Google/Amazon and I can probably get by with 98% of my projects being monoliths. The micro-service architecture also adds a level of complexity that turns the 1-man coder into a certified devops/sysadmin that needs to understand a lot of important things on that devops/sysadmin level.</p>
+<p>From a security point-of-view, if you don't get things right with Docker containers, you can/will probably shoot yourself in the foot (when containers were meant to protect you from shots in the first place).</p>
+<h3>So what is this LXC thing?</h3>
+<p>I don't (and probably can't) go into too much detail about the technical workings of LXC. Simply put, LXC is the (apparent) daddy of the container eco-system. In fact, I don't think words can ever explain it as good as the infographic above, so please go look at it again.</p>
+<p>Docker has an interesting relationship with LXC. It was built on top of it (with the micro-service philosophy in mind), but I have since heard/read that they have moved away from LXC (on some level I assume).</p>
+<p>When I first heard that Docker was "built on top of LXC", my first reaction to it was on a level similar to that of people saying "I built a layer on top of the C API", indicating that a major layer of complexity was taken out of the equation (C code is C code afterall).</p>
+<p>Fortunately for the 1-man-coder, wordpress-hackers, beginner-coders and more, LXC is not as complex as you might think it could be (and it definitely was not the nightmare I thought it would be - thinking I'd need to write C/other-boilerplate-code just to build/run containers). I even noted down a few commands to get the basics working, and the total of these commands came to: 7</p>
+<p>With these 7 commands, you can: create, start, stop, attach (get into), info (get properties), destroy and "ls" (get a full list of all containers)</p>
+<p>Once you get your first LXC container going though, it starts to feel a lot more like regular Linux/Ubuntu, compared to Dockers opinionated way of doing things.</p>
+<p>The only terrible/difficult thing so far has been to attach a host filesystem to an LXC container (which took a day or 2 to figure out), but LXC seems more in tune with my current needs as a tinkerer/programmer/1-man-coder.</p>
+<h3>Is it already time to start bashing Docker yet?</h3>
+<p>Not at all. Docker has its place and it will be used a lot at many different places. The only problem I personally see is the "bandwagon" issue. A lot of people are trying to get into containerization without fully understanding Dockers philosophy ("micro-services architecture").</p>
+<p>That infographic I linked to above explains things a million times more clearly than the wads of text I had to read through (whilst learning about containers since a year or 2 ago).</p>
+<p>Just remember that: micro-services are based on an architectural decision to address the issues at a Google/Amazon level</p>
+<p>This blog, a drop-in for virtualenv for Python environments or your dads WordPress business-site probably don't need a Docker container (and some would argue that they probably don't need any containerization - LXC included - at all).</p>
+<hr />
+<p>Moving forward, I will be (and have been) learning/using LXC as my go-to for containers.</p>
+<p>In part 2 of this 3-part blog, I will do a basic walk-through of installing LXC, creating a bare/minimal container(Ubuntu) and then slapping the Python library/software called "Twisted Matrix" (a network engine) onto a container built on top of the bare/minimal Ubuntu container.</p>
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/lxc.html">LXC</a></p>
+                        <p>Tags: <a href="/tag/ubuntu.html">ubuntu</a>, <a href="/tag/lxc.html">LXC</a>, <a href="/tag/docker.html">docker</a>, </p>
+                    </aside>
+                    <hr/>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+
+        <script src="/theme/js/main.js"></script>
+    </body>
+</html>
