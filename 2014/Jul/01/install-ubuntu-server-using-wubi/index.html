@@ -37,7 +37,7 @@
                 <li><a href="/pages/about-me.html">About me</a></li>
                 <li><a href="/pages/projects.html">Projects</a></li>
             <li>
-            <a href="http://github.com/Kentoseth" target="_blank">
+            <a href="https://github.com/Kentoseth" target="_blank">
                 GitHub
             </a>
             </li>
@@ -81,19 +81,17 @@
 </ul>
 <p>The process of converting the desktop to server is made very simple, using a tool called <a href="https://help.ubuntu.com/community/Tasksel">Tasksel</a></p>
 <p>Open a terminal/console window in your Ubuntu Desktop and type in the following commands:</p>
-<ul>
-<li>sudo apt-get install tasksel</li>
-<li>sudo tasksel remove ubuntu-desktop (Note: this may take a few minutes to complete)</li>
-<li>sudo tasksel install server</li>
-<li>apt-get install linux-server linux-image-server</li>
-<li>apt-get –purge remove lightdm</li>
-</ul>
-<p>Remember to type in each command (as listed by the each point) separately and wait for it to complete, before typing in the next command.</p>
-<p>Also, for this line:</p>
-<div class="highlight"><pre><span></span>sudo tasksel remove ubuntu-desktop
+<div class="highlight"><pre><span></span>sudo apt-get install tasksel
+sudo tasksel remove ubuntu-desktop (Note: this may take a few minutes to complete)
+sudo tasksel install server
+apt-get install linux-server linux-image-server
+apt-get –purge remove lightdm
 </pre></div>
 
 
+<p>Remember to type in each command (as listed by the each point) separately and wait for it to complete, before typing in the next command.</p>
+<p>Also, for this line:</p>
+<p><code>sudo tasksel remove ubuntu-desktop</code></p>
 <p>Make sure you specify the correct desktop you are using (which could be Lubuntu or Kubuntu or Xubuntu).</p>
 <p>Once this is done, you will officially have Ubuntu Server installed on your PC using Wubi.</p>
 <p>You can test this out by restarting the PC and booting into Ubuntu. Give it some time, depending on your system.</p>

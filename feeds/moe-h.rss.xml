@@ -1,57 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kentoseth Blog</title><link>/</link><description>Coding. Linux. Data Science. Python. Web.</description><atom:link href="/feeds/moe-h.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 22 Aug 2016 02:00:00 +0200</lastBuildDate><item><title>Basics of LXC: 2 of 2</title><link>/2016/Aug/22/basics-of-lxc-2-of-2/</link><description>&lt;p&gt;In my previous blog post, I mentioned why I moved from Docker to LXC (reference: &lt;a href="https://kentoseth.github.io/2016/May/17/moving-from-docker-to-lxc-1-of-2-the-why/"&gt;here&lt;/a&gt; ).&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kentoseth Blog</title><link>/</link><description>Coding. Linux. Data Science. Python. Web.</description><atom:link href="/feeds/moe-h.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 13 Sep 2016 02:00:00 +0200</lastBuildDate><item><title>Installing latest Python3 version on Ubuntu 14.04</title><link>/2016/Sep/13/installing-latest-python3-version-on-ubuntu-1404/</link><description>&lt;p&gt;Recently, I have wanted to experiment with the latest features of Python3 (3.5.2 as of this date). Unfortunately, Ubuntu 14.04 is stuck on 3.4.3 and it is unlikely that 3.5 will ever come to this LTS release (as per the way the release-schedules work, or my understanding thereof).&lt;/p&gt;
+&lt;p&gt;During the discovery stage, I investigated and found a variety of ways to install different versions of Python on the same system. Some of these options are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PyEnv (quite popular)&lt;/li&gt;
+&lt;li&gt;Pythonbrew (an old favourite of mine, but the project is not being maintained anymore)&lt;/li&gt;
+&lt;li&gt;Containers (this is a lazy answer, and you will see why below)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I didn't want to risk borking my machine with a newer Python version being installed (even if it was installed in parallel to the system-version), so I settled on doing everything within an LXC container.&lt;/p&gt;
+&lt;h3&gt;Goals&lt;/h3&gt;
+&lt;p&gt;My goals were:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create the lightest possible containerized-option&lt;/li&gt;
+&lt;li&gt;Try to keep the install process as simple as possible&lt;/li&gt;
+&lt;li&gt;Avoid any need to modify/add anything on the host system&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Install instructions&lt;/h3&gt;
+&lt;p&gt;We can create/start/attach our container using the LXC Ubuntu template:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo lxc-create --name py35 --template ubuntu
+sudo lxc-start --name py35 --daemon
+sudo lxc-attach --name py35
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I have called my container: &lt;code&gt;py35&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You should now either be connected as the 'root' user (within the container) or if you had to go through the login process, as the 'ubuntu' user. The rest of this tutorial will assume that you are the 'ubuntu' user.&lt;/p&gt;
+&lt;p&gt;The Ubuntu template lacks the the required package/s to add the 'deadsnakes' PPA, which is what we will use to get the latest Python version (which we will then use with virtualenv). Let's add the PPA:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:fkrull/deadsnakes
+sudo apt-get update
+sudo apt-get install python3.5
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Check if it successfully installed:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;python3.5 --version&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Install virtualenv:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo pip3 install virtualenv&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;I will now create a new folder for my virtualenv project. I will call this folder "project1". Then I will create the virtualenv itself:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /home/ubuntu/project1
+virtualenv -p /usr/bin/python3.5 /home/ubuntu/project1/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Going through the virtualenv process, you should also have the latest &lt;code&gt;pip&lt;/code&gt; installed.&lt;/p&gt;
+&lt;p&gt;Let us test that everything worked:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd /home/ubuntu/project1/
+source /home/ubuntu/project1/bin/activate
+python --version
+# should output 3.5.2
+pip --version
+# should output 8.1.2
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Containers = lazy answer?&lt;/h3&gt;
+&lt;p&gt;Above, I mentioned that using containers for different Python versions is a lazy answer. The simple reason for this is that even if you use containers, you are still stuck with the system-version. So the only way to bump up/down your Python version is to move to a newer/older Ubuntu release. This still doesn't guarantee you will get the version you wish. My instructions above get you the version you want, whilst keeping your Host protected from different Python installs.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Final message&lt;/h3&gt;
+&lt;p&gt;You have now successfully installed Python 3.5.2 on Ubuntu 14.04. You could easily install multiple Pythons/projects within a single container, but things could quickly get bloated. I recommend using containers as the layer of abstraction/isolation for each large-enough project and only using &lt;code&gt;virtualenv&lt;/code&gt; (within a container) when you require the latest/fixed Python versions.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Moe. H</dc:creator><pubDate>Tue, 13 Sep 2016 02:00:00 +0200</pubDate><guid>tag:,2016-09-13:2016/Sep/13/installing-latest-python3-version-on-ubuntu-1404/</guid><category>ubuntu</category><category>LXC</category><category>docker</category></item><item><title>Basics of LXC: 2 of 2</title><link>/2016/Aug/22/basics-of-lxc-2-of-2/</link><description>&lt;p&gt;In my previous blog post, I mentioned why I moved from Docker to LXC (reference: &lt;a href="https://kentoseth.github.io/2016/May/17/moving-from-docker-to-lxc-1-of-2-the-why/"&gt;here&lt;/a&gt; ).&lt;/p&gt;
 &lt;p&gt;I also mentioned 7 basic commands you will need to get started with LXC. I will list them and walk-through each below.&lt;/p&gt;
 &lt;h3&gt;Container Basics&lt;/h3&gt;
 &lt;p&gt;Let us start by creating and starting a container:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;sudo lxc-create -n myfirstcont -t ubuntu&lt;/p&gt;
-&lt;p&gt;sudo lxc-start -n myfirstcont -d&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo lxc-create -n myfirstcont -t ubuntu
+sudo lxc-start -n myfirstcont -d
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;The first command will create a container called &lt;code&gt;myfirstcont&lt;/code&gt; from the &lt;em&gt;remote&lt;/em&gt; Ubuntu template.&lt;/p&gt;
 &lt;p&gt;After the first command has successfully executed, you can start the container using the second command (lxc-start).&lt;/p&gt;
 &lt;p&gt;Next, we will get &lt;em&gt;into&lt;/em&gt; the container:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;sudo lxc-attach -n myfirstcont&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-attach -n myfirstcont&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;This command will take you into the container as the root user.&lt;/p&gt;
 &lt;p&gt;Once you are in the container, you can work with it as you normally would in a regular Ubuntu OS (although a number of regular/standard packages may not be present).&lt;/p&gt;
 &lt;p&gt;Now that we started our container and we have also managed to get &lt;em&gt;within&lt;/em&gt; the container (via lxc-attach), we may need to obtain some information about the container to work with it externally.&lt;/p&gt;
 &lt;p&gt;A common example is when we start an HTTP-server within the container (and bind the server to the 0.0.0.0 IP). To obtain the IP-address assigned to the container (as well as other basic information), we will use:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;sudo lxc-info -n myfirstcont&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-info -n myfirstcont&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;You will get a basic amount of information using the &lt;code&gt;lxc-info&lt;/code&gt; option.&lt;/p&gt;
 &lt;p&gt;The next 2 commands will stop and destroy your container.&lt;/p&gt;
 &lt;p&gt;Stopping:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;sudo lxc-stop -n myfirstcont&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-stop -n myfirstcont&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Destroying:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;sudo lxc-destroy -n myfirstcont&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-destroy -n myfirstcont&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;The container itself will be destroyed, but your template (somewhat similar to a Docker image) will still exist.&lt;/p&gt;
 &lt;p&gt;The last command is to list all containers on your system. The command will list all containers, regardless of state:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;sudo lxc-ls&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-ls&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;One important thing to mention about this tutorial is that we are using the default LXC instructions and creating &lt;em&gt;priviledged&lt;/em&gt; containers by using &lt;code&gt;sudo&lt;/code&gt;. I recommend reading up about the priviledged/unpriviledged aspects of containers &lt;a href="https://help.ubuntu.com/lts/serverguide/lxc.html#lxc-basic-usage"&gt;here&lt;/a&gt; .&lt;/p&gt;
 &lt;h3&gt;Mounting&lt;/h3&gt;
 &lt;p&gt;In my first post, I mentioned that mounting from the host &amp;gt; container or vice-versa took a bit of time to figure out. For the purposes of simplicity and ease-of-use for anyone reading this, here is a set of commands to use for mounting.&lt;/p&gt;
 &lt;p&gt;Host-to-container:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;sudo mount --bind /var/lib/lxc/myfirstcont/rootfs/home/ubuntu/myfolder/ /Project/path/to/hostfolder&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;sudo mount --bind /var/lib/lxc/myfirstcont/rootfs/home/ubuntu/myfolder/ /Project/path/to/hostfolder&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Container-to-host:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;sudo mount --bind /Project/path/to/hostfolder /var/lib/lxc/myfirstcont/rootfs/home/ubuntu/myfolder&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;sudo mount --bind /Project/path/to/hostfolder /var/lib/lxc/myfirstcont/rootfs/home/ubuntu/myfolder&lt;/code&gt;&lt;/p&gt;
 &lt;h3&gt;Installing small Python library in a container&lt;/h3&gt;
 &lt;p&gt;If you have not destroyed the container you created above, let us go ahead and restart the container:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;sudo lxc-start -n myfirstcont -d&lt;/p&gt;
-&lt;p&gt;sudo lxc-attach -n myfirstcont&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo lxc-start -n myfirstcont -d
+sudo lxc-attach -n myfirstcont
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;You should be attached as the root-user within the container.&lt;/p&gt;
 &lt;p&gt;Now run:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get update
@@ -134,14 +182,10 @@ RUN \
 &lt;/ol&gt;
 &lt;p&gt;Now let's build our first Docker image.&lt;/p&gt;
 &lt;p&gt;Open your Terminal where the Dockerfile is (/home/[USER]/Docker/) and run this:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;sudo docker build -t pybuntu .&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;sudo docker build -t pybuntu .&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;You can rename "myapp" to anything you wish, as this is the name of your image. In this case, because it is Ubuntu + Python, you can call it something like "pybuntu" or whatever helps you recognize the image (only lowercase works). Also, you will see a ' . ' in my command above. This isn't an error, so please include it as well (you can learn about about "complex" build-procedures from the link above).&lt;/p&gt;
 &lt;p&gt;After the build process is complete, let's view our new Docker image. Run this command:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;sudo docker images&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;sudo docker images&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;and you should get this output:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Photo1" src="/images/docker/docker2.png" /&gt;&lt;/p&gt;
 &lt;p&gt;From the above image, you can see I have 3 images. We haven't yet got to the "pelicanpy" yet, but if you've followed my instructions and everything worked, you should have something similar to "ubuntupy" (or myapp/image-name).&lt;/p&gt;
@@ -154,9 +198,7 @@ RUN \
 &lt;/blockquote&gt;
 &lt;p&gt;Now let's create a container that has a 'mounted' path from your Ubuntu/linux system.&lt;/p&gt;
 &lt;p&gt;Open your commandline (in any directory) and run the following command:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;sudo docker run -i -t -v /home/[USER]/Docker/mount/test/:/test pybuntu&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;sudo docker run -i -t -v /home/[USER]/Docker/mount/test/:/test pybuntu&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;A quick walk-through of the line above is:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Every "-[LETTER]" command corresponds to some commandline specification (more info on the site)&lt;/li&gt;
@@ -167,9 +209,7 @@ RUN \
 &lt;p&gt;&lt;img alt="Photo2" src="/images/docker/con1.png" /&gt;&lt;/p&gt;
 &lt;p&gt;From the image above, you can now see that you are a "root" user in your container.&lt;/p&gt;
 &lt;p&gt;Let's go into our mounted directory:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;cd test&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;cd test&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Once in, let's create a test python file. We will call it "hello.py". Here is the code:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#This is our test Python file
 
@@ -179,9 +219,7 @@ print(&amp;quot;Hello World!&amp;quot;)
 
 &lt;p&gt;Save your file in your mounted directory (.../mount/test/hello.py)&lt;/p&gt;
 &lt;p&gt;Now, within the container terminal, run this:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;python hello.py&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;python hello.py&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Hello World!&lt;/em&gt; should be printed out in the terminal now.&lt;/p&gt;
 &lt;p&gt;Once done, you have now successfully created your Docker Image and a Container of that Image.&lt;/p&gt;
 &lt;p&gt;I will follow up this tutorial with how to use Docker as a drop-in replacement for virtualenv (or any programming virtual environment for that matter) soon.&lt;/p&gt;
@@ -198,18 +236,12 @@ print(&amp;quot;Hello World!&amp;quot;)
 &lt;p&gt;&lt;em&gt;The steps provided below will be done on Ubuntu machines. Similar commands from other distros should be applied where Ubuntu-commands are used. (paths for the packages may differ though)&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Step 1 - Installing SSH:&lt;/h3&gt;
 &lt;p&gt;Getting SSH installed on your main download machine can be done in a single command:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install openssh-server
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;&lt;code&gt;sudo apt-get install openssh-server&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;If you'd like more info on SSH (maybe for installing on a remote server),  &lt;a href="http://www.ihaveapc.com/2012/02/how-to-install-ssh-server-on-ubuntu/"&gt;click here&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Step 2 - Updating packages for main machine + IP address:&lt;/h3&gt;
 &lt;p&gt;First do your updates on the main machine (either through Terminal or via the Update Manager). Once that is done, you will now (mostly) be doing everything else on your other machines (I will refer to them as &lt;em&gt;"client"&lt;/em&gt; machines).&lt;/p&gt;
 &lt;p&gt;Let's first get the IP address of the &lt;strong&gt;main&lt;/strong&gt; machine. Type this command in Terminal/CLI:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ifconfig
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;&lt;code&gt;ifconfig&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;You should be looking for a line like this:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;inet addr:192.$$$.$.$  Bcast:192.$$$.$.$$$  Mask:255.$$$.$$$.$&lt;/p&gt;
@@ -222,23 +254,14 @@ print(&amp;quot;Hello World!&amp;quot;)
 &lt;p&gt;You need to remember this IP address, as this is what you will use to connect from client machines to your updated/main machine.&lt;/p&gt;
 &lt;h3&gt;Step 3 - Updating client machines:&lt;/h3&gt;
 &lt;p&gt;Take one of your client laptops/desktops (which is connected to the same router as the main machine) and open Terminal/CLI. In the Terminal, type this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;scp&lt;/span&gt; &lt;span class="n"&gt;kent&lt;/span&gt;&lt;span class="mf"&gt;@192.168.1.102&lt;/span&gt;&lt;span class="o"&gt;:/&lt;/span&gt;&lt;span class="n"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cache&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;archives&lt;/span&gt;&lt;span class="o"&gt;/*&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;deb&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cache&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;archives&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;&lt;code&gt;sudo scp kent@192.168.1.102:/var/cache/apt/archives/*.deb /var/cache/apt/archives/&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;"kent" is the name of the main machine. You need to specify the name you are using on your main machine where "kent" is.&lt;/p&gt;
 &lt;p&gt;This command is "secure copy" (scp) which transfers the archives of the updated machine to your client machines. You can read from the command how it is copying archives from one folder to another.&lt;/p&gt;
 &lt;p&gt;You will likely be asked for the passwords of both machines (client and main machine) after using the command above. If everything was successful, you should see a transfer or files being done.&lt;/p&gt;
 &lt;p&gt;Your client machine should now have the updated .deb files, so let's do the actual update on the client machine. Type this (still in Terminal):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get update
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;&lt;code&gt;sudo apt-get update&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Then:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get upgrade
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;&lt;code&gt;sudo apt-get upgrade&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;You should now have all your packages updated.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note 1: The linux system files don't seem to update after running "&lt;strong&gt;sudo apt-get upgrade&lt;/strong&gt;", but you can update them through the update manager&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note 2: Even if you have different packages on your machines (like extra packages on the main machine), the other packages that weren't previously installed on your client machine will &lt;em&gt;not&lt;/em&gt; be installed&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Moe. H</dc:creator><pubDate>Thu, 16 Oct 2014 02:00:00 +0200</pubDate><guid>tag:,2014-10-16:2014/Oct/16/single-package-update-across-ubuntu-pcs/</guid><category>ubuntu</category><category>updates</category><category>ssh</category></item><item><title>Install Ubuntu Server using Wubi</title><link>/2014/Jul/01/install-ubuntu-server-using-wubi/</link><description>&lt;p&gt;If you're somebody that has tinkered with linux a while back, you may have come across something called &lt;a href="https://wiki.ubuntu.com/WubiGuide"&gt;Wubi&lt;/a&gt;&lt;/p&gt;
@@ -256,19 +279,17 @@ print(&amp;quot;Hello World!&amp;quot;)
 &lt;/ul&gt;
 &lt;p&gt;The process of converting the desktop to server is made very simple, using a tool called &lt;a href="https://help.ubuntu.com/community/Tasksel"&gt;Tasksel&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Open a terminal/console window in your Ubuntu Desktop and type in the following commands:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;sudo apt-get install tasksel&lt;/li&gt;
-&lt;li&gt;sudo tasksel remove ubuntu-desktop (Note: this may take a few minutes to complete)&lt;/li&gt;
-&lt;li&gt;sudo tasksel install server&lt;/li&gt;
-&lt;li&gt;apt-get install linux-server linux-image-server&lt;/li&gt;
-&lt;li&gt;apt-get –purge remove lightdm&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Remember to type in each command (as listed by the each point) separately and wait for it to complete, before typing in the next command.&lt;/p&gt;
-&lt;p&gt;Also, for this line:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo tasksel remove ubuntu-desktop
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install tasksel
+sudo tasksel remove ubuntu-desktop (Note: this may take a few minutes to complete)
+sudo tasksel install server
+apt-get install linux-server linux-image-server
+apt-get –purge remove lightdm
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;Remember to type in each command (as listed by the each point) separately and wait for it to complete, before typing in the next command.&lt;/p&gt;
+&lt;p&gt;Also, for this line:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo tasksel remove ubuntu-desktop&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Make sure you specify the correct desktop you are using (which could be Lubuntu or Kubuntu or Xubuntu).&lt;/p&gt;
 &lt;p&gt;Once this is done, you will officially have Ubuntu Server installed on your PC using Wubi.&lt;/p&gt;
 &lt;p&gt;You can test this out by restarting the PC and booting into Ubuntu. Give it some time, depending on your system.&lt;/p&gt;

@@ -37,7 +37,7 @@
                 <li><a href="/pages/about-me.html">About me</a></li>
                 <li><a href="/pages/projects.html">Projects</a></li>
             <li>
-            <a href="http://github.com/Kentoseth" target="_blank">
+            <a href="https://github.com/Kentoseth" target="_blank">
                 GitHub
             </a>
             </li>
@@ -111,14 +111,10 @@ RUN \
 </ol>
 <p>Now let's build our first Docker image.</p>
 <p>Open your Terminal where the Dockerfile is (/home/[USER]/Docker/) and run this:</p>
-<blockquote>
-<p>sudo docker build -t pybuntu .</p>
-</blockquote>
+<p><code>sudo docker build -t pybuntu .</code></p>
 <p>You can rename "myapp" to anything you wish, as this is the name of your image. In this case, because it is Ubuntu + Python, you can call it something like "pybuntu" or whatever helps you recognize the image (only lowercase works). Also, you will see a ' . ' in my command above. This isn't an error, so please include it as well (you can learn about about "complex" build-procedures from the link above).</p>
 <p>After the build process is complete, let's view our new Docker image. Run this command:</p>
-<blockquote>
-<p>sudo docker images</p>
-</blockquote>
+<p><code>sudo docker images</code></p>
 <p>and you should get this output:</p>
 <p><img alt="Photo1" src="/images/docker/docker2.png" /></p>
 <p>From the above image, you can see I have 3 images. We haven't yet got to the "pelicanpy" yet, but if you've followed my instructions and everything worked, you should have something similar to "ubuntupy" (or myapp/image-name).</p>
@@ -131,9 +127,7 @@ RUN \
 </blockquote>
 <p>Now let's create a container that has a 'mounted' path from your Ubuntu/linux system.</p>
 <p>Open your commandline (in any directory) and run the following command:</p>
-<blockquote>
-<p>sudo docker run -i -t -v /home/[USER]/Docker/mount/test/:/test pybuntu</p>
-</blockquote>
+<p><code>sudo docker run -i -t -v /home/[USER]/Docker/mount/test/:/test pybuntu</code></p>
 <p>A quick walk-through of the line above is:</p>
 <ul>
 <li>Every "-[LETTER]" command corresponds to some commandline specification (more info on the site)</li>
@@ -144,9 +138,7 @@ RUN \
 <p><img alt="Photo2" src="/images/docker/con1.png" /></p>
 <p>From the image above, you can now see that you are a "root" user in your container.</p>
 <p>Let's go into our mounted directory:</p>
-<blockquote>
-<p>cd test</p>
-</blockquote>
+<p><code>cd test</code></p>
 <p>Once in, let's create a test python file. We will call it "hello.py". Here is the code:</p>
 <div class="highlight"><pre><span></span>#This is our test Python file
 
@@ -156,9 +148,7 @@ print(&quot;Hello World!&quot;)
 
 <p>Save your file in your mounted directory (.../mount/test/hello.py)</p>
 <p>Now, within the container terminal, run this:</p>
-<blockquote>
-<p>python hello.py</p>
-</blockquote>
+<p><code>python hello.py</code></p>
 <p><em>Hello World!</em> should be printed out in the terminal now.</p>
 <p>Once done, you have now successfully created your Docker Image and a Container of that Image.</p>
 <p>I will follow up this tutorial with how to use Docker as a drop-in replacement for virtualenv (or any programming virtual environment for that matter) soon.</p>
