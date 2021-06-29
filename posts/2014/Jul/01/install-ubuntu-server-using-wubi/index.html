@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://kentoseth.github.io/theme/pygments/monokai.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/solid.css">
+
+    <link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet">
+
+    <link href="https://kentoseth.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom">
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Mohamed H." />
+<meta name="description" content="Getting Ubuntu Server installed using the wubi method." />
+<meta name="keywords" content="ubuntu-server, wubi">
+
+
+<meta property="og:site_name" content="Kentoseth - Thoughts on programming, culture, FOSS and more"/>
+<meta property="og:title" content="Install Ubuntu Server using Wubi"/>
+<meta property="og:description" content="Getting Ubuntu Server installed using the wubi method."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://kentoseth.github.io/posts/2014/Jul/01/install-ubuntu-server-using-wubi/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2014-07-01 02:00:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://kentoseth.github.io/author/mohamed-h.html">
+<meta property="article:section" content="Linux"/>
+<meta property="article:tag" content="ubuntu-server"/>
+<meta property="article:tag" content="wubi"/>
+<meta property="og:image" content="/images/avatar.jpg">
+
+  <title>Kentoseth - Thoughts on programming, culture, FOSS and more &ndash; Install Ubuntu Server using Wubi</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://kentoseth.github.io">
+        <img src="/images/avatar.jpg" alt="Kentoseth" title="Kentoseth">
+      </a>
+
+      <h1>
+        <a href="https://kentoseth.github.io">Kentoseth</a>
+      </h1>
+
+<p>Coding. Culture. Linux. More.</p>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://kentoseth.github.io/pages/about-me/">
+                  About me
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="https://kentoseth.github.io/pages/projects/">
+                  Projects
+                </a>
+              </li>
+
+            <li>
+              <a target="_self" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" >Email</a>
+            </li>
+            <li>
+              <a target="_self" href="/categories.html" >Categories</a>
+            </li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
+              <i class="fab fa-github-alt"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
+              <i class="fab fa-gitlab"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://kentoseth.github.io">Home</a>
+
+      <a href="/categories">Categories</a>
+      <a href="/tags">Tags</a>
+
+      <a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="install-ubuntu-server-using-wubi">Install Ubuntu Server using Wubi</h1>
+    <p>
+      Posted on Tue 01 July 2014 in <a href="https://kentoseth.github.io/category/linux.html">Linux</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>If you're somebody that has tinkered with linux a while back, you may have come across something called <a href="https://wiki.ubuntu.com/WubiGuide">Wubi</a></p>
+<p>Wubi basically allows you to install linux <em>within</em> windows.</p>
+<p>You will probably want to install Ubuntu Server with Wubi if you have a Windows system that you feel you still need, but you'd also like to tinker/test-out a server-version of Ubuntu.</p>
+<blockquote>
+<p><strong><em>This install method is recommended for hobbyists and shouldn't be used for any production-critical matters</em></strong></p>
+</blockquote>
+<p>With that said, let's install ubuntu-server within windows using Wubi.</p>
+<p><em>Requirements:</em></p>
+<ul>
+<li>A PC with Ubuntu/Xubuntu/Lubuntu Desktop installed (preferably 12.04 and nothing above this version)</li>
+<li>Internet access (a decent speed broadband speed)</li>
+<li>A router (if you'd like to SSH from another PC into your server - useful for remote installations)</li>
+</ul>
+<p>The process of converting the desktop to server is made very simple, using a tool called <a href="https://help.ubuntu.com/community/Tasksel">Tasksel</a></p>
+<p>Open a terminal/console window in your Ubuntu Desktop and type in the following commands:</p>
+<div class="highlight"><pre><span></span>sudo apt-get install tasksel
+sudo tasksel remove ubuntu-desktop <span class="c1"># (Note: this may take a few minutes to complete)</span>
+sudo tasksel install server
+apt-get install linux-server linux-image-server
+apt-get –purge remove lightdm
+</pre></div>
+
+
+<p>Remember to type in each command (as listed by the each point) separately and wait for it to complete, before typing in the next command.</p>
+<p>Also, for this line:</p>
+<p><code>sudo tasksel remove ubuntu-desktop</code></p>
+<p>Make sure you specify the correct desktop you are using (which could be Lubuntu or Kubuntu or Xubuntu).</p>
+<p>Once this is done, you will officially have Ubuntu Server installed on your PC using Wubi.</p>
+<p>You can test this out by restarting the PC and booting into Ubuntu. Give it some time, depending on your system.</p>
+<p>The next part is to fix the bootloader on Windows, so that you can operate your Ubuntu Server without a screen (and just be able to SSH into it).</p>
+<h3>Modifying the Windows bootloader</h3>
+<p>I have Win XP installed, so the instructions I found was for this OS. I initially followed these instructions <a href="http://support.microsoft.com/kb/289022">here</a>.</p>
+<p>It didn't seem to work though. So I basically just went through the process of first backing up the boot.ini file (very important that you do this).</p>
+<p>The process:</p>
+<ol>
+<li>Right-click My Computer, and then click Properties.
+    -or-
+   Click Start, click Run, type sysdm.cpl, and then click OK.</li>
+<li>On the Advanced tab, click Settings under Startup and Recovery.</li>
+<li>Under System Startup, click Edit. This opens the file in Notepad ready for editing.</li>
+<li>In Notepad, click File on the Menu bar, and then click Save As.</li>
+<li>Right click in an empty area of the Save As dialog box, point to New in the context menu, and then click Folder.</li>
+<li>Type a name for the new folder, for example temp, and then press the ENTER key to create the folder named temp.</li>
+<li>Double-click the new folder named temp, and then click the Save button to save a backup copy of the Boot.ini file.</li>
+</ol>
+<p>You could do this process any way you feel that will ensure that a boot.ini file is saved somewhere accessible.</p>
+<p>Now under point 3 above, you will see that you visited the "<em>System Startup</em>" window, which shows the current boot order of your system.</p>
+<p>What I did was to simply select the Ubuntu Server option (it may still have a Desktop name to it) as the first boot choice, and it mariculously allowed me to have Ubuntu as the first option when booting (remember that when booting using Wubi, the first boot is the windows boot and when changing the bootloader on Windows, you are changing this bootloader and not the GRUB bootloader normally used on Ubuntu).</p>
+<p>Having the first option for booting means that I just need to switch the PC on and wait around 60 seconds (without a screen).</p>
+<p>After waiting for 60 seconds, I can SSH into the server successfully (using another PC through my router).</p>
+<p>I'm not going to explain how to SSH in this tutorial, as there are plenty of examples out there.</p>
+<p>Just remember that you will need:</p>
+<ul>
+<li>IP address of the Ubuntu Server machine</li>
+<li>Your old username and password (from when you installed Ubuntu Desktop)</li>
+</ul>
+<p>If you have any trouble getting Ubuntu-server installed, feel free to drop me an email and I will try to assist.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://kentoseth.github.io/tag/ubuntu-server.html">ubuntu-server</a>
+      <a href="https://kentoseth.github.io/tag/wubi.html">wubi</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; 2021 </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Kentoseth - Thoughts on programming, culture, FOSS and more ",
+  "url" : "https://kentoseth.github.io",
+  "image": "/images/avatar.jpg",
+  "description": "Thoughts on programming, culture, FOSS and more."
+}
+</script>
+
+
+</body>
+</html>

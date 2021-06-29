@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Kentoseth - Thoughts on programming, culture, FOSS and more - LXC</title><link href="https://kentoseth.github.io/" rel="alternate"></link><link href="https://kentoseth.github.io/feeds/lxc.atom.xml" rel="self"></link><id>https://kentoseth.github.io/</id><updated>2021-05-28T02:00:00+02:00</updated><subtitle>Coding. Culture. Linux. More.</subtitle><entry><title>How to install Visual Studio Code(VSCode) inside an LXC container</title><link href="https://kentoseth.github.io/posts/2021/May/28/how-to-install-visual-studio-codevscode-inside-an-lxc-container/" rel="alternate"></link><published>2021-05-28T02:00:00+02:00</published><updated>2021-05-28T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-05-28:/posts/2021/May/28/how-to-install-visual-studio-codevscode-inside-an-lxc-container/</id><summary type="html">&lt;p&gt;How to install VSCode(a GUI app) inside an LXC container&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://code.visualstudio.com/"&gt;Visual Studio Code or vscode&lt;/a&gt; is a really great editor. One of its most advanced features that most other editors don't have is the &lt;a href="https://code.visualstudio.com/docs/remote/remote-overview"&gt;VS Code Remote Development&lt;/a&gt; which can enable a bloat-free development-environment by leveraging Docker or other container solutions.&lt;/p&gt;
+&lt;p&gt;However, licensing issues(explained &lt;a href="https://code.visualstudio.com/docs/remote/faq#_license-and-privacy"&gt;here&lt;/a&gt; and &lt;a href="https://github.com/microsoft/vscode/wiki/Differences-between-the-repository-and-Visual-Studio-Code"&gt;here&lt;/a&gt;) means that the only version of vscode that works with the "remote development extension" is the binary(or closed-source) version.&lt;/p&gt;
+&lt;p&gt;I found a &lt;a href="https://github.com/microsoft/vscode-remote-release/issues/1858"&gt;bug report&lt;/a&gt; discussing this and why the open-source version(known as Code) does not support the powerful "remote development extension". Wearing a (small) tinfoil hat, I figured that it would be a good idea to isolate vscode itself into a container for 2 purposes:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;To test if the binary does any undisclosed things like making perpetual pings back home(in a future blog post)&lt;/li&gt;
+&lt;li&gt;Seeing if a containerized-vscode can speak to other containers via SSH(SSH is 1 of the supported protocols for non-Docker containers)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Pre-requisites&lt;/h3&gt;
+&lt;p&gt;I use a Linux-based distro as the host and I am not sure if this will apply to Mac/Windows because of the X11-forwarding that is needed. (If this does work on your Windows/Mac PC, send me an email and I'll update this post with your commands).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LXC, SSH (on the host)&lt;/li&gt;
+&lt;li&gt;Some familiarity with the commandline&lt;/li&gt;
+&lt;li&gt;Ubuntu 20.04(container)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can use the following article to &lt;a href="https://www.how2shout.com/how-to/how-to-install-and-use-lxc-linux-containers-on-ubuntu.html#"&gt;install LXC&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Creating/Accessing the Ubuntu 20.04 container&lt;/h3&gt;
+&lt;p&gt;To create the Ubuntu 20.04 container, run the following command(&lt;strong&gt;from the host&lt;/strong&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-create -n vscode -t download -- --dist ubuntu --release focal --arch amd64&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-n vscode&lt;/code&gt; - the name of the container&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--dist ubuntu&lt;/code&gt; - Ubuntu as the OS&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--release focal&lt;/code&gt; - 20.04 as the release&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--arch amd64&lt;/code&gt; - x86-64bit as the architecture&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This process should take a while(depending on internet speed). Once it is complete, start the container using:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-start -n vscode -d&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;And access a shell of the container using:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-attach -n vscode&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you enter as &lt;code&gt;root&lt;/code&gt;, use the following to enter as the user: &lt;code&gt;su ubuntu&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;(Note 1: this shell is not the same as an SSH connection, so X11-forwarding won't work via it, as far as I am aware)
+(Note 2: &lt;code&gt;sudo&lt;/code&gt; may not be needed for unprivileged containers, so if you don't need it, don't use it)&lt;/p&gt;
+&lt;h3&gt;Installing required packages in the container&lt;/h3&gt;
+&lt;p&gt;The container requires a number of packages in order to run a GUI application like vscode. For basic programs like &lt;code&gt;xclock&lt;/code&gt;, not as many packages were needed, but for vscode, the installation might feel 'bloated'. Install the following(&lt;strong&gt;after 'attaching' the container and being in the container shell&lt;/strong&gt;):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt update
+sudo apt upgrade
+sudo apt install xauth ssh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;(&lt;code&gt;xauth&lt;/code&gt; might already be installed)&lt;/p&gt;
+&lt;p&gt;Now install some of the other required packages:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install libxss1 libxshmfence1 libxext-dev libxrender-dev libxslt1.1 libgconf-2-4 libnotify4 libnspr4 libnss3 libnss3-dev libnss3-tools libxtst-dev libgtk2.0-0 libcanberra-gtk-module software-properties-common gnupg2
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I am not sure what half of these are for, but the reference for why I needed to install them is here: &lt;a href="https://github.com/allamand/docker-vscode/blob/master/Dockerfile"&gt;docker-vscode Dockerfile&lt;/a&gt;. I attempted to install the least amount of packages to get vscode running. Prior to installing these packages, vscode was not working.&lt;/p&gt;
+&lt;h3&gt;Configuring SSH in the container&lt;/h3&gt;
+&lt;p&gt;First we will give the &lt;code&gt;ubuntu&lt;/code&gt; user a password. I found that even though the container &lt;code&gt;ubuntu&lt;/code&gt; user seems to have 'ubuntu' as a password, this password didn't work when trying to SSH into the container(from the host). Run(&lt;strong&gt;while in the container&lt;/strong&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo passwd ubuntu&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;I used 'ubuntu' for the new password(just to simplify the installation).&lt;/p&gt;
+&lt;p&gt;Before connecting to the container via SSH, the SSH needs to be configured with the appropriate changes.&lt;/p&gt;
+&lt;p&gt;Open the SSH config file:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo vim /etc/ssh/sshd_config&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Only the changes will be shown below. Please look for these lines in the &lt;code&gt;sshd_config&lt;/code&gt; file and change them appropriately(some of them also require that the &lt;code&gt;#&lt;/code&gt; be removed, otherwise the line remains commented):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PasswordAuthentication yes
+X11Forwarding yes
+X11DisplayOffset 10
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Exit the &lt;code&gt;vim&lt;/code&gt; editor and now restart the SSH service:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo systemctl restart sshd&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You can confirm SSH is working by running:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo systemctl status sshd&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now we can test if it is possible to SSH into the container from the host(you can just open a new tab/window in your terminal). First find the IP address of the container(&lt;strong&gt;run this on the host&lt;/strong&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-info -n vscode&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The output should give you a local IP address to connect to the container. This IP should be similar to your host IP. Example:&lt;/p&gt;
+&lt;p&gt;Host IP: &lt;code&gt;10.0.4.1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Container IP: &lt;code&gt;10.0.4.62&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now that we have the container IP, run the following command(&lt;strong&gt;from the host&lt;/strong&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh ubuntu@&amp;lt;container-IP&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The SSH prompt should say the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;The authenticity of host &amp;#39;&amp;lt;container-IP&amp;gt; (&amp;lt;container-IP&amp;gt;)&amp;#39; can&amp;#39;t be established.
+ED25519 key fingerprint is SHA256:fXFuBKAXm2HgFGuKVFpu+bRIR/2tzxBIWVH+dkQh9KE.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Enter: &lt;code&gt;yes&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then you will be prompted to enter the password for user &lt;code&gt;ubuntu&lt;/code&gt;, enter: 'ubuntu'&lt;/p&gt;
+&lt;p&gt;You should now be in the container via SSH if successful.&lt;/p&gt;
+&lt;h3&gt;Installing vscode in the container&lt;/h3&gt;
+&lt;p&gt;The vscode website provides an adequate explanation for &lt;a href="https://code.visualstudio.com/docs/setup/linux"&gt;installing vscode on linux&lt;/a&gt;, but I preferred this installation method: &lt;a href="https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-20-04/"&gt;How to Install Visual Studio Code on Ubuntu 20.04&lt;/a&gt;. I will reproduce the installation below for convenience.&lt;/p&gt;
+&lt;p&gt;Add the Microsoft repo(&lt;strong&gt;while in the container&lt;/strong&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The only output to confirm everything worked is the word: &lt;code&gt;OK&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now add the repo:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;and now install vscode(I installed &lt;code&gt;code-insiders&lt;/code&gt; to be at a more "bleeding-edge" version of vscode, but installing the stable version should work as well. If the stable doesn't work, install the &lt;code&gt;code-insiders&lt;/code&gt;, as it may have fixed some bugs):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo apt install code-insiders&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you wish, you can restart the container now(as restarting always seems to 'fix' things even if they are working).&lt;/p&gt;
+&lt;h3&gt;SSH and start vscode&lt;/h3&gt;
+&lt;p&gt;Now &lt;strong&gt;from the host&lt;/strong&gt;, we connect to the container with X-forwarding enabled using this command:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh ubuntu@&amp;lt;container-IP&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;After entering the password 'ubuntu', we should now be in the container once again. Now run this command(&lt;strong&gt;while in the container&lt;/strong&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;code-insiders --disable-gpu&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;vscode will now start and the display should look like:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="vscode-start" src="https://kentoseth.github.io/images/vscode/vscode.png"&gt;&lt;/p&gt;
+&lt;h3&gt;Conclusion and next steps&lt;/h3&gt;
+&lt;p&gt;In the next article, I will investigate how to opt-out of Windows tracking in vscode(I thought it was supposed to be opt-in as per GDPR). I will also look at what network calls are made before/after opting-out to see how much data is still harvested by this proprietary binary and perhaps also add some rules to block the application from making any network calls at all.&lt;/p&gt;
+&lt;h3&gt;References&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://linuxcontainers.org/lxc/getting-started/"&gt;Linux Containers LXC page&lt;/a&gt;
+&lt;a href="https://unix.stackexchange.com/questions/12755/how-to-forward-x-over-ssh-to-run-graphics-applications-remotely"&gt;How to forward X over SSH to run graphics applications remotely?&lt;/a&gt;
+&lt;a href="http://www.benue.com/blog/2018/03/16/how-to-run-gui-applications-in-an-lxc-container/"&gt;How to run GUI applications in an LXC Container&lt;/a&gt;
+&lt;a href="https://askubuntu.com/questions/47642/how-to-start-a-gui-software-on-a-remote-linux-pc-via-ssh"&gt;How to start a GUI software on a remote Linux PC via SSH&lt;/a&gt;&lt;/p&gt;</content><category term="LXC"></category><category term="ubuntu"></category><category term="LXC"></category><category term="vscode"></category></entry><entry><title>Installing latest Python3 version on Ubuntu 14.04</title><link href="https://kentoseth.github.io/posts/2016/Sep/13/installing-latest-python3-version-on-ubuntu-1404/" rel="alternate"></link><published>2016-09-13T02:00:00+02:00</published><updated>2016-09-13T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2016-09-13:/posts/2016/Sep/13/installing-latest-python3-version-on-ubuntu-1404/</id><summary type="html">&lt;p&gt;How to install the latest Python version on Ubuntu 14.04&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, I have wanted to experiment with the latest features of Python3 (3.5.2 as of this date). Unfortunately, Ubuntu 14.04 is stuck on 3.4.3 and it is unlikely that 3.5 will ever come to this LTS release (as per the way the release-schedules work, or my understanding thereof).&lt;/p&gt;
+&lt;p&gt;During the discovery stage, I investigated and found a variety of ways to install different versions of Python on the same system. Some of these options are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PyEnv (quite popular)&lt;/li&gt;
+&lt;li&gt;Pythonbrew (an old favourite of mine, but the project is not being maintained anymore)&lt;/li&gt;
+&lt;li&gt;Containers (this is a lazy answer, and you will see why below)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I didn't want to risk borking my machine with a newer Python version being installed (even if it was installed in parallel to the system-version), so I settled on doing everything within an LXC container.&lt;/p&gt;
+&lt;h3&gt;Goals&lt;/h3&gt;
+&lt;p&gt;My goals were:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create the lightest possible containerized-option&lt;/li&gt;
+&lt;li&gt;Try to keep the install process as simple as possible&lt;/li&gt;
+&lt;li&gt;Avoid any need to modify/add anything on the host system&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Install instructions&lt;/h3&gt;
+&lt;p&gt;We can create/start/attach our container using the LXC Ubuntu template:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo lxc-create --name py35 --template ubuntu
+sudo lxc-start --name py35 --daemon
+sudo lxc-attach --name py35
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I have called my container: &lt;code&gt;py35&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You should now either be connected as the 'root' user (within the container) or if you had to go through the login process, as the 'ubuntu' user. The rest of this tutorial will assume that you are the 'ubuntu' user.&lt;/p&gt;
+&lt;p&gt;The Ubuntu template lacks the the required package/s to add the 'deadsnakes' PPA, which is what we will use to get the latest Python version (which we will then use with virtualenv). Let's add the PPA:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:fkrull/deadsnakes
+sudo apt-get update
+sudo apt-get install python3.5
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Check if it successfully installed:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;python3.5 --version&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Install virtualenv:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo pip3 install virtualenv&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;I will now create a new folder for my virtualenv project. I will call this folder "project1". Then I will create the virtualenv itself:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /home/ubuntu/project1
+virtualenv -p /usr/bin/python3.5 /home/ubuntu/project1/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Going through the virtualenv process, you should also have the latest &lt;code&gt;pip&lt;/code&gt; installed.&lt;/p&gt;
+&lt;p&gt;Let us test that everything worked:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd /home/ubuntu/project1/
+source /home/ubuntu/project1/bin/activate
+python --version
+# should output 3.5.2
+pip --version
+# should output 8.1.2
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Containers = lazy answer?&lt;/h3&gt;
+&lt;p&gt;Above, I mentioned that using containers for different Python versions is a lazy answer. The simple reason for this is that even if you use containers, you are still stuck with the system-version. So the only way to bump up/down your Python version is to move to a newer/older Ubuntu release. This still doesn't guarantee you will get the version you wish. My instructions above get you the version you want, whilst keeping your Host protected from different Python installs.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;Final message&lt;/h3&gt;
+&lt;p&gt;You have now successfully installed Python 3.5.2 on Ubuntu 14.04. You could easily install multiple Pythons/projects within a single container, but things could quickly get bloated. I recommend using containers as the layer of abstraction/isolation for each large-enough project and only using &lt;code&gt;virtualenv&lt;/code&gt; (within a container) when you require the latest/fixed Python versions.&lt;/p&gt;</content><category term="LXC"></category><category term="ubuntu"></category><category term="LXC"></category><category term="docker"></category></entry><entry><title>Basics of LXC: 2 of 2</title><link href="https://kentoseth.github.io/posts/2016/Aug/22/basics-of-lxc-2-of-2/" rel="alternate"></link><published>2016-08-22T02:00:00+02:00</published><updated>2016-08-22T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2016-08-22:/posts/2016/Aug/22/basics-of-lxc-2-of-2/</id><summary type="html">&lt;p&gt;Basic intro to LXC&lt;/p&gt;</summary><content type="html">&lt;p&gt;In my previous blog post, I mentioned why I moved from Docker to LXC (reference: &lt;a href="https://kentoseth.github.io/2016/May/17/moving-from-docker-to-lxc-1-of-2-the-why/"&gt;here&lt;/a&gt; ).&lt;/p&gt;
+&lt;p&gt;I also mentioned 7 basic commands you will need to get started with LXC. I will list them and walk-through each below.&lt;/p&gt;
+&lt;h3&gt;Container Basics&lt;/h3&gt;
+&lt;p&gt;Let us start by creating and starting a container:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo lxc-create -n myfirstcont -t ubuntu
+sudo lxc-start -n myfirstcont -d
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The first command will create a container called &lt;code&gt;myfirstcont&lt;/code&gt; from the &lt;em&gt;remote&lt;/em&gt; Ubuntu template.&lt;/p&gt;
+&lt;p&gt;After the first command has successfully executed, you can start the container using the second command (lxc-start).&lt;/p&gt;
+&lt;p&gt;Next, we will get &lt;em&gt;into&lt;/em&gt; the container:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-attach -n myfirstcont&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This command will take you into the container as the root user.&lt;/p&gt;
+&lt;p&gt;Once you are in the container, you can work with it as you normally would in a regular Ubuntu OS (although a number of regular/standard packages may not be present).&lt;/p&gt;
+&lt;p&gt;Now that we started our container and we have also managed to get &lt;em&gt;within&lt;/em&gt; the container (via lxc-attach), we may need to obtain some information about the container to work with it externally.&lt;/p&gt;
+&lt;p&gt;A common example is when we start an HTTP-server within the container (and bind the server to the 0.0.0.0 IP). To obtain the IP-address assigned to the container (as well as other basic information), we will use:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-info -n myfirstcont&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You will get a basic amount of information using the &lt;code&gt;lxc-info&lt;/code&gt; option.&lt;/p&gt;
+&lt;p&gt;The next 2 commands will stop and destroy your container.&lt;/p&gt;
+&lt;p&gt;Stopping:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-stop -n myfirstcont&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Destroying:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-destroy -n myfirstcont&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The container itself will be destroyed, but your template (somewhat similar to a Docker image) will still exist.&lt;/p&gt;
+&lt;p&gt;The last command is to list all containers on your system. The command will list all containers, regardless of state:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-ls&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;One important thing to mention about this tutorial is that we are using the default LXC instructions and creating &lt;em&gt;priviledged&lt;/em&gt; containers by using &lt;code&gt;sudo&lt;/code&gt;. I recommend reading up about the priviledged/unpriviledged aspects of containers &lt;a href="https://help.ubuntu.com/lts/serverguide/lxc.html#lxc-basic-usage"&gt;here&lt;/a&gt; .&lt;/p&gt;
+&lt;h3&gt;Mounting&lt;/h3&gt;
+&lt;p&gt;In my first post, I mentioned that mounting from the host &amp;gt; container or vice-versa took a bit of time to figure out. For the purposes of simplicity and ease-of-use for anyone reading this, here is a set of commands to use for mounting.&lt;/p&gt;
+&lt;p&gt;Host-to-container:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo mount --bind /var/lib/lxc/myfirstcont/rootfs/home/ubuntu/myfolder/ /Project/path/to/hostfolder&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Container-to-host:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo mount --bind /Project/path/to/hostfolder /var/lib/lxc/myfirstcont/rootfs/home/ubuntu/myfolder&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Installing small Python library in a container&lt;/h3&gt;
+&lt;p&gt;If you have not destroyed the container you created above, let us go ahead and restart the container:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo lxc-start -n myfirstcont -d
+sudo lxc-attach -n myfirstcont
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You should be attached as the root-user within the container.&lt;/p&gt;
+&lt;p&gt;Now run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get update
+apt-get upgrade
+apt-get install -y python3-pip
+pip3 install pelican markdown
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You have now successfully created an LXC container for the static site-generator &lt;a href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; .&lt;/p&gt;
+&lt;h3&gt;LXD as an easier LXC-manager&lt;/h3&gt;
+&lt;p&gt;In the final part of this blog post, I would like to mention &lt;a href="https://linuxcontainers.org/lxd/"&gt;LXD&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;Although the link above explains things better than I can, LXD is a very useful LXC-manager. It provides unpriviledged containers by default and uses the Docker image/container approach (instead of templates).&lt;/p&gt;
+&lt;p&gt;LXD provides a host of other features that would be useful for large-scale container-management.&lt;/p&gt;
+&lt;p&gt;I would strongly urge anyone interested in using LXC-containers in production to consider using LXD to manage your infrastructure.&lt;/p&gt;</content><category term="LXC"></category><category term="ubuntu"></category><category term="LXC"></category><category term="docker"></category></entry><entry><title>Moving from Docker to LXC: 1 of 2 (The why)</title><link href="https://kentoseth.github.io/posts/2016/May/17/moving-from-docker-to-lxc-1-of-2-the-why/" rel="alternate"></link><published>2016-05-17T02:00:00+02:00</published><updated>2016-05-17T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2016-05-17:/posts/2016/May/17/moving-from-docker-to-lxc-1-of-2-the-why/</id><summary type="html">&lt;p&gt;Why I switched from Docker to LXC&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ever since discovering Docker, I've been a huge fan of the whole concept of containers and how they separate concerns.&lt;/p&gt;
+&lt;p&gt;Up until recently, I always saw a container as a "container", and did not understand that Docker is very specific about what they interpret a container to be. Then 1 day, I wished to try to install a bunch of different applications to get a mail-server running (namely: Postfix, Dovecot and Roundcube).&lt;/p&gt;
+&lt;p&gt;Much to my dismay, I discovered that it was a real PITA to install these things into a single Docker container. Digging deeper into my issues, I was led to the discovery that Dockers philosophy is driven by the whole "micro-services" concept. What this means is that Docker views each container as something that does a single process and a single process alone. You can make the process as big (or small) as you wish, but the goal of this philosophy is to encourage small services vs. a monolith (or so I interpreted it as that). Think about it as: confining your single search box into its own process vs. the big box of bad that is "WordPress, Apache, MySQL and PHP combined".&lt;/p&gt;
+&lt;p&gt;Well things weren't going too great, so after wrangling lots of minds on #Docker and asking a few friends/colleagues via various mediums, it was brought to my attention that perhaps LXC would be a better option for what I wished to do. I could dump entire monoliths into LXC and that would be fine.&lt;/p&gt;
+&lt;p&gt;During my research time, I also found this really cool infographic (with detailed article) that everyone learning about containers should see:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://web.archive.org/web/20170108164728/https://www.flockport.com/wp-content/uploads/2014/08/lxc-vs-docker5.png"&gt;Flockport: Docker vs. LXC&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Being able to understand this fully will probably save you (and likely myself) lots of headaches in the future, especially as we all move to the containerized world in 2016 and beyond. Just like many developers out there in the far reaches of the world, I am but a small fry. I used to use Docker as a drop-in replacement for virtualenv for separating my Python projects. This did work reasonably well, but when I decided that I'd like to get my Postfix/Dovecot monolith up, the not-so-obvious warts crept in. I'm no Google/Amazon and I can probably get by with 98% of my projects being monoliths. The micro-service architecture also adds a level of complexity that turns the 1-man coder into a certified devops/sysadmin that needs to understand a lot of important things on that devops/sysadmin level.&lt;/p&gt;
+&lt;p&gt;From a security point-of-view, if you don't get things right with Docker containers, you can/will probably shoot yourself in the foot (when containers were meant to protect you from shots in the first place).&lt;/p&gt;
+&lt;h3&gt;So what is this LXC thing?&lt;/h3&gt;
+&lt;p&gt;I don't (and probably can't) go into too much detail about the technical workings of LXC. Simply put, LXC is the (apparent) daddy of the container eco-system. In fact, I don't think words can ever explain it as good as the infographic above, so please go look at it again.&lt;/p&gt;
+&lt;p&gt;Docker has an interesting relationship with LXC. It was built on top of it (with the micro-service philosophy in mind), but I have since heard/read that they have moved away from LXC (on some level I assume).&lt;/p&gt;
+&lt;p&gt;When I first heard that Docker was "built on top of LXC", my first reaction to it was on a level similar to that of people saying "I built a layer on top of the C API", indicating that a major layer of complexity was taken out of the equation (C code is C code afterall).&lt;/p&gt;
+&lt;p&gt;Fortunately for the 1-man-coder, wordpress-hackers, beginner-coders and more, LXC is not as complex as you might think it could be (and it definitely was not the nightmare I thought it would be - thinking I'd need to write C/other-boilerplate-code just to build/run containers). I even noted down a few commands to get the basics working, and the total of these commands came to: 7&lt;/p&gt;
+&lt;p&gt;With these 7 commands, you can: create, start, stop, attach (get into), info (get properties), destroy and "ls" (get a full list of all containers)&lt;/p&gt;
+&lt;p&gt;Once you get your first LXC container going though, it starts to feel a lot more like regular Linux/Ubuntu, compared to Dockers opinionated way of doing things.&lt;/p&gt;
+&lt;p&gt;The only terrible/difficult thing so far has been to attach a host filesystem to an LXC container (which took a day or 2 to figure out), but LXC seems more in tune with my current needs as a tinkerer/programmer/1-man-coder.&lt;/p&gt;
+&lt;h3&gt;Is it already time to start bashing Docker yet?&lt;/h3&gt;
+&lt;p&gt;Not at all. Docker has its place and it will be used a lot at many different places. The only problem I personally see is the "bandwagon" issue. A lot of people are trying to get into containerization without fully understanding Dockers philosophy ("micro-services architecture").&lt;/p&gt;
+&lt;p&gt;That infographic I linked to above explains things a million times more clearly than the wads of text I had to read through (whilst learning about containers since a year or 2 ago).&lt;/p&gt;
+&lt;p&gt;Just remember that: micro-services are based on an architectural decision to address the issues at a Google/Amazon level&lt;/p&gt;
+&lt;p&gt;This blog, a drop-in for virtualenv for Python environments or your dads WordPress business-site probably don't need a Docker container (and some would argue that they probably don't need any containerization - LXC included - at all).&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Moving forward, I will be (and have been) learning/using LXC as my go-to for containers.&lt;/p&gt;
+&lt;p&gt;In part 2 of this 2-part blog, I will do a basic walk-through of installing LXC, creating a bare/minimal container(Ubuntu) and then slapping an example Python library/software (possibly Pelican, Twisted or some other library) onto a container built on top of the bare/minimal Ubuntu container.&lt;/p&gt;</content><category term="LXC"></category><category term="ubuntu"></category><category term="LXC"></category><category term="docker"></category></entry></feed>

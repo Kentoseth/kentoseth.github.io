@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Kentoseth - Thoughts on programming, culture, FOSS and more - Linux</title><link href="https://kentoseth.github.io/" rel="alternate"></link><link href="https://kentoseth.github.io/feeds/linux.atom.xml" rel="self"></link><id>https://kentoseth.github.io/</id><updated>2021-06-21T02:00:00+02:00</updated><subtitle>Coding. Culture. Linux. More.</subtitle><entry><title>Install PSP emulator(PPSSPP) in RetroArch on Linux</title><link href="https://kentoseth.github.io/posts/2021/Jun/21/install-psp-emulatorppsspp-in-retroarch-on-linux/" rel="alternate"></link><published>2021-06-21T02:00:00+02:00</published><updated>2021-06-21T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-06-21:/posts/2021/Jun/21/install-psp-emulatorppsspp-in-retroarch-on-linux/</id><summary type="html">&lt;p&gt;A quick guide to install a PSP emulator on RetroArch on an Arch-based Linux distro&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to play a few PSP games from the mid-00s recently and I discovered that to install the PSP Core(emulator), known as "PPSSPP", isn't as simple as the instructions provided by LibRetro &lt;a href="https://docs.libretro.com/library/ppsspp/"&gt;here&lt;/a&gt; and &lt;a href="https://www.youtube.com/watch?v=KYt6oXA1Bws"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The issue with the Youtube instructions is that no "Core Updater" exists. The &lt;a href="https://www.reddit.com/r/RetroArch/comments/kug5db/missing_cores_will_return_soontm/"&gt;subreddit post said that it was a result of some updating/migration&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I also found close to 0 tutorials explaining how to install the emulator to be used on RetroArch. What I did learn though was that you can run this PPSSPP emulator on its own, but with a single emulator-manager(RetroArch), why have 10 different pieces of software when 1 will do?&lt;/p&gt;
+&lt;h3&gt;Installation&lt;/h3&gt;
+&lt;p&gt;Installing the emulator on Arch-based distros is really easy and just requires one package. Open Pamac and search for "PPSSPP", then locate the package that is called: libretro-ppsspp&lt;/p&gt;
+&lt;p&gt;At the time of writing, the package details look like so:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Anbox" src="https://kentoseth.github.io/images/linux/libretro-ppsspp.png"&gt;&lt;/p&gt;
+&lt;p&gt;Once installed, you can verify that the Core is in RetroArch by opening it and loading the Sony Playstation Portable core under "Load Core".&lt;/p&gt;</content><category term="Linux"></category><category term="PSP"></category><category term="RetroArch"></category><category term="Arch"></category><category term="Manjaro"></category></entry><entry><title>Anbox - libprotobuf bug</title><link href="https://kentoseth.github.io/posts/2021/Mar/21/anbox-libprotobuf-bug/" rel="alternate"></link><published>2021-03-21T02:00:00+02:00</published><updated>2021-03-21T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-03-21:/posts/2021/Mar/21/anbox-libprotobuf-bug/</id><summary type="html">&lt;p&gt;Fixing the Anbox libprotobuf bug on Arch-based distros&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://anbox.io/"&gt;Anbox&lt;/a&gt; also known as Android in a box is used for emulating Android applications on Linux. A common use for this would be to run WhatsApp on Linux natively(no QR codes or WhatsApp Web).&lt;/p&gt;
+&lt;p&gt;A bug that occurs on Arch-based distros after installing/upgrading your system is the following:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;anbox: error while loading shared libraries: libprotobuf-lite.so.23: cannot open shared object file: No such file or directory&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I am documenting how to fix this bug as it does not exist anywhere else except &lt;a href="https://bbs.archlinux.org/viewtopic.php?id=245032"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://wiki.archlinux.org/index.php/Anbox"&gt;Arch Anbox&lt;/a&gt; link also has no solution to this bug.&lt;/p&gt;
+&lt;h3&gt;How to fix&lt;/h3&gt;
+&lt;p&gt;The forum link says that anbox needs to be recompiled. Recompiling the Anbox package is straight-forward using the Package Manager. Navigate to:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Anbox" src="https://kentoseth.github.io/images/linux/anbox.png"&gt;&lt;/p&gt;
+&lt;p&gt;Click on &lt;code&gt;Build&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;After the Anbox package has been rebuilt. Restart your machine and Anbox should work once again.&lt;/p&gt;
+&lt;p&gt;If you experience any bugs with my solution, contact me via email and I will try to help you figure out a fix.&lt;/p&gt;</content><category term="Linux"></category><category term="anbox"></category><category term="bug"></category><category term="protobuf"></category><category term="Arch"></category><category term="Manjaro"></category></entry><entry><title>Merging and Filtering CSV files using Linux</title><link href="https://kentoseth.github.io/posts/2021/Feb/03/merging-and-filtering-csv-files-using-linux/" rel="alternate"></link><published>2021-02-03T02:00:00+02:00</published><updated>2021-02-03T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-02-03:/posts/2021/Feb/03/merging-and-filtering-csv-files-using-linux/</id><summary type="html">&lt;p&gt;Using a bunch of Linux tools to merge multiple CSV files and then filter that merged file&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently ran into a problem after downloading multiple CSV files. I wanted to firstly merge all those files and then extract/filter data from that merged file. Doing this is possible using code, but Linux has a bunch of powerful tools that can also handle such tasks and can do them very quickly(in comparison to Python).&lt;/p&gt;
+&lt;p&gt;Let us say we have a bunch of CSV files labelled like so: data_1.csv, data_2.csv and so on&lt;/p&gt;
+&lt;h3&gt;Merging&lt;/h3&gt;
+&lt;p&gt;In order to merge[1] all these CSV files, we can use &lt;code&gt;sed&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sed 1d data-*.csv &amp;amp;gt; merged.csv
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The command collects all the data- files and after merging them, saves them to &lt;code&gt;merged.csv&lt;/code&gt;. From the reference article I learned that if you used &lt;code&gt;*.csv&lt;/code&gt; it may also merge the &lt;code&gt;merged.csv&lt;/code&gt; file and create duplicates and other issues.&lt;/p&gt;
+&lt;h3&gt;Filtering - exact match&lt;/h3&gt;
+&lt;p&gt;In order to find an exact entry in the CSV file, we can use &lt;code&gt;awk&lt;/code&gt;[2]:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;awk -F&amp;quot;,&amp;quot; &amp;#39;$1==somestring&amp;#39; merged.csv
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The &lt;code&gt;","&lt;/code&gt; tells &lt;code&gt;awk&lt;/code&gt; to view the comma as a separator. The &lt;code&gt;$1&lt;/code&gt; says to look in the first column. &lt;code&gt;somestring&lt;/code&gt; is the exact match we are looking for in column 1. &lt;code&gt;merged.csv&lt;/code&gt; is the file we want to look into for the value.&lt;/p&gt;
+&lt;h3&gt;Filtering - partial strings&lt;/h3&gt;
+&lt;p&gt;My main filtering goal was to use partial strings to find certain values that match the partial string. Again we will use &lt;code&gt;awk&lt;/code&gt;[3]:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;awk &amp;#39;index($1, &amp;quot;partialstring&amp;quot;)&amp;#39; merged.csv
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Similar to the above, &lt;code&gt;$1&lt;/code&gt; looks in column 1 for the &lt;code&gt;"partialstring"&lt;/code&gt; string. In both the &lt;code&gt;awk&lt;/code&gt; commands you can also save the output to a file like so:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;awk 'index($1, "partialstring")' merged.csv &amp;gt; output.txt&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;I hope these 3 commands help you save a lot of time if you are attempting to do anything with CSV files.&lt;/p&gt;
+&lt;p&gt;Sources:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://blog.softhints.com/how-to-merge-multiple-csv-files-with-python/"&gt;1 - https://blog.softhints.com/how-to-merge-multiple-csv-files-with-python/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/2373885/searching-a-csv-file-using-grep"&gt;2 - https://stackoverflow.com/questions/2373885/searching-a-csv-file-using-grep&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/17001849/awk-partly-string-match-if-column-word-partly-matches"&gt;3 - https://stackoverflow.com/questions/17001849/awk-partly-string-match-if-column-word-partly-matches&lt;/a&gt;&lt;/p&gt;</content><category term="Linux"></category><category term="linux"></category><category term="csv"></category><category term="awk"></category><category term="sed"></category></entry><entry><title>Single Package Update across Ubuntu PCs</title><link href="https://kentoseth.github.io/posts/2014/Oct/16/single-package-update-across-ubuntu-pcs/" rel="alternate"></link><published>2014-10-16T02:00:00+02:00</published><updated>2014-10-16T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2014-10-16:/posts/2014/Oct/16/single-package-update-across-ubuntu-pcs/</id><summary type="html">&lt;p&gt;Downloading updates once and using same updates across machines.&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you live in a country with a slow internet connection, have limited bandwidth capacity, have multiple machines or would like to conserve your bandwidth by not doing repeat downloads, this tutorial will be useful to you.&lt;/p&gt;
+&lt;p&gt;I recently came across a rather simple method for keeping my machines updated with the latest packages by downloading the updates once and then using those packages to update the other machines/PCs.&lt;/p&gt;
+&lt;p&gt;Here is a checklist before attempting this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;All machines should be using the same version of Linux on the same processor-type (eg. Ubuntu 12.04, 32-bit)&lt;/li&gt;
+&lt;li&gt;The machine where you do the initial updates requires SSH to be installed&lt;/li&gt;
+&lt;li&gt;All the machines should be connected via a router/LAN&lt;/li&gt;
+&lt;li&gt;Passwords for all the machines will be required&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;The steps provided below will be done on Ubuntu machines. Similar commands from other distros should be applied where Ubuntu-commands are used. (paths for the packages may differ though)&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Step 1 - Installing SSH:&lt;/h3&gt;
+&lt;p&gt;Getting SSH installed on your main download machine can be done in a single command:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo apt-get install openssh-server&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you'd like more info on SSH (maybe for installing on a remote server),  &lt;a href="http://www.ihaveapc.com/2012/02/how-to-install-ssh-server-on-ubuntu/"&gt;click here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Step 2 - Updating packages for main machine + IP address:&lt;/h3&gt;
+&lt;p&gt;First do your updates on the main machine (either through Terminal or via the Update Manager). Once that is done, you will now (mostly) be doing everything else on your other machines (I will refer to them as &lt;em&gt;"client"&lt;/em&gt; machines).&lt;/p&gt;
+&lt;p&gt;Let's first get the IP address of the &lt;strong&gt;main&lt;/strong&gt; machine. Type this command in Terminal/CLI:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ifconfig&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You should be looking for a line like this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;inet addr:192.$$$.$.$  Bcast:192.$$$.$.$$$  Mask:255.$$$.$$$.$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;($ = numbers)&lt;/p&gt;
+&lt;p&gt;After typing the command above, let us use an example IP address of:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;192.168.1.102&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You need to remember this IP address, as this is what you will use to connect from client machines to your updated/main machine.&lt;/p&gt;
+&lt;h3&gt;Step 3 - Updating client machines:&lt;/h3&gt;
+&lt;p&gt;Take one of your client laptops/desktops (which is connected to the same router as the main machine) and open Terminal/CLI. In the Terminal, type this:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo scp kent@192.168.1.102:/var/cache/apt/archives/*.deb /var/cache/apt/archives/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;"kent" is the name of the main machine. You need to specify the name you are using on your main machine where "kent" is.&lt;/p&gt;
+&lt;p&gt;This command is "secure copy" (scp) which transfers the archives of the updated machine to your client machines. You can read from the command how it is copying archives from one folder to another.&lt;/p&gt;
+&lt;p&gt;You will likely be asked for the passwords of both machines (client and main machine) after using the command above. If everything was successful, you should see a transfer or files being done.&lt;/p&gt;
+&lt;p&gt;Your client machine should now have the updated .deb files, so let's do the actual update on the client machine. Type this (still in Terminal):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo apt-get update&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo apt-get upgrade&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You should now have all your packages updated.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note 1: The linux system files don't seem to update after running "&lt;strong&gt;sudo apt-get upgrade&lt;/strong&gt;", but you can update them through the update manager&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note 2: Even if you have different packages on your machines (like extra packages on the main machine), the other packages that weren't previously installed on your client machine will &lt;em&gt;not&lt;/em&gt; be installed&lt;/em&gt;&lt;/p&gt;</content><category term="Linux"></category><category term="ubuntu"></category><category term="updates"></category><category term="ssh"></category></entry><entry><title>Install Ubuntu Server using Wubi</title><link href="https://kentoseth.github.io/posts/2014/Jul/01/install-ubuntu-server-using-wubi/" rel="alternate"></link><published>2014-07-01T02:00:00+02:00</published><updated>2014-07-01T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2014-07-01:/posts/2014/Jul/01/install-ubuntu-server-using-wubi/</id><summary type="html">&lt;p&gt;Getting Ubuntu Server installed using the wubi method.&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you're somebody that has tinkered with linux a while back, you may have come across something called &lt;a href="https://wiki.ubuntu.com/WubiGuide"&gt;Wubi&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Wubi basically allows you to install linux &lt;em&gt;within&lt;/em&gt; windows.&lt;/p&gt;
+&lt;p&gt;You will probably want to install Ubuntu Server with Wubi if you have a Windows system that you feel you still need, but you'd also like to tinker/test-out a server-version of Ubuntu.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;This install method is recommended for hobbyists and shouldn't be used for any production-critical matters&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;With that said, let's install ubuntu-server within windows using Wubi.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Requirements:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A PC with Ubuntu/Xubuntu/Lubuntu Desktop installed (preferably 12.04 and nothing above this version)&lt;/li&gt;
+&lt;li&gt;Internet access (a decent speed broadband speed)&lt;/li&gt;
+&lt;li&gt;A router (if you'd like to SSH from another PC into your server - useful for remote installations)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The process of converting the desktop to server is made very simple, using a tool called &lt;a href="https://help.ubuntu.com/community/Tasksel"&gt;Tasksel&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Open a terminal/console window in your Ubuntu Desktop and type in the following commands:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install tasksel
+sudo tasksel remove ubuntu-desktop &lt;span class="c1"&gt;# (Note: this may take a few minutes to complete)&lt;/span&gt;
+sudo tasksel install server
+apt-get install linux-server linux-image-server
+apt-get –purge remove lightdm
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Remember to type in each command (as listed by the each point) separately and wait for it to complete, before typing in the next command.&lt;/p&gt;
+&lt;p&gt;Also, for this line:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo tasksel remove ubuntu-desktop&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Make sure you specify the correct desktop you are using (which could be Lubuntu or Kubuntu or Xubuntu).&lt;/p&gt;
+&lt;p&gt;Once this is done, you will officially have Ubuntu Server installed on your PC using Wubi.&lt;/p&gt;
+&lt;p&gt;You can test this out by restarting the PC and booting into Ubuntu. Give it some time, depending on your system.&lt;/p&gt;
+&lt;p&gt;The next part is to fix the bootloader on Windows, so that you can operate your Ubuntu Server without a screen (and just be able to SSH into it).&lt;/p&gt;
+&lt;h3&gt;Modifying the Windows bootloader&lt;/h3&gt;
+&lt;p&gt;I have Win XP installed, so the instructions I found was for this OS. I initially followed these instructions &lt;a href="http://support.microsoft.com/kb/289022"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It didn't seem to work though. So I basically just went through the process of first backing up the boot.ini file (very important that you do this).&lt;/p&gt;
+&lt;p&gt;The process:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Right-click My Computer, and then click Properties.
+    -or-
+   Click Start, click Run, type sysdm.cpl, and then click OK.&lt;/li&gt;
+&lt;li&gt;On the Advanced tab, click Settings under Startup and Recovery.&lt;/li&gt;
+&lt;li&gt;Under System Startup, click Edit. This opens the file in Notepad ready for editing.&lt;/li&gt;
+&lt;li&gt;In Notepad, click File on the Menu bar, and then click Save As.&lt;/li&gt;
+&lt;li&gt;Right click in an empty area of the Save As dialog box, point to New in the context menu, and then click Folder.&lt;/li&gt;
+&lt;li&gt;Type a name for the new folder, for example temp, and then press the ENTER key to create the folder named temp.&lt;/li&gt;
+&lt;li&gt;Double-click the new folder named temp, and then click the Save button to save a backup copy of the Boot.ini file.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You could do this process any way you feel that will ensure that a boot.ini file is saved somewhere accessible.&lt;/p&gt;
+&lt;p&gt;Now under point 3 above, you will see that you visited the "&lt;em&gt;System Startup&lt;/em&gt;" window, which shows the current boot order of your system.&lt;/p&gt;
+&lt;p&gt;What I did was to simply select the Ubuntu Server option (it may still have a Desktop name to it) as the first boot choice, and it mariculously allowed me to have Ubuntu as the first option when booting (remember that when booting using Wubi, the first boot is the windows boot and when changing the bootloader on Windows, you are changing this bootloader and not the GRUB bootloader normally used on Ubuntu).&lt;/p&gt;
+&lt;p&gt;Having the first option for booting means that I just need to switch the PC on and wait around 60 seconds (without a screen).&lt;/p&gt;
+&lt;p&gt;After waiting for 60 seconds, I can SSH into the server successfully (using another PC through my router).&lt;/p&gt;
+&lt;p&gt;I'm not going to explain how to SSH in this tutorial, as there are plenty of examples out there.&lt;/p&gt;
+&lt;p&gt;Just remember that you will need:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;IP address of the Ubuntu Server machine&lt;/li&gt;
+&lt;li&gt;Your old username and password (from when you installed Ubuntu Desktop)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you have any trouble getting Ubuntu-server installed, feel free to drop me an email and I will try to assist.&lt;/p&gt;</content><category term="Linux"></category><category term="ubuntu-server"></category><category term="wubi"></category></entry></feed>

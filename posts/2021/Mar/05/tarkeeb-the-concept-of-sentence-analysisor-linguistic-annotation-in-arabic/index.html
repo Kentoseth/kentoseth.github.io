@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://kentoseth.github.io/theme/pygments/monokai.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/solid.css">
+
+    <link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet">
+
+    <link href="https://kentoseth.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom">
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Mohamed H." />
+<meta name="description" content="Discussing tarkeeb and annotation-software that can be used for it" />
+<meta name="keywords" content="Arabic, NLP, languages, annotation-software">
+
+
+<meta property="og:site_name" content="Kentoseth - Thoughts on programming, culture, FOSS and more"/>
+<meta property="og:title" content="Tarkeeb - the concept of sentence analysis(or Linguistic Annotation) in Arabic"/>
+<meta property="og:description" content="Discussing tarkeeb and annotation-software that can be used for it"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://kentoseth.github.io/posts/2021/Mar/05/tarkeeb-the-concept-of-sentence-analysisor-linguistic-annotation-in-arabic/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2021-03-05 03:00:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://kentoseth.github.io/author/mohamed-h.html">
+<meta property="article:section" content="Language"/>
+<meta property="article:tag" content="Arabic"/>
+<meta property="article:tag" content="NLP"/>
+<meta property="article:tag" content="languages"/>
+<meta property="article:tag" content="annotation-software"/>
+<meta property="og:image" content="/images/avatar.jpg">
+
+  <title>Kentoseth - Thoughts on programming, culture, FOSS and more &ndash; Tarkeeb - the concept of sentence analysis(or Linguistic Annotation) in Arabic</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://kentoseth.github.io">
+        <img src="/images/avatar.jpg" alt="Kentoseth" title="Kentoseth">
+      </a>
+
+      <h1>
+        <a href="https://kentoseth.github.io">Kentoseth</a>
+      </h1>
+
+<p>Coding. Culture. Linux. More.</p>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://kentoseth.github.io/pages/about-me/">
+                  About me
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="https://kentoseth.github.io/pages/projects/">
+                  Projects
+                </a>
+              </li>
+
+            <li>
+              <a target="_self" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" >Email</a>
+            </li>
+            <li>
+              <a target="_self" href="/categories.html" >Categories</a>
+            </li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
+              <i class="fab fa-github-alt"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
+              <i class="fab fa-gitlab"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://kentoseth.github.io">Home</a>
+
+      <a href="/categories">Categories</a>
+      <a href="/tags">Tags</a>
+
+      <a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="tarkeeb-the-concept-of-sentence-analysisor-linguistic-annotation-in-arabic">Tarkeeb - the concept of sentence analysis(or Linguistic Annotation) in Arabic</h1>
+    <p>
+      Posted on Fri 05 March 2021 in <a href="https://kentoseth.github.io/category/language.html">Language</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>During my time studying intermediate Arabic, mainly the study of Al-Ajurumiyah[1] in Arabic grammar, I was introduced to the word 'Tarkeeb'. I was initially trying to grasp the concept of what Tarkeeb means, among the mountain of Arabic terms used for different concepts in the language(parts-of-speech, grammatical concepts, morphological concepts and more), until I realized that I have already been exposed to Tarkeeb via <a href="https://corpus.quran.com/">The Quran Corpus</a>.</p>
+<h3>Defining Tarkeeb</h3>
+<p>Tarkeeb is basically the equivalent of what is shown in the <a href="https://corpus.quran.com/treebank.jsp">Quran Corpus Treebank</a>. I did find a definition from a PDF(the PDF is the only definition or discussion of 'Tarkeeb' I found on the internet that relates to the concept of Linguistic Annotation. I have also removed the link to the PDF for various reasons) but I will copy/paste the definition due to the lack of preservation of digitized works among the many hundreds of Islamic/Arabic websites that depend on 3rd-party services(like the hosted sites on wordpress.com) that get shut down after a few years for various reasons.</p>
+<p>The definition says:</p>
+<blockquote>
+<p>Tarkeeb,  in  the  English  language,  could  be  best  translated  as  “Sentence Parsing”; though, to explain the concept of it to an English speaker may prove difficult,as neither does English nor –to the best of our knowledge –any other language havesuch a component as “Tarkeeb”. That is, the critical analysis of speech  and  text;  breaking itdown  sentence  by  sentence,  and  analysing  those sentences,  analysing  each  and  every  word  in  the  sentence, tracing  them  back to their root forms, understanding each and every word individually, its role in the  sentence,  why  it  was  inserted,  what  effect  it  has  on  the  word(s)  before  it and the word(s) after it, and thereafter joining that sentence together, piece by piece, like a jigsaw puzzle, after having dissected and fully understood it.</p>
+<p>English does have what they refer to as “Sentence Parsing”, but this can never be compared with “Tarkeeb” in Arabic.Also, “sentence parsing”, as a subject taught formally in schools died out a long time ago. And again, that is besides the  fact  that  Tarkeeb  is  incomparably  more  advanced  and  sophisticated  as compared  to  “Sentence  Parsing”  in  English.  Nevertheless,  English  speakers whohad  studied  sentence  parsing  should  then  at  least  have  a  vague  idea  of what Tarkeeb is about.</p>
+</blockquote>
+<p>The reason the author mentions the following:</p>
+<blockquote>
+<p>as neither does English nor –to the best of our knowledge –any other language havesuch a component as “Tarkeeb”</p>
+</blockquote>
+<p>Is due to a drawback in how this field is itself defined. A layperson would not be able to explain the idea behind what Tarkeeb is without digging deeply into the academic areas of language. I happened to do so myself and uncovered that the equivalent of Tarkeeb in other languages is: <a href="https://en.wikipedia.org/wiki/Text_annotation#Linguistic_annotation">Linguistic annotation</a>. The field is so broad that there is even a generalized framework for Linguistic Annotation called <a href="https://universaldependencies.org/">Universal Dependencies</a></p>
+<p>Here is the explanation of UD:</p>
+<blockquote>
+<p>Universal Dependencies (UD) is a framework for consistent annotation of grammar (parts of speech, morphological features, and syntactic dependencies) across different human languages.</p>
+</blockquote>
+<h3>How I discovered Linguistic Annotation</h3>
+<p>As I progress in my learning of Classical Arabic, the geek in me has been exploring various software related to different areas of language(and Arabic). Contrary to what the Quran Corpus offers on its <a href="https://corpus.quran.com/java/download.jsp">download page</a>, it is very much a closed-source project that cannot be hosted locally. I wanted to host my own instance of the software in order to experiment with applying Linguistic Annotation to other Islamic texts like Hadith(a future full article will be dedicated to explaining this fully). Through a major yak-shave, I uncovered both a more accurate definition(see below) and label for the concept(Linguistic Annotation) and a bunch of <a href="https://corpus-analysis.com/">Tools for Corpus Linguistics</a></p>
+<h3>A clearer definition Tarkeeb</h3>
+<p>Tarkeeb would basically be:</p>
+<blockquote>
+<p>The annotation of the(textual) Arabic language with various concepts related to understanding language(like parts-of-speech, morphological features and dependency-graphs)</p>
+</blockquote>
+<p>A picture is worth a thousand words, so here is a borrowed image from the Quran Corpus:</p>
+<p><img alt="Surah Ikhlas" src="https://kentoseth.github.io/images/tarkeeb/corpus-image.png"></p>
+<p>My definition is probably inaccurate to academic-linguists, but for laypeople it is easier to understand. Case in point is the Wikipedia explanation(linked above), which is too burdensome for laypeople to understand without having to know the various domain-specific definitions that only academic-linguists would.</p>
+<h3>Annotation software</h3>
+<p>I shared a link above to various Open Source <a href="https://corpus-analysis.com/">Corpus Linguistics tools</a>, but the ones that would be best suited for Tarkeeb are the annotation ones. I tried a few of them that were closest to what the Quran Corpus has in structure, like <a href="https://github.com/proycon/flat">Flat</a>. I was biased towards Python options as those would be the easiest for me to modify if I needed code-modifications. After some deeper investigation I found <a href="https://inception-project.github.io/">INCEpTION</a> via <a href="https://webanno.github.io/webanno/">WebAnno</a>. INCEpTION is really amazing and has practically everything I need for a possible clone of the Quran Corpus. In a future article I will discuss how to install and run INCEpTION locally.</p>
+<p>Many of the advanced Open Source language-annotation projects are written in Java. The complexity of some of these projects is profound and I have a new-found respect for the often-derided language(which I am still not a fan of due to its C-like syntax and difficulty to grasp when compared to Python).</p>
+<h3>Conclusion</h3>
+<p>If you have any thoughts on Tarkeeb, learning Arabic, Open Source software(related to what I discussed above), drop me an email and we can share our thoughts on the subject.</p>
+<p>[1] Al-Ajurumiyah is a famous Arabic Grammar book written by Abu `Abdillah Muḥammad b. Muḥammad b. Dāwūd as-Sinhājī</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://kentoseth.github.io/tag/arabic.html">Arabic</a>
+      <a href="https://kentoseth.github.io/tag/nlp.html">NLP</a>
+      <a href="https://kentoseth.github.io/tag/languages.html">languages</a>
+      <a href="https://kentoseth.github.io/tag/annotation-software.html">annotation-software</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; 2021 </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Kentoseth - Thoughts on programming, culture, FOSS and more ",
+  "url" : "https://kentoseth.github.io",
+  "image": "/images/avatar.jpg",
+  "description": "Thoughts on programming, culture, FOSS and more."
+}
+</script>
+
+
+</body>
+</html>

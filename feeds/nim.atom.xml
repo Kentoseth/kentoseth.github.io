@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Kentoseth - Thoughts on programming, culture, FOSS and more - Nim</title><link href="https://kentoseth.github.io/" rel="alternate"></link><link href="https://kentoseth.github.io/feeds/nim.atom.xml" rel="self"></link><id>https://kentoseth.github.io/</id><updated>2017-05-02T03:00:00+02:00</updated><subtitle>Coding. Culture. Linux. More.</subtitle><entry><title>Nim - it feels like Python</title><link href="https://kentoseth.github.io/posts/2017/May/02/nim-it-feels-like-python/" rel="alternate"></link><published>2017-05-02T03:00:00+02:00</published><updated>2017-05-02T03:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2017-05-02:/posts/2017/May/02/nim-it-feels-like-python/</id><summary type="html">&lt;p&gt;A light intro to the Nim programming language&lt;/p&gt;</summary><content type="html">&lt;p&gt;In the Python world, there is a quest to always make Python "faster" by certain individuals/groups (sometimes due to need, sometimes simply to test the limits of the language and sometimes simply &lt;em&gt;because we can&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;There are many variations of this in the form of JIT(Just-In-Time) Compilers, as well as sub/supersets of the Python language itself.&lt;/p&gt;
+&lt;p&gt;Here is a quick list of some of the performance-enhancing tools written to make Python "faster":&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PyPy (JIT)&lt;/li&gt;
+&lt;li&gt;Cython (superset)&lt;/li&gt;
+&lt;li&gt;Pyston (JIT)&lt;/li&gt;
+&lt;li&gt;Pyjion (JIT)&lt;/li&gt;
+&lt;li&gt;Nuitka (Compiler ~ of sorts)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There has even be talk of removing the GIL (Global Interpreter Lock) to improve Python's performance. While these initiatives are great and I admire the work done through these initiatives to make new (and quite likely, existing) codebases gain better performance, it may also be prudent to invest a little time evaluating languages that provide better-performance out-of-the-box.&lt;/p&gt;
+&lt;p&gt;There is a saying that: &lt;em&gt;Go-lang was written to attract Java developers but many Python developers picked up the language instead&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;How far this is true, I am not sure. Go and Rust are the 2 trending systems-languages as of 2017. They get quite a bit of coverage (blogs, etc.) and have corporate-financial-backing. &lt;/p&gt;
+&lt;p&gt;On the topic of newer &lt;code&gt;systems-languages&lt;/code&gt; though, I would like to introduce the language called: Nim/nim-lang (formerly called "Nimrod"): &lt;a href="https://nim-lang.org"&gt;Nim-lang website&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Nim can be summarized to be addressing issues at the same level as: C++, D, Go, Rust&lt;/p&gt;
+&lt;p&gt;Nim is mostly community-driven, with a very small group of core/compiler developers.&lt;/p&gt;
+&lt;p&gt;I am not an expert in programming-language design, so any opinions I have surrounding that topic will more than likely be incorrect. However, I would like to display some Nim code to show how &lt;em&gt;similar&lt;/em&gt; it can otherwise appear to Python (and justify why the language appeals to me).&lt;/p&gt;
+&lt;p&gt;Here is a short snippet of Nim code that calculates whether a number is even:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;math&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;strutils&lt;/span&gt;
+
+&lt;span class="n"&gt;proc&lt;/span&gt; &lt;span class="n"&gt;is_even&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;value2&lt;/span&gt; &lt;span class="n"&gt;mod&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;new_value&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;value2&lt;/span&gt; &lt;span class="n"&gt;div&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;new_value&lt;/span&gt;
+
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;The number you have entered is an odd number: &amp;quot;&lt;/span&gt;
+      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;value2&lt;/span&gt;
+
+&lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Enter your Number: &amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;readLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;stdin&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;val_cleaned&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;parseInt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;is_even&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;val_cleaned&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are coming from a purely Python/dynamic programming background, it may be a bit unusual to initially understand the code. However, let me rewrite the part where the &lt;code&gt;proc&lt;/code&gt; is, which will then display how similar Nim &lt;em&gt;feels&lt;/em&gt; to Python:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;def is_even(value2):
+    if value2 % 2 == 0:  
+        new_value = value2 / 2  
+        return new_value  
+    else:
+        print(&amp;quot;The number you have entered is an odd number: &amp;quot;)
+        return value2
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I have previously dabbled in C, C++ and also attempted to learn Go. None of these languages were quite as enjoyable to code in (for a Pythonista familiar with dynamic-programming). After overcoming the hurdle of static-typing, which has become a very useful feature to have, Nim and Python feel very alike in terms of readability, etc.&lt;/p&gt;
+&lt;p&gt;The most critical thing I learnt when learning Nim was that: &lt;em&gt;a &lt;code&gt;proc&lt;/code&gt; in Nim is a &lt;code&gt;def&lt;/code&gt; in Python&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;(in simpler terms: a function is a function)&lt;/p&gt;
+&lt;p&gt;I am now using Nim for a few things, chief among them being CLI-apps. The code is compiled to dependency-free binaries and (from the library I use), the apps execute similar to what most Linux-users would be used to (&lt;code&gt;apt install something&lt;/code&gt; or &lt;code&gt;tar -czf file.tar.gz folder/&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;I have no plans on completely switching to Nim. The dearth of libraries/assistance/documentation/community is part of the reason why Python is such a great language.&lt;/p&gt;
+&lt;p&gt;However, if you are a frequent participant of tech-blogs/forums/news-sites and see lots of Go/Rust comparisons, I recommend considering Nim as well.&lt;/p&gt;
+&lt;p&gt;Some useful links/resources:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://nim-lang.org/docs/tut1.html"&gt;Introductory Nim Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nim-lang.org/docs/lib.html"&gt;Nim Standard Library&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nim-lang.org/community.html"&gt;Community Link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://glot.io/new/nim"&gt;Online Nim Compiler&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Nim"></category><category term="nim"></category><category term="python"></category></entry></feed>

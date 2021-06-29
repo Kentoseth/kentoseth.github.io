@@ -1,0 +1,968 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Kentoseth - Thoughts on programming, culture, FOSS and more</title><link href="https://kentoseth.github.io/" rel="alternate"></link><link href="https://kentoseth.github.io/feeds/all.atom.xml" rel="self"></link><id>https://kentoseth.github.io/</id><updated>2021-06-30T02:00:00+02:00</updated><subtitle>Coding. Culture. Linux. More.</subtitle><entry><title>Memon(language): Saying you and your</title><link href="https://kentoseth.github.io/posts/2021/Jun/30/memonlanguage-saying-you-and-your/" rel="alternate"></link><published>2021-06-30T02:00:00+02:00</published><updated>2021-06-30T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-06-30:/posts/2021/Jun/30/memonlanguage-saying-you-and-your/</id><summary type="html">&lt;p&gt;Explaining the you/your pronouns used in the Memon language.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Memoni_language"&gt;Memon(or Memoni as some call it), is a verbal language&lt;/a&gt; that has very little written information that documents the rules of the language. This lack of documentation might even extend to the culture and various habits of the Memon people. In a previous &lt;a href="https://kentoseth.tk/posts/2020/oct/10/expanding-blog-scope/"&gt;blog post&lt;/a&gt; I mentioned how I planned to expand the scope of this blog. Today I am proud to present the first article about the Memon language.&lt;/p&gt;
+&lt;p&gt;One caveat about my efforts to document Memon is that the verbal tradition diverges from area to area and the different "types of Memons"(basically a reference to which tribe you originate from in India). My reference point(s) for documenting Memon are the people around me who fluently speak the language.&lt;/p&gt;
+&lt;p&gt;Today I will discuss the pronouns: you and your&lt;/p&gt;
+&lt;h3&gt;Pronouns: you and your&lt;/h3&gt;
+&lt;p&gt;"You and your" fall under the category of personal pronouns. I needed a starting point for writing an article about the Memon language, so I chose these 2 pronouns due to the frequency of usage in communication.&lt;/p&gt;
+&lt;p&gt;Languages like Arabic have &lt;a href="https://arabicforbeginners.com/topic/personal-pronouns-overview/"&gt;6 different ways&lt;/a&gt; to say 'you' and a further &lt;a href="https://blogs.transparent.com/arabic/arabic-attached-pronouns/"&gt;6 different ways&lt;/a&gt; to say 'your'. Memon is closer to English in this regard, as there are just 2 ways to say 'you' and 4 ways to say 'your' and the you/your words use the same pronoun(see below).&lt;/p&gt;
+&lt;h3&gt;Pronoun: you - tu/ain&lt;/h3&gt;
+&lt;p&gt;The Memon equivalent of you is: tu or ain&lt;/p&gt;
+&lt;p&gt;Both words mean 'you' and they are gender neutral(meaning that tu/ain) can both be used for males or both be used for females.&lt;/p&gt;
+&lt;p&gt;Why the different words? This is where Memon gets interesting. 'tu' is used for your peers and people of a similar or younger background. 'ain' is used for your elders. Baked into the language is the idea of respecting older people.&lt;/p&gt;
+&lt;p&gt;Pronounciation:&lt;/p&gt;
+&lt;p&gt;'Tu' is pronounced like two.&lt;/p&gt;
+&lt;p&gt;The 'n' in ain is silent.&lt;/p&gt;
+&lt;p&gt;'Ain' is pronounced like eye.&lt;/p&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;p&gt;tu kidaa si aaviye(n)? / ai(n) kidaa si aaviye? - Where did you come from?
+Pronounced: two kid-aah see aah-vee-yeh(soft 'h' sound) / eye kid-aah see aah-vee-yeh(soft 'h' sound)&lt;/p&gt;
+&lt;h3&gt;Pronoun: your - tojo/toji + ainjo/ainji&lt;/h3&gt;
+&lt;p&gt;The pronoun for 'your' gets a bit more tricky and it was harder to understand the context of usage. Here, the 'your' is is divided into male/female:&lt;/p&gt;
+&lt;p&gt;tojo/ainjo = male
+toji/ainji = female&lt;/p&gt;
+&lt;p&gt;My first assumption was that the male/female options were used when speaking to a male or female. But &lt;em&gt;holds breath&lt;/em&gt; ... Memon (possibly) shares some familiarity with Arabic regarding this. The context of when to use 'ji' or 'jo' depends on the words within the sentence or the context(see below for the discussion) and not on the gender of the person you are speaking to. This made me assume(as yet not fully proven) that Memon has masculine and feminine words &lt;a href="https://www.madinaharabic.com/arabic-language-course/lessons/L006_001.html"&gt;just like Arabic&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Pronounciation:&lt;/p&gt;
+&lt;p&gt;'Tojo' - I will split this in 2. 'To' is pronounced like 'shore' but with the silent 'r'. Another way to understand it is the 'shaw' in "Shawshank". The 'jo' in 'tojo'/'ainjo' is pronounced like jaw. A spell-as-you-speak-it way of spelling it would be: tawjaw/eyejaw&lt;/p&gt;
+&lt;p&gt;The 'ji' in 'toji' is pronounced like 'bee'&lt;/p&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;p&gt;tojo naalo lak hidaa/ainjo naalo lik hidaa - Write your name here
+Pronounced: tawjaw naa-law lak(pronounced like flip) he-daa / eyejaw naa-law lak(pronounced like flip) he-daa&lt;/p&gt;
+&lt;h3&gt;Masculine and Feminine&lt;/h3&gt;
+&lt;p&gt;Documenting the masculine/feminine will prove tricky. It is not clear whether it is the general context that determines whether to use 'jo' or 'ji' or if certain words are feminine by nature(like Arabic has). I will keep trying to find examples to pick out a pattern(or lack thereof).&lt;/p&gt;
+&lt;h3&gt;Next post: Interrogative pronouns&lt;/h3&gt;
+&lt;p&gt;In the next blog post, I will discuss the interrogative pronouns like: what, when, where, how and who&lt;/p&gt;
+&lt;p&gt;For any mistakes in this article, please email me and I will fix them.&lt;/p&gt;</content><category term="Language"></category><category term="memon"></category><category term="pronouns"></category><category term="you"></category><category term="your"></category></entry><entry><title>Install PSP emulator(PPSSPP) in RetroArch on Linux</title><link href="https://kentoseth.github.io/posts/2021/Jun/21/install-psp-emulatorppsspp-in-retroarch-on-linux/" rel="alternate"></link><published>2021-06-21T02:00:00+02:00</published><updated>2021-06-21T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-06-21:/posts/2021/Jun/21/install-psp-emulatorppsspp-in-retroarch-on-linux/</id><summary type="html">&lt;p&gt;A quick guide to install a PSP emulator on RetroArch on an Arch-based Linux distro&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wanted to play a few PSP games from the mid-00s recently and I discovered that to install the PSP Core(emulator), known as "PPSSPP", isn't as simple as the instructions provided by LibRetro &lt;a href="https://docs.libretro.com/library/ppsspp/"&gt;here&lt;/a&gt; and &lt;a href="https://www.youtube.com/watch?v=KYt6oXA1Bws"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The issue with the Youtube instructions is that no "Core Updater" exists. The &lt;a href="https://www.reddit.com/r/RetroArch/comments/kug5db/missing_cores_will_return_soontm/"&gt;subreddit post said that it was a result of some updating/migration&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I also found close to 0 tutorials explaining how to install the emulator to be used on RetroArch. What I did learn though was that you can run this PPSSPP emulator on its own, but with a single emulator-manager(RetroArch), why have 10 different pieces of software when 1 will do?&lt;/p&gt;
+&lt;h3&gt;Installation&lt;/h3&gt;
+&lt;p&gt;Installing the emulator on Arch-based distros is really easy and just requires one package. Open Pamac and search for "PPSSPP", then locate the package that is called: libretro-ppsspp&lt;/p&gt;
+&lt;p&gt;At the time of writing, the package details look like so:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Anbox" src="https://kentoseth.github.io/images/linux/libretro-ppsspp.png"&gt;&lt;/p&gt;
+&lt;p&gt;Once installed, you can verify that the Core is in RetroArch by opening it and loading the Sony Playstation Portable core under "Load Core".&lt;/p&gt;</content><category term="Linux"></category><category term="PSP"></category><category term="RetroArch"></category><category term="Arch"></category><category term="Manjaro"></category></entry><entry><title>How to install Visual Studio Code(VSCode) inside an LXC container</title><link href="https://kentoseth.github.io/posts/2021/May/28/how-to-install-visual-studio-codevscode-inside-an-lxc-container/" rel="alternate"></link><published>2021-05-28T02:00:00+02:00</published><updated>2021-05-28T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-05-28:/posts/2021/May/28/how-to-install-visual-studio-codevscode-inside-an-lxc-container/</id><summary type="html">&lt;p&gt;How to install VSCode(a GUI app) inside an LXC container&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://code.visualstudio.com/"&gt;Visual Studio Code or vscode&lt;/a&gt; is a really great editor. One of its most advanced features that most other editors don't have is the &lt;a href="https://code.visualstudio.com/docs/remote/remote-overview"&gt;VS Code Remote Development&lt;/a&gt; which can enable a bloat-free development-environment by leveraging Docker or other container solutions.&lt;/p&gt;
+&lt;p&gt;However, licensing issues(explained &lt;a href="https://code.visualstudio.com/docs/remote/faq#_license-and-privacy"&gt;here&lt;/a&gt; and &lt;a href="https://github.com/microsoft/vscode/wiki/Differences-between-the-repository-and-Visual-Studio-Code"&gt;here&lt;/a&gt;) means that the only version of vscode that works with the "remote development extension" is the binary(or closed-source) version.&lt;/p&gt;
+&lt;p&gt;I found a &lt;a href="https://github.com/microsoft/vscode-remote-release/issues/1858"&gt;bug report&lt;/a&gt; discussing this and why the open-source version(known as Code) does not support the powerful "remote development extension". Wearing a (small) tinfoil hat, I figured that it would be a good idea to isolate vscode itself into a container for 2 purposes:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;To test if the binary does any undisclosed things like making perpetual pings back home(in a future blog post)&lt;/li&gt;
+&lt;li&gt;Seeing if a containerized-vscode can speak to other containers via SSH(SSH is 1 of the supported protocols for non-Docker containers)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Pre-requisites&lt;/h3&gt;
+&lt;p&gt;I use a Linux-based distro as the host and I am not sure if this will apply to Mac/Windows because of the X11-forwarding that is needed. (If this does work on your Windows/Mac PC, send me an email and I'll update this post with your commands).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LXC, SSH (on the host)&lt;/li&gt;
+&lt;li&gt;Some familiarity with the commandline&lt;/li&gt;
+&lt;li&gt;Ubuntu 20.04(container)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can use the following article to &lt;a href="https://www.how2shout.com/how-to/how-to-install-and-use-lxc-linux-containers-on-ubuntu.html#"&gt;install LXC&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Creating/Accessing the Ubuntu 20.04 container&lt;/h3&gt;
+&lt;p&gt;To create the Ubuntu 20.04 container, run the following command(&lt;strong&gt;from the host&lt;/strong&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-create -n vscode -t download -- --dist ubuntu --release focal --arch amd64&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-n vscode&lt;/code&gt; - the name of the container&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--dist ubuntu&lt;/code&gt; - Ubuntu as the OS&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--release focal&lt;/code&gt; - 20.04 as the release&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--arch amd64&lt;/code&gt; - x86-64bit as the architecture&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This process should take a while(depending on internet speed). Once it is complete, start the container using:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-start -n vscode -d&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;And access a shell of the container using:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-attach -n vscode&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you enter as &lt;code&gt;root&lt;/code&gt;, use the following to enter as the user: &lt;code&gt;su ubuntu&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;(Note 1: this shell is not the same as an SSH connection, so X11-forwarding won't work via it, as far as I am aware)
+(Note 2: &lt;code&gt;sudo&lt;/code&gt; may not be needed for unprivileged containers, so if you don't need it, don't use it)&lt;/p&gt;
+&lt;h3&gt;Installing required packages in the container&lt;/h3&gt;
+&lt;p&gt;The container requires a number of packages in order to run a GUI application like vscode. For basic programs like &lt;code&gt;xclock&lt;/code&gt;, not as many packages were needed, but for vscode, the installation might feel 'bloated'. Install the following(&lt;strong&gt;after 'attaching' the container and being in the container shell&lt;/strong&gt;):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt update
+sudo apt upgrade
+sudo apt install xauth ssh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;(&lt;code&gt;xauth&lt;/code&gt; might already be installed)&lt;/p&gt;
+&lt;p&gt;Now install some of the other required packages:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install libxss1 libxshmfence1 libxext-dev libxrender-dev libxslt1.1 libgconf-2-4 libnotify4 libnspr4 libnss3 libnss3-dev libnss3-tools libxtst-dev libgtk2.0-0 libcanberra-gtk-module software-properties-common gnupg2
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I am not sure what half of these are for, but the reference for why I needed to install them is here: &lt;a href="https://github.com/allamand/docker-vscode/blob/master/Dockerfile"&gt;docker-vscode Dockerfile&lt;/a&gt;. I attempted to install the least amount of packages to get vscode running. Prior to installing these packages, vscode was not working.&lt;/p&gt;
+&lt;h3&gt;Configuring SSH in the container&lt;/h3&gt;
+&lt;p&gt;First we will give the &lt;code&gt;ubuntu&lt;/code&gt; user a password. I found that even though the container &lt;code&gt;ubuntu&lt;/code&gt; user seems to have 'ubuntu' as a password, this password didn't work when trying to SSH into the container(from the host). Run(&lt;strong&gt;while in the container&lt;/strong&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo passwd ubuntu&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;I used 'ubuntu' for the new password(just to simplify the installation).&lt;/p&gt;
+&lt;p&gt;Before connecting to the container via SSH, the SSH needs to be configured with the appropriate changes.&lt;/p&gt;
+&lt;p&gt;Open the SSH config file:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo vim /etc/ssh/sshd_config&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Only the changes will be shown below. Please look for these lines in the &lt;code&gt;sshd_config&lt;/code&gt; file and change them appropriately(some of them also require that the &lt;code&gt;#&lt;/code&gt; be removed, otherwise the line remains commented):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PasswordAuthentication yes
+X11Forwarding yes
+X11DisplayOffset 10
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Exit the &lt;code&gt;vim&lt;/code&gt; editor and now restart the SSH service:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo systemctl restart sshd&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You can confirm SSH is working by running:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo systemctl status sshd&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now we can test if it is possible to SSH into the container from the host(you can just open a new tab/window in your terminal). First find the IP address of the container(&lt;strong&gt;run this on the host&lt;/strong&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-info -n vscode&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The output should give you a local IP address to connect to the container. This IP should be similar to your host IP. Example:&lt;/p&gt;
+&lt;p&gt;Host IP: &lt;code&gt;10.0.4.1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Container IP: &lt;code&gt;10.0.4.62&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now that we have the container IP, run the following command(&lt;strong&gt;from the host&lt;/strong&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh ubuntu@&amp;lt;container-IP&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The SSH prompt should say the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;The authenticity of host &amp;#39;&amp;lt;container-IP&amp;gt; (&amp;lt;container-IP&amp;gt;)&amp;#39; can&amp;#39;t be established.
+ED25519 key fingerprint is SHA256:fXFuBKAXm2HgFGuKVFpu+bRIR/2tzxBIWVH+dkQh9KE.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Enter: &lt;code&gt;yes&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then you will be prompted to enter the password for user &lt;code&gt;ubuntu&lt;/code&gt;, enter: 'ubuntu'&lt;/p&gt;
+&lt;p&gt;You should now be in the container via SSH if successful.&lt;/p&gt;
+&lt;h3&gt;Installing vscode in the container&lt;/h3&gt;
+&lt;p&gt;The vscode website provides an adequate explanation for &lt;a href="https://code.visualstudio.com/docs/setup/linux"&gt;installing vscode on linux&lt;/a&gt;, but I preferred this installation method: &lt;a href="https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-20-04/"&gt;How to Install Visual Studio Code on Ubuntu 20.04&lt;/a&gt;. I will reproduce the installation below for convenience.&lt;/p&gt;
+&lt;p&gt;Add the Microsoft repo(&lt;strong&gt;while in the container&lt;/strong&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The only output to confirm everything worked is the word: &lt;code&gt;OK&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now add the repo:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;and now install vscode(I installed &lt;code&gt;code-insiders&lt;/code&gt; to be at a more "bleeding-edge" version of vscode, but installing the stable version should work as well. If the stable doesn't work, install the &lt;code&gt;code-insiders&lt;/code&gt;, as it may have fixed some bugs):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo apt install code-insiders&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you wish, you can restart the container now(as restarting always seems to 'fix' things even if they are working).&lt;/p&gt;
+&lt;h3&gt;SSH and start vscode&lt;/h3&gt;
+&lt;p&gt;Now &lt;strong&gt;from the host&lt;/strong&gt;, we connect to the container with X-forwarding enabled using this command:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh ubuntu@&amp;lt;container-IP&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;After entering the password 'ubuntu', we should now be in the container once again. Now run this command(&lt;strong&gt;while in the container&lt;/strong&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;code-insiders --disable-gpu&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;vscode will now start and the display should look like:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="vscode-start" src="https://kentoseth.github.io/images/vscode/vscode.png"&gt;&lt;/p&gt;
+&lt;h3&gt;Conclusion and next steps&lt;/h3&gt;
+&lt;p&gt;In the next article, I will investigate how to opt-out of Windows tracking in vscode(I thought it was supposed to be opt-in as per GDPR). I will also look at what network calls are made before/after opting-out to see how much data is still harvested by this proprietary binary and perhaps also add some rules to block the application from making any network calls at all.&lt;/p&gt;
+&lt;h3&gt;References&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://linuxcontainers.org/lxc/getting-started/"&gt;Linux Containers LXC page&lt;/a&gt;
+&lt;a href="https://unix.stackexchange.com/questions/12755/how-to-forward-x-over-ssh-to-run-graphics-applications-remotely"&gt;How to forward X over SSH to run graphics applications remotely?&lt;/a&gt;
+&lt;a href="http://www.benue.com/blog/2018/03/16/how-to-run-gui-applications-in-an-lxc-container/"&gt;How to run GUI applications in an LXC Container&lt;/a&gt;
+&lt;a href="https://askubuntu.com/questions/47642/how-to-start-a-gui-software-on-a-remote-linux-pc-via-ssh"&gt;How to start a GUI software on a remote Linux PC via SSH&lt;/a&gt;&lt;/p&gt;</content><category term="LXC"></category><category term="ubuntu"></category><category term="LXC"></category><category term="vscode"></category></entry><entry><title>Where does sunnah.com get its English Hadith sources?</title><link href="https://kentoseth.github.io/posts/2021/May/06/where-does-sunnahcom-get-its-english-hadith-sources/" rel="alternate"></link><published>2021-05-06T03:00:00+02:00</published><updated>2021-05-06T03:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-05-06:/posts/2021/May/06/where-does-sunnahcom-get-its-english-hadith-sources/</id><summary type="html">&lt;p&gt;Tracking down where sunnah.com sources its English translations of Hadiths/Ahadith.&lt;/p&gt;</summary><content type="html">&lt;p&gt;(&lt;em&gt;Note to readers: I will use Hadiths instead of Ahadith because it is easier to understand the plural form as Hadiths, instead of Ahadith, for regular readers&lt;/em&gt;)&lt;/p&gt;
+&lt;p&gt;Sunnah.com is a great website for providing digital copies of the famous &lt;a href="https://en.wikipedia.org/wiki/Kutub_al-Sittah"&gt;al-Sahih al-Sittah/Kutub al-Sittah&lt;/a&gt;. For the unaware reader, the Kutub al-Sittah are the 6 famous Hadith books(or collections) that have Hadith compilations.&lt;/p&gt;
+&lt;p&gt;I personally have issues with the current manner of digitization of classical Islamic works, but I will save that discussion for its own article(where I can go into further detail). The focus of this article is to find the translators and books which are the source material for sunnah.com&lt;/p&gt;
+&lt;h3&gt;What sunnah.com says&lt;/h3&gt;
+&lt;p&gt;Looking at this &lt;a href="https://sunnah.com/about#SourcesNumbering"&gt;sunnah.com - About - Sources&lt;/a&gt;, we can use this as a  starting point to find out where the English content for the Hadiths comes from. This is what the site says regarding English translations:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For the English we use various translators, a full list of which will appear here shortly inshaAllah. The English has been through two iterations of cleaning (spelling corrections etc.). We have done our best to provide the most authentic and exact hadith possible.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For Sahih Bukhari and Sahih Muslim, the website does provide a reference to an English data source, seen here:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Bukhari-eng-ref" src="https://kentoseth.github.io/images/sunnahcom/bukhari.png"&gt;&lt;/p&gt;
+&lt;p&gt;But the problem with the "USC-MSA web (English) reference" is that it no longer exists. I tried to figure out what the cause was and apparently it had to do with some political issues raised at the USC, but that is not the concern for us.&lt;/p&gt;
+&lt;p&gt;The "About" section is also limited on its sources by just saying that they use various translators. We live in an age where many laymen consider themselves capable scholars and use the internet(where sunnah.com ranks highly) to issue fatwas. This makes it even more important that sources are more clearly shown regarding Islamic works and especially their translations.&lt;/p&gt;
+&lt;h3&gt;What I found&lt;/h3&gt;
+&lt;p&gt;Through the Mercy of Allah and without much looking, I was able to source the English references for most of the Hadith collections.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://kalamullah.com"&gt;Kalamullah&lt;/a&gt; is famous for providing PDFs to various Islamic books, including the 6 Hadith collections(with translations). This is where I was able to make the connection back to sunnah.com&lt;/p&gt;
+&lt;p&gt;If we look at &lt;a href="https://sunnah.com/ibnmajah/1/200"&gt;ibn Majah - Book 1 - Hadith 200&lt;/a&gt;, the Arabic and English references are as follows:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;English translation    : Vol. 1, Book 1, Hadith 466
+Arabic reference   : Book 1, Hadith 503&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The book to download is &lt;a href="https://kalamullah.com/Books/Hadith/Sunan%20Ibn%20Majah%20Vol.%201%20-%201-802.pdf"&gt;ibn Majah Volume 1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is what sunnah.com says in English for Hadith 200:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It was narrated that Qais bin Sa'd said:&lt;/p&gt;
+&lt;p&gt;"The Prophet came to us and we gave him water to perform a bath." Then we brought him a Warshiyyah cloth, and he wrapped himself in it. It is as if I can see the marks of the Wars on the folds of his stomach."&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is what the PDF shows:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Majah-1" src="https://kentoseth.github.io/images/sunnahcom/majah1.png"&gt;&lt;/p&gt;
+&lt;p&gt;Word-for-word, it is the same content. I tested this out randomly in 4 other places:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/ibnmajah:750"&gt;ibn Majah - Hadith 750&lt;/a&gt; - PDF Vol1 pg. 492&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/ibnmajah:750"&gt;ibn Majah - Hadith 1785&lt;/a&gt; - PDF Vol3 pg. 19 (I found a missing word on the website, but the English content is almost exactly the same)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/ibnmajah:2415"&gt;ibn Majah - Hadith 2415&lt;/a&gt; - PDF Vol3 pg. 382&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/ibnmajah:4056"&gt;ibn Majah - Hadith 4056&lt;/a&gt; - PDF Vol5 pg. 246&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The author and publisher of this version is:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Publisher&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Maktaba&lt;/span&gt; &lt;span class="n"&gt;Dar&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;us&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Salam&lt;/span&gt;
+&lt;span class="n"&gt;Published&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2007&lt;/span&gt;
+&lt;span class="n"&gt;ISBN&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;9960&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;9881&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;
+&lt;span class="n"&gt;Ahadith&lt;/span&gt; &lt;span class="n"&gt;edited&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;researched&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;referenced&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;Hafiz&lt;/span&gt; &lt;span class="n"&gt;Abu&lt;/span&gt; &lt;span class="n"&gt;Tahir&lt;/span&gt; &lt;span class="n"&gt;Zubair&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Ali Za&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;
+&lt;span class="n"&gt;Translated&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;Nasiruddin&lt;/span&gt; &lt;span class="n"&gt;al&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Khattab&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Canada&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;Edited&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;Huda&lt;/span&gt; &lt;span class="n"&gt;Khattab&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Canada&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;Final&lt;/span&gt; &lt;span class="n"&gt;review&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;Abu&lt;/span&gt; &lt;span class="n"&gt;Khaliyl&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;USA&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I will apply the same method(but reducing to 3 Hadiths per set) for the other 5 Hadith collections.&lt;/p&gt;
+&lt;h4&gt;Bukhari&lt;/h4&gt;
+&lt;p&gt;The volumes to download for this set are here: &lt;a href="https://kalamullah.com/sahih-bukhari.html"&gt;Sahih Bukhari&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/bukhari:61"&gt;Bukhari - Hadith 61&lt;/a&gt; - PDF Vol1 pg. 89 (Book3, CH4, nr. 61)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/bukhari:1200"&gt;Bukhari - Hadith 1200&lt;/a&gt; - PDF Vol2 pg. 175 (Book21, CH2, nr. 1200) - not a word-for-word match, small editing for spelling/grammar improvement&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/bukhari:6290"&gt;Bukhari - Hadith 6290&lt;/a&gt; - PDF Vol8 pg. 173 (Book79, CH47, nr. 6290)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The author and publisher of this version is:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Publisher&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Maktaba&lt;/span&gt; &lt;span class="n"&gt;Dar&lt;/span&gt; &lt;span class="n"&gt;us&lt;/span&gt; &lt;span class="n"&gt;Salam&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;same&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;ibn&lt;/span&gt; &lt;span class="n"&gt;Majah&lt;/span&gt; &lt;span class="n"&gt;books&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;Published&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1997&lt;/span&gt;
+&lt;span class="n"&gt;ISBN&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;9960&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;717&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;span class="n"&gt;Translated&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Dr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Muhammad&lt;/span&gt; &lt;span class="n"&gt;Muhsin&lt;/span&gt; &lt;span class="n"&gt;Khan&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Muslim&lt;/h4&gt;
+&lt;p&gt;The volumes to download for this set are here: &lt;a href="https://kalamullah.com/sahih-muslim.html"&gt;Sahih Muslim&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/muslim:55a"&gt;Muslim - Hadith 55a&lt;/a&gt; - PDF Vol1 pg. 150 (Book1, CH23, nr. 196) - not a word-for-word match, some changes present(common folk -&amp;gt; masses)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/muslim:900"&gt;Muslim - Hadith 900&lt;/a&gt; - PDF Vol2 pg. 422 (Book9, CH4, nr. 2087) - also not a word-for-word match&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/muslim:2035"&gt;Muslim - Hadith 2035a&lt;/a&gt; - PDF Vol5 pg. 383 (Book36, CH18, nr. 2035) - CH heading the same but significant variation in Hadith text&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The author and publisher used for Sahih Muslim on sunnah.com is presumably not the same as the version available on kalamullah.com&lt;/p&gt;
+&lt;h4&gt;an-Nasa'i&lt;/h4&gt;
+&lt;p&gt;The volumes to download for this set are here: &lt;a href="https://kalamullah.com/sunan-an-nasai.html"&gt;Sunan An-Nasa'i&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/nasai:691"&gt;Nasai - Hadith 691&lt;/a&gt; - PDF Vol1 pg. 408 (Book8, CH4, nr. 691)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/nasai:1300"&gt;Nasai - Hadith 1300&lt;/a&gt; - PDF Vol2 pg. 260 (Book13, CH58, nr. 1301)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/nasai:691"&gt;Nasai - Hadith 691&lt;/a&gt; - PDF Vol1 pg. 408 (Book8, CH4, nr. 691)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The author and publisher of this version is:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Publisher&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Maktaba&lt;/span&gt; &lt;span class="n"&gt;Dar&lt;/span&gt; &lt;span class="n"&gt;us&lt;/span&gt; &lt;span class="n"&gt;Salam&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;same&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;ibn&lt;/span&gt; &lt;span class="n"&gt;Majah&lt;/span&gt; &lt;span class="n"&gt;books&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;Published&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2007&lt;/span&gt;
+&lt;span class="n"&gt;ISBN&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;978&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;9960&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;58&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;760&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;
+&lt;span class="n"&gt;Ahadith&lt;/span&gt; &lt;span class="n"&gt;edited&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;referenced&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;Hafiz&lt;/span&gt; &lt;span class="n"&gt;Abu&lt;/span&gt; &lt;span class="n"&gt;Tahir&lt;/span&gt; &lt;span class="n"&gt;Zubair&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Ali Za&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;
+&lt;span class="n"&gt;Translated&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;Nasiruddin&lt;/span&gt; &lt;span class="n"&gt;al&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Khattab&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Canada&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;Edited&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;Huda&lt;/span&gt; &lt;span class="n"&gt;Khattab&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Canada&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;Final&lt;/span&gt; &lt;span class="n"&gt;review&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;Abu&lt;/span&gt; &lt;span class="n"&gt;Khaliyl&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;USA&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Abu Dawood&lt;/h4&gt;
+&lt;p&gt;The volumes to download for this set are here: &lt;a href="https://kalamullah.com/sunan-abu-dawood.html"&gt;Sunan Abu Dawood&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/abudawud:376"&gt;Abu Dawood - Hadith 376&lt;/a&gt; - PDF Vol1 pg. 237 (Book1, CH135, nr. 376) - translation appears to be different(same meaning, different translation)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/abudawud:1623"&gt;Abu Dawood - Hadith 1623&lt;/a&gt; - PDF Vol2 pg. 280 (Book9, CH22, nr. 1623) - translation appears to be different(same meaning, different translation)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/abudawud:3502"&gt;Abu Dawood - Hadith 3502&lt;/a&gt; - PDF Vol4 pg. 139 (Book22, CH67, nr. 3502) - translation appears to be different(same meaning, different translation)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The author and publisher used for Sahih Muslim on sunnah.com is presumably not the same as the version available on kalamullah.com&lt;/p&gt;
+&lt;h4&gt;at-Tirmidhi&lt;/h4&gt;
+&lt;p&gt;The volumes to download for this set are here: &lt;a href="https://kalamullah.com/jami-at-tirmidhi.html"&gt;Jami' At-Tirmidhi&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/tirmidhi:601"&gt;Tirmidhi - Hadith 601&lt;/a&gt; - PDF Vol2 pg. 63 (Book(*), CH68, nr. 601)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/tirmidhi:1461"&gt;Tirmidhi - Hadith 1461&lt;/a&gt; - PDF Vol3 pg. 246 (Book15, CH28, nr. 1461)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sunnah.com/tirmidhi:2168"&gt;Tirmidhi - Hadith 2168&lt;/a&gt; - PDF Vol4 pg. 408 (Book31, CH8, nr. 2168)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;*The discrepancy in Book numbers appears in Vol2, where "Travelling" and "Fasting" were not given Book numbers and hence the online version is 2 Books ahead of the PDFs.&lt;/p&gt;
+&lt;p&gt;The author and publisher of this version is:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Publisher&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Maktaba&lt;/span&gt; &lt;span class="n"&gt;Dar&lt;/span&gt; &lt;span class="n"&gt;us&lt;/span&gt; &lt;span class="n"&gt;Salam&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;same&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;ibn&lt;/span&gt; &lt;span class="n"&gt;Majah&lt;/span&gt; &lt;span class="n"&gt;books&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;Published&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2007&lt;/span&gt;
+&lt;span class="n"&gt;ISBN&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;978&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;9960&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;9967&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;38&lt;/span&gt;
+&lt;span class="n"&gt;Ahadith&lt;/span&gt; &lt;span class="n"&gt;edited&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;referenced&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;Hafiz&lt;/span&gt; &lt;span class="n"&gt;Abu&lt;/span&gt; &lt;span class="n"&gt;Tahir&lt;/span&gt; &lt;span class="n"&gt;Zubair&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Ali Za&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;
+&lt;span class="n"&gt;Translated&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;Abu&lt;/span&gt; &lt;span class="n"&gt;Khaliyl&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;USA&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;Final&lt;/span&gt; &lt;span class="n"&gt;review&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;Islamic&lt;/span&gt; &lt;span class="n"&gt;Research&lt;/span&gt; &lt;span class="n"&gt;Section&lt;/span&gt; &lt;span class="n"&gt;Darussalam&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Sahih Muslim and Sunan Abu Dawood were the only 2 using different Arabic-English translations. I am aware that other translations of some of the Hadith collections do exist, but the slant of sunnah.com appears to be towards the Saudi Arabian publisher Darus Salam. It might be that the sources for Sahih Muslim and Sunan Abu Dawood are also by Darus Salam, but from different authors.&lt;/p&gt;
+&lt;p&gt;If any mistakes were made in this article, please contact me to have them fixed.&lt;/p&gt;</content><category term="Islam"></category><category term="hadith"></category><category term="isnad"></category><category term="sunnahcom"></category><category term="english"></category></entry><entry><title>Installing INCEpTION - an Open Source tool for Linguistic Annotation</title><link href="https://kentoseth.github.io/posts/2021/Apr/25/installing-inception-an-open-source-tool-for-linguistic-annotation/" rel="alternate"></link><published>2021-04-25T03:00:00+02:00</published><updated>2021-04-25T03:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-04-25:/posts/2021/Apr/25/installing-inception-an-open-source-tool-for-linguistic-annotation/</id><summary type="html">&lt;p&gt;A guide to install INCEpTION on Linux-based distros&lt;/p&gt;</summary><content type="html">&lt;p&gt;In a previous post about &lt;a href="https://kentoseth.tk/posts/2021/mar/05/tarkeeb-the-concept-of-sentence-analysisor-linguistic-annotation-in-arabic/"&gt;Tarkeeb&lt;/a&gt; I mentioned the use of annotation software for rebuilding the Quran Corpus or building any Arabic corpus. I discussed software like &lt;a href="https://github.com/proycon/flat"&gt;Flat&lt;/a&gt; but then mentioned my preferred option for annotation, &lt;a href="https://inception-project.github.io/"&gt;INCEpTION&lt;/a&gt;. Below I will explain how to install INCEpTION on Ubuntu 20.04(you should be able to adjust the commands to install it on most distros).&lt;/p&gt;
+&lt;h3&gt;Installing Java&lt;/h3&gt;
+&lt;p&gt;If you use a system container like &lt;a href="https://linuxcontainers.org/"&gt;LXC&lt;/a&gt;, the standard containers don't come with Java installed. This is a good thing, as it allows you to choose &lt;a href="https://adoptopenjdk.net/"&gt;OpenJDK&lt;/a&gt; over Oracle's Java.&lt;/p&gt;
+&lt;p&gt;To install OpenJDK, do the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt update
+sudo apt upgrade
+sudo apt install openjdk-11-jdk
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Verifying that Java is installed:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;java --version
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If it didn't work, visit &lt;a href="https://adoptopenjdk.net/installation.html"&gt;here&lt;/a&gt; for debugging.&lt;/p&gt;
+&lt;h3&gt;Downloading &amp;amp; Running INCEpTION&lt;/h3&gt;
+&lt;p&gt;Create a directory for the standalone Java executable:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir annotation/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Download &lt;a href="https://inception-project.github.io/downloads/"&gt;INCEpTION&lt;/a&gt; from here. When I installed the software, it worked with version 0.18.0. However, version 0.19.3 should also work(I will update this article if it doesn't).&lt;/p&gt;
+&lt;p&gt;Save the &lt;code&gt;inception-app-webapp-0.19.3-standalone.jar&lt;/code&gt; into the &lt;code&gt;annotation/&lt;/code&gt; folder.&lt;/p&gt;
+&lt;p&gt;On the Downloads page above, the instructions for running the web application are:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;java -jar inception-app-webapp-0.19.3-standalone.jar
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;These instructions assume that you are running the executable locally and can double-click on it. This didn't work for me because I isolated the app into a container.&lt;/p&gt;
+&lt;p&gt;After a bit of yak-shaving, I learned that INCEpTION is built using the &lt;a href="https://spring.io/projects/spring-framework"&gt;Spring Framework&lt;/a&gt;. To run a Spring web application as if it was a remote application and making it accessible outside a container, the following command needs to be used:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;java -Djava.awt.headless=true -Dserver.port=8999 -Dserver.ip=0.0.0.0 -jar inception-app-webapp-0.19.3-standalone.jar
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Binding to &lt;code&gt;0.0.0.0&lt;/code&gt; and a specific port is self-explanatory. I cannot recall why, but running the application as &lt;code&gt;headless&lt;/code&gt; was required to make it work. If you can run it without the &lt;code&gt;headless&lt;/code&gt; command, please email me and explain how/why.&lt;/p&gt;
+&lt;h3&gt;Using INCEpTION&lt;/h3&gt;
+&lt;p&gt;The application should now be accessible on the container IP on the specific port selected. eg. &lt;code&gt;10.0.4.44:8999&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Thereafter you can look at the &lt;a href="https://inception-project.github.io/releases/0.19.3/docs/user-guide.html"&gt;User Guide&lt;/a&gt; for more information on how to use it.&lt;/p&gt;
+&lt;p&gt;I will be adding a future blog post about rebuilding the Quran Corpus with INCEpTION. At the moment I am manually adding some content to the corpus data. This data was added to the existing &lt;a href="https://corpus.quran.com/"&gt;Quran Corpus&lt;/a&gt; and specifically relates to the &lt;a href="https://corpus.quran.com/documentation/dependencygraph.jsp"&gt;Reference Nodes, Hidden Nodes and Empty Nodes&lt;/a&gt;.&lt;/p&gt;</content><category term="Language"></category><category term="annotation-software"></category><category term="inception"></category><category term="quran-corpus"></category></entry><entry><title>Anbox - libprotobuf bug</title><link href="https://kentoseth.github.io/posts/2021/Mar/21/anbox-libprotobuf-bug/" rel="alternate"></link><published>2021-03-21T02:00:00+02:00</published><updated>2021-03-21T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-03-21:/posts/2021/Mar/21/anbox-libprotobuf-bug/</id><summary type="html">&lt;p&gt;Fixing the Anbox libprotobuf bug on Arch-based distros&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://anbox.io/"&gt;Anbox&lt;/a&gt; also known as Android in a box is used for emulating Android applications on Linux. A common use for this would be to run WhatsApp on Linux natively(no QR codes or WhatsApp Web).&lt;/p&gt;
+&lt;p&gt;A bug that occurs on Arch-based distros after installing/upgrading your system is the following:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;anbox: error while loading shared libraries: libprotobuf-lite.so.23: cannot open shared object file: No such file or directory&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I am documenting how to fix this bug as it does not exist anywhere else except &lt;a href="https://bbs.archlinux.org/viewtopic.php?id=245032"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://wiki.archlinux.org/index.php/Anbox"&gt;Arch Anbox&lt;/a&gt; link also has no solution to this bug.&lt;/p&gt;
+&lt;h3&gt;How to fix&lt;/h3&gt;
+&lt;p&gt;The forum link says that anbox needs to be recompiled. Recompiling the Anbox package is straight-forward using the Package Manager. Navigate to:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Anbox" src="https://kentoseth.github.io/images/linux/anbox.png"&gt;&lt;/p&gt;
+&lt;p&gt;Click on &lt;code&gt;Build&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;After the Anbox package has been rebuilt. Restart your machine and Anbox should work once again.&lt;/p&gt;
+&lt;p&gt;If you experience any bugs with my solution, contact me via email and I will try to help you figure out a fix.&lt;/p&gt;</content><category term="Linux"></category><category term="anbox"></category><category term="bug"></category><category term="protobuf"></category><category term="Arch"></category><category term="Manjaro"></category></entry><entry><title>The problem with anglicisation of scholar names</title><link href="https://kentoseth.github.io/posts/2021/Mar/06/the-problem-with-anglicisation-of-scholar-names/" rel="alternate"></link><published>2021-03-06T02:00:00+02:00</published><updated>2021-03-06T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-03-06:/posts/2021/Mar/06/the-problem-with-anglicisation-of-scholar-names/</id><summary type="html">&lt;p&gt;Discussing the drawbacks of anglicisation and why a standard would be good&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you have an interest in early Middle Eastern history or Islamic history, you will come across lots of names of renowned people who shaped history during their time on earth.&lt;/p&gt;
+&lt;p&gt;In a previous article, I listed the &lt;a href="https://kentoseth.tk/posts/2021/feb/19/lists-of-scholars-who-learned-from-each-other/"&gt;names of early Islamic scholars who learned from each other&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I copied the names from a book verbatim. As an unaware reader, you might assume this is the only way that these names are spelled. However, this is definitely not the case.&lt;/p&gt;
+&lt;p&gt;Anglicisation is defined from &lt;a href="https://en.wikipedia.org/wiki/Anglicisation"&gt;Wikipedia&lt;/a&gt; as:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Linguistic anglicisation (or anglicization, occasionally anglification, anglifying, or Englishing) is the practice of modifying foreign words, names, and phrases to make them easier to spell, pronounce, or understand in English.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There are some efforts at standardizing found here &lt;a href="https://en.wikipedia.org/wiki/Romanization_of_Arabic"&gt;Romanization of Arabic&lt;/a&gt; but this is just a letter-to-letter matching of Arabic-English and does not cover an actual standard.&lt;/p&gt;
+&lt;h3&gt;What does a standard mean?&lt;/h3&gt;
+&lt;p&gt;Here is a simple example:&lt;/p&gt;
+&lt;p&gt;Is it Abu Haneefa, Abu Hanifa, Aboo Haneefa or Aboo Hanifa? (ra)&lt;/p&gt;
+&lt;p&gt;While 'Abu' is self-standardized, Haneefa is not.&lt;/p&gt;
+&lt;p&gt;Here is another example. A famous scholar had the name: Wakee bin Jarraa(ra). According to Wikipedia, his page title is &lt;a href="https://en.wikipedia.org/wiki/Waki_ibn_al-Jarrah"&gt;Waki ibn al-Jarrah&lt;/a&gt;, his introductory name is Abū Sufyān Wakīʿ ibn al-Jarrāḥ ibn Malīḥ al-Ruʾāsī al-Kilābī al-Kufī (the part we are looking for is: Wakīʿ ibn al-Jarrāḥ) and the Arabic is وكيع بن الجرّاح&lt;/p&gt;
+&lt;h3&gt;Is this even a problem?&lt;/h3&gt;
+&lt;p&gt;You may be asking yourself why this even matters? For academics and even people just casually browsing, it matters for many reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A different spelling could link to a completely different individual&lt;/li&gt;
+&lt;li&gt;Different spellings not correctly linking to websites that have relevant information(would Waki ibn al-Jarrah give more results than Wakee bin Jarraa or the other way around?)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Why does the problem exist?&lt;/h3&gt;
+&lt;p&gt;My theory is that it is because of a lack of standard, different people spell out Arabic words according to how they hear it(differently), Arabic-English does not have a clear 1-1 for many letters and the addition of diacritics impacts the different spelling options too.&lt;/p&gt;
+&lt;p&gt;How would ح be spelled in English? If the answer is simple and is: 'ha' let's make it more challenging. How would حَ or حَا be spelled?&lt;/p&gt;
+&lt;p&gt;Following the Romanization linked to above, a few other issues creep up like the usage of symbols on the English words: wāw/ṣād or capitalization of certain letters to differentiate(ح = Ha and ه = ha). None of these can work in the real world because nobody will follow the conventions of where to capitalize and even fewer people will use the symbols to spell in English.&lt;/p&gt;
+&lt;h3&gt;Towards a standard?&lt;/h3&gt;
+&lt;p&gt;I don't actually have a solution. Programmers know all about standards too, see below:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Standards" src="https://imgs.xkcd.com/comics/standards.png"&gt;&lt;/p&gt;
+&lt;p&gt;For Arabic speakers, this isn't necessary because there is only 1 spelling(I'll exclude the fact that sometimes different Arabs assign different titles to famous scholars). For everyone else, some type of standard should exist that at least conforms to an Arabic-English of names(the standard could apply to all Arabic names or just the famous scholars).&lt;/p&gt;
+&lt;p&gt;This isn't a technical challenge though. I can quickly develop my own solution of what a standard should look like, but adoption and cooperation is more important than solutions. Cooperation between Arabic-speaking countries and non-Arabic speaking countries could lead to some standard. Academics should also be encouraged to adopt the standard, which could be made simpler through online spell-checkers and Arabic-English transliteration tools.&lt;/p&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;While I don't expect anything to come of this, I felt it worthwhile to discuss the matter as I morph into a language-geek.&lt;/p&gt;
+&lt;p&gt;Yours truly, كنطوسث&lt;/p&gt;</content><category term="Language"></category><category term="scholars"></category><category term="names"></category><category term="arabic"></category><category term="english"></category></entry><entry><title>Tarkeeb - the concept of sentence analysis(or Linguistic Annotation) in Arabic</title><link href="https://kentoseth.github.io/posts/2021/Mar/05/tarkeeb-the-concept-of-sentence-analysisor-linguistic-annotation-in-arabic/" rel="alternate"></link><published>2021-03-05T03:00:00+02:00</published><updated>2021-03-05T03:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-03-05:/posts/2021/Mar/05/tarkeeb-the-concept-of-sentence-analysisor-linguistic-annotation-in-arabic/</id><summary type="html">&lt;p&gt;Discussing tarkeeb and annotation-software that can be used for it&lt;/p&gt;</summary><content type="html">&lt;p&gt;During my time studying intermediate Arabic, mainly the study of Al-Ajurumiyah[1] in Arabic grammar, I was introduced to the word 'Tarkeeb'. I was initially trying to grasp the concept of what Tarkeeb means, among the mountain of Arabic terms used for different concepts in the language(parts-of-speech, grammatical concepts, morphological concepts and more), until I realized that I have already been exposed to Tarkeeb via &lt;a href="https://corpus.quran.com/"&gt;The Quran Corpus&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Defining Tarkeeb&lt;/h3&gt;
+&lt;p&gt;Tarkeeb is basically the equivalent of what is shown in the &lt;a href="https://corpus.quran.com/treebank.jsp"&gt;Quran Corpus Treebank&lt;/a&gt;. I did find a definition from a PDF(the PDF is the only definition or discussion of 'Tarkeeb' I found on the internet that relates to the concept of Linguistic Annotation. I have also removed the link to the PDF for various reasons) but I will copy/paste the definition due to the lack of preservation of digitized works among the many hundreds of Islamic/Arabic websites that depend on 3rd-party services(like the hosted sites on wordpress.com) that get shut down after a few years for various reasons.&lt;/p&gt;
+&lt;p&gt;The definition says:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Tarkeeb,  in  the  English  language,  could  be  best  translated  as  “Sentence Parsing”; though, to explain the concept of it to an English speaker may prove difficult,as neither does English nor –to the best of our knowledge –any other language havesuch a component as “Tarkeeb”. That is, the critical analysis of speech  and  text;  breaking itdown  sentence  by  sentence,  and  analysing  those sentences,  analysing  each  and  every  word  in  the  sentence, tracing  them  back to their root forms, understanding each and every word individually, its role in the  sentence,  why  it  was  inserted,  what  effect  it  has  on  the  word(s)  before  it and the word(s) after it, and thereafter joining that sentence together, piece by piece, like a jigsaw puzzle, after having dissected and fully understood it.&lt;/p&gt;
+&lt;p&gt;English does have what they refer to as “Sentence Parsing”, but this can never be compared with “Tarkeeb” in Arabic.Also, “sentence parsing”, as a subject taught formally in schools died out a long time ago. And again, that is besides the  fact  that  Tarkeeb  is  incomparably  more  advanced  and  sophisticated  as compared  to  “Sentence  Parsing”  in  English.  Nevertheless,  English  speakers whohad  studied  sentence  parsing  should  then  at  least  have  a  vague  idea  of what Tarkeeb is about.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The reason the author mentions the following:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;as neither does English nor –to the best of our knowledge –any other language havesuch a component as “Tarkeeb”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Is due to a drawback in how this field is itself defined. A layperson would not be able to explain the idea behind what Tarkeeb is without digging deeply into the academic areas of language. I happened to do so myself and uncovered that the equivalent of Tarkeeb in other languages is: &lt;a href="https://en.wikipedia.org/wiki/Text_annotation#Linguistic_annotation"&gt;Linguistic annotation&lt;/a&gt;. The field is so broad that there is even a generalized framework for Linguistic Annotation called &lt;a href="https://universaldependencies.org/"&gt;Universal Dependencies&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here is the explanation of UD:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Universal Dependencies (UD) is a framework for consistent annotation of grammar (parts of speech, morphological features, and syntactic dependencies) across different human languages.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;How I discovered Linguistic Annotation&lt;/h3&gt;
+&lt;p&gt;As I progress in my learning of Classical Arabic, the geek in me has been exploring various software related to different areas of language(and Arabic). Contrary to what the Quran Corpus offers on its &lt;a href="https://corpus.quran.com/java/download.jsp"&gt;download page&lt;/a&gt;, it is very much a closed-source project that cannot be hosted locally. I wanted to host my own instance of the software in order to experiment with applying Linguistic Annotation to other Islamic texts like Hadith(a future full article will be dedicated to explaining this fully). Through a major yak-shave, I uncovered both a more accurate definition(see below) and label for the concept(Linguistic Annotation) and a bunch of &lt;a href="https://corpus-analysis.com/"&gt;Tools for Corpus Linguistics&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;A clearer definition Tarkeeb&lt;/h3&gt;
+&lt;p&gt;Tarkeeb would basically be:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The annotation of the(textual) Arabic language with various concepts related to understanding language(like parts-of-speech, morphological features and dependency-graphs)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A picture is worth a thousand words, so here is a borrowed image from the Quran Corpus:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Surah Ikhlas" src="https://kentoseth.github.io/images/tarkeeb/corpus-image.png"&gt;&lt;/p&gt;
+&lt;p&gt;My definition is probably inaccurate to academic-linguists, but for laypeople it is easier to understand. Case in point is the Wikipedia explanation(linked above), which is too burdensome for laypeople to understand without having to know the various domain-specific definitions that only academic-linguists would.&lt;/p&gt;
+&lt;h3&gt;Annotation software&lt;/h3&gt;
+&lt;p&gt;I shared a link above to various Open Source &lt;a href="https://corpus-analysis.com/"&gt;Corpus Linguistics tools&lt;/a&gt;, but the ones that would be best suited for Tarkeeb are the annotation ones. I tried a few of them that were closest to what the Quran Corpus has in structure, like &lt;a href="https://github.com/proycon/flat"&gt;Flat&lt;/a&gt;. I was biased towards Python options as those would be the easiest for me to modify if I needed code-modifications. After some deeper investigation I found &lt;a href="https://inception-project.github.io/"&gt;INCEpTION&lt;/a&gt; via &lt;a href="https://webanno.github.io/webanno/"&gt;WebAnno&lt;/a&gt;. INCEpTION is really amazing and has practically everything I need for a possible clone of the Quran Corpus. In a future article I will discuss how to install and run INCEpTION locally.&lt;/p&gt;
+&lt;p&gt;Many of the advanced Open Source language-annotation projects are written in Java. The complexity of some of these projects is profound and I have a new-found respect for the often-derided language(which I am still not a fan of due to its C-like syntax and difficulty to grasp when compared to Python).&lt;/p&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;If you have any thoughts on Tarkeeb, learning Arabic, Open Source software(related to what I discussed above), drop me an email and we can share our thoughts on the subject.&lt;/p&gt;
+&lt;p&gt;[1] Al-Ajurumiyah is a famous Arabic Grammar book written by Abu `Abdillah Muḥammad b. Muḥammad b. Dāwūd as-Sinhājī&lt;/p&gt;</content><category term="Language"></category><category term="Arabic"></category><category term="NLP"></category><category term="languages"></category><category term="annotation-software"></category></entry><entry><title>Lists of early Islamic scholars who learned from each other</title><link href="https://kentoseth.github.io/posts/2021/Feb/19/lists-of-early-islamic-scholars-who-learned-from-each-other/" rel="alternate"></link><published>2021-02-19T02:00:00+02:00</published><updated>2021-02-19T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-02-19:/posts/2021/Feb/19/lists-of-early-islamic-scholars-who-learned-from-each-other/</id><summary type="html">&lt;p&gt;A bunch of lists highlighting who learned from who from the early scholar of Islam&lt;/p&gt;</summary><content type="html">&lt;p&gt;When browsing Wikipedia and looking up names of well-known classical Islamic scholars, the information on them is sparse in some regards. Who they learned from and who they taught is fundamental to how Islamic knowledge is passed down and is known as 'isnad'(chain - sometimes referred as "chain of narrators").&lt;/p&gt;
+&lt;p&gt;I read a book called "Four Illustrious Imams" written by Maulana Makbool Ahmed Suharwi and translated by Mufti Afzel Hossen Elias that provides some of the lists we are looking for. I will reproduce them as per the book(see the last portion "Ilmi Chart").&lt;/p&gt;
+&lt;h3&gt;Twelve Renowned Jurists amongst the Sahaba(RA)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Hadhrat Mu'aadh bin Jabal(RA)&lt;/li&gt;
+&lt;li&gt;Hadhrat Ubayy bin Ka'b(RA)&lt;/li&gt;
+&lt;li&gt;Hadhrat Abu Dardaa(RA)&lt;/li&gt;
+&lt;li&gt;Hadhrat Abdullah bin Mas'ood(RA)&lt;/li&gt;
+&lt;li&gt;Hadhrat Zaid bin Thaabit(RA)&lt;/li&gt;
+&lt;li&gt;Hadhrat Ali(RA)&lt;/li&gt;
+&lt;li&gt;Hadhrat Uthmaan(RA)&lt;/li&gt;
+&lt;li&gt;Hadhrat Abu Moosa Ash'ari(RA)&lt;/li&gt;
+&lt;li&gt;Hadhrat Jaabir(RA)&lt;/li&gt;
+&lt;li&gt;Hadhrat Abdullah bin Umar(RA)&lt;/li&gt;
+&lt;li&gt;Hadhrat Abdullah bin Abbaas(RA)&lt;/li&gt;
+&lt;li&gt;Hadhrat Mu'aawiya(RA)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Imam Abu Haneefa(ra) learned Hadith from&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Imam Ataa(ra)&lt;/li&gt;
+&lt;li&gt;Imam Naafi(ra)&lt;/li&gt;
+&lt;li&gt;Imam Abdur Rahmaan bin Hurmuzaan(ra)&lt;/li&gt;
+&lt;li&gt;Imam Salma bint Kuhail(ra)&lt;/li&gt;
+&lt;li&gt;Imam Baaqir(ra)&lt;/li&gt;
+&lt;li&gt;Imam Qataadah(ra)&lt;/li&gt;
+&lt;li&gt;Imam Amr bin Dinaar(ra)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Narrators of Hadith from Imam Abu Haneefa(ra)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Imam Wakee(ra)&lt;/li&gt;
+&lt;li&gt;Imam Yazeed bin Haaroon(ra)&lt;/li&gt;
+&lt;li&gt;Imam Sa'd bin Silt(ra)&lt;/li&gt;
+&lt;li&gt;Imam Abu Aasim(ra)&lt;/li&gt;
+&lt;li&gt;Imam Abdur Razzaaq bin Humaam(ra)&lt;/li&gt;
+&lt;li&gt;Imam Ubaidullah bin Moosa(ra)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Studied Hadith from Imam Abu Haneefa(ra)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Imam Yahya bin Sa'eed Qattaan(ra)&lt;/li&gt;
+&lt;li&gt;Imam Wakee bin Jarraa(ra)&lt;/li&gt;
+&lt;li&gt;Imam Sufyaan bin Uyayna(ra)&lt;/li&gt;
+&lt;li&gt;Imam Abdullah bin Mubaarak(ra)&lt;/li&gt;
+&lt;li&gt;Imam Abdur Razzaaq bin Humaam(ra)&lt;/li&gt;
+&lt;li&gt;Imam Yazeed bin Haaroon(ra)&lt;/li&gt;
+&lt;li&gt;Imam Hafs bin Ghayaath(ra)&lt;/li&gt;
+&lt;li&gt;Imam Yahya bin Zakariyya(ra)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Studied Fiqh from Imam Abu Haneefa(ra)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Hadhrat Abdullah bin Mubaarak(ra)&lt;/li&gt;
+&lt;li&gt;Hadhrat Yahya bin Sa'eed Qattaan(ra)&lt;/li&gt;
+&lt;li&gt;Hadhrat Wakee bin Jarraa(ra)&lt;/li&gt;
+&lt;li&gt;Hadhrat Sufyaan bin Uyayna(ra)&lt;/li&gt;
+&lt;li&gt;Hadhrat Yazeed bin Haaroon(ra)&lt;/li&gt;
+&lt;li&gt;Hadhrat Hafs bin Ghayaath(ra)&lt;/li&gt;
+&lt;li&gt;Hadhrat Yahya bin Abi Zaa'idah(ra)&lt;/li&gt;
+&lt;li&gt;Hadhrat Imam Abu Yusuf(ra)&lt;/li&gt;
+&lt;li&gt;Hadhrat Imam Zufar bin Hudhail(ra)&lt;/li&gt;
+&lt;li&gt;Hadhrat Imam Muhammed bin Hasan Shaybaani(ra)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Imam Muhammed bin Hasan Shaybaani(ra) narrated Hadith from&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Hadhrat Mas'ar bin Kudaam(ra)&lt;/li&gt;
+&lt;li&gt;Imam Imam Abu Haneefa(ra)&lt;/li&gt;
+&lt;li&gt;Imam Zufar bin Hudhail(ra)&lt;/li&gt;
+&lt;li&gt;Imam Awzaa'ee(ra)&lt;/li&gt;
+&lt;li&gt;Imam Sufyaan Thowri(ra)&lt;/li&gt;
+&lt;li&gt;Imam Maalik bin Dinaar(ra)&lt;/li&gt;
+&lt;li&gt;Imam Maalik bin Anas(ra)&lt;/li&gt;
+&lt;li&gt;Imam Abu Yusuf(ra)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Ten Distinguished Mujtahideen&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Imam Ja'far bin Muhammed(ra)&lt;/li&gt;
+&lt;li&gt;Imam Sufyaan Thowri(ra)&lt;/li&gt;
+&lt;li&gt;Imam Maalik bin Anas(ra)&lt;/li&gt;
+&lt;li&gt;Imam Awzaa'ee(ra)&lt;/li&gt;
+&lt;li&gt;Imam Laith bin Sa'd Misri(ra)&lt;/li&gt;
+&lt;li&gt;Imam Shaafi'ee(ra)&lt;/li&gt;
+&lt;li&gt;Imam Ishaaq bin Raahway(ra)&lt;/li&gt;
+&lt;li&gt;Imam Ahmed bin Hambal(ra)&lt;/li&gt;
+&lt;li&gt;Imam Bukhaari(Muhammed bin Isma'eel)(ra)&lt;/li&gt;
+&lt;li&gt;Imam Muslim(ra)&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Islam"></category><category term="scholars"></category><category term="hanafi"></category><category term="isnad"></category><category term="sahaba"></category></entry><entry><title>Merging and Filtering CSV files using Linux</title><link href="https://kentoseth.github.io/posts/2021/Feb/03/merging-and-filtering-csv-files-using-linux/" rel="alternate"></link><published>2021-02-03T02:00:00+02:00</published><updated>2021-02-03T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-02-03:/posts/2021/Feb/03/merging-and-filtering-csv-files-using-linux/</id><summary type="html">&lt;p&gt;Using a bunch of Linux tools to merge multiple CSV files and then filter that merged file&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently ran into a problem after downloading multiple CSV files. I wanted to firstly merge all those files and then extract/filter data from that merged file. Doing this is possible using code, but Linux has a bunch of powerful tools that can also handle such tasks and can do them very quickly(in comparison to Python).&lt;/p&gt;
+&lt;p&gt;Let us say we have a bunch of CSV files labelled like so: data_1.csv, data_2.csv and so on&lt;/p&gt;
+&lt;h3&gt;Merging&lt;/h3&gt;
+&lt;p&gt;In order to merge[1] all these CSV files, we can use &lt;code&gt;sed&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sed 1d data-*.csv &amp;amp;gt; merged.csv
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The command collects all the data- files and after merging them, saves them to &lt;code&gt;merged.csv&lt;/code&gt;. From the reference article I learned that if you used &lt;code&gt;*.csv&lt;/code&gt; it may also merge the &lt;code&gt;merged.csv&lt;/code&gt; file and create duplicates and other issues.&lt;/p&gt;
+&lt;h3&gt;Filtering - exact match&lt;/h3&gt;
+&lt;p&gt;In order to find an exact entry in the CSV file, we can use &lt;code&gt;awk&lt;/code&gt;[2]:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;awk -F&amp;quot;,&amp;quot; &amp;#39;$1==somestring&amp;#39; merged.csv
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The &lt;code&gt;","&lt;/code&gt; tells &lt;code&gt;awk&lt;/code&gt; to view the comma as a separator. The &lt;code&gt;$1&lt;/code&gt; says to look in the first column. &lt;code&gt;somestring&lt;/code&gt; is the exact match we are looking for in column 1. &lt;code&gt;merged.csv&lt;/code&gt; is the file we want to look into for the value.&lt;/p&gt;
+&lt;h3&gt;Filtering - partial strings&lt;/h3&gt;
+&lt;p&gt;My main filtering goal was to use partial strings to find certain values that match the partial string. Again we will use &lt;code&gt;awk&lt;/code&gt;[3]:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;awk &amp;#39;index($1, &amp;quot;partialstring&amp;quot;)&amp;#39; merged.csv
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Similar to the above, &lt;code&gt;$1&lt;/code&gt; looks in column 1 for the &lt;code&gt;"partialstring"&lt;/code&gt; string. In both the &lt;code&gt;awk&lt;/code&gt; commands you can also save the output to a file like so:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;awk 'index($1, "partialstring")' merged.csv &amp;gt; output.txt&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;I hope these 3 commands help you save a lot of time if you are attempting to do anything with CSV files.&lt;/p&gt;
+&lt;p&gt;Sources:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://blog.softhints.com/how-to-merge-multiple-csv-files-with-python/"&gt;1 - https://blog.softhints.com/how-to-merge-multiple-csv-files-with-python/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/2373885/searching-a-csv-file-using-grep"&gt;2 - https://stackoverflow.com/questions/2373885/searching-a-csv-file-using-grep&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/17001849/awk-partly-string-match-if-column-word-partly-matches"&gt;3 - https://stackoverflow.com/questions/17001849/awk-partly-string-match-if-column-word-partly-matches&lt;/a&gt;&lt;/p&gt;</content><category term="Linux"></category><category term="linux"></category><category term="csv"></category><category term="awk"></category><category term="sed"></category></entry><entry><title>Using OCR, CAT and crowdsourcing to translate Classical Arabic works</title><link href="https://kentoseth.github.io/posts/2021/Jan/12/using-ocr-cat-and-crowdsourcing-to-translate-classical-arabic-works/" rel="alternate"></link><published>2021-01-12T03:00:00+02:00</published><updated>2021-01-12T03:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-01-12:/posts/2021/Jan/12/using-ocr-cat-and-crowdsourcing-to-translate-classical-arabic-works/</id><summary type="html">&lt;p&gt;Using a combination of OCR and CAT software and the power of crowdsourced translations to translate Classical Arabic books&lt;/p&gt;</summary><content type="html">&lt;p&gt;I was recently exploring the idea of how to convert Classical Arabic/Islamic works into English using a combination of CAT(Computer Assisted Translation), OCR(Optical Character Recognition) and crowdsourcing students in Arabic studies. The lazy answer for wanting to translate books is to use a combination of OCR and MT(machine-translation) tools(Google/Bing translator) to get an Arabic-to-English translation. This does not work for a few reasons:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Machine-translation is not as good as human translation as explained &lt;a href="https://www.cmmlanguages.com/cat-tools-vs-machine-translation.html"&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Machine-translation is capable of converting MSA Arabic sentences somewhat accurately, but many Islamic words are not covered by the existing MT tools and will not be accurate for basic sentences.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Below I will discuss the existing challenges and then present my theoretical solution.&lt;/p&gt;
+&lt;h3&gt;The Challenges&lt;/h3&gt;
+&lt;p&gt;Although there are many translations of famous works(like the Quran and the 6 Hadith books), there are also lots of other niche works that are not translated to English. The second shortcoming is that copyright is not strictly respected and many PDF documents are floating around of various Arabic-English translations that presumably do not have the permission of the respective authors. The lack of respect for copyright is a negative for expert translators who spend many thousands of hours going through volumes of a single work and charge a fair price for their translations. These works are then scanned/uploaded without their permission and they lose valuable income that could enable them to create more translations.&lt;/p&gt;
+&lt;p&gt;Thirdly, many existing translations are only available in physical(printed) books. No digital copies, APIs or even copyable texts exist for many translated works beyond the Quran/Hadith. Some PDF readers are able to copy the English text(even though these are scanned versions of the physical books) but attempting to copy the Arabic text results in malformed text appearing(likely due to left-to-right copying of the text while Arabic is a right-to-left language).&lt;/p&gt;
+&lt;p&gt;Lastly, the economics of translating niche works does not make many of them feasible for expert translators. A simple example might be a work like &lt;a href="https://en.wikipedia.org/wiki/Muhammad_al-Shaybani#Works"&gt;al-Jami al-Saghir&lt;/a&gt; by Imam Muhammad al-Shaybani. A niche book like this might only appeal to advanced students of Islamic knowledge within the Hanafi school of jurisprudence.&lt;/p&gt;
+&lt;h3&gt;Outlining the Steps&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Sourcing PDF versions of Arabic-only Classical works - this will not affect copyright(to the best of my knowledge) as most of the authors lived 1000+ years ago and many of the printed works are just reprints, so even old editions will work&lt;/li&gt;
+&lt;li&gt;Choosing a source-material for the Translation-Memory of the CAT tool - in this case I think that the Arabic-English from the Hadith books will be the optimal solution.&lt;/li&gt;
+&lt;li&gt;Appealing to students of Arabic studies to participate in crowdsourcing the translations - this is a win-win as it helps them improve their Arabic translation skills&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;The Solution&lt;/h3&gt;
+&lt;p&gt;The following is my algorithm for how to achieve the desired outcome. I will mention the software I propose to use in each step below.&lt;/p&gt;
+&lt;h4&gt;PDFs and Scanning - OCR&lt;/h4&gt;
+&lt;p&gt;In order to make the text copyable from PDFs, I propose using 2 pieces of software:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/tesseract-ocr/tesseract"&gt;Tesseract&lt;/a&gt; - this will be the engine that will read the text. Training data can be sourced from &lt;a href="https://github.com/tesseract-ocr/tessdata_best"&gt;here&lt;/a&gt; for Arabic&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/writecrow/ocr2text"&gt;PDF to TXT (with OCR)&lt;/a&gt; - this is the only listed option for PDF-to-text built on top of Tesseract. Using this script on top of the OCR engine will enable scanning of the sourced PDFs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Translation Management - CAT&lt;/h4&gt;
+&lt;p&gt;The best translation management tool with multi-user support I found is &lt;a href="https://weblate.org/en/"&gt;Weblate&lt;/a&gt;. It is the best because:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It is used by 1000+ other projects for translations&lt;/li&gt;
+&lt;li&gt;It has multi-user support&lt;/li&gt;
+&lt;li&gt;It has built-in version-control&lt;/li&gt;
+&lt;li&gt;It has Translation Memory support&lt;/li&gt;
+&lt;li&gt;It is popular on GitHub(the most Stars)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The source material for the Translation Memory can be obtained from the sunnah.com &lt;a href="https://sunnah.api-docs.io/"&gt;API&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Once the data is loaded into the Translation Memory, this can be applied app-wide and various students can use the CAT tool to translate pieces of content much faster and the content can also be reviewed by others before being approved.&lt;/p&gt;
+&lt;h4&gt;Books, Authors and Works&lt;/h4&gt;
+&lt;p&gt;A starting list of books I found is here: &lt;a href="https://en.wikipedia.org/wiki/List_of_Sunni_books"&gt;List of Sunni books&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This can be a starting point for sourcing/finding various books to translate.&lt;/p&gt;
+&lt;p&gt;There should be some type of standard for approving which books are to be crowdsourced as translations. I do not have such a standard as of yet but it can be developed as time goes by.&lt;/p&gt;
+&lt;h4&gt;The Goals&lt;/h4&gt;
+&lt;p&gt;The first and primary goal for such a task is to Obtain the Pleasure of God. Although we might shy away from admitting it on technical/personal blogs, deep inside a person's heart, this is always the main goal.&lt;/p&gt;
+&lt;p&gt;Another important goal for me is to document and develop a system where both the content and the technology behind it is Open Source and accessible to all. I would likely propose that all the crowdsourced translations have a permissive license like the Wikipedia content license so that the translated works are accessible to all(and any edits and improvements can be made via the system that is accessible to students pursuing Arabic studies).&lt;/p&gt;</content><category term="Language"></category><category term="culture"></category><category term="languages"></category><category term="ideas"></category><category term="OCR"></category><category term="CAT"></category><category term="Arabic"></category></entry><entry><title>Expanding Blog Scope</title><link href="https://kentoseth.github.io/posts/2020/Oct/10/expanding-blog-scope/" rel="alternate"></link><published>2020-10-10T03:00:00+02:00</published><updated>2020-10-10T03:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2020-10-10:/posts/2020/Oct/10/expanding-blog-scope/</id><summary type="html">&lt;p&gt;Blogging about other topics of interest outside the technology scope&lt;/p&gt;</summary><content type="html">&lt;p&gt;I initially planned on maintaining this blog with a focus on just technology-related topics like programming and Information Security(InfoSec). As my interests have evolved(possibly due to age?) and my unwillingness to maintain multiple different blogs that focus on other areas of interest, I have decided to expand this personal blog to talk about other interesting phenomenon relative to me.&lt;/p&gt;
+&lt;p&gt;2 key topics I have found worthy of blogging about are: culture and languages&lt;/p&gt;
+&lt;h3&gt;Languages&lt;/h3&gt;
+&lt;p&gt;I start with languages because I have taken up the effort to learn a new language(Arabic) and I have also been learning "how to learn a new language". There is a lot to be said about this and I plan to do so.&lt;/p&gt;
+&lt;p&gt;I have also found that textual preservation of my home-language(&lt;a href="https://en.wikipedia.org/wiki/Memoni_language"&gt;Memon&lt;/a&gt;) is in short supply online.&lt;/p&gt;
+&lt;h3&gt;Culture&lt;/h3&gt;
+&lt;p&gt;Noting the shortage of textual preservation of my home-language(above), there is also a shortage of preservation of the cultural habits of the Memon people. As South African Memons, we have also diverged quite a bit from our counterparts in India/UK/Malawi/Canada.&lt;/p&gt;
+&lt;p&gt;Sharing broader culturally-Memon topics and the South African divergence will be a great lesson in introspection and possibly bias too.&lt;/p&gt;
+&lt;h3&gt;More&lt;/h3&gt;
+&lt;p&gt;I also hope to increase my frequency of blogging and speak about other topics of interest. "Lifehacks", like my article about &lt;a href="https://kentoseth.tk/2019/Mar/17/rechargeable-batteryaaaaa-hack/#rechargeable-batteryaaaaa-hack"&gt;Rechargeable batteries(AA/AAA)&lt;/a&gt;, will also appear occasionally.&lt;/p&gt;
+&lt;p&gt;I also plan to continue blogging about technology, but after 6+ years of &lt;a href="https://news.ycombinator.com/news"&gt;Hacker News&lt;/a&gt;, technology-blogging can feel 'stale' at times.&lt;/p&gt;</content><category term="Other"></category><category term="culture"></category><category term="languages"></category><category term="blog"></category><category term="ideas"></category><category term="thoughts"></category></entry><entry><title>Rechargeable battery(AA/AAA) hack</title><link href="https://kentoseth.github.io/posts/2019/Mar/17/rechargeable-batteryaaaaa-hack/" rel="alternate"></link><published>2019-03-17T03:00:00+02:00</published><updated>2019-03-17T03:00:00+02:00</updated><author><name>Moe. H</name></author><id>tag:kentoseth.github.io,2019-03-17:/posts/2019/Mar/17/rechargeable-batteryaaaaa-hack/</id><summary type="html">&lt;p&gt;A simple hack to recharge your rechargeable batteries in electronic devices&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have been using a wireless-mouse for a long time now. Instead of buying expensive single-use batteries, I decided I would use some spare AAA rechargeable batteries I had laying around.&lt;/p&gt;
+&lt;p&gt;I didn't own a recharging-device for the batteries though. However, my cordless housephone/landline also uses the same size batteries as the wireless-mouse. With this convenience, I now recharge my batteries using the cordless housephone and don't need to buy a specific recharging-device for the batteries.&lt;/p&gt;
+&lt;p&gt;This will save you time(finding where you left the recharging-device) and money(buying a single-use electronic item). You may also find this solution convenient, as you will own 1 less electronic item. Also worth a mention that this type of "hack" is so intuitive that people may overlook it.&lt;/p&gt;</content><category term="Other"></category><category term="battery"></category><category term="batteries"></category><category term="AA"></category><category term="AAA"></category><category term="rechargeable"></category><category term="hacks"></category></entry><entry><title>ESL - European Super League</title><link href="https://kentoseth.github.io/posts/2018/Mar/26/esl-european-super-league/" rel="alternate"></link><published>2018-03-26T03:00:00+02:00</published><updated>2018-03-26T03:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2018-03-26:/posts/2018/Mar/26/esl-european-super-league/</id><summary type="html">&lt;p&gt;Alternative to the UEFA Champions League&lt;/p&gt;</summary><content type="html">&lt;p&gt;The UEFA Champions League (UCL) is a 32-team, continental tournament played in Europe. The elite teams of Europe contest this tournament every year. It is considered by many to be the pinnacle of club football.&lt;/p&gt;
+&lt;p&gt;I have been a fan of the UCL for over 15 years now. From seeing Liverpool pull off the Istanbul win of 2005 to Real Madrid retaining the UCL (a feat no other team has achieved in the current format until now). The tournament has been great since the time I've gotten to know it.&lt;/p&gt;
+&lt;p&gt;Although the tournament has grown in popularity over the years, I have a few criticisms of it (being an avid fan and self-appointed "football critic"). &lt;/p&gt;
+&lt;p&gt;Beyond the criticisms, I will also introduce a new format for a continental European tournament, which I have branded: ESL - European Super League&lt;/p&gt;
+&lt;h2&gt;Criticisms&lt;/h2&gt;
+&lt;h3&gt;The best vs. outcome of the selections/draws&lt;/h3&gt;
+&lt;p&gt;The UCL format is similar to the World Cup format. 32 teams in groups, with the top 2 from each group proceeding into the knockout-rounds that go all the way to the finals.&lt;/p&gt;
+&lt;p&gt;While you occassionally get the &lt;em&gt;group of death&lt;/em&gt; each year (a difficult group with at least 3 winning-potential teams), the rest of the format leans towards the outcome of the selections/draws.&lt;/p&gt;
+&lt;p&gt;A team could arguably have an &lt;em&gt;easy&lt;/em&gt; path all the way to the semi-finals and only face another real contender then. This doesn't actually allow fans to see "the best vs. the best".&lt;/p&gt;
+&lt;p&gt;As a fan of a single club, you may prefer having that &lt;em&gt;easy&lt;/em&gt; path. However, if you assumed a neutral position, wouldn't you rather see the best teams square off with each other to genuinely prove who is Europes best club?&lt;/p&gt;
+&lt;h3&gt;Defensive football ("parking the bus")&lt;/h3&gt;
+&lt;p&gt;I will be the first to admit that it is not that bad to see a defensive masterclass outdo a relentless attacking team. We've seen teams like Inter Milan and Chelsea pull these off by essentially loading their defensive third with all their players and then attempting to play on the counter.&lt;/p&gt;
+&lt;p&gt;While a few of these games are great, to watch many of them is quite painful. It is a relentless onslaught by the attacking team that would fatigue a neutral watcher of the beautiful game. It also falls into the category of game-management, but in certain cases, the entire away game is &lt;em&gt;managed&lt;/em&gt; for a certain outcome.&lt;/p&gt;
+&lt;p&gt;This is certainly not as exciting as the attacking mantra of: &lt;strong&gt;anything you score, we will score more&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Minnow teams&lt;/h3&gt;
+&lt;p&gt;Seeing the underdog win a tournament like the UCL is 1 of the hopes of many neutral fans. Pre-money, the last time this occurred was in 2004 with Porto FC. With &lt;em&gt;big-money&lt;/em&gt; now playing a central role in most big teams, seeing a minnow win the UCL is extremely unlikely (into the foreseeable future).&lt;/p&gt;
+&lt;p&gt;This leaves minnows as &lt;em&gt;fillers&lt;/em&gt;. They occassionally break into the knockout-rounds, but to most of them, just making it to the UCL itself is a win. When the minnows face the &lt;em&gt;giants&lt;/em&gt;, it becomes a training execise where they are beaten both home and away (7 or 8 nil scorelines).&lt;/p&gt;
+&lt;h2&gt;The European Super League (ESL) alternative&lt;/h2&gt;
+&lt;p&gt;The ESL is a proposed upgrade to the current UCL format. Proposed changes in the ESL include the tournament structure, as well as the points system.&lt;/p&gt;
+&lt;h3&gt;Format&lt;/h3&gt;
+&lt;p&gt;Switching formats to the ESL would require adjusting the entry-requirements. The quota system would need to be adjusted down to 20 teams. These 20 teams would then compete in a league-like format, with home/away games.&lt;/p&gt;
+&lt;p&gt;The winner of the league each season would be the team that accumulates the most points. There would be no relegation, as each current season of teams in the ESL would be determined by the qualifying teams positions in their local leagues of the previous season.&lt;/p&gt;
+&lt;h3&gt;Points&lt;/h3&gt;
+&lt;p&gt;Moving to a league format might risk having situations where certain teams choose to play out to draws (especially on away fixtures). To remedy this situation, switching to a "positive-points" system would ensure that attacking football is guaranteed in every fixture.&lt;/p&gt;
+&lt;p&gt;The positive-points system would look like so:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Home team Win = 2 points&lt;/li&gt;
+&lt;li&gt;Away team Win = 3 points&lt;/li&gt;
+&lt;li&gt;Draw = 0 points&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The points system would possibly require review by game theorists to see if this positive-points system could be &lt;em&gt;gamed&lt;/em&gt; by teams. Due to its simplicity and incentives though, it should encourage away teams to play attacking football too.&lt;/p&gt;
+&lt;h2&gt;Finances&lt;/h2&gt;
+&lt;p&gt;I have purposely avoided discussion of the financing behind the ESL, as that is a complex topic on its own.&lt;/p&gt;
+&lt;p&gt;The current UCL model is a complex set of licensing deals and sponsorships.&lt;/p&gt;
+&lt;p&gt;For simplicity sake, I would advocate for a live-streaming model that is accessible globally to all audiences.&lt;/p&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Every plan has rough edges. I welcome people to review and modify the idea of the ESL, whilst keeping simplicity in mind at all times. You can reach me at my email to share your ideas.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Copyright reserved. This article can be published in full on all sports-related mediums, provided that a prominent link back to this website is placed both above and below the article and full acknowledgement of the author is prominently mentioned above and below the article. The author also reserves the right to revoke the republishing of this article on any mediums the author wishes to.&lt;/em&gt;&lt;/p&gt;</content><category term="Sports"></category><category term="football"></category><category term="Europe"></category></entry><entry><title>Nim - it feels like Python</title><link href="https://kentoseth.github.io/posts/2017/May/02/nim-it-feels-like-python/" rel="alternate"></link><published>2017-05-02T03:00:00+02:00</published><updated>2017-05-02T03:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2017-05-02:/posts/2017/May/02/nim-it-feels-like-python/</id><summary type="html">&lt;p&gt;A light intro to the Nim programming language&lt;/p&gt;</summary><content type="html">&lt;p&gt;In the Python world, there is a quest to always make Python "faster" by certain individuals/groups (sometimes due to need, sometimes simply to test the limits of the language and sometimes simply &lt;em&gt;because we can&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;There are many variations of this in the form of JIT(Just-In-Time) Compilers, as well as sub/supersets of the Python language itself.&lt;/p&gt;
+&lt;p&gt;Here is a quick list of some of the performance-enhancing tools written to make Python "faster":&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PyPy (JIT)&lt;/li&gt;
+&lt;li&gt;Cython (superset)&lt;/li&gt;
+&lt;li&gt;Pyston (JIT)&lt;/li&gt;
+&lt;li&gt;Pyjion (JIT)&lt;/li&gt;
+&lt;li&gt;Nuitka (Compiler ~ of sorts)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There has even be talk of removing the GIL (Global Interpreter Lock) to improve Python's performance. While these initiatives are great and I admire the work done through these initiatives to make new (and quite likely, existing) codebases gain better performance, it may also be prudent to invest a little time evaluating languages that provide better-performance out-of-the-box.&lt;/p&gt;
+&lt;p&gt;There is a saying that: &lt;em&gt;Go-lang was written to attract Java developers but many Python developers picked up the language instead&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;How far this is true, I am not sure. Go and Rust are the 2 trending systems-languages as of 2017. They get quite a bit of coverage (blogs, etc.) and have corporate-financial-backing. &lt;/p&gt;
+&lt;p&gt;On the topic of newer &lt;code&gt;systems-languages&lt;/code&gt; though, I would like to introduce the language called: Nim/nim-lang (formerly called "Nimrod"): &lt;a href="https://nim-lang.org"&gt;Nim-lang website&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Nim can be summarized to be addressing issues at the same level as: C++, D, Go, Rust&lt;/p&gt;
+&lt;p&gt;Nim is mostly community-driven, with a very small group of core/compiler developers.&lt;/p&gt;
+&lt;p&gt;I am not an expert in programming-language design, so any opinions I have surrounding that topic will more than likely be incorrect. However, I would like to display some Nim code to show how &lt;em&gt;similar&lt;/em&gt; it can otherwise appear to Python (and justify why the language appeals to me).&lt;/p&gt;
+&lt;p&gt;Here is a short snippet of Nim code that calculates whether a number is even:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;math&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;strutils&lt;/span&gt;
+
+&lt;span class="n"&gt;proc&lt;/span&gt; &lt;span class="n"&gt;is_even&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;value2&lt;/span&gt; &lt;span class="n"&gt;mod&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;new_value&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;value2&lt;/span&gt; &lt;span class="n"&gt;div&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;new_value&lt;/span&gt;
+
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;The number you have entered is an odd number: &amp;quot;&lt;/span&gt;
+      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;value2&lt;/span&gt;
+
+&lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Enter your Number: &amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;readLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;stdin&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;val_cleaned&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;parseInt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;is_even&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;val_cleaned&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are coming from a purely Python/dynamic programming background, it may be a bit unusual to initially understand the code. However, let me rewrite the part where the &lt;code&gt;proc&lt;/code&gt; is, which will then display how similar Nim &lt;em&gt;feels&lt;/em&gt; to Python:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;def is_even(value2):
+    if value2 % 2 == 0:  
+        new_value = value2 / 2  
+        return new_value  
+    else:
+        print(&amp;quot;The number you have entered is an odd number: &amp;quot;)
+        return value2
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I have previously dabbled in C, C++ and also attempted to learn Go. None of these languages were quite as enjoyable to code in (for a Pythonista familiar with dynamic-programming). After overcoming the hurdle of static-typing, which has become a very useful feature to have, Nim and Python feel very alike in terms of readability, etc.&lt;/p&gt;
+&lt;p&gt;The most critical thing I learnt when learning Nim was that: &lt;em&gt;a &lt;code&gt;proc&lt;/code&gt; in Nim is a &lt;code&gt;def&lt;/code&gt; in Python&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;(in simpler terms: a function is a function)&lt;/p&gt;
+&lt;p&gt;I am now using Nim for a few things, chief among them being CLI-apps. The code is compiled to dependency-free binaries and (from the library I use), the apps execute similar to what most Linux-users would be used to (&lt;code&gt;apt install something&lt;/code&gt; or &lt;code&gt;tar -czf file.tar.gz folder/&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;I have no plans on completely switching to Nim. The dearth of libraries/assistance/documentation/community is part of the reason why Python is such a great language.&lt;/p&gt;
+&lt;p&gt;However, if you are a frequent participant of tech-blogs/forums/news-sites and see lots of Go/Rust comparisons, I recommend considering Nim as well.&lt;/p&gt;
+&lt;p&gt;Some useful links/resources:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://nim-lang.org/docs/tut1.html"&gt;Introductory Nim Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nim-lang.org/docs/lib.html"&gt;Nim Standard Library&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nim-lang.org/community.html"&gt;Community Link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://glot.io/new/nim"&gt;Online Nim Compiler&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Nim"></category><category term="nim"></category><category term="python"></category></entry><entry><title>Installing latest Python3 version on Ubuntu 14.04</title><link href="https://kentoseth.github.io/posts/2016/Sep/13/installing-latest-python3-version-on-ubuntu-1404/" rel="alternate"></link><published>2016-09-13T02:00:00+02:00</published><updated>2016-09-13T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2016-09-13:/posts/2016/Sep/13/installing-latest-python3-version-on-ubuntu-1404/</id><summary type="html">&lt;p&gt;How to install the latest Python version on Ubuntu 14.04&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, I have wanted to experiment with the latest features of Python3 (3.5.2 as of this date). Unfortunately, Ubuntu 14.04 is stuck on 3.4.3 and it is unlikely that 3.5 will ever come to this LTS release (as per the way the release-schedules work, or my understanding thereof).&lt;/p&gt;
+&lt;p&gt;During the discovery stage, I investigated and found a variety of ways to install different versions of Python on the same system. Some of these options are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PyEnv (quite popular)&lt;/li&gt;
+&lt;li&gt;Pythonbrew (an old favourite of mine, but the project is not being maintained anymore)&lt;/li&gt;
+&lt;li&gt;Containers (this is a lazy answer, and you will see why below)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I didn't want to risk borking my machine with a newer Python version being installed (even if it was installed in parallel to the system-version), so I settled on doing everything within an LXC container.&lt;/p&gt;
+&lt;h3&gt;Goals&lt;/h3&gt;
+&lt;p&gt;My goals were:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create the lightest possible containerized-option&lt;/li&gt;
+&lt;li&gt;Try to keep the install process as simple as possible&lt;/li&gt;
+&lt;li&gt;Avoid any need to modify/add anything on the host system&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Install instructions&lt;/h3&gt;
+&lt;p&gt;We can create/start/attach our container using the LXC Ubuntu template:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo lxc-create --name py35 --template ubuntu
+sudo lxc-start --name py35 --daemon
+sudo lxc-attach --name py35
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I have called my container: &lt;code&gt;py35&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You should now either be connected as the 'root' user (within the container) or if you had to go through the login process, as the 'ubuntu' user. The rest of this tutorial will assume that you are the 'ubuntu' user.&lt;/p&gt;
+&lt;p&gt;The Ubuntu template lacks the the required package/s to add the 'deadsnakes' PPA, which is what we will use to get the latest Python version (which we will then use with virtualenv). Let's add the PPA:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:fkrull/deadsnakes
+sudo apt-get update
+sudo apt-get install python3.5
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Check if it successfully installed:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;python3.5 --version&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Install virtualenv:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo pip3 install virtualenv&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;I will now create a new folder for my virtualenv project. I will call this folder "project1". Then I will create the virtualenv itself:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /home/ubuntu/project1
+virtualenv -p /usr/bin/python3.5 /home/ubuntu/project1/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Going through the virtualenv process, you should also have the latest &lt;code&gt;pip&lt;/code&gt; installed.&lt;/p&gt;
+&lt;p&gt;Let us test that everything worked:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd /home/ubuntu/project1/
+source /home/ubuntu/project1/bin/activate
+python --version
+# should output 3.5.2
+pip --version
+# should output 8.1.2
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Containers = lazy answer?&lt;/h3&gt;
+&lt;p&gt;Above, I mentioned that using containers for different Python versions is a lazy answer. The simple reason for this is that even if you use containers, you are still stuck with the system-version. So the only way to bump up/down your Python version is to move to a newer/older Ubuntu release. This still doesn't guarantee you will get the version you wish. My instructions above get you the version you want, whilst keeping your Host protected from different Python installs.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;Final message&lt;/h3&gt;
+&lt;p&gt;You have now successfully installed Python 3.5.2 on Ubuntu 14.04. You could easily install multiple Pythons/projects within a single container, but things could quickly get bloated. I recommend using containers as the layer of abstraction/isolation for each large-enough project and only using &lt;code&gt;virtualenv&lt;/code&gt; (within a container) when you require the latest/fixed Python versions.&lt;/p&gt;</content><category term="LXC"></category><category term="ubuntu"></category><category term="LXC"></category><category term="docker"></category></entry><entry><title>Basics of LXC: 2 of 2</title><link href="https://kentoseth.github.io/posts/2016/Aug/22/basics-of-lxc-2-of-2/" rel="alternate"></link><published>2016-08-22T02:00:00+02:00</published><updated>2016-08-22T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2016-08-22:/posts/2016/Aug/22/basics-of-lxc-2-of-2/</id><summary type="html">&lt;p&gt;Basic intro to LXC&lt;/p&gt;</summary><content type="html">&lt;p&gt;In my previous blog post, I mentioned why I moved from Docker to LXC (reference: &lt;a href="https://kentoseth.github.io/2016/May/17/moving-from-docker-to-lxc-1-of-2-the-why/"&gt;here&lt;/a&gt; ).&lt;/p&gt;
+&lt;p&gt;I also mentioned 7 basic commands you will need to get started with LXC. I will list them and walk-through each below.&lt;/p&gt;
+&lt;h3&gt;Container Basics&lt;/h3&gt;
+&lt;p&gt;Let us start by creating and starting a container:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo lxc-create -n myfirstcont -t ubuntu
+sudo lxc-start -n myfirstcont -d
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The first command will create a container called &lt;code&gt;myfirstcont&lt;/code&gt; from the &lt;em&gt;remote&lt;/em&gt; Ubuntu template.&lt;/p&gt;
+&lt;p&gt;After the first command has successfully executed, you can start the container using the second command (lxc-start).&lt;/p&gt;
+&lt;p&gt;Next, we will get &lt;em&gt;into&lt;/em&gt; the container:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-attach -n myfirstcont&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This command will take you into the container as the root user.&lt;/p&gt;
+&lt;p&gt;Once you are in the container, you can work with it as you normally would in a regular Ubuntu OS (although a number of regular/standard packages may not be present).&lt;/p&gt;
+&lt;p&gt;Now that we started our container and we have also managed to get &lt;em&gt;within&lt;/em&gt; the container (via lxc-attach), we may need to obtain some information about the container to work with it externally.&lt;/p&gt;
+&lt;p&gt;A common example is when we start an HTTP-server within the container (and bind the server to the 0.0.0.0 IP). To obtain the IP-address assigned to the container (as well as other basic information), we will use:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-info -n myfirstcont&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You will get a basic amount of information using the &lt;code&gt;lxc-info&lt;/code&gt; option.&lt;/p&gt;
+&lt;p&gt;The next 2 commands will stop and destroy your container.&lt;/p&gt;
+&lt;p&gt;Stopping:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-stop -n myfirstcont&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Destroying:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-destroy -n myfirstcont&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The container itself will be destroyed, but your template (somewhat similar to a Docker image) will still exist.&lt;/p&gt;
+&lt;p&gt;The last command is to list all containers on your system. The command will list all containers, regardless of state:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-ls&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;One important thing to mention about this tutorial is that we are using the default LXC instructions and creating &lt;em&gt;priviledged&lt;/em&gt; containers by using &lt;code&gt;sudo&lt;/code&gt;. I recommend reading up about the priviledged/unpriviledged aspects of containers &lt;a href="https://help.ubuntu.com/lts/serverguide/lxc.html#lxc-basic-usage"&gt;here&lt;/a&gt; .&lt;/p&gt;
+&lt;h3&gt;Mounting&lt;/h3&gt;
+&lt;p&gt;In my first post, I mentioned that mounting from the host &amp;gt; container or vice-versa took a bit of time to figure out. For the purposes of simplicity and ease-of-use for anyone reading this, here is a set of commands to use for mounting.&lt;/p&gt;
+&lt;p&gt;Host-to-container:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo mount --bind /var/lib/lxc/myfirstcont/rootfs/home/ubuntu/myfolder/ /Project/path/to/hostfolder&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Container-to-host:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo mount --bind /Project/path/to/hostfolder /var/lib/lxc/myfirstcont/rootfs/home/ubuntu/myfolder&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Installing small Python library in a container&lt;/h3&gt;
+&lt;p&gt;If you have not destroyed the container you created above, let us go ahead and restart the container:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo lxc-start -n myfirstcont -d
+sudo lxc-attach -n myfirstcont
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You should be attached as the root-user within the container.&lt;/p&gt;
+&lt;p&gt;Now run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get update
+apt-get upgrade
+apt-get install -y python3-pip
+pip3 install pelican markdown
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You have now successfully created an LXC container for the static site-generator &lt;a href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; .&lt;/p&gt;
+&lt;h3&gt;LXD as an easier LXC-manager&lt;/h3&gt;
+&lt;p&gt;In the final part of this blog post, I would like to mention &lt;a href="https://linuxcontainers.org/lxd/"&gt;LXD&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;Although the link above explains things better than I can, LXD is a very useful LXC-manager. It provides unpriviledged containers by default and uses the Docker image/container approach (instead of templates).&lt;/p&gt;
+&lt;p&gt;LXD provides a host of other features that would be useful for large-scale container-management.&lt;/p&gt;
+&lt;p&gt;I would strongly urge anyone interested in using LXC-containers in production to consider using LXD to manage your infrastructure.&lt;/p&gt;</content><category term="LXC"></category><category term="ubuntu"></category><category term="LXC"></category><category term="docker"></category></entry><entry><title>Moving from Docker to LXC: 1 of 2 (The why)</title><link href="https://kentoseth.github.io/posts/2016/May/17/moving-from-docker-to-lxc-1-of-2-the-why/" rel="alternate"></link><published>2016-05-17T02:00:00+02:00</published><updated>2016-05-17T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2016-05-17:/posts/2016/May/17/moving-from-docker-to-lxc-1-of-2-the-why/</id><summary type="html">&lt;p&gt;Why I switched from Docker to LXC&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ever since discovering Docker, I've been a huge fan of the whole concept of containers and how they separate concerns.&lt;/p&gt;
+&lt;p&gt;Up until recently, I always saw a container as a "container", and did not understand that Docker is very specific about what they interpret a container to be. Then 1 day, I wished to try to install a bunch of different applications to get a mail-server running (namely: Postfix, Dovecot and Roundcube).&lt;/p&gt;
+&lt;p&gt;Much to my dismay, I discovered that it was a real PITA to install these things into a single Docker container. Digging deeper into my issues, I was led to the discovery that Dockers philosophy is driven by the whole "micro-services" concept. What this means is that Docker views each container as something that does a single process and a single process alone. You can make the process as big (or small) as you wish, but the goal of this philosophy is to encourage small services vs. a monolith (or so I interpreted it as that). Think about it as: confining your single search box into its own process vs. the big box of bad that is "WordPress, Apache, MySQL and PHP combined".&lt;/p&gt;
+&lt;p&gt;Well things weren't going too great, so after wrangling lots of minds on #Docker and asking a few friends/colleagues via various mediums, it was brought to my attention that perhaps LXC would be a better option for what I wished to do. I could dump entire monoliths into LXC and that would be fine.&lt;/p&gt;
+&lt;p&gt;During my research time, I also found this really cool infographic (with detailed article) that everyone learning about containers should see:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://web.archive.org/web/20170108164728/https://www.flockport.com/wp-content/uploads/2014/08/lxc-vs-docker5.png"&gt;Flockport: Docker vs. LXC&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Being able to understand this fully will probably save you (and likely myself) lots of headaches in the future, especially as we all move to the containerized world in 2016 and beyond. Just like many developers out there in the far reaches of the world, I am but a small fry. I used to use Docker as a drop-in replacement for virtualenv for separating my Python projects. This did work reasonably well, but when I decided that I'd like to get my Postfix/Dovecot monolith up, the not-so-obvious warts crept in. I'm no Google/Amazon and I can probably get by with 98% of my projects being monoliths. The micro-service architecture also adds a level of complexity that turns the 1-man coder into a certified devops/sysadmin that needs to understand a lot of important things on that devops/sysadmin level.&lt;/p&gt;
+&lt;p&gt;From a security point-of-view, if you don't get things right with Docker containers, you can/will probably shoot yourself in the foot (when containers were meant to protect you from shots in the first place).&lt;/p&gt;
+&lt;h3&gt;So what is this LXC thing?&lt;/h3&gt;
+&lt;p&gt;I don't (and probably can't) go into too much detail about the technical workings of LXC. Simply put, LXC is the (apparent) daddy of the container eco-system. In fact, I don't think words can ever explain it as good as the infographic above, so please go look at it again.&lt;/p&gt;
+&lt;p&gt;Docker has an interesting relationship with LXC. It was built on top of it (with the micro-service philosophy in mind), but I have since heard/read that they have moved away from LXC (on some level I assume).&lt;/p&gt;
+&lt;p&gt;When I first heard that Docker was "built on top of LXC", my first reaction to it was on a level similar to that of people saying "I built a layer on top of the C API", indicating that a major layer of complexity was taken out of the equation (C code is C code afterall).&lt;/p&gt;
+&lt;p&gt;Fortunately for the 1-man-coder, wordpress-hackers, beginner-coders and more, LXC is not as complex as you might think it could be (and it definitely was not the nightmare I thought it would be - thinking I'd need to write C/other-boilerplate-code just to build/run containers). I even noted down a few commands to get the basics working, and the total of these commands came to: 7&lt;/p&gt;
+&lt;p&gt;With these 7 commands, you can: create, start, stop, attach (get into), info (get properties), destroy and "ls" (get a full list of all containers)&lt;/p&gt;
+&lt;p&gt;Once you get your first LXC container going though, it starts to feel a lot more like regular Linux/Ubuntu, compared to Dockers opinionated way of doing things.&lt;/p&gt;
+&lt;p&gt;The only terrible/difficult thing so far has been to attach a host filesystem to an LXC container (which took a day or 2 to figure out), but LXC seems more in tune with my current needs as a tinkerer/programmer/1-man-coder.&lt;/p&gt;
+&lt;h3&gt;Is it already time to start bashing Docker yet?&lt;/h3&gt;
+&lt;p&gt;Not at all. Docker has its place and it will be used a lot at many different places. The only problem I personally see is the "bandwagon" issue. A lot of people are trying to get into containerization without fully understanding Dockers philosophy ("micro-services architecture").&lt;/p&gt;
+&lt;p&gt;That infographic I linked to above explains things a million times more clearly than the wads of text I had to read through (whilst learning about containers since a year or 2 ago).&lt;/p&gt;
+&lt;p&gt;Just remember that: micro-services are based on an architectural decision to address the issues at a Google/Amazon level&lt;/p&gt;
+&lt;p&gt;This blog, a drop-in for virtualenv for Python environments or your dads WordPress business-site probably don't need a Docker container (and some would argue that they probably don't need any containerization - LXC included - at all).&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Moving forward, I will be (and have been) learning/using LXC as my go-to for containers.&lt;/p&gt;
+&lt;p&gt;In part 2 of this 2-part blog, I will do a basic walk-through of installing LXC, creating a bare/minimal container(Ubuntu) and then slapping an example Python library/software (possibly Pelican, Twisted or some other library) onto a container built on top of the bare/minimal Ubuntu container.&lt;/p&gt;</content><category term="LXC"></category><category term="ubuntu"></category><category term="LXC"></category><category term="docker"></category></entry><entry><title>Guerrilla guide to using Docker</title><link href="https://kentoseth.github.io/posts/2015/May/19/guerrilla-guide-to-using-docker/" rel="alternate"></link><published>2015-05-19T02:00:00+02:00</published><updated>2015-05-19T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2015-05-19:/posts/2015/May/19/guerrilla-guide-to-using-docker/</id><summary type="html">&lt;p&gt;Rapid quick-start for using Docker.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a quick-start intro to using Docker. For the long-form version of "Getting Started with Docker" please see: &lt;a href="https://docs.docker.com/installation/#installation"&gt;Docker Basics&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This tutorial should take you &lt;em&gt;less than 15 minutes&lt;/em&gt; to get up and running with Docker (this excludes the time it takes to install Docker itself and downloading of the source files). Also note that this tutorial assumes you are using Ubuntu (or a variant thereof).&lt;/p&gt;
+&lt;p&gt;If you haven't installed Docker already, go ahead and use the link above to install it.&lt;/p&gt;
+&lt;h3&gt;Images, Containers and Dockerfiles&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Image:&lt;/em&gt; Think of this as a static snapshot of your Docker setup. Images are layered on top of each other like an onion, so that it does not duplicate the same core files repeatedly (for example, creating many different "stacks" on top of an Ubuntu image will not recreate Ubuntu each time). Images are never used explicitly and are used as the base for creating Containers. &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Container:&lt;/em&gt; Containers are dynamic versions of Images. Think of a Container as the fake version of priceless art. You would never touch or damage the original (Image) but you can do whatever you like with a fake (Container). Containers can be made, modified and destroyed very easily (they also act as the tool for building on images)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Dockerfile:&lt;/em&gt; This is the formal method of building Images. Think of the Dockerfile as a Shell Script for installing something (it works almost exactly the same).&lt;/p&gt;
+&lt;h3&gt;Building an Image: Ubuntu + Python&lt;/h3&gt;
+&lt;p&gt;Let us first create a Docker folder. Open up your File Manager and create a folder so that you get this path:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;/home/[USER]/Docker/&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now, I will walk you through my simple Dockerfile for this (you can download it here: &lt;a href="https://registry.hub.docker.com/u/dockops/ubuntupy/"&gt;File&lt;/a&gt; )&lt;/p&gt;
+&lt;p&gt;Here is the output:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# 
+# Dockerfile to use as a base for python
+#
+# Combines Ubuntu + Python
+#
+# https://github.com/Kentoseth/Docker/tree/master/UbuntuPy
+
+FROM ubuntu:14.04
+MAINTAINER &amp;quot;Moe&amp;quot; &amp;lt;kentoseth@devcroo.com&amp;gt;
+
+# Prerequisites
+
+RUN \
+  sudo apt-get update &amp;amp;&amp;amp; \
+  sudo apt-get -y upgrade &amp;amp;&amp;amp; \
+  sudo apt-get install -y python2.7 python2.7-dev python-pip &amp;amp;&amp;amp; \
+  sudo apt-get clean &amp;amp;&amp;amp; \
+  sudo rm -rf /var/lib/apt/lists/*
+
+# END
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Save a file called "Dockerfile" in: /home/[USER]/Docker/&lt;/p&gt;
+&lt;p&gt;I will just tell you 2 important things from the above code:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Where you see the word "FROM", what this is doing is "pulling" the Ubuntu image from the remote Docker registry&lt;/li&gt;
+&lt;li&gt;For everything after the line "RUN \", you should notice this as basic Ubuntu install commands&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now let's build our first Docker image.&lt;/p&gt;
+&lt;p&gt;Open your Terminal where the Dockerfile is (/home/[USER]/Docker/) and run this:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo docker build -t pybuntu .&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You can rename "myapp" to anything you wish, as this is the name of your image. In this case, because it is Ubuntu + Python, you can call it something like "pybuntu" or whatever helps you recognize the image (only lowercase works). Also, you will see a ' . ' in my command above. This isn't an error, so please include it as well (you can learn about about "complex" build-procedures from the link above).&lt;/p&gt;
+&lt;p&gt;After the build process is complete, let's view our new Docker image. Run this command:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo docker images&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;and you should get this output:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Photo1" src="https://kentoseth.github.io/images/docker/docker2.png"&gt;&lt;/p&gt;
+&lt;p&gt;From the above image, you can see I have 3 images. We haven't yet got to the "pelicanpy" yet, but if you've followed my instructions and everything worked, you should have something similar to "ubuntupy" (or myapp/image-name).&lt;/p&gt;
+&lt;h3&gt;Creating a container: from 'pybuntu' image&lt;/h3&gt;
+&lt;p&gt;Now that we have our image, lets use this image ( &lt;em&gt;static&lt;/em&gt; ) to make our container ( &lt;em&gt;dynamic&lt;/em&gt; ).&lt;/p&gt;
+&lt;p&gt;First, we can create a directory where we can "mount" files into the container from our filesystem (so that we can run them in the container).&lt;/p&gt;
+&lt;p&gt;You can create your directory here(with subdirectory called "mount/test"):&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;/home/[USER]/Docker/mount/test/&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now let's create a container that has a 'mounted' path from your Ubuntu/linux system.&lt;/p&gt;
+&lt;p&gt;Open your commandline (in any directory) and run the following command:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo docker run -i -t -v /home/[USER]/Docker/mount/test/:/test pybuntu&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A quick walk-through of the line above is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Every "-[LETTER]" command corresponds to some commandline specification (more info on the site)&lt;/li&gt;
+&lt;li&gt;Some commands, like "-v" have instructions that follow them. In this case, "-v" is used for mounting. First we declare the system path (.../mount/test/), then we declare the folder within the container(:/test). Note that the path in the container &lt;strong&gt;has&lt;/strong&gt; to be declared&lt;/li&gt;
+&lt;li&gt;Lastly, you call on "pybuntu", which is basically telling the container which image to use as the "dynamic" version of that "static" screenshot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After you're done creating the container, you should see something similar to this:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Photo2" src="https://kentoseth.github.io/images/docker/con1.png"&gt;&lt;/p&gt;
+&lt;p&gt;From the image above, you can now see that you are a "root" user in your container.&lt;/p&gt;
+&lt;p&gt;Let's go into our mounted directory:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cd test&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Once in, let's create a test python file. We will call it "hello.py". Here is the code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#This is our test Python file
+
+print(&amp;quot;Hello World!&amp;quot;)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Save your file in your mounted directory (.../mount/test/hello.py)&lt;/p&gt;
+&lt;p&gt;Now, within the container terminal, run this:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;python hello.py&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Hello World!&lt;/em&gt; should be printed out in the terminal now.&lt;/p&gt;
+&lt;p&gt;Once done, you have now successfully created your Docker Image and a Container of that Image.&lt;/p&gt;
+&lt;p&gt;I will follow up this tutorial with how to use Docker as a drop-in replacement for virtualenv (or any programming virtual environment for that matter) soon.&lt;/p&gt;
+&lt;p&gt;Enjoy containerizing everything!&lt;/p&gt;
+&lt;p&gt;(&amp;lt;- Email me if you find any faults or can make any improvements)&lt;/p&gt;</content><category term="Docker"></category><category term="ubuntu"></category><category term="python"></category><category term="docker"></category></entry><entry><title>Single Package Update across Ubuntu PCs</title><link href="https://kentoseth.github.io/posts/2014/Oct/16/single-package-update-across-ubuntu-pcs/" rel="alternate"></link><published>2014-10-16T02:00:00+02:00</published><updated>2014-10-16T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2014-10-16:/posts/2014/Oct/16/single-package-update-across-ubuntu-pcs/</id><summary type="html">&lt;p&gt;Downloading updates once and using same updates across machines.&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you live in a country with a slow internet connection, have limited bandwidth capacity, have multiple machines or would like to conserve your bandwidth by not doing repeat downloads, this tutorial will be useful to you.&lt;/p&gt;
+&lt;p&gt;I recently came across a rather simple method for keeping my machines updated with the latest packages by downloading the updates once and then using those packages to update the other machines/PCs.&lt;/p&gt;
+&lt;p&gt;Here is a checklist before attempting this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;All machines should be using the same version of Linux on the same processor-type (eg. Ubuntu 12.04, 32-bit)&lt;/li&gt;
+&lt;li&gt;The machine where you do the initial updates requires SSH to be installed&lt;/li&gt;
+&lt;li&gt;All the machines should be connected via a router/LAN&lt;/li&gt;
+&lt;li&gt;Passwords for all the machines will be required&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;The steps provided below will be done on Ubuntu machines. Similar commands from other distros should be applied where Ubuntu-commands are used. (paths for the packages may differ though)&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Step 1 - Installing SSH:&lt;/h3&gt;
+&lt;p&gt;Getting SSH installed on your main download machine can be done in a single command:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo apt-get install openssh-server&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you'd like more info on SSH (maybe for installing on a remote server),  &lt;a href="http://www.ihaveapc.com/2012/02/how-to-install-ssh-server-on-ubuntu/"&gt;click here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Step 2 - Updating packages for main machine + IP address:&lt;/h3&gt;
+&lt;p&gt;First do your updates on the main machine (either through Terminal or via the Update Manager). Once that is done, you will now (mostly) be doing everything else on your other machines (I will refer to them as &lt;em&gt;"client"&lt;/em&gt; machines).&lt;/p&gt;
+&lt;p&gt;Let's first get the IP address of the &lt;strong&gt;main&lt;/strong&gt; machine. Type this command in Terminal/CLI:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ifconfig&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You should be looking for a line like this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;inet addr:192.$$$.$.$  Bcast:192.$$$.$.$$$  Mask:255.$$$.$$$.$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;($ = numbers)&lt;/p&gt;
+&lt;p&gt;After typing the command above, let us use an example IP address of:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;192.168.1.102&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You need to remember this IP address, as this is what you will use to connect from client machines to your updated/main machine.&lt;/p&gt;
+&lt;h3&gt;Step 3 - Updating client machines:&lt;/h3&gt;
+&lt;p&gt;Take one of your client laptops/desktops (which is connected to the same router as the main machine) and open Terminal/CLI. In the Terminal, type this:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo scp kent@192.168.1.102:/var/cache/apt/archives/*.deb /var/cache/apt/archives/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;"kent" is the name of the main machine. You need to specify the name you are using on your main machine where "kent" is.&lt;/p&gt;
+&lt;p&gt;This command is "secure copy" (scp) which transfers the archives of the updated machine to your client machines. You can read from the command how it is copying archives from one folder to another.&lt;/p&gt;
+&lt;p&gt;You will likely be asked for the passwords of both machines (client and main machine) after using the command above. If everything was successful, you should see a transfer or files being done.&lt;/p&gt;
+&lt;p&gt;Your client machine should now have the updated .deb files, so let's do the actual update on the client machine. Type this (still in Terminal):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo apt-get update&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo apt-get upgrade&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You should now have all your packages updated.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note 1: The linux system files don't seem to update after running "&lt;strong&gt;sudo apt-get upgrade&lt;/strong&gt;", but you can update them through the update manager&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note 2: Even if you have different packages on your machines (like extra packages on the main machine), the other packages that weren't previously installed on your client machine will &lt;em&gt;not&lt;/em&gt; be installed&lt;/em&gt;&lt;/p&gt;</content><category term="Linux"></category><category term="ubuntu"></category><category term="updates"></category><category term="ssh"></category></entry><entry><title>Install Ubuntu Server using Wubi</title><link href="https://kentoseth.github.io/posts/2014/Jul/01/install-ubuntu-server-using-wubi/" rel="alternate"></link><published>2014-07-01T02:00:00+02:00</published><updated>2014-07-01T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2014-07-01:/posts/2014/Jul/01/install-ubuntu-server-using-wubi/</id><summary type="html">&lt;p&gt;Getting Ubuntu Server installed using the wubi method.&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you're somebody that has tinkered with linux a while back, you may have come across something called &lt;a href="https://wiki.ubuntu.com/WubiGuide"&gt;Wubi&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Wubi basically allows you to install linux &lt;em&gt;within&lt;/em&gt; windows.&lt;/p&gt;
+&lt;p&gt;You will probably want to install Ubuntu Server with Wubi if you have a Windows system that you feel you still need, but you'd also like to tinker/test-out a server-version of Ubuntu.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;This install method is recommended for hobbyists and shouldn't be used for any production-critical matters&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;With that said, let's install ubuntu-server within windows using Wubi.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Requirements:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A PC with Ubuntu/Xubuntu/Lubuntu Desktop installed (preferably 12.04 and nothing above this version)&lt;/li&gt;
+&lt;li&gt;Internet access (a decent speed broadband speed)&lt;/li&gt;
+&lt;li&gt;A router (if you'd like to SSH from another PC into your server - useful for remote installations)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The process of converting the desktop to server is made very simple, using a tool called &lt;a href="https://help.ubuntu.com/community/Tasksel"&gt;Tasksel&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Open a terminal/console window in your Ubuntu Desktop and type in the following commands:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install tasksel
+sudo tasksel remove ubuntu-desktop &lt;span class="c1"&gt;# (Note: this may take a few minutes to complete)&lt;/span&gt;
+sudo tasksel install server
+apt-get install linux-server linux-image-server
+apt-get –purge remove lightdm
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Remember to type in each command (as listed by the each point) separately and wait for it to complete, before typing in the next command.&lt;/p&gt;
+&lt;p&gt;Also, for this line:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo tasksel remove ubuntu-desktop&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Make sure you specify the correct desktop you are using (which could be Lubuntu or Kubuntu or Xubuntu).&lt;/p&gt;
+&lt;p&gt;Once this is done, you will officially have Ubuntu Server installed on your PC using Wubi.&lt;/p&gt;
+&lt;p&gt;You can test this out by restarting the PC and booting into Ubuntu. Give it some time, depending on your system.&lt;/p&gt;
+&lt;p&gt;The next part is to fix the bootloader on Windows, so that you can operate your Ubuntu Server without a screen (and just be able to SSH into it).&lt;/p&gt;
+&lt;h3&gt;Modifying the Windows bootloader&lt;/h3&gt;
+&lt;p&gt;I have Win XP installed, so the instructions I found was for this OS. I initially followed these instructions &lt;a href="http://support.microsoft.com/kb/289022"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It didn't seem to work though. So I basically just went through the process of first backing up the boot.ini file (very important that you do this).&lt;/p&gt;
+&lt;p&gt;The process:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Right-click My Computer, and then click Properties.
+    -or-
+   Click Start, click Run, type sysdm.cpl, and then click OK.&lt;/li&gt;
+&lt;li&gt;On the Advanced tab, click Settings under Startup and Recovery.&lt;/li&gt;
+&lt;li&gt;Under System Startup, click Edit. This opens the file in Notepad ready for editing.&lt;/li&gt;
+&lt;li&gt;In Notepad, click File on the Menu bar, and then click Save As.&lt;/li&gt;
+&lt;li&gt;Right click in an empty area of the Save As dialog box, point to New in the context menu, and then click Folder.&lt;/li&gt;
+&lt;li&gt;Type a name for the new folder, for example temp, and then press the ENTER key to create the folder named temp.&lt;/li&gt;
+&lt;li&gt;Double-click the new folder named temp, and then click the Save button to save a backup copy of the Boot.ini file.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You could do this process any way you feel that will ensure that a boot.ini file is saved somewhere accessible.&lt;/p&gt;
+&lt;p&gt;Now under point 3 above, you will see that you visited the "&lt;em&gt;System Startup&lt;/em&gt;" window, which shows the current boot order of your system.&lt;/p&gt;
+&lt;p&gt;What I did was to simply select the Ubuntu Server option (it may still have a Desktop name to it) as the first boot choice, and it mariculously allowed me to have Ubuntu as the first option when booting (remember that when booting using Wubi, the first boot is the windows boot and when changing the bootloader on Windows, you are changing this bootloader and not the GRUB bootloader normally used on Ubuntu).&lt;/p&gt;
+&lt;p&gt;Having the first option for booting means that I just need to switch the PC on and wait around 60 seconds (without a screen).&lt;/p&gt;
+&lt;p&gt;After waiting for 60 seconds, I can SSH into the server successfully (using another PC through my router).&lt;/p&gt;
+&lt;p&gt;I'm not going to explain how to SSH in this tutorial, as there are plenty of examples out there.&lt;/p&gt;
+&lt;p&gt;Just remember that you will need:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;IP address of the Ubuntu Server machine&lt;/li&gt;
+&lt;li&gt;Your old username and password (from when you installed Ubuntu Desktop)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you have any trouble getting Ubuntu-server installed, feel free to drop me an email and I will try to assist.&lt;/p&gt;</content><category term="Linux"></category><category term="ubuntu-server"></category><category term="wubi"></category></entry></feed>

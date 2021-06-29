@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://kentoseth.github.io/theme/pygments/monokai.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/solid.css">
+
+    <link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet">
+
+    <link href="https://kentoseth.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom">
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Mohamed H." />
+<meta name="description" content="A light intro to the Nim programming language" />
+<meta name="keywords" content="nim, python">
+
+
+<meta property="og:site_name" content="Kentoseth - Thoughts on programming, culture, FOSS and more"/>
+<meta property="og:title" content="Nim - it feels like Python"/>
+<meta property="og:description" content="A light intro to the Nim programming language"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://kentoseth.github.io/posts/2017/May/02/nim-it-feels-like-python/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-05-02 03:00:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://kentoseth.github.io/author/mohamed-h.html">
+<meta property="article:section" content="Nim"/>
+<meta property="article:tag" content="nim"/>
+<meta property="article:tag" content="python"/>
+<meta property="og:image" content="/images/avatar.jpg">
+
+  <title>Kentoseth - Thoughts on programming, culture, FOSS and more &ndash; Nim - it feels like Python</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://kentoseth.github.io">
+        <img src="/images/avatar.jpg" alt="Kentoseth" title="Kentoseth">
+      </a>
+
+      <h1>
+        <a href="https://kentoseth.github.io">Kentoseth</a>
+      </h1>
+
+<p>Coding. Culture. Linux. More.</p>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://kentoseth.github.io/pages/about-me/">
+                  About me
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="https://kentoseth.github.io/pages/projects/">
+                  Projects
+                </a>
+              </li>
+
+            <li>
+              <a target="_self" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" >Email</a>
+            </li>
+            <li>
+              <a target="_self" href="/categories.html" >Categories</a>
+            </li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
+              <i class="fab fa-github-alt"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
+              <i class="fab fa-gitlab"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://kentoseth.github.io">Home</a>
+
+      <a href="/categories">Categories</a>
+      <a href="/tags">Tags</a>
+
+      <a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="nim-it-feels-like-python">Nim - it feels like Python</h1>
+    <p>
+      Posted on Tue 02 May 2017 in <a href="https://kentoseth.github.io/category/nim.html">Nim</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>In the Python world, there is a quest to always make Python "faster" by certain individuals/groups (sometimes due to need, sometimes simply to test the limits of the language and sometimes simply <em>because we can</em>).</p>
+<p>There are many variations of this in the form of JIT(Just-In-Time) Compilers, as well as sub/supersets of the Python language itself.</p>
+<p>Here is a quick list of some of the performance-enhancing tools written to make Python "faster":</p>
+<ul>
+<li>PyPy (JIT)</li>
+<li>Cython (superset)</li>
+<li>Pyston (JIT)</li>
+<li>Pyjion (JIT)</li>
+<li>Nuitka (Compiler ~ of sorts)</li>
+</ul>
+<p>There has even be talk of removing the GIL (Global Interpreter Lock) to improve Python's performance. While these initiatives are great and I admire the work done through these initiatives to make new (and quite likely, existing) codebases gain better performance, it may also be prudent to invest a little time evaluating languages that provide better-performance out-of-the-box.</p>
+<p>There is a saying that: <em>Go-lang was written to attract Java developers but many Python developers picked up the language instead</em></p>
+<p>How far this is true, I am not sure. Go and Rust are the 2 trending systems-languages as of 2017. They get quite a bit of coverage (blogs, etc.) and have corporate-financial-backing. </p>
+<p>On the topic of newer <code>systems-languages</code> though, I would like to introduce the language called: Nim/nim-lang (formerly called "Nimrod"): <a href="https://nim-lang.org">Nim-lang website</a></p>
+<p>Nim can be summarized to be addressing issues at the same level as: C++, D, Go, Rust</p>
+<p>Nim is mostly community-driven, with a very small group of core/compiler developers.</p>
+<p>I am not an expert in programming-language design, so any opinions I have surrounding that topic will more than likely be incorrect. However, I would like to display some Nim code to show how <em>similar</em> it can otherwise appear to Python (and justify why the language appeals to me).</p>
+<p>Here is a short snippet of Nim code that calculates whether a number is even:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">strutils</span>
+
+<span class="n">proc</span> <span class="n">is_even</span><span class="p">(</span><span class="n">value2</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span> <span class="nb">int</span> <span class="o">=</span>
+    <span class="k">if</span> <span class="n">value2</span> <span class="n">mod</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="n">var</span> <span class="n">new_value</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">value2</span> <span class="n">div</span> <span class="mi">2</span>
+      <span class="k">return</span> <span class="n">new_value</span>
+
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">echo</span> <span class="s2">&quot;The number you have entered is an odd number: &quot;</span>
+      <span class="k">return</span> <span class="n">value2</span>
+
+<span class="n">echo</span> <span class="s2">&quot;Enter your Number: &quot;</span>
+<span class="n">var</span> <span class="n">val</span><span class="p">:</span> <span class="n">string</span> <span class="o">=</span> <span class="n">readLine</span><span class="p">(</span><span class="n">stdin</span><span class="p">)</span>
+<span class="n">var</span> <span class="n">val_cleaned</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">parseInt</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<span class="n">echo</span> <span class="n">is_even</span><span class="p">(</span><span class="n">val_cleaned</span><span class="p">)</span>
+</pre></div>
+
+
+<p>If you are coming from a purely Python/dynamic programming background, it may be a bit unusual to initially understand the code. However, let me rewrite the part where the <code>proc</code> is, which will then display how similar Nim <em>feels</em> to Python:</p>
+<div class="highlight"><pre><span></span>def is_even(value2):
+    if value2 % 2 == 0:  
+        new_value = value2 / 2  
+        return new_value  
+    else:
+        print(&quot;The number you have entered is an odd number: &quot;)
+        return value2
+</pre></div>
+
+
+<p>I have previously dabbled in C, C++ and also attempted to learn Go. None of these languages were quite as enjoyable to code in (for a Pythonista familiar with dynamic-programming). After overcoming the hurdle of static-typing, which has become a very useful feature to have, Nim and Python feel very alike in terms of readability, etc.</p>
+<p>The most critical thing I learnt when learning Nim was that: <em>a <code>proc</code> in Nim is a <code>def</code> in Python</em></p>
+<p>(in simpler terms: a function is a function)</p>
+<p>I am now using Nim for a few things, chief among them being CLI-apps. The code is compiled to dependency-free binaries and (from the library I use), the apps execute similar to what most Linux-users would be used to (<code>apt install something</code> or <code>tar -czf file.tar.gz folder/</code>).</p>
+<p>I have no plans on completely switching to Nim. The dearth of libraries/assistance/documentation/community is part of the reason why Python is such a great language.</p>
+<p>However, if you are a frequent participant of tech-blogs/forums/news-sites and see lots of Go/Rust comparisons, I recommend considering Nim as well.</p>
+<p>Some useful links/resources:</p>
+<ul>
+<li><a href="https://nim-lang.org/docs/tut1.html">Introductory Nim Tutorial</a></li>
+<li><a href="https://nim-lang.org/docs/lib.html">Nim Standard Library</a></li>
+<li><a href="https://nim-lang.org/community.html">Community Link</a></li>
+<li><a href="https://glot.io/new/nim">Online Nim Compiler</a></li>
+</ul>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://kentoseth.github.io/tag/nim.html">nim</a>
+      <a href="https://kentoseth.github.io/tag/python.html">python</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; 2021 </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Kentoseth - Thoughts on programming, culture, FOSS and more ",
+  "url" : "https://kentoseth.github.io",
+  "image": "/images/avatar.jpg",
+  "description": "Thoughts on programming, culture, FOSS and more."
+}
+</script>
+
+
+</body>
+</html>

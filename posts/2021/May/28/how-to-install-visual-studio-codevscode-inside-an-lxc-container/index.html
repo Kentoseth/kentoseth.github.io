@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://kentoseth.github.io/theme/pygments/monokai.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/solid.css">
+
+    <link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet">
+
+    <link href="https://kentoseth.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom">
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Mohamed H." />
+<meta name="description" content="How to install VSCode(a GUI app) inside an LXC container" />
+<meta name="keywords" content="ubuntu, LXC, vscode">
+
+
+<meta property="og:site_name" content="Kentoseth - Thoughts on programming, culture, FOSS and more"/>
+<meta property="og:title" content="How to install Visual Studio Code(VSCode) inside an LXC container"/>
+<meta property="og:description" content="How to install VSCode(a GUI app) inside an LXC container"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://kentoseth.github.io/posts/2021/May/28/how-to-install-visual-studio-codevscode-inside-an-lxc-container/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2021-05-28 02:00:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://kentoseth.github.io/author/mohamed-h.html">
+<meta property="article:section" content="LXC"/>
+<meta property="article:tag" content="ubuntu"/>
+<meta property="article:tag" content="LXC"/>
+<meta property="article:tag" content="vscode"/>
+<meta property="og:image" content="/images/avatar.jpg">
+
+  <title>Kentoseth - Thoughts on programming, culture, FOSS and more &ndash; How to install Visual Studio Code(VSCode) inside an LXC container</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://kentoseth.github.io">
+        <img src="/images/avatar.jpg" alt="Kentoseth" title="Kentoseth">
+      </a>
+
+      <h1>
+        <a href="https://kentoseth.github.io">Kentoseth</a>
+      </h1>
+
+<p>Coding. Culture. Linux. More.</p>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://kentoseth.github.io/pages/about-me/">
+                  About me
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="https://kentoseth.github.io/pages/projects/">
+                  Projects
+                </a>
+              </li>
+
+            <li>
+              <a target="_self" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" >Email</a>
+            </li>
+            <li>
+              <a target="_self" href="/categories.html" >Categories</a>
+            </li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
+              <i class="fab fa-github-alt"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
+              <i class="fab fa-gitlab"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://kentoseth.github.io">Home</a>
+
+      <a href="/categories">Categories</a>
+      <a href="/tags">Tags</a>
+
+      <a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="how-to-install-visual-studio-codevscode-inside-an-lxc-container">How to install Visual Studio Code(VSCode) inside an LXC container</h1>
+    <p>
+      Posted on Fri 28 May 2021 in <a href="https://kentoseth.github.io/category/lxc.html">LXC</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p><a href="https://code.visualstudio.com/">Visual Studio Code or vscode</a> is a really great editor. One of its most advanced features that most other editors don't have is the <a href="https://code.visualstudio.com/docs/remote/remote-overview">VS Code Remote Development</a> which can enable a bloat-free development-environment by leveraging Docker or other container solutions.</p>
+<p>However, licensing issues(explained <a href="https://code.visualstudio.com/docs/remote/faq#_license-and-privacy">here</a> and <a href="https://github.com/microsoft/vscode/wiki/Differences-between-the-repository-and-Visual-Studio-Code">here</a>) means that the only version of vscode that works with the "remote development extension" is the binary(or closed-source) version.</p>
+<p>I found a <a href="https://github.com/microsoft/vscode-remote-release/issues/1858">bug report</a> discussing this and why the open-source version(known as Code) does not support the powerful "remote development extension". Wearing a (small) tinfoil hat, I figured that it would be a good idea to isolate vscode itself into a container for 2 purposes:</p>
+<ol>
+<li>To test if the binary does any undisclosed things like making perpetual pings back home(in a future blog post)</li>
+<li>Seeing if a containerized-vscode can speak to other containers via SSH(SSH is 1 of the supported protocols for non-Docker containers)</li>
+</ol>
+<h3>Pre-requisites</h3>
+<p>I use a Linux-based distro as the host and I am not sure if this will apply to Mac/Windows because of the X11-forwarding that is needed. (If this does work on your Windows/Mac PC, send me an email and I'll update this post with your commands).</p>
+<ul>
+<li>LXC, SSH (on the host)</li>
+<li>Some familiarity with the commandline</li>
+<li>Ubuntu 20.04(container)</li>
+</ul>
+<p>You can use the following article to <a href="https://www.how2shout.com/how-to/how-to-install-and-use-lxc-linux-containers-on-ubuntu.html#">install LXC</a></p>
+<h3>Creating/Accessing the Ubuntu 20.04 container</h3>
+<p>To create the Ubuntu 20.04 container, run the following command(<strong>from the host</strong>):</p>
+<p><code>sudo lxc-create -n vscode -t download -- --dist ubuntu --release focal --arch amd64</code></p>
+<ul>
+<li><code>-n vscode</code> - the name of the container</li>
+<li><code>--dist ubuntu</code> - Ubuntu as the OS</li>
+<li><code>--release focal</code> - 20.04 as the release</li>
+<li><code>--arch amd64</code> - x86-64bit as the architecture</li>
+</ul>
+<p>This process should take a while(depending on internet speed). Once it is complete, start the container using:</p>
+<p><code>sudo lxc-start -n vscode -d</code></p>
+<p>And access a shell of the container using:</p>
+<p><code>sudo lxc-attach -n vscode</code></p>
+<p>If you enter as <code>root</code>, use the following to enter as the user: <code>su ubuntu</code></p>
+<p>(Note 1: this shell is not the same as an SSH connection, so X11-forwarding won't work via it, as far as I am aware)
+(Note 2: <code>sudo</code> may not be needed for unprivileged containers, so if you don't need it, don't use it)</p>
+<h3>Installing required packages in the container</h3>
+<p>The container requires a number of packages in order to run a GUI application like vscode. For basic programs like <code>xclock</code>, not as many packages were needed, but for vscode, the installation might feel 'bloated'. Install the following(<strong>after 'attaching' the container and being in the container shell</strong>):</p>
+<div class="highlight"><pre><span></span>sudo apt update
+sudo apt upgrade
+sudo apt install xauth ssh
+</pre></div>
+
+
+<p>(<code>xauth</code> might already be installed)</p>
+<p>Now install some of the other required packages:</p>
+<div class="highlight"><pre><span></span>sudo apt-get install libxss1 libxshmfence1 libxext-dev libxrender-dev libxslt1.1 libgconf-2-4 libnotify4 libnspr4 libnss3 libnss3-dev libnss3-tools libxtst-dev libgtk2.0-0 libcanberra-gtk-module software-properties-common gnupg2
+</pre></div>
+
+
+<p>I am not sure what half of these are for, but the reference for why I needed to install them is here: <a href="https://github.com/allamand/docker-vscode/blob/master/Dockerfile">docker-vscode Dockerfile</a>. I attempted to install the least amount of packages to get vscode running. Prior to installing these packages, vscode was not working.</p>
+<h3>Configuring SSH in the container</h3>
+<p>First we will give the <code>ubuntu</code> user a password. I found that even though the container <code>ubuntu</code> user seems to have 'ubuntu' as a password, this password didn't work when trying to SSH into the container(from the host). Run(<strong>while in the container</strong>):</p>
+<p><code>sudo passwd ubuntu</code></p>
+<p>I used 'ubuntu' for the new password(just to simplify the installation).</p>
+<p>Before connecting to the container via SSH, the SSH needs to be configured with the appropriate changes.</p>
+<p>Open the SSH config file:</p>
+<p><code>sudo vim /etc/ssh/sshd_config</code></p>
+<p>Only the changes will be shown below. Please look for these lines in the <code>sshd_config</code> file and change them appropriately(some of them also require that the <code>#</code> be removed, otherwise the line remains commented):</p>
+<div class="highlight"><pre><span></span>PasswordAuthentication yes
+X11Forwarding yes
+X11DisplayOffset 10
+</pre></div>
+
+
+<p>Exit the <code>vim</code> editor and now restart the SSH service:</p>
+<p><code>sudo systemctl restart sshd</code></p>
+<p>You can confirm SSH is working by running:</p>
+<p><code>sudo systemctl status sshd</code></p>
+<p>Now we can test if it is possible to SSH into the container from the host(you can just open a new tab/window in your terminal). First find the IP address of the container(<strong>run this on the host</strong>):</p>
+<p><code>sudo lxc-info -n vscode</code></p>
+<p>The output should give you a local IP address to connect to the container. This IP should be similar to your host IP. Example:</p>
+<p>Host IP: <code>10.0.4.1</code></p>
+<p>Container IP: <code>10.0.4.62</code></p>
+<p>Now that we have the container IP, run the following command(<strong>from the host</strong>):</p>
+<p><code>ssh ubuntu@&lt;container-IP&gt;</code></p>
+<p>The SSH prompt should say the following:</p>
+<div class="highlight"><pre><span></span>The authenticity of host &#39;&lt;container-IP&gt; (&lt;container-IP&gt;)&#39; can&#39;t be established.
+ED25519 key fingerprint is SHA256:fXFuBKAXm2HgFGuKVFpu+bRIR/2tzxBIWVH+dkQh9KE.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+</pre></div>
+
+
+<p>Enter: <code>yes</code></p>
+<p>Then you will be prompted to enter the password for user <code>ubuntu</code>, enter: 'ubuntu'</p>
+<p>You should now be in the container via SSH if successful.</p>
+<h3>Installing vscode in the container</h3>
+<p>The vscode website provides an adequate explanation for <a href="https://code.visualstudio.com/docs/setup/linux">installing vscode on linux</a>, but I preferred this installation method: <a href="https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-20-04/">How to Install Visual Studio Code on Ubuntu 20.04</a>. I will reproduce the installation below for convenience.</p>
+<p>Add the Microsoft repo(<strong>while in the container</strong>):</p>
+<p><code>wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -</code></p>
+<p>The only output to confirm everything worked is the word: <code>OK</code></p>
+<p>Now add the repo:</p>
+<p><code>sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"</code></p>
+<p>and now install vscode(I installed <code>code-insiders</code> to be at a more "bleeding-edge" version of vscode, but installing the stable version should work as well. If the stable doesn't work, install the <code>code-insiders</code>, as it may have fixed some bugs):</p>
+<p><code>sudo apt install code-insiders</code></p>
+<p>If you wish, you can restart the container now(as restarting always seems to 'fix' things even if they are working).</p>
+<h3>SSH and start vscode</h3>
+<p>Now <strong>from the host</strong>, we connect to the container with X-forwarding enabled using this command:</p>
+<p><code>ssh ubuntu@&lt;container-IP&gt;</code></p>
+<p>After entering the password 'ubuntu', we should now be in the container once again. Now run this command(<strong>while in the container</strong>):</p>
+<p><code>code-insiders --disable-gpu</code></p>
+<p>vscode will now start and the display should look like:</p>
+<p><img alt="vscode-start" src="https://kentoseth.github.io/images/vscode/vscode.png"></p>
+<h3>Conclusion and next steps</h3>
+<p>In the next article, I will investigate how to opt-out of Windows tracking in vscode(I thought it was supposed to be opt-in as per GDPR). I will also look at what network calls are made before/after opting-out to see how much data is still harvested by this proprietary binary and perhaps also add some rules to block the application from making any network calls at all.</p>
+<h3>References</h3>
+<p><a href="https://linuxcontainers.org/lxc/getting-started/">Linux Containers LXC page</a>
+<a href="https://unix.stackexchange.com/questions/12755/how-to-forward-x-over-ssh-to-run-graphics-applications-remotely">How to forward X over SSH to run graphics applications remotely?</a>
+<a href="http://www.benue.com/blog/2018/03/16/how-to-run-gui-applications-in-an-lxc-container/">How to run GUI applications in an LXC Container</a>
+<a href="https://askubuntu.com/questions/47642/how-to-start-a-gui-software-on-a-remote-linux-pc-via-ssh">How to start a GUI software on a remote Linux PC via SSH</a></p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://kentoseth.github.io/tag/ubuntu.html">ubuntu</a>
+      <a href="https://kentoseth.github.io/tag/lxc.html">LXC</a>
+      <a href="https://kentoseth.github.io/tag/vscode.html">vscode</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; 2021 </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Kentoseth - Thoughts on programming, culture, FOSS and more ",
+  "url" : "https://kentoseth.github.io",
+  "image": "/images/avatar.jpg",
+  "description": "Thoughts on programming, culture, FOSS and more."
+}
+</script>
+
+
+</body>
+</html>

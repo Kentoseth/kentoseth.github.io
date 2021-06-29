@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://kentoseth.github.io/theme/pygments/monokai.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/solid.css">
+
+    <link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet">
+
+    <link href="https://kentoseth.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom">
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Mohamed H." />
+<meta name="description" content="Using a combination of OCR and CAT software and the power of crowdsourced translations to translate Classical Arabic books" />
+<meta name="keywords" content="culture, languages, ideas, OCR, CAT, Arabic">
+
+
+<meta property="og:site_name" content="Kentoseth - Thoughts on programming, culture, FOSS and more"/>
+<meta property="og:title" content="Using OCR, CAT and crowdsourcing to translate Classical Arabic works"/>
+<meta property="og:description" content="Using a combination of OCR and CAT software and the power of crowdsourced translations to translate Classical Arabic books"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://kentoseth.github.io/posts/2021/Jan/12/using-ocr-cat-and-crowdsourcing-to-translate-classical-arabic-works/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2021-01-12 03:00:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://kentoseth.github.io/author/mohamed-h.html">
+<meta property="article:section" content="Language"/>
+<meta property="article:tag" content="culture"/>
+<meta property="article:tag" content="languages"/>
+<meta property="article:tag" content="ideas"/>
+<meta property="article:tag" content="OCR"/>
+<meta property="article:tag" content="CAT"/>
+<meta property="article:tag" content="Arabic"/>
+<meta property="og:image" content="/images/avatar.jpg">
+
+  <title>Kentoseth - Thoughts on programming, culture, FOSS and more &ndash; Using OCR, CAT and crowdsourcing to translate Classical Arabic works</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://kentoseth.github.io">
+        <img src="/images/avatar.jpg" alt="Kentoseth" title="Kentoseth">
+      </a>
+
+      <h1>
+        <a href="https://kentoseth.github.io">Kentoseth</a>
+      </h1>
+
+<p>Coding. Culture. Linux. More.</p>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://kentoseth.github.io/pages/about-me/">
+                  About me
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="https://kentoseth.github.io/pages/projects/">
+                  Projects
+                </a>
+              </li>
+
+            <li>
+              <a target="_self" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" >Email</a>
+            </li>
+            <li>
+              <a target="_self" href="/categories.html" >Categories</a>
+            </li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
+              <i class="fab fa-github-alt"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
+              <i class="fab fa-gitlab"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://kentoseth.github.io">Home</a>
+
+      <a href="/categories">Categories</a>
+      <a href="/tags">Tags</a>
+
+      <a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="using-ocr-cat-and-crowdsourcing-to-translate-classical-arabic-works">Using OCR, CAT and crowdsourcing to translate Classical Arabic works</h1>
+    <p>
+      Posted on Tue 12 January 2021 in <a href="https://kentoseth.github.io/category/language.html">Language</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>I was recently exploring the idea of how to convert Classical Arabic/Islamic works into English using a combination of CAT(Computer Assisted Translation), OCR(Optical Character Recognition) and crowdsourcing students in Arabic studies. The lazy answer for wanting to translate books is to use a combination of OCR and MT(machine-translation) tools(Google/Bing translator) to get an Arabic-to-English translation. This does not work for a few reasons:</p>
+<ol>
+<li>Machine-translation is not as good as human translation as explained <a href="https://www.cmmlanguages.com/cat-tools-vs-machine-translation.html">here</a></li>
+<li>Machine-translation is capable of converting MSA Arabic sentences somewhat accurately, but many Islamic words are not covered by the existing MT tools and will not be accurate for basic sentences.</li>
+</ol>
+<p>Below I will discuss the existing challenges and then present my theoretical solution.</p>
+<h3>The Challenges</h3>
+<p>Although there are many translations of famous works(like the Quran and the 6 Hadith books), there are also lots of other niche works that are not translated to English. The second shortcoming is that copyright is not strictly respected and many PDF documents are floating around of various Arabic-English translations that presumably do not have the permission of the respective authors. The lack of respect for copyright is a negative for expert translators who spend many thousands of hours going through volumes of a single work and charge a fair price for their translations. These works are then scanned/uploaded without their permission and they lose valuable income that could enable them to create more translations.</p>
+<p>Thirdly, many existing translations are only available in physical(printed) books. No digital copies, APIs or even copyable texts exist for many translated works beyond the Quran/Hadith. Some PDF readers are able to copy the English text(even though these are scanned versions of the physical books) but attempting to copy the Arabic text results in malformed text appearing(likely due to left-to-right copying of the text while Arabic is a right-to-left language).</p>
+<p>Lastly, the economics of translating niche works does not make many of them feasible for expert translators. A simple example might be a work like <a href="https://en.wikipedia.org/wiki/Muhammad_al-Shaybani#Works">al-Jami al-Saghir</a> by Imam Muhammad al-Shaybani. A niche book like this might only appeal to advanced students of Islamic knowledge within the Hanafi school of jurisprudence.</p>
+<h3>Outlining the Steps</h3>
+<ol>
+<li>Sourcing PDF versions of Arabic-only Classical works - this will not affect copyright(to the best of my knowledge) as most of the authors lived 1000+ years ago and many of the printed works are just reprints, so even old editions will work</li>
+<li>Choosing a source-material for the Translation-Memory of the CAT tool - in this case I think that the Arabic-English from the Hadith books will be the optimal solution.</li>
+<li>Appealing to students of Arabic studies to participate in crowdsourcing the translations - this is a win-win as it helps them improve their Arabic translation skills</li>
+</ol>
+<h3>The Solution</h3>
+<p>The following is my algorithm for how to achieve the desired outcome. I will mention the software I propose to use in each step below.</p>
+<h4>PDFs and Scanning - OCR</h4>
+<p>In order to make the text copyable from PDFs, I propose using 2 pieces of software:</p>
+<ul>
+<li><a href="https://github.com/tesseract-ocr/tesseract">Tesseract</a> - this will be the engine that will read the text. Training data can be sourced from <a href="https://github.com/tesseract-ocr/tessdata_best">here</a> for Arabic</li>
+<li><a href="https://github.com/writecrow/ocr2text">PDF to TXT (with OCR)</a> - this is the only listed option for PDF-to-text built on top of Tesseract. Using this script on top of the OCR engine will enable scanning of the sourced PDFs</li>
+</ul>
+<h4>Translation Management - CAT</h4>
+<p>The best translation management tool with multi-user support I found is <a href="https://weblate.org/en/">Weblate</a>. It is the best because:</p>
+<ul>
+<li>It is used by 1000+ other projects for translations</li>
+<li>It has multi-user support</li>
+<li>It has built-in version-control</li>
+<li>It has Translation Memory support</li>
+<li>It is popular on GitHub(the most Stars)</li>
+</ul>
+<p>The source material for the Translation Memory can be obtained from the sunnah.com <a href="https://sunnah.api-docs.io/">API</a></p>
+<p>Once the data is loaded into the Translation Memory, this can be applied app-wide and various students can use the CAT tool to translate pieces of content much faster and the content can also be reviewed by others before being approved.</p>
+<h4>Books, Authors and Works</h4>
+<p>A starting list of books I found is here: <a href="https://en.wikipedia.org/wiki/List_of_Sunni_books">List of Sunni books</a></p>
+<p>This can be a starting point for sourcing/finding various books to translate.</p>
+<p>There should be some type of standard for approving which books are to be crowdsourced as translations. I do not have such a standard as of yet but it can be developed as time goes by.</p>
+<h4>The Goals</h4>
+<p>The first and primary goal for such a task is to Obtain the Pleasure of God. Although we might shy away from admitting it on technical/personal blogs, deep inside a person's heart, this is always the main goal.</p>
+<p>Another important goal for me is to document and develop a system where both the content and the technology behind it is Open Source and accessible to all. I would likely propose that all the crowdsourced translations have a permissive license like the Wikipedia content license so that the translated works are accessible to all(and any edits and improvements can be made via the system that is accessible to students pursuing Arabic studies).</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://kentoseth.github.io/tag/culture.html">culture</a>
+      <a href="https://kentoseth.github.io/tag/languages.html">languages</a>
+      <a href="https://kentoseth.github.io/tag/ideas.html">ideas</a>
+      <a href="https://kentoseth.github.io/tag/ocr.html">OCR</a>
+      <a href="https://kentoseth.github.io/tag/cat.html">CAT</a>
+      <a href="https://kentoseth.github.io/tag/arabic.html">Arabic</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; 2021 </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Kentoseth - Thoughts on programming, culture, FOSS and more ",
+  "url" : "https://kentoseth.github.io",
+  "image": "/images/avatar.jpg",
+  "description": "Thoughts on programming, culture, FOSS and more."
+}
+</script>
+
+
+</body>
+</html>
