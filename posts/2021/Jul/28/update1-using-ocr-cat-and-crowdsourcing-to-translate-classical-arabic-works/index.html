@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://kentoseth.github.io/theme/pygments/monokai.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/solid.css">
+
+    <link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet">
+
+    <link href="https://kentoseth.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom">
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Mohamed H." />
+<meta name="description" content="An update on using a combination of OCR and CAT software and the power of crowdsourced translations to translate Classical Arabic books" />
+<meta name="keywords" content="culture, languages, ideas, OCR, CAT, Arabic">
+
+
+<meta property="og:site_name" content="Kentoseth - Thoughts on programming, culture, FOSS and more"/>
+<meta property="og:title" content="Update1: Using OCR, CAT and crowdsourcing to translate Classical Arabic works"/>
+<meta property="og:description" content="An update on using a combination of OCR and CAT software and the power of crowdsourced translations to translate Classical Arabic books"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://kentoseth.github.io/posts/2021/Jul/28/update1-using-ocr-cat-and-crowdsourcing-to-translate-classical-arabic-works/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2021-07-28 03:00:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://kentoseth.github.io/author/mohamed-h.html">
+<meta property="article:section" content="Language"/>
+<meta property="article:tag" content="culture"/>
+<meta property="article:tag" content="languages"/>
+<meta property="article:tag" content="ideas"/>
+<meta property="article:tag" content="OCR"/>
+<meta property="article:tag" content="CAT"/>
+<meta property="article:tag" content="Arabic"/>
+<meta property="og:image" content="/images/avatar.jpg">
+
+  <title>Kentoseth - Thoughts on programming, culture, FOSS and more &ndash; Update1: Using OCR, CAT and crowdsourcing to translate Classical Arabic works</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://kentoseth.github.io">
+        <img src="/images/avatar.jpg" alt="Kentoseth" title="Kentoseth">
+      </a>
+
+      <h1>
+        <a href="https://kentoseth.github.io">Kentoseth</a>
+      </h1>
+
+<p>Coding. Culture. Linux. More.</p>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://kentoseth.github.io/pages/about-me/">
+                  About me
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="https://kentoseth.github.io/pages/projects/">
+                  Projects
+                </a>
+              </li>
+
+            <li>
+              <a target="_self" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" >Email</a>
+            </li>
+            <li>
+              <a target="_self" href="/categories.html" >Categories</a>
+            </li>
+        </ul>
+      </nav>
+
+        <form style="border:1px solid #ccc;padding:3px;text-align:center;" 
+        action="https://tinyletter.com/Kentoseth" method="post" target="popupwindow" 
+        onsubmit="window.open('https://tinyletter.com/Kentoseth', 'popupwindow', 
+        'scrollbars=yes,width=800,height=600');return true">
+        <p><label for="tlemail">Join my Newsletter</label></p>
+        <p><input type="text" style="width:140px" name="email" id="tlemail" /></p>
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" />
+        <p><a href="https://tinyletter.com" target="_blank" rel="noopener noreferrer">powered by TinyLetter</a></p>
+        </form>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
+              <i class="fab fa-github-alt"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
+              <i class="fab fa-gitlab"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="me" class="sc-mastodon" href="https://fosstodon.org/@kentoseth" target="_blank">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://kentoseth.github.io">Home</a>
+
+      <a href="/categories">Categories</a>
+      <a href="/tags">Tags</a>
+
+      <a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="update1-using-ocr-cat-and-crowdsourcing-to-translate-classical-arabic-works">Update1: Using OCR, CAT and crowdsourcing to translate Classical Arabic works</h1>
+    <p>
+      Posted on Wed 28 July 2021 in <a href="https://kentoseth.github.io/category/language.html">Language</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>In my last article on <a href="https://kentoseth.tk/posts/2021/jan/12/using-ocr-cat-and-crowdsourcing-to-translate-classical-arabic-works/">Using OCR, CAT and crowdsourcing to translate Classical Arabic works</a> I spoke about various tools for digitizing Classical Arabic books and then translating them. Since then I have made a series of discoveries and this update is to document those discoveries.</p>
+<h3>PDFs, OCR and Scanning</h3>
+<p>Going through the process of finding PDF texts and then using OCR to obtain a digital form of the text is laborious. I was fortunate to discover that my idea for digitizing Arabic texts was already thought about in the mid-00s by others. The project name and website is <a href="https://shamela.ws/">Shamela</a> and not much will be known to English speakers about it because most Arabic-related discussions happen to be in ... Arabic.</p>
+<p>There is a historical record available <a href="http://kitab-project.org/2020/12/03/al-maktaba-al-shamila-a-short-history/">here</a>. Firstly, the history is Shamela is very unclear until today. Based on the link above, the project is founded by an Egyptian and now funded by an <a href="http://www.arrawda.com/">organization in Saudi Arabia</a>. The <a href="https://shamela.ws/index.php/page/about-shamela">about</a> page does not say much either. Having a historical record of knowing who is creating the digital versions of Classical Arabic works is important for authenticity. While the Quran is well-preserved(Allah has Promised to preserve it), even the Ahadith experienced attempts at fabrication. The attempts at fabrication are what led to compilation efforts like Sahih Bukhari(even though the oral tradition for Hadith is still relied upon to this day). The PDF on the Ar-Rawda website <a href="http://www.arrawdah.com/files/shamela.pdf">here</a> provides information about employee names working for Shamela, so we have some basic information. There are 30 people working in the digitizing/verification/data-entry department and 4 programmers working on the software. They all appear to be Egyptians. I will discuss the issue of authenticity a bit more in the next section.</p>
+<p>This leads me to the second point, regarding <a href="http://kitab-project.org/">KITAB</a>. KITAB is a project funded by the European Research Council (ERC) and the Aga Khan University(see KITAB homepage). One of their projects is the <a href="https://github.com/OpenITI">Open Islamicate Texts Initiative (OpenITI)</a> which is attempting to verify the digital copies provided on Shamela and other collections(Shamela, Shamela-Ibadiyya, Shamela-Shia, Hindawi, Zaydiyya and more). The full list of collections can be found on the <a href="https://github.com/OpenITI">OpenITI github page</a>.</p>
+<h3>Book Verifications(and tagging)</h3>
+<p>The way OpenITI does verification is confusing to outsiders. Their <a href="https://docs.google.com/document/d/1twaKWlfiu92pLbFEF5JDRsgo9HQsuOZKSsO4uTjGP_g/edit">Google Doc</a> isn't too clear but I was able to gather some basic information from <a href="https://github.com/OpenITI/Annotation/issues/2058">tickets like these on GitHub</a></p>
+<p>Also, their documentation is scattered all over the place and concealed within Google Doc links, making them non-indexable to search engines. Even with these drawbacks, their structure for storing books and book metadata is excellent. The structure is broken down like so:</p>
+<ul>
+<li>All authors are listed under their date-of-death(Hijri calendar). Example: 0179MalikIbnAnas</li>
+<li>Within each folder, the various books of the author are listed in their folders. Example: 0179MalikIbnAnas.Muwatta + author information stored in a YAML file. Example: 0179MalikIbnAnas.yml</li>
+<li>Within each book folder will be the various books. Their format is like so: date_of_death+author_name+book_name+source+source_URL+language. An example is: 0179MalikIbnAnas.Muwatta.Shamela0001699-ara1 . The source URL is: <a href="https://shamela.ws/index.php/book/1699">https://shamela.ws/index.php/book/1699</a></li>
+<li>Each version of the book has its own YAML file. Example: 0179MalikIbnAnas.Muwatta.Shamela0001699-ara1.yml</li>
+<li>Then there is another file called: 0179MalikIbnAnas.Muwatta.yml . This might be some metadata related to the book, but it isn't completely clear</li>
+</ul>
+<p>The process for their tagging/verification seems to follow these steps:</p>
+<ol>
+<li>Finding an online PDF that is the same version as the source-text</li>
+<li>Finding a hard-copy reference of that book on <a href="https://www.worldcat.org">WorldCat</a></li>
+<li>Doing some text-tagging and annotation for their own flavour of Markdown(which requires a closed-source Windows-only editor to use)</li>
+<li>Reviewing this tagging/annotation</li>
+</ol>
+<h3>Authenticity - who checks the scanners?</h3>
+<p>I found the process of verifying the Shamela(and other) books by using digitally-scanned copies of their hard-copy counterparts to be circular. The reason being that the point of failure lies in the anonymous scanners of the hard-copy books.</p>
+<p>Why is this a point of failure?</p>
+<p>To answer this, I provide a series of questions:</p>
+<ul>
+<li>Who scanned the book?</li>
+<li>When did the scans take place?</li>
+<li>How certain is it that the claimed scanned version is actually the same as its hard-copy counterpart?</li>
+</ul>
+<p>I contacted the Shamela team via email to understand how they digitized books. Perhaps they used hard-copy books and did their own scanning. I asked the following questions to them:</p>
+<blockquote>
+<p>My query to you is about how you authenticate or verify the books that you are digitizing?</p>
+<p>What method do you follow? Do you keep a digital PDF and a hard copy of each book?</p>
+</blockquote>
+<p>There(rather short) response was:</p>
+<blockquote>
+<p>Yes. In books we digitize, we keep a pdf and text copies. No hard copies here</p>
+</blockquote>
+<p>I sent a follow-up email querying the hard-copy problem and received the same response as above, albeit in larger font. This all but confirmed that Shamela are also just using scanned copies of books found on the internet and leads me to the next point ...</p>
+<p>The reason the OpenITI team are able to verify books according to version is because the Shamela team are essentially just finding these scanned copies online themselves and then digitizing it. Hence the circular problem. The text and digitally-scanned copy will match, but it doesn't seem like OpenITI or even Shamela are asking: do the digitally-scanned copies match their hard-copy versions?</p>
+<h3>Connecting the physical to the digital</h3>
+<p>While it may be daunting, verifying the hard-copies against the digitally-scanned ones would close the loop on authenticity. The OpenITI team is taking care of making sure there are digitally-scanned copies that match up to the text, what remains is to connect the digitally-scanned copy to its hard-copy counterpart.</p>
+<p>A simple method of verifying(and reaping rewards for practicing the Sunnah) would be to use an <a href="https://hadithanswers.com/the-significance-of-odd-numbers/">odd number</a> (<a href="https://www.abuaminaelias.com/dailyhadithonline/2021/05/31/allah-loves-witr/">other reference</a> like 3 and finding 3 randomly-chosen points in the text, then comparing these to the digital-scan and then to the hard-copy.</p>
+<p>I initially considered the number 33, but besides tasbih-fatimi, I found no significance to that number specifically(although it is an odd number too).</p>
+<h3>CAT tools - OmegaT, AI/ML and ethics</h3>
+<p>Regarding CAT tools, <a href="https://weblate.org/en/">Weblate</a> is not a suitable option. It is geared towards Open Source projects and not books. I spent a lot of(perhaps pointless) time looking at the various CAT tools available.</p>
+<p>I did learn a lot about CAT-related software:</p>
+<ul>
+<li>Various types of CAT tools exist, some using only human-driven data and some using a mix of Machine Translations(MT) that are then edited by humans</li>
+<li>Human-driven data is stored in Translation Memories(called TMs), which are also now being used for Machine Learning in something called: <a href="https://site.matecat.com/adaptive-mt-modernmt/">Adaptive MT</a></li>
+<li>The industry has had its own 'cloud' moment in the form of <a href="https://site.matecat.com/benefits/">Matecat</a> and others that followed, which are able to benefit from the massive corpora created by users</li>
+<li>Adding this "Adaptive MT" was something a lot of the proprietary players did to either keep up with the competition or to just add marketing spin to their products(I didn't find any studies to indicate its effectiveness for translators, although it is marketed as such)</li>
+<li>There is some strange and possibly unethical funding model with some of these Open Source projects(which I will discuss below)</li>
+<li>There is only 1 major Open Source tool in comparison to the proprietary ones and it is called: <a href="http://www.omegat.org/">OmegaT</a></li>
+</ul>
+<p>The situation behind what <em>I would personally consider unethical(and not proven in a court of law)</em> is the way in which some Open Source projects were funded and how their business models evolved. What I discovered was that both MateCat and ModernMT were partially or fully-funded by the EU and research grants, but these projects evolved into subscription-services. <em>My personal view</em> is that using research/grant money intended to build out an Open Source product and then 'forking' it into your own paid-for proprietary cloud service once a proven business model exists is somewhat unethical(evidenced by <a href="https://github.com/modernmt/modernmt/issues/580#issuecomment-770790049">ModernMT's roadmap</a> that essentially puts the Open Source project into maintenance mode).</p>
+<p>The idea behind Adaptive MT sounds really cool to have for an undertaking like translating Classical Arabic works, but I reasoned that it won't be of much use because there isn't much existing data to train the MT(via TMs or Translation Memories).</p>
+<p>I previously discussed that 1 of the goals of the translation was to crowdsource the effort so that lots of content can be translated simultaneously. The advantages of web-based tools over OmegaT are the minimal install requirements and more polished UIs. On the other hand, offline collaboration becomes possible with software like OmegaT. The <a href="https://omegat.sourceforge.io/manual-standard/en/howtos.html#howto.setupteamproject">Team Project</a> also requires a server to be setup, but this would be the case for a web-based tool as well.</p>
+<h3>Creating an umbrella for the different projects</h3>
+<p>I am busy formulating an outline for the different projects and I will place them under an umbrella website. Having a structure is important for being able to know what the goals are and then working towards them with small iterations.</p>
+<p>I will announce the umbrella website name and the structure in the next update.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://kentoseth.github.io/tag/culture.html">culture</a>
+      <a href="https://kentoseth.github.io/tag/languages.html">languages</a>
+      <a href="https://kentoseth.github.io/tag/ideas.html">ideas</a>
+      <a href="https://kentoseth.github.io/tag/ocr.html">OCR</a>
+      <a href="https://kentoseth.github.io/tag/cat.html">CAT</a>
+      <a href="https://kentoseth.github.io/tag/arabic.html">Arabic</a>
+    </p>
+  </div>
+
+
+
+
+  <hr>
+
+  <h3>If you don't know how to use RSS and want email updates on my new content, consider
+         <a href="https://tinyletter.com/Kentoseth" target="_blank" rel="noopener noreferrer">
+          Joining my Newsletter</a></h3>
+
+  <p><em>The original content of this blog is a Waqf solely for the Pleasure of Allah. You are hereby granted full permission to copy, download, distribute, publish and share this content without modification under condition that full attribution is given to this author by creating a link either above or below the content that links back to the original source of the content. For any questions or ambiguity, you are requested to contact me via email for clarification.</em></p>
+
+
+</article>
+
+    <footer>
+<p>&copy; 2021 </p>
+<p>
+Built with <a href="https://getpelican.com" target="_blank">Pelican</a> using <a href="https://github.com/alexandrevicenzi/Flex" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Kentoseth - Thoughts on programming, culture, FOSS and more ",
+  "url" : "https://kentoseth.github.io",
+  "image": "/images/avatar.jpg",
+  "description": "Thoughts on programming, culture, FOSS and more."
+}
+</script>
+
+
+</body>
+</html>
