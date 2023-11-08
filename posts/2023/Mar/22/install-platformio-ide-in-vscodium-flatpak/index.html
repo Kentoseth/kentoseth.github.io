@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="robots"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/theme/stylesheet/style.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/pygments/monokai.min.css" id="pygments-light-theme" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/brands.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/solid.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/feeds/all.atom.xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom" type="application/atom+xml"/>
+<!-- Chrome, Firefox OS and Opera -->
+<meta content="#333333" name="theme-color"/>
+<!-- Windows Phone -->
+<meta content="#333333" name="msapplication-navbutton-color"/>
+<!-- iOS Safari -->
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<!-- Microsoft EDGE -->
+<meta content="#333333" name="msapplication-TileColor"/>
+<meta content="Mohamed H." name="author">
+<meta content="How to install PlatformIO IDE in VsCodium using FlatPak." name="description">
+<meta content="PlatformIO, vscodium, flatpak" name="keywords"/>
+<meta content="Kentoseth - Thoughts on programming, culture, FOSS and more" property="og:site_name">
+<meta content="Install PlatformIO IDE in VsCodium (FlatPak)" property="og:title">
+<meta content="How to install PlatformIO IDE in VsCodium using FlatPak." property="og:description">
+<meta content="en_US" property="og:locale">
+<meta content="https://kentoseth.github.io/posts/2023/Mar/22/install-platformio-ide-in-vscodium-flatpak/" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="2023-03-22 02:00:00+02:00" property="article:published_time"/>
+<meta content="" property="article:modified_time"/>
+<meta content="https://kentoseth.github.io/author/mohamed-h.html" property="article:author"/>
+<meta content="Linux" property="article:section">
+<meta content="PlatformIO" property="article:tag"/>
+<meta content="vscodium" property="article:tag"/>
+<meta content="flatpak" property="article:tag"/>
+<meta content="/images/avatar.jpg" property="og:image"/>
+<title>Kentoseth - Thoughts on programming, culture, FOSS and more – Install PlatformIO IDE in VsCodium (FlatPak)</title>
+</meta></meta></meta></meta></meta></meta></meta><link href="https://kentoseth.github.io/posts/2023/Mar/22/install-platformio-ide-in-vscodium-flatpak/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kentoseth - Thoughts on programming, culture, FOSS and more", "item": "https://kentoseth.github.io"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://kentoseth.github.io/posts"}, {"@type": "ListItem", "position": 3, "name": "2023", "item": "https://kentoseth.github.io/posts/2023"}, {"@type": "ListItem", "position": 4, "name": "Mar", "item": "https://kentoseth.github.io/posts/2023/Mar"}, {"@type": "ListItem", "position": 5, "name": "22", "item": "https://kentoseth.github.io/posts/2023/Mar/22"}, {"@type": "ListItem", "position": 6, "name": "Install platformio ide in vscodium flatpak", "item": "https://kentoseth.github.io/posts/2023/Mar/22/install-platformio-ide-in-vscodium-flatpak"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://kentoseth.github.io/posts/2023/Mar/22/install-platformio-ide-in-vscodium-flatpak/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Mohamed H."}, "publisher": {"@type": "Organization", "name": "Kentoseth - Thoughts on programming, culture, FOSS and more"}, "headline": "Install PlatformIO IDE in VsCodium (FlatPak)", "about": "Linux", "datePublished": "2023-03-22 02:00"}</script></head>
+<body class="light-theme">
+<aside>
+<div>
+<a href="https://kentoseth.github.io">
+<img alt="Kentoseth" src="/images/avatar.jpg" title="Kentoseth"/>
+</a>
+<h1>
+<a href="https://kentoseth.github.io">Kentoseth</a>
+</h1>
+<p>Coding. Culture. Linux. More.</p>
+<nav>
+<ul class="list">
+<li>
+<a href="https://kentoseth.github.io/pages/about-me/" target="_self">
+                  About me
+                </a>
+</li>
+<li>
+<a href="https://kentoseth.github.io/pages/projects/" target="_self">
+                  Projects
+                </a>
+</li>
+<li>
+<a href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_self">Email</a>
+</li>
+<li>
+<a href="/categories.html" target="_self">Categories</a>
+</li>
+</ul>
+</nav>
+<form action="https://tinyletter.com/Kentoseth" method="post" onsubmit="window.open('https://tinyletter.com/Kentoseth', 'popupwindow', 
+        'scrollbars=yes,width=800,height=600');return true" style="border:1px solid #ccc;padding:3px;text-align:center;" target="popupwindow">
+<p><label for="tlemail">Join my Newsletter</label></p>
+<p><input id="tlemail" name="email" style="width:140px" type="text"/></p>
+<input name="embed" type="hidden" value="1"/>
+<input type="submit" value="Subscribe"/>
+<p><a href="https://tinyletter.com" rel="noopener noreferrer" target="_blank">powered by TinyLetter</a></p>
+</form>
+<ul class="social">
+<li>
+<a class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
+<i class="fab fa-github-alt"></i>
+</a>
+</li>
+<li>
+<a class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
+<i class="fab fa-gitlab"></i>
+</a>
+</li>
+<li>
+<a class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+<i class="fas fa-envelope"></i>
+</a>
+</li>
+<li>
+<a class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
+<i class="fas fa-rss"></i>
+</a>
+</li>
+<li>
+<a class="sc-mastodon" href="https://fosstodon.org/@kentoseth" rel="me" target="_blank">
+<i class="fab fa-mastodon"></i>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<main>
+<nav>
+<a href="https://kentoseth.github.io">Home</a>
+<a href="/categories">Categories</a>
+<a href="/tags">Tags</a>
+<a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
+</nav>
+<article class="single">
+<header>
+<h1 id="install-platformio-ide-in-vscodium-flatpak">Install PlatformIO IDE in VsCodium (FlatPak)</h1>
+<p>
+      Posted on Wed 22 March 2023 in <a href="https://kentoseth.github.io/category/linux.html">Linux</a>
+</p>
+</header>
+<div>
+<p>بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+<p>I am not a fan of proprietary software, especially from companies that are very keen on telemetry collection. This includes Microsoft'ss VSCode software.</p>
+<p>An alternative to this is called VSCodium, which is purely open source and has stripped away all the proprietary software.</p>
+<p>PlatformIO IDE is an alternative to the Arduino IDE, but it requires installation through VSCode.  This short guide will explain how to install platform io ide in VSCodium (which is installed using flatpak)</p>
+<p>The information of this is based on <a href="https://github.com/platformio/platformio-vscode-ide/issues/1886#issuecomment-1003719317">this github comment</a>.</p>
+<h3>Install VSCodium (FlatPak)</h3>
+<p>Open Pamac and make sure that FlatPak is enabled under ' preferences'.</p>
+<p>Now search for:</p>
+<p><code>VSCodium</code></p>
+<p>You should get two results, but choose the one that explicitly says: VSCodium</p>
+<p>Proceed to install.</p>
+<h3>Download vsix extensions</h3>
+<p>The first extension is the presumably proprietary <code>cpptools-linux.vsix</code> extension. This is the reason for using FlatPak.</p>
+<p>Download the extension from here: <a href="https://github.com/microsoft/vscode-cpptools/releases/download/1.3.1/cpptools-linux.vsix">cpptools-linux.vsix</a></p>
+<p>Now go to the PlatformIO IDE extension link here: <a href="https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide">PlatformIO vsix</a></p>
+<p>The image below shows where to download the vsix extension:</p>
+<p><img alt="VSCode plugin URL" src="https://kentoseth.github.io/images/vscode/pio-1.png"/></p>
+<h3>Install within VsCodium</h3>
+<p>Open VSCodium and scroll to the following to install these extensions:</p>
+<p><img alt="Installation of extension" src="https://kentoseth.github.io/images/vscode/pio-2.png"/></p>
+<p>Click on the triple dots and choose:</p>
+<p><code>install from vsix</code></p>
+<p>First install <code>cpptools-linux.vsix</code> then install <code>PlatformIO vsix</code>.</p>
+<p>A reset will be required.</p>
+<p>Once installed and re-opened, an alien-like icon should be shown as the picture above does. Click on it and let the IDE update.</p>
+<p>PlatformIO IDE is now installed.</p>
+</div>
+<div class="tag-cloud">
+<p>
+<a href="https://kentoseth.github.io/tag/platformio.html">PlatformIO</a>
+<a href="https://kentoseth.github.io/tag/vscodium.html">vscodium</a>
+<a href="https://kentoseth.github.io/tag/flatpak.html">flatpak</a>
+</p>
+</div>
+<hr/>
+<h3>If you don't know how to use RSS and want email updates on my new content, consider
+         <a href="https://tinyletter.com/Kentoseth" rel="noopener noreferrer" target="_blank">
+          Joining my Newsletter</a></h3>
+<p><em>The original content of this blog is a Waqf solely for the Pleasure of Allah. You are hereby granted full permission to copy, download, distribute, publish and share this content without modification under condition that full attribution is given to this author by creating a link either above or below the content that links back to the original source of the content. For any questions or ambiguity, you are requested to contact me via email for clarification.</em></p>
+</article>
+<footer>
+<p>© 2023 </p>
+<p>
+Built with <a href="https://getpelican.com" target="_blank">Pelican</a> using <a href="https://github.com/alexandrevicenzi/Flex" target="_blank">Flex</a> theme
+</p> </footer>
+</main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Kentoseth - Thoughts on programming, culture, FOSS and more ",
+  "url" : "https://kentoseth.github.io",
+  "image": "/images/avatar.jpg",
+  "description": "Content focused on Islam, Islamic Studies, Languages, Linux, FOSS, infosec and culture"
+}
+</script>
+</body>
+</html>

@@ -1,5 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Kentoseth - Thoughts on programming, culture, FOSS and more - Linux</title><link href="https://kentoseth.github.io/" rel="alternate"></link><link href="https://kentoseth.github.io/feeds/linux.atom.xml" rel="self"></link><id>https://kentoseth.github.io/</id><updated>2021-10-24T02:00:00+02:00</updated><subtitle>Coding. Culture. Linux. More.</subtitle><entry><title>Transfer files to and from Anbox</title><link href="https://kentoseth.github.io/posts/2021/Oct/24/transfer-files-to-and-from-anbox/" rel="alternate"></link><published>2021-10-24T02:00:00+02:00</published><updated>2021-10-24T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-10-24:/posts/2021/Oct/24/transfer-files-to-and-from-anbox/</id><summary type="html">&lt;p&gt;A short how-to on transferring files between a host Linux OS and Anbox&lt;/p&gt;</summary><content type="html">&lt;p&gt;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Kentoseth - Thoughts on programming, culture, FOSS and more - Linux</title><link href="https://kentoseth.github.io/" rel="alternate"></link><link href="https://kentoseth.github.io/feeds/linux.atom.xml" rel="self"></link><id>https://kentoseth.github.io/</id><updated>2023-09-03T02:00:00+02:00</updated><subtitle>Coding. Culture. Linux. More.</subtitle><entry><title>Install CAMeL Tools On Ubuntu Linux</title><link href="https://kentoseth.github.io/posts/2023/Sep/03/install-camel-tools-on-ubuntu-linux/" rel="alternate"></link><published>2023-09-03T02:00:00+02:00</published><updated>2023-09-03T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2023-09-03:/posts/2023/Sep/03/install-camel-tools-on-ubuntu-linux/</id><summary type="html">&lt;p&gt;How to install the Arabic NLP software called CAMeL Tools on Ubuntu Linux.&lt;/p&gt;</summary><content type="html">&lt;p&gt;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ&lt;/p&gt;
+&lt;p&gt;This guide will explain how to install the Arabic NLP software called &lt;a href="https://github.com/CAMeL-Lab/camel_tools"&gt;CAMeL Tools&lt;/a&gt; on Ubuntu Linux.&lt;/p&gt;
+&lt;p&gt;CAMeL Tools is a suite of Arabic natural language processing tools developed by the CAMeL Lab at New York University Abu Dhabi.&lt;/p&gt;
+&lt;p&gt;These instructions are based on the assumption that you have used my &lt;a href="https://www.kentoseth.com/posts/2023/aug/04/creating-a-base-lxc-container-to-build-other-containers-from/"&gt;LXC base container tutorial&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;(Please note that at the time of writing this article CAMeL Tools only supports Python versions 3.7-3.10. The installation of data packages outside of these versions will not work)&lt;/p&gt;
+&lt;h2&gt;Creating &amp;amp; accessing the CAMeL Tools container.&lt;/h2&gt;
+&lt;p&gt;Run this command on your host machine using any terminal software (like Yakuake, Konsole, Xterm or GNOME Terminal)::&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-copy -n base -N camel&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now start the container: &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-start -n camel&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now attach the container to gain access to it:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-attach -n camel&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The container should now be attached as:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;root@camel&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Installing Ubuntu Packages&lt;/h2&gt;
+&lt;p&gt;Update the container:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;apt update &amp;amp;&amp;amp; apt upgrade&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Install the following required system packages for CAMeL Tools:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;apt install rustc cmake libboost-all-dev&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Installing CAMeL Tools and data packages:&lt;/h2&gt;
+&lt;p&gt;Install CAMeL Tools:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip install camel-tools&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Depending on the speed of the internet, the installation may take a while due to the volume of large Python packages being installed.&lt;/p&gt;
+&lt;p&gt;Once completed, now install the data packages. In this example, the morphology data packages are being installed:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;camel_data -i light&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Use-cases&lt;/h3&gt;
+&lt;p&gt;A guided tour of CAMeL Tools is available online showing many examples, found &lt;a href="https://colab.research.google.com/drive/1Y3qCbD6Gw1KEw-lixQx1rI6WlyWnrnDS?usp=sharing#scrollTo=MtzSgEBl088z"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For my personal usage, the detailed morphological analysis of CAMeL Tools will be used for Arabic study using the Quran and Hadith.&lt;/p&gt;
+&lt;p&gt;For any errors, send me an email or contact me via &lt;a href="https://fosstodon.org/@kentoseth"&gt;Mastodon&lt;/a&gt;.&lt;/p&gt;</content><category term="Linux"></category><category term="ubuntu"></category><category term="pyton"></category><category term="nlp"></category><category term="arabic"></category></entry><entry><title>Adding an SSH key to a server</title><link href="https://kentoseth.github.io/posts/2023/Aug/07/adding-an-ssh-key-to-a-server/" rel="alternate"></link><published>2023-08-07T02:00:00+02:00</published><updated>2023-08-07T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2023-08-07:/posts/2023/Aug/07/adding-an-ssh-key-to-a-server/</id><summary type="html">&lt;p&gt;A simple guide on how to generate and add an SSH key to a Linux server.&lt;/p&gt;</summary><content type="html">&lt;p&gt;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ&lt;/p&gt;
+&lt;p&gt;This guide will explain how to add an SSH key to a remote server/container that has Linux installed on it. The user will then be able to connect from the host machine (where the key was generated) to the remote server. &lt;/p&gt;
+&lt;p&gt;The instructions should work on most Linux distros.&lt;/p&gt;
+&lt;h2&gt;Generate your SSH key on your local PC&lt;/h2&gt;
+&lt;p&gt;Run this command in any terminal software (like Yakuake, Konsole, Xterm or GNOME Terminal):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh-keygen -t rsa -b 4096 -C "add any comment you wish here"&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Follow the prompts and remember to enter the full file-path for the key + its name when asked where to save the key to:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/path/to/.ssh/my_new_key&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In the &lt;code&gt;.ssh/&lt;/code&gt; folder, 2 files should now exist:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;my_new_key&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;my_new_key.pub&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Add SSH key to remote server/container&lt;/h2&gt;
+&lt;p&gt;Now connect to your remote server. Without an existing key, the way to connect to a remote server will be via a password, like:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh root@&amp;lt;some-ip-address&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It is advisable to restrict root access and create a user. In this guide we will assume the new user is called 'ubuntu'.&lt;/p&gt;
+&lt;p&gt;As the 'ubuntu' user run these commands:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;
+mkdir&lt;span class="w"&gt; &lt;/span&gt;.ssh
+chmod&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;700&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;.ssh/
+
+
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;.ssh/
+touch&lt;span class="w"&gt; &lt;/span&gt;authorized_keys
+chmod&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;600&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;authorized_keys
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now open the &lt;code&gt;my_new_key.pub&lt;/code&gt; file on your &lt;strong&gt;local PC&lt;/strong&gt;. &lt;/p&gt;
+&lt;p&gt;Then run this command on the &lt;strong&gt;server&lt;/strong&gt; to open and edit the &lt;code&gt;authorized_keys&lt;/code&gt; file:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;nano authorized_keys&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Copy and paste the entire contents of &lt;code&gt;my_new_key.pub&lt;/code&gt; into &lt;code&gt;authorized_keys&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Close the file by pressing &lt;code&gt;CTRL + X&lt;/code&gt; and saving.&lt;/p&gt;
+&lt;p&gt;Test the connection by running this command on your local PC:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh -i ~/.ssh/my_new_key -p 22 ubuntu@&amp;lt;server-IP-address&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Bonus: adding the SSH info to your local PC SSH config file&lt;/h3&gt;
+&lt;p&gt;On your local PC, open the following file &lt;code&gt;.ssh/config&lt;/code&gt; using any text editor. Add the following text to this config file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nx"&gt;IdentitiesOnly&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;yes&lt;/span&gt;
+
+&lt;span class="nx"&gt;Host&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;new&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;server&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;HostName&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;server&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;IP&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;address&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;Port&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;22&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;User&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;ubuntu&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;IdentityFile&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;my_new_key&lt;/span&gt;
+
+
+&lt;span class="nx"&gt;Host&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;ForwardAgent&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;no&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;IdentitiesOnly&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;yes&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;It should now be possible to SSH to the server like so:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh ubuntu@new-server&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;For any errors, send me an email or contact me via &lt;a href="https://fosstodon.org/@kentoseth"&gt;Mastodon&lt;/a&gt;.&lt;/p&gt;</content><category term="Linux"></category><category term="ssh"></category><category term="ubuntu"></category></entry><entry><title>Install PlatformIO IDE in VsCodium (FlatPak)</title><link href="https://kentoseth.github.io/posts/2023/Mar/22/install-platformio-ide-in-vscodium-flatpak/" rel="alternate"></link><published>2023-03-22T02:00:00+02:00</published><updated>2023-03-22T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2023-03-22:/posts/2023/Mar/22/install-platformio-ide-in-vscodium-flatpak/</id><summary type="html">&lt;p&gt;How to install PlatformIO IDE in VsCodium using FlatPak.&lt;/p&gt;</summary><content type="html">&lt;p&gt;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ&lt;/p&gt;
+&lt;p&gt;I am not a fan of proprietary software, especially from companies that are very keen on telemetry collection. This includes Microsoft'ss VSCode software.&lt;/p&gt;
+&lt;p&gt;An alternative to this is called VSCodium, which is purely open source and has stripped away all the proprietary software.&lt;/p&gt;
+&lt;p&gt;PlatformIO IDE is an alternative to the Arduino IDE, but it requires installation through VSCode.  This short guide will explain how to install platform io ide in VSCodium (which is installed using flatpak)&lt;/p&gt;
+&lt;p&gt;The information of this is based on &lt;a href="https://github.com/platformio/platformio-vscode-ide/issues/1886#issuecomment-1003719317"&gt;this github comment&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Install VSCodium (FlatPak)&lt;/h3&gt;
+&lt;p&gt;Open Pamac and make sure that FlatPak is enabled under ' preferences'.&lt;/p&gt;
+&lt;p&gt;Now search for:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;VSCodium&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You should get two results, but choose the one that explicitly says: VSCodium&lt;/p&gt;
+&lt;p&gt;Proceed to install.&lt;/p&gt;
+&lt;h3&gt;Download vsix extensions&lt;/h3&gt;
+&lt;p&gt;The first extension is the presumably proprietary &lt;code&gt;cpptools-linux.vsix&lt;/code&gt; extension. This is the reason for using FlatPak.&lt;/p&gt;
+&lt;p&gt;Download the extension from here: &lt;a href="https://github.com/microsoft/vscode-cpptools/releases/download/1.3.1/cpptools-linux.vsix"&gt;cpptools-linux.vsix&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now go to the PlatformIO IDE extension link here: &lt;a href="https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide"&gt;PlatformIO vsix&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The image below shows where to download the vsix extension:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="VSCode plugin URL" src="https://kentoseth.github.io/images/vscode/pio-1.png"&gt;&lt;/p&gt;
+&lt;h3&gt;Install within VsCodium&lt;/h3&gt;
+&lt;p&gt;Open VSCodium and scroll to the following to install these extensions:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Installation of extension" src="https://kentoseth.github.io/images/vscode/pio-2.png"&gt;&lt;/p&gt;
+&lt;p&gt;Click on the triple dots and choose:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;install from vsix&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;First install &lt;code&gt;cpptools-linux.vsix&lt;/code&gt; then install &lt;code&gt;PlatformIO vsix&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;A reset will be required.&lt;/p&gt;
+&lt;p&gt;Once installed and re-opened, an alien-like icon should be shown as the picture above does. Click on it and let the IDE update.&lt;/p&gt;
+&lt;p&gt;PlatformIO IDE is now installed.&lt;/p&gt;</content><category term="Linux"></category><category term="PlatformIO"></category><category term="vscodium"></category><category term="flatpak"></category></entry><entry><title>SSH config file: Use correct IdentityFile</title><link href="https://kentoseth.github.io/posts/2022/Jul/03/ssh-config-file-use-correct-identityfile/" rel="alternate"></link><published>2022-07-03T02:00:00+02:00</published><updated>2022-07-03T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2022-07-03:/posts/2022/Jul/03/ssh-config-file-use-correct-identityfile/</id><summary type="html">&lt;p&gt;How to make the ~/.ssh/config file use the correct SSH key in IdentityFile.&lt;/p&gt;</summary><content type="html">&lt;p&gt;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ&lt;/p&gt;
+&lt;p&gt;I was recently trying to set up a new code-hosting repo at &lt;a href="https://codeberg.org"&gt;Codeberg&lt;/a&gt; using a new SSH key. I created the SSH key like so:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh-keygen -t rsa -b 4096 -C "somename@mail.org"&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In order to test that the connection to Codeberg works, I ran:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh -vT git@codeberg.org&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The debug output showed that SSH was attempting to use the first few keys it could find and none of them were the key I specified &lt;code&gt;sample_key&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I found this answer from &lt;a href="https://superuser.com/questions/268776/how-do-i-configure-ssh-so-it-doesnt-try-all-the-identity-files-automatically/"&gt;SuperUser&lt;/a&gt; that says the solution to fix the &lt;code&gt;IdentityFile&lt;/code&gt; problem is to add the following to the &lt;code&gt;~/.ssh/config&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;#&lt;span class="nv"&gt;sample&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;host&lt;/span&gt;
+
+&lt;span class="nv"&gt;Host&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;codeberg&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;HostName&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;codeberg&lt;/span&gt;.&lt;span class="nv"&gt;org&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;User&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;git&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;IdentityFile&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;~/&lt;/span&gt;.&lt;span class="nv"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;sample_key&lt;/span&gt;
+
+#&lt;span class="nv"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;file&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;after&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;every&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;Host&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;has&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;been&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;added&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;add&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;this&lt;/span&gt;:
+
+&lt;span class="nv"&gt;Host&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ForwardAgent&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;no&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;IdentitiesOnly&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;yes&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;But this did not work for me either! SSH still kept using the first few keys it could find and not using &lt;code&gt;sample_key&lt;/code&gt; at all.&lt;/p&gt;
+&lt;p&gt;The fix for this solution is to add the correct URL for &lt;code&gt;Host&lt;/code&gt; such that it matches &lt;code&gt;HostName&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Host codeberg.org
+ HostName codeberg.org
+ User git
+ IdentityFile ~/.ssh/sample_key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Below is a list of Host/HostNames that should work for various Git repo providers:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;#gitlab
+
+Host gitlab.com
+ HostName gitlab.com
+ ...
+
+#codeberg
+
+Host codeberg.org
+ HostName codeberg.org
+ ...
+
+#bitbucket
+
+Host bitbucket.org
+ HostName bitbucket.org
+ ...
+
+#github
+
+Host github.com
+ HostName github.com
+ ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The full explanation of the difference was shared in a &lt;a href="https://fosstodon.org/web/@jordan@sometimes.social/108569036830049690"&gt;toot here&lt;/a&gt;, reproduced verbatim:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Host” is the name you type on the command-line - if you have a block with “Host codeberg” then it will apply if you “ssh codeberg”&lt;/p&gt;
+&lt;p&gt;“Hostname” is the name that ssh actually connects to. If you had “Host foo / Hostname bar” then when you typed “ssh foo” then ssh would connect to bar.&lt;/p&gt;
+&lt;p&gt;You can leave “Hostname” out if you don’t want to override it, i.e. you can just have “Host foo” and specify other options for that host without giving a “Hostname” and it will just connect directly to “foo” — “Host” and “Hostname” is mainly useful in combination to create aliases for hosts.&lt;/p&gt;
+&lt;p&gt;“Host” can accept multiple names - you can have   “Host foo bar baz / Hostname quux” and ssh will connect to quux when you ssh to foo, bar, or baz.&lt;/p&gt;
+&lt;p&gt;See https://github.com/jordemort/dotfiles/blob/main/home/.ssh/config.d/default for an example.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So you can actually use &lt;code&gt;Host codeberg&lt;/code&gt; but then you will need to SSH like so:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh codeberg&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Whichever option used, I hope this article helps everyone debug this issue quickly and easily.&lt;/p&gt;</content><category term="Linux"></category><category term="SSH"></category><category term="git"></category></entry><entry><title>Linux: How to view bit-rate and compress MP3 files</title><link href="https://kentoseth.github.io/posts/2022/Apr/08/linux-how-to-view-bit-rate-and-compress-mp3-files/" rel="alternate"></link><published>2022-04-08T02:00:00+02:00</published><updated>2022-04-08T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2022-04-08:/posts/2022/Apr/08/linux-how-to-view-bit-rate-and-compress-mp3-files/</id><summary type="html">&lt;p&gt;A short how-to on viewing the bit-rate of an MP3 file and compressing the MP3 via the command-line.&lt;/p&gt;</summary><content type="html">&lt;p&gt;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ&lt;/p&gt;
+&lt;p&gt;The following guide assumes the reader is comfortable with using a terminal editor (otherwise known as the command-line or command-prompt).&lt;/p&gt;
+&lt;p&gt;Two command-line tools are also required:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;exiftool&lt;/li&gt;
+&lt;li&gt;lame&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Depending on your Linux distribution, they should already be installed or available via the package manager.&lt;/p&gt;
+&lt;h3&gt;Viewing the bit-rate&lt;/h3&gt;
+&lt;p&gt;Viewing the bit-rate of an MP3 file helps to determine whether the file should be compressed and what the current quality of the audio is.&lt;/p&gt;
+&lt;p&gt;To view the bit-rate, navigate to the folder where the MP3 file is stored via the command-line.&lt;/p&gt;
+&lt;p&gt;Enter the following command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;exiftool&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;AudioBitrate&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;myfilename&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mp3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The expected output should be:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Audio Bitrate : 128 kbps
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Compressing the MP3 file&lt;/h3&gt;
+&lt;p&gt;According to this &lt;a href="https://en.wikipedia.org/wiki/Bit_rate#MP3"&gt;source&lt;/a&gt;, the lowest acceptable quality bit-rate for MP3 files is "32 kbit/s".&lt;/p&gt;
+&lt;p&gt;After choosing your preferred bit-rate, run the following command:&lt;/p&gt;
+&lt;p&gt;lame -b 64 myfilename.mp3 myfilename-64.mp3&lt;/p&gt;
+&lt;p&gt;The compression may take some time depending on the size of the file. once completed, a new file should exist called &lt;code&gt;myfilename-64.mp3&lt;/code&gt; and the file size should be smaller than the original.&lt;/p&gt;</content><category term="Linux"></category><category term="mp3"></category><category term="compress"></category><category term="bit-rate"></category><category term="lame"></category></entry><entry><title>Transfer files to and from Anbox</title><link href="https://kentoseth.github.io/posts/2021/Oct/24/transfer-files-to-and-from-anbox/" rel="alternate"></link><published>2021-10-24T02:00:00+02:00</published><updated>2021-10-24T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-10-24:/posts/2021/Oct/24/transfer-files-to-and-from-anbox/</id><summary type="html">&lt;p&gt;A short how-to on transferring files between a host Linux OS and Anbox.&lt;/p&gt;</summary><content type="html">&lt;p&gt;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://anbox.io/"&gt;Anbox&lt;/a&gt; makes it possible to bring Android apps to Linux devices. This short tutorial explains how to transfer files between your Linux host Operating System and Anbox.&lt;/p&gt;
 &lt;h3&gt;Instructions&lt;/h3&gt;
 &lt;p&gt;Access your file manager as the &lt;strong&gt;root&lt;/strong&gt; user(or via the CLI as root). Navigate to:&lt;/p&gt;
@@ -29,23 +228,20 @@
 &lt;p&gt;Let us say we have a bunch of CSV files labelled like so: data_1.csv, data_2.csv and so on&lt;/p&gt;
 &lt;h3&gt;Merging&lt;/h3&gt;
 &lt;p&gt;In order to merge[1] all these CSV files, we can use &lt;code&gt;sed&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sed 1d data-*.csv &amp;amp;gt; merged.csv
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sed 1d data-*.csv &amp;gt; merged.csv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The command collects all the data- files and after merging them, saves them to &lt;code&gt;merged.csv&lt;/code&gt;. From the reference article I learned that if you used &lt;code&gt;*.csv&lt;/code&gt; it may also merge the &lt;code&gt;merged.csv&lt;/code&gt; file and create duplicates and other issues.&lt;/p&gt;
 &lt;h3&gt;Filtering - exact match&lt;/h3&gt;
 &lt;p&gt;In order to find an exact entry in the CSV file, we can use &lt;code&gt;awk&lt;/code&gt;[2]:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;awk -F&amp;quot;,&amp;quot; &amp;#39;$1==somestring&amp;#39; merged.csv
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;awk -F&amp;quot;,&amp;quot; &amp;#39;$1==somestring&amp;#39; merged.csv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The &lt;code&gt;","&lt;/code&gt; tells &lt;code&gt;awk&lt;/code&gt; to view the comma as a separator. The &lt;code&gt;$1&lt;/code&gt; says to look in the first column. &lt;code&gt;somestring&lt;/code&gt; is the exact match we are looking for in column 1. &lt;code&gt;merged.csv&lt;/code&gt; is the file we want to look into for the value.&lt;/p&gt;
 &lt;h3&gt;Filtering - partial strings&lt;/h3&gt;
 &lt;p&gt;My main filtering goal was to use partial strings to find certain values that match the partial string. Again we will use &lt;code&gt;awk&lt;/code&gt;[3]:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;awk &amp;#39;index($1, &amp;quot;partialstring&amp;quot;)&amp;#39; merged.csv
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;awk &amp;#39;index($1, &amp;quot;partialstring&amp;quot;)&amp;#39; merged.csv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Similar to the above, &lt;code&gt;$1&lt;/code&gt; looks in column 1 for the &lt;code&gt;"partialstring"&lt;/code&gt; string. In both the &lt;code&gt;awk&lt;/code&gt; commands you can also save the output to a file like so:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;awk 'index($1, "partialstring")' merged.csv &amp;gt; output.txt&lt;/code&gt;&lt;/p&gt;
@@ -92,7 +288,7 @@
 &lt;p&gt;Then:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;sudo apt-get upgrade&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;You should now have all your packages updated.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Note 1: The linux system files don't seem to update after running "&lt;strong&gt;sudo apt-get upgrade&lt;/strong&gt;", but you can update them through the update manager&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note 1: The linux system files don't seem to update after running "__sudo apt-get upgrade__", but you can update them through the update manager&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note 2: Even if you have different packages on your machines (like extra packages on the main machine), the other packages that weren't previously installed on your client machine will &lt;em&gt;not&lt;/em&gt; be installed&lt;/em&gt;&lt;/p&gt;</content><category term="Linux"></category><category term="ubuntu"></category><category term="updates"></category><category term="ssh"></category></entry><entry><title>Install Ubuntu Server using Wubi</title><link href="https://kentoseth.github.io/posts/2014/Jul/01/install-ubuntu-server-using-wubi/" rel="alternate"></link><published>2014-07-01T02:00:00+02:00</published><updated>2014-07-01T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2014-07-01:/posts/2014/Jul/01/install-ubuntu-server-using-wubi/</id><summary type="html">&lt;p&gt;Getting Ubuntu Server installed using the wubi method.&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you're somebody that has tinkered with linux a while back, you may have come across something called &lt;a href="https://wiki.ubuntu.com/WubiGuide"&gt;Wubi&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Wubi basically allows you to install linux &lt;em&gt;within&lt;/em&gt; windows.&lt;/p&gt;
 &lt;p&gt;You will probably want to install Ubuntu Server with Wubi if you have a Windows system that you feel you still need, but you'd also like to tinker/test-out a server-version of Ubuntu.&lt;/p&gt;
@@ -108,13 +304,12 @@
 &lt;/ul&gt;
 &lt;p&gt;The process of converting the desktop to server is made very simple, using a tool called &lt;a href="https://help.ubuntu.com/community/Tasksel"&gt;Tasksel&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Open a terminal/console window in your Ubuntu Desktop and type in the following commands:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install tasksel
-sudo tasksel remove ubuntu-desktop &lt;span class="c1"&gt;# (Note: this may take a few minutes to complete)&lt;/span&gt;
-sudo tasksel install server
-apt-get install linux-server linux-image-server
-apt-get –purge remove lightdm
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;tasksel
+sudo&lt;span class="w"&gt; &lt;/span&gt;tasksel&lt;span class="w"&gt; &lt;/span&gt;remove&lt;span class="w"&gt; &lt;/span&gt;ubuntu-desktop&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# (Note: this may take a few minutes to complete)&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;tasksel&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;server
+apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;linux-server&lt;span class="w"&gt; &lt;/span&gt;linux-image-server
+apt-get&lt;span class="w"&gt; &lt;/span&gt;–purge&lt;span class="w"&gt; &lt;/span&gt;remove&lt;span class="w"&gt; &lt;/span&gt;lightdm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Remember to type in each command (as listed by the each point) separately and wait for it to complete, before typing in the next command.&lt;/p&gt;
 &lt;p&gt;Also, for this line:&lt;/p&gt;

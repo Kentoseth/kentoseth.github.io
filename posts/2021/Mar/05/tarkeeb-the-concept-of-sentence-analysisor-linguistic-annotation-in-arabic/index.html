@@ -1,172 +1,133 @@
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/stylesheet/style.min.css">
-
-
-    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-          href="https://kentoseth.github.io/theme/pygments/monokai.min.css">
-
-
-  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/solid.css">
-
-    <link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet">
-
-    <link href="https://kentoseth.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom">
-
-
-
-
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#333333">
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#333333">
-    <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Microsoft EDGE -->
-    <meta name="msapplication-TileColor" content="#333333">
-
-<meta name="author" content="Mohamed H." />
-<meta name="description" content="Discussing tarkeeb and annotation-software that can be used for it" />
-<meta name="keywords" content="Arabic, NLP, languages, annotation-software">
-
-
-<meta property="og:site_name" content="Kentoseth - Thoughts on programming, culture, FOSS and more"/>
-<meta property="og:title" content="Tarkeeb - the concept of sentence analysis(or Linguistic Annotation) in Arabic"/>
-<meta property="og:description" content="Discussing tarkeeb and annotation-software that can be used for it"/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://kentoseth.github.io/posts/2021/Mar/05/tarkeeb-the-concept-of-sentence-analysisor-linguistic-annotation-in-arabic/"/>
-<meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2021-03-05 03:00:00+02:00"/>
-<meta property="article:modified_time" content=""/>
-<meta property="article:author" content="https://kentoseth.github.io/author/mohamed-h.html">
-<meta property="article:section" content="Language"/>
-<meta property="article:tag" content="Arabic"/>
-<meta property="article:tag" content="NLP"/>
-<meta property="article:tag" content="languages"/>
-<meta property="article:tag" content="annotation-software"/>
-<meta property="og:image" content="/images/avatar.jpg">
-
-  <title>Kentoseth - Thoughts on programming, culture, FOSS and more &ndash; Tarkeeb - the concept of sentence analysis(or Linguistic Annotation) in Arabic</title>
-
-</head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="robots"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/theme/stylesheet/style.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/pygments/monokai.min.css" id="pygments-light-theme" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/brands.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/solid.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/feeds/all.atom.xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom" type="application/atom+xml"/>
+<!-- Chrome, Firefox OS and Opera -->
+<meta content="#333333" name="theme-color"/>
+<!-- Windows Phone -->
+<meta content="#333333" name="msapplication-navbutton-color"/>
+<!-- iOS Safari -->
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<!-- Microsoft EDGE -->
+<meta content="#333333" name="msapplication-TileColor"/>
+<meta content="Mohamed H." name="author">
+<meta content="Discussing tarkeeb and annotation-software that can be used for it" name="description">
+<meta content="Arabic, NLP, languages, annotation-software" name="keywords"/>
+<meta content="Kentoseth - Thoughts on programming, culture, FOSS and more" property="og:site_name">
+<meta content="Tarkeeb - the concept of sentence analysis(or Linguistic Annotation) in Arabic" property="og:title">
+<meta content="Discussing tarkeeb and annotation-software that can be used for it" property="og:description">
+<meta content="en_US" property="og:locale">
+<meta content="https://kentoseth.github.io/posts/2021/Mar/05/tarkeeb-the-concept-of-sentence-analysisor-linguistic-annotation-in-arabic/" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="2021-03-05 03:00:00+02:00" property="article:published_time"/>
+<meta content="" property="article:modified_time"/>
+<meta content="https://kentoseth.github.io/author/mohamed-h.html" property="article:author"/>
+<meta content="Language" property="article:section">
+<meta content="Arabic" property="article:tag"/>
+<meta content="NLP" property="article:tag"/>
+<meta content="languages" property="article:tag"/>
+<meta content="annotation-software" property="article:tag"/>
+<meta content="/images/avatar.jpg" property="og:image"/>
+<title>Kentoseth - Thoughts on programming, culture, FOSS and more – Tarkeeb - the concept of sentence analysis(or Linguistic Annotation) in Arabic</title>
+</meta></meta></meta></meta></meta></meta></meta><link href="https://kentoseth.github.io/posts/2021/Mar/05/tarkeeb-the-concept-of-sentence-analysisor-linguistic-annotation-in-arabic/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kentoseth - Thoughts on programming, culture, FOSS and more", "item": "https://kentoseth.github.io"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://kentoseth.github.io/posts"}, {"@type": "ListItem", "position": 3, "name": "2021", "item": "https://kentoseth.github.io/posts/2021"}, {"@type": "ListItem", "position": 4, "name": "Mar", "item": "https://kentoseth.github.io/posts/2021/Mar"}, {"@type": "ListItem", "position": 5, "name": "05", "item": "https://kentoseth.github.io/posts/2021/Mar/05"}, {"@type": "ListItem", "position": 6, "name": "Tarkeeb the concept of sentence analysisor linguistic annotation in arabic", "item": "https://kentoseth.github.io/posts/2021/Mar/05/tarkeeb-the-concept-of-sentence-analysisor-linguistic-annotation-in-arabic"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://kentoseth.github.io/posts/2021/Mar/05/tarkeeb-the-concept-of-sentence-analysisor-linguistic-annotation-in-arabic/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Mohamed H."}, "publisher": {"@type": "Organization", "name": "Kentoseth - Thoughts on programming, culture, FOSS and more"}, "headline": "Tarkeeb - the concept of sentence analysis(or Linguistic Annotation) in Arabic", "about": "Language", "datePublished": "2021-03-05 03:00"}</script></head>
 <body class="light-theme">
-  <aside>
-    <div>
-      <a href="https://kentoseth.github.io">
-        <img src="/images/avatar.jpg" alt="Kentoseth" title="Kentoseth">
-      </a>
-
-      <h1>
-        <a href="https://kentoseth.github.io">Kentoseth</a>
-      </h1>
-
+<aside>
+<div>
+<a href="https://kentoseth.github.io">
+<img alt="Kentoseth" src="/images/avatar.jpg" title="Kentoseth"/>
+</a>
+<h1>
+<a href="https://kentoseth.github.io">Kentoseth</a>
+</h1>
 <p>Coding. Culture. Linux. More.</p>
-
-      <nav>
-        <ul class="list">
-
-
-              <li>
-                <a target="_self"
-                   href="https://kentoseth.github.io/pages/about-me/">
+<nav>
+<ul class="list">
+<li>
+<a href="https://kentoseth.github.io/pages/about-me/" target="_self">
                   About me
                 </a>
-              </li>
-              <li>
-                <a target="_self"
-                   href="https://kentoseth.github.io/pages/projects/">
+</li>
+<li>
+<a href="https://kentoseth.github.io/pages/projects/" target="_self">
                   Projects
                 </a>
-              </li>
-
-            <li>
-              <a target="_self" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" >Email</a>
-            </li>
-            <li>
-              <a target="_self" href="/categories.html" >Categories</a>
-            </li>
-        </ul>
-      </nav>
-
-        <form style="border:1px solid #ccc;padding:3px;text-align:center;" 
-        action="https://tinyletter.com/Kentoseth" method="post" target="popupwindow" 
-        onsubmit="window.open('https://tinyletter.com/Kentoseth', 'popupwindow', 
-        'scrollbars=yes,width=800,height=600');return true">
-        <p><label for="tlemail">Join my Newsletter</label></p>
-        <p><input type="text" style="width:140px" name="email" id="tlemail" /></p>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" />
-        <p><a href="https://tinyletter.com" target="_blank" rel="noopener noreferrer">powered by TinyLetter</a></p>
-        </form>
-
-      <ul class="social">
-          <li>
-            <a  class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
-              <i class="fab fa-github-alt"></i>
-            </a>
-          </li>
-          <li>
-            <a  class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
-              <i class="fab fa-gitlab"></i>
-            </a>
-          </li>
-          <li>
-            <a  class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
-              <i class="fas fa-envelope"></i>
-            </a>
-          </li>
-          <li>
-            <a  class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
-              <i class="fas fa-rss"></i>
-            </a>
-          </li>
-          <li>
-            <a rel="me" class="sc-mastodon" href="https://fosstodon.org/@kentoseth" target="_blank">
-              <i class="fab fa-mastodon"></i>
-            </a>
-          </li>
-      </ul>
-    </div>
-
-  </aside>
-  <main>
-
-    <nav>
-      <a href="https://kentoseth.github.io">Home</a>
-
-      <a href="/categories">Categories</a>
-      <a href="/tags">Tags</a>
-
-      <a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
-
-    </nav>
-
+</li>
+<li>
+<a href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_self">Email</a>
+</li>
+<li>
+<a href="/categories.html" target="_self">Categories</a>
+</li>
+</ul>
+</nav>
+<form action="https://tinyletter.com/Kentoseth" method="post" onsubmit="window.open('https://tinyletter.com/Kentoseth', 'popupwindow', 
+        'scrollbars=yes,width=800,height=600');return true" style="border:1px solid #ccc;padding:3px;text-align:center;" target="popupwindow">
+<p><label for="tlemail">Join my Newsletter</label></p>
+<p><input id="tlemail" name="email" style="width:140px" type="text"/></p>
+<input name="embed" type="hidden" value="1"/>
+<input type="submit" value="Subscribe"/>
+<p><a href="https://tinyletter.com" rel="noopener noreferrer" target="_blank">powered by TinyLetter</a></p>
+</form>
+<ul class="social">
+<li>
+<a class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
+<i class="fab fa-github-alt"></i>
+</a>
+</li>
+<li>
+<a class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
+<i class="fab fa-gitlab"></i>
+</a>
+</li>
+<li>
+<a class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+<i class="fas fa-envelope"></i>
+</a>
+</li>
+<li>
+<a class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
+<i class="fas fa-rss"></i>
+</a>
+</li>
+<li>
+<a class="sc-mastodon" href="https://fosstodon.org/@kentoseth" rel="me" target="_blank">
+<i class="fab fa-mastodon"></i>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<main>
+<nav>
+<a href="https://kentoseth.github.io">Home</a>
+<a href="/categories">Categories</a>
+<a href="/tags">Tags</a>
+<a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
+</nav>
 <article class="single">
-  <header>
-      
-    <h1 id="tarkeeb-the-concept-of-sentence-analysisor-linguistic-annotation-in-arabic">Tarkeeb - the concept of sentence analysis(or Linguistic Annotation) in Arabic</h1>
-    <p>
+<header>
+<h1 id="tarkeeb-the-concept-of-sentence-analysisor-linguistic-annotation-in-arabic">Tarkeeb - the concept of sentence analysis(or Linguistic Annotation) in Arabic</h1>
+<p>
       Posted on Fri 05 March 2021 in <a href="https://kentoseth.github.io/category/language.html">Language</a>
-
-    </p>
-  </header>
-
-
-  <div>
-    <p>During my time studying intermediate Arabic, mainly the study of Al-Ajurumiyah[1] in Arabic grammar, I was introduced to the word 'Tarkeeb'. I was initially trying to grasp the concept of what Tarkeeb means, among the mountain of Arabic terms used for different concepts in the language(parts-of-speech, grammatical concepts, morphological concepts and more), until I realized that I have already been exposed to Tarkeeb via <a href="https://corpus.quran.com/">The Quran Corpus</a>.</p>
+</p>
+</header>
+<div>
+<p>During my time studying intermediate Arabic, mainly the study of Al-Ajurumiyah[1] in Arabic grammar, I was introduced to the word 'Tarkeeb'. I was initially trying to grasp the concept of what Tarkeeb means, among the mountain of Arabic terms used for different concepts in the language(parts-of-speech, grammatical concepts, morphological concepts and more), until I realized that I have already been exposed to Tarkeeb via <a href="https://corpus.quran.com/">The Quran Corpus</a>.</p>
 <h3>Defining Tarkeeb</h3>
 <p>Tarkeeb is basically the equivalent of what is shown in the <a href="https://corpus.quran.com/treebank.jsp">Quran Corpus Treebank</a>. I did find a definition from a PDF(the PDF is the only definition or discussion of 'Tarkeeb' I found on the internet that relates to the concept of Linguistic Annotation. I have also removed the link to the PDF for various reasons) but I will copy/paste the definition due to the lack of preservation of digitized works among the many hundreds of Islamic/Arabic websites that depend on 3rd-party services(like the hosted sites on wordpress.com) that get shut down after a few years for various reasons.</p>
 <p>The definition says:</p>
@@ -191,7 +152,7 @@
 <p>The annotation of the(textual) Arabic language with various concepts related to understanding language(like parts-of-speech, morphological features and dependency-graphs)</p>
 </blockquote>
 <p>A picture is worth a thousand words, so here is a borrowed image from the Quran Corpus:</p>
-<p><img alt="Surah Ikhlas" src="https://kentoseth.github.io/images/tarkeeb/corpus-image.png"></p>
+<p><img alt="Surah Ikhlas" src="https://kentoseth.github.io/images/tarkeeb/corpus-image.png"/></p>
 <p>My definition is probably inaccurate to academic-linguists, but for laypeople it is easier to understand. Case in point is the Wikipedia explanation(linked above), which is too burdensome for laypeople to understand without having to know the various domain-specific definitions that only academic-linguists would.</p>
 <h3>Annotation software</h3>
 <p>I shared a link above to various Open Source <a href="https://corpus-analysis.com/">Corpus Linguistics tools</a>, but the ones that would be best suited for Tarkeeb are the annotation ones. I tried a few of them that were closest to what the Quran Corpus has in structure, like <a href="https://github.com/proycon/flat">Flat</a>. I was biased towards Python options as those would be the easiest for me to modify if I needed code-modifications. After some deeper investigation I found <a href="https://inception-project.github.io/">INCEpTION</a> via <a href="https://webanno.github.io/webanno/">WebAnno</a>. INCEpTION is really amazing and has practically everything I need for a possible clone of the Quran Corpus. In a future article I will discuss how to install and run INCEpTION locally.</p>
@@ -199,40 +160,27 @@
 <h3>Conclusion</h3>
 <p>If you have any thoughts on Tarkeeb, learning Arabic, Open Source software(related to what I discussed above), drop me an email and we can share our thoughts on the subject.</p>
 <p>[1] Al-Ajurumiyah is a famous Arabic Grammar book written by Abu `Abdillah Muḥammad b. Muḥammad b. Dāwūd as-Sinhājī</p>
-  </div>
-  <div class="tag-cloud">
-    <p>
-      <a href="https://kentoseth.github.io/tag/arabic.html">Arabic</a>
-      <a href="https://kentoseth.github.io/tag/nlp.html">NLP</a>
-      <a href="https://kentoseth.github.io/tag/languages.html">languages</a>
-      <a href="https://kentoseth.github.io/tag/annotation-software.html">annotation-software</a>
-    </p>
-  </div>
-
-
-
-
-  <hr>
-
-  <h3>If you don't know how to use RSS and want email updates on my new content, consider
-         <a href="https://tinyletter.com/Kentoseth" target="_blank" rel="noopener noreferrer">
+</div>
+<div class="tag-cloud">
+<p>
+<a href="https://kentoseth.github.io/tag/arabic.html">Arabic</a>
+<a href="https://kentoseth.github.io/tag/nlp.html">NLP</a>
+<a href="https://kentoseth.github.io/tag/languages.html">languages</a>
+<a href="https://kentoseth.github.io/tag/annotation-software.html">annotation-software</a>
+</p>
+</div>
+<hr/>
+<h3>If you don't know how to use RSS and want email updates on my new content, consider
+         <a href="https://tinyletter.com/Kentoseth" rel="noopener noreferrer" target="_blank">
           Joining my Newsletter</a></h3>
-
-  <p><em>The original content of this blog is a Waqf solely for the Pleasure of Allah. You are hereby granted full permission to copy, download, distribute, publish and share this content without modification under condition that full attribution is given to this author by creating a link either above or below the content that links back to the original source of the content. For any questions or ambiguity, you are requested to contact me via email for clarification.</em></p>
-
-
+<p><em>The original content of this blog is a Waqf solely for the Pleasure of Allah. You are hereby granted full permission to copy, download, distribute, publish and share this content without modification under condition that full attribution is given to this author by creating a link either above or below the content that links back to the original source of the content. For any questions or ambiguity, you are requested to contact me via email for clarification.</em></p>
 </article>
-
-    <footer>
-<p>&copy; 2021 </p>
+<footer>
+<p>© 2023 </p>
 <p>
 Built with <a href="https://getpelican.com" target="_blank">Pelican</a> using <a href="https://github.com/alexandrevicenzi/Flex" target="_blank">Flex</a> theme
-</p>    </footer>
-  </main>
-
-
-
-
+</p> </footer>
+</main>
 <script type="application/ld+json">
 {
   "@context" : "http://schema.org",
@@ -240,10 +188,8 @@ Built with <a href="https://getpelican.com" target="_blank">Pelican</a> using <a
   "name": " Kentoseth - Thoughts on programming, culture, FOSS and more ",
   "url" : "https://kentoseth.github.io",
   "image": "/images/avatar.jpg",
-  "description": "Thoughts on programming, culture, FOSS and more."
+  "description": "Content focused on Islam, Islamic Studies, Languages, Linux, FOSS, infosec and culture"
 }
 </script>
-
-
 </body>
 </html>

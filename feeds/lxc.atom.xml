@@ -1,5 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Kentoseth - Thoughts on programming, culture, FOSS and more - LXC</title><link href="https://kentoseth.github.io/" rel="alternate"></link><link href="https://kentoseth.github.io/feeds/lxc.atom.xml" rel="self"></link><id>https://kentoseth.github.io/</id><updated>2021-05-28T02:00:00+02:00</updated><subtitle>Coding. Culture. Linux. More.</subtitle><entry><title>How to install Visual Studio Code(VSCode) inside an LXC container</title><link href="https://kentoseth.github.io/posts/2021/May/28/how-to-install-visual-studio-codevscode-inside-an-lxc-container/" rel="alternate"></link><published>2021-05-28T02:00:00+02:00</published><updated>2021-05-28T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-05-28:/posts/2021/May/28/how-to-install-visual-studio-codevscode-inside-an-lxc-container/</id><summary type="html">&lt;p&gt;How to install VSCode(a GUI app) inside an LXC container&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://code.visualstudio.com/"&gt;Visual Studio Code or vscode&lt;/a&gt; is a really great editor. One of its most advanced features that most other editors don't have is the &lt;a href="https://code.visualstudio.com/docs/remote/remote-overview"&gt;VS Code Remote Development&lt;/a&gt; which can enable a bloat-free development-environment by leveraging Docker or other container solutions.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Kentoseth - Thoughts on programming, culture, FOSS and more - LXC</title><link href="https://kentoseth.github.io/" rel="alternate"></link><link href="https://kentoseth.github.io/feeds/lxc.atom.xml" rel="self"></link><id>https://kentoseth.github.io/</id><updated>2023-08-04T02:00:00+02:00</updated><subtitle>Coding. Culture. Linux. More.</subtitle><entry><title>Creating a 'base' LXC container to build other containers from</title><link href="https://kentoseth.github.io/posts/2023/Aug/04/creating-a-base-lxc-container-to-build-other-containers-from/" rel="alternate"></link><published>2023-08-04T02:00:00+02:00</published><updated>2023-08-04T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2023-08-04:/posts/2023/Aug/04/creating-a-base-lxc-container-to-build-other-containers-from/</id><summary type="html">&lt;p&gt;A quick explanation on why and how to create a base LXC container to build other containers from.&lt;/p&gt;</summary><content type="html">&lt;p&gt;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ&lt;/p&gt;
+&lt;p&gt;In my previous post about &lt;a href="https://www.kentoseth.com/posts/2023/mar/20/adding-an-lxc-container-withto-virt-manager-virtual-machine-manager/"&gt;Adding an LXC container with/to virt-manager (Virtual Machine Manager)&lt;/a&gt;, I mentioned at the end of the article that creating a 'base' container is a good idea for making new containers that have a skeleton or template to build on top of.&lt;/p&gt;
+&lt;p&gt;This short guide will explain how to setup that base container with some packages to make it useable for software development for Python and JavaScript.&lt;/p&gt;
+&lt;p&gt;It is worth mentioning here that a good reason for using LXC containers for software development is to isolate all the packages (and the bloat it contains) into its own environment, thus keeping your PC relatively bloat-free.&lt;/p&gt;
+&lt;h2&gt;Create the LXC container&lt;/h2&gt;
+&lt;p&gt;Run this command in any terminal software (like Yakuake, Konsole, Xterm or GNOME Terminal):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-create --template download --name base&lt;/code&gt; (interactive, so you choose the options step-by-step)&lt;/p&gt;
+&lt;p&gt;or this:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-create -n base -t download -- --dist ubuntu --release focal --arch amd64&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A container called &lt;code&gt;base&lt;/code&gt; based on Ubuntu 22.04 should now exist.&lt;/p&gt;
+&lt;h2&gt;Starting, Connecting and adding a user password&lt;/h2&gt;
+&lt;p&gt;Start the container:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-start -n base&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Connect to it:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-attach -n base&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The terminal prompt should now say: &lt;code&gt;root@base:/#&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Set a root password by typing (and then following the prompts): &lt;code&gt;passwd&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Adding base packages&lt;/h2&gt;
+&lt;p&gt;Update the base container:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;apt update &amp;amp;&amp;amp; apt upgrade&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Add some packages to make the container functional:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;apt install wget git ssh curl zip nano nodejs npm python3-pip postgresql libpq-dev&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The decision on which base packages to add is based on the user.&lt;/p&gt;
+&lt;h2&gt;Cloning 'base' for new project containers&lt;/h2&gt;
+&lt;p&gt;To clone the base container for a new project, run this command at the host level (not within the base container):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-copy -n base -N new-project&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;code&gt;new-project&lt;/code&gt; = the name of your new container.&lt;/p&gt;
+&lt;h3&gt;Using Lapce IDE to connect to containers&lt;/h3&gt;
+&lt;p&gt;One of the drawbacks of isolating software development projects in containers is the limited tooling it results in (no code auto-complete, etc.), but a few IDEs (Integrated Development Environments) support connecting to 'remote' development environments via SSH, including &lt;a href="https://lapce.dev/"&gt;Lapce&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In my next article I will explain how to connect Lapce to a development container via SSH.&lt;/p&gt;</content><category term="LXC"></category><category term="ubuntu"></category><category term="python"></category></entry><entry><title>Adding an LXC container with/to virt-manager (Virtual Machine Manager)</title><link href="https://kentoseth.github.io/posts/2023/Mar/20/adding-an-lxc-container-withto-virt-manager-virtual-machine-manager/" rel="alternate"></link><published>2023-03-20T02:00:00+02:00</published><updated>2023-03-20T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2023-03-20:/posts/2023/Mar/20/adding-an-lxc-container-withto-virt-manager-virtual-machine-manager/</id><summary type="html">&lt;p&gt;How to add an LXC container to the GUI tool called Virtual Machine Manager (virt-manager).&lt;/p&gt;</summary><content type="html">&lt;p&gt;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://virt-manager.org/"&gt;Virtual Machine Manager (or virt-manager)&lt;/a&gt; is a desktop GUI tool meant to simplify the process of dealing with VMs or containers on Linux desktop machines.&lt;/p&gt;
+&lt;p&gt;Before I begin this tutorial I will give my verdict on Virtual Machine Manager regarding LXC containers. This software is terrible at what it is supposed to do for 2 main reasons:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;It has some of the worst documentation of any Open Source project (essentially none on their website)&lt;/li&gt;
+&lt;li&gt;It doesn't actually help create an LXC container at all. This tutorial demonstrates how to 'connect' an existing LXC container (which we will create on the command-line) to the GUI software via the most arduous processes possible&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I would urge people to consider alternative GUI options for LXC containers. But if you went through the effort of installing virt-manager (I will use this name to refer to the software in the rest of this tutorial), this guide is for you.&lt;/p&gt;
+&lt;p&gt;The source references for my tutorial are: &lt;a href="https://blog.scottlowe.org/2013/11/27/linux-containers-via-lxc-and-libvirt/"&gt;Linux Containers via LXC and Libvirt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gist.github.com/pyrenaica/7eca3f9f2a543fb280718ab730cf598a"&gt;Accessing remote KVM/QEMU vms with virt-manager&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://p5r.uk/blog/2021/unprivileged-lxc-container-libvirt.html"&gt;Unprivileged LXC container with libvirt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Make sure LXC, virt-manager and all the packages needed for virt-manager to work with LXC are installed.&lt;/p&gt;
+&lt;h2&gt;Create the LXC container&lt;/h2&gt;
+&lt;p&gt;Run this command:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-create --template download --name testapp&lt;/code&gt; (interactive, so you choose the options step-by-step)&lt;/p&gt;
+&lt;p&gt;or this:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-create -n testapp -t download -- --dist ubuntu --release focal --arch amd64&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A container called &lt;code&gt;testapp&lt;/code&gt; should now exist.&lt;/p&gt;
+&lt;h2&gt;Creating the XML file&lt;/h2&gt;
+&lt;p&gt;Make a directory/folder for the XML file:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;mkdir LXC&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Within this directory create an XML file &lt;code&gt;testapp.xml&lt;/code&gt; and use the following contents:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;domain&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;lxc&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;testapp&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;memory&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;unit=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;KiB&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;4276800&lt;span class="nt"&gt;&amp;lt;/memory&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;vcpu&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;placement=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;static&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;1&lt;span class="nt"&gt;&amp;lt;/vcpu&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;os&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;arch=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;x86_64&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;exe&lt;span class="nt"&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;init&amp;gt;&lt;/span&gt;/lib/systemd/systemd&lt;span class="nt"&gt;&amp;lt;/init&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;/os&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;clock&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;offset=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;utc&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;on_poweroff&amp;gt;&lt;/span&gt;destroy&lt;span class="nt"&gt;&amp;lt;/on_poweroff&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;on_reboot&amp;gt;&lt;/span&gt;restart&lt;span class="nt"&gt;&amp;lt;/on_reboot&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;on_crash&amp;gt;&lt;/span&gt;destroy&lt;span class="nt"&gt;&amp;lt;/on_crash&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;devices&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;emulator&amp;gt;&lt;/span&gt;/usr/lib/libvirt/libvirt_lxc&lt;span class="nt"&gt;&amp;lt;/emulator&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;filesystem&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;mount&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;accessmode=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;passthrough&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;source&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;dir=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;/var/lib/lxc/testapp/rootfs&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;target&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;dir=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;/filesystem&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;interface&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;network&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;source&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;network=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;default&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;/interface&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;console&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;pty&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;target&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;lxc&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;port=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;/console&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;/devices&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/domain&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Only 2 lines need to be changed when adding new containers:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;name&amp;gt;testapp&amp;lt;/name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;and:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;source dir='/var/lib/lxc/testapp/rootfs'/&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Setting a root password&lt;/h2&gt;
+&lt;p&gt;LXC containers come with no passwords and this is where the pointless need for virt-manager arises (as one needs to run commands which all but defeat the need for a GUI)&lt;/p&gt;
+&lt;p&gt;Start the container:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-start -n testapp&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Go into the container root:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-attach -n testapp&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;and now set a root password by typing (and then following the prompts): &lt;code&gt;passwd&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now stop the container:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo lxc-stop -n testapp&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Start container within GUI&lt;/h2&gt;
+&lt;p&gt;Open virt-manager and you will see &lt;code&gt;testapp&lt;/code&gt; under LXC. Select &lt;code&gt;run&lt;/code&gt; and once running, select &lt;code&gt;open&lt;/code&gt;. This will take you to a command-line interface within virt-manager asking for login details. Enter &lt;code&gt;root&lt;/code&gt; for the user and whatever password you used in the previous step.&lt;/p&gt;
+&lt;h3&gt;Creating a base container to clone&lt;/h3&gt;
+&lt;p&gt;A nifty trick with system containers that I've used for years is to create a 'base' container that contains all the required packages (wget, git, ssh and all the sundry library packages) and then clone this container for other projects. It also saves on bandwidth.&lt;/p&gt;</content><category term="LXC"></category><category term="virt-manager"></category><category term="GUI"></category></entry><entry><title>How to install Visual Studio Code(VSCode) inside an LXC container</title><link href="https://kentoseth.github.io/posts/2021/May/28/how-to-install-visual-studio-codevscode-inside-an-lxc-container/" rel="alternate"></link><published>2021-05-28T02:00:00+02:00</published><updated>2021-05-28T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-05-28:/posts/2021/May/28/how-to-install-visual-studio-codevscode-inside-an-lxc-container/</id><summary type="html">&lt;p&gt;How to install VSCode(a GUI app) inside an LXC container&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://code.visualstudio.com/"&gt;Visual Studio Code or vscode&lt;/a&gt; is a really great editor. One of its most advanced features that most other editors don't have is the &lt;a href="https://code.visualstudio.com/docs/remote/remote-overview"&gt;VS Code Remote Development&lt;/a&gt; which can enable a bloat-free development-environment by leveraging Docker or other container solutions.&lt;/p&gt;
 &lt;p&gt;However, licensing issues(explained &lt;a href="https://code.visualstudio.com/docs/remote/faq#_license-and-privacy"&gt;here&lt;/a&gt; and &lt;a href="https://github.com/microsoft/vscode/wiki/Differences-between-the-repository-and-Visual-Studio-Code"&gt;here&lt;/a&gt;) means that the only version of vscode that works with the "remote development extension" is the binary(or closed-source) version.&lt;/p&gt;
 &lt;p&gt;I found a &lt;a href="https://github.com/microsoft/vscode-remote-release/issues/1858"&gt;bug report&lt;/a&gt; discussing this and why the open-source version(known as Code) does not support the powerful "remote development extension". Wearing a (small) tinfoil hat, I figured that it would be a good idea to isolate vscode itself into a container for 2 purposes:&lt;/p&gt;
 &lt;ol&gt;
@@ -32,17 +127,15 @@
 (Note 2: &lt;code&gt;sudo&lt;/code&gt; may not be needed for unprivileged containers, so if you don't need it, don't use it)&lt;/p&gt;
 &lt;h3&gt;Installing required packages in the container&lt;/h3&gt;
 &lt;p&gt;The container requires a number of packages in order to run a GUI application like vscode. For basic programs like &lt;code&gt;xclock&lt;/code&gt;, not as many packages were needed, but for vscode, the installation might feel 'bloated'. Install the following(&lt;strong&gt;after 'attaching' the container and being in the container shell&lt;/strong&gt;):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt update
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt update
 sudo apt upgrade
 sudo apt install xauth ssh
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;(&lt;code&gt;xauth&lt;/code&gt; might already be installed)&lt;/p&gt;
 &lt;p&gt;Now install some of the other required packages:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install libxss1 libxshmfence1 libxext-dev libxrender-dev libxslt1.1 libgconf-2-4 libnotify4 libnspr4 libnss3 libnss3-dev libnss3-tools libxtst-dev libgtk2.0-0 libcanberra-gtk-module software-properties-common gnupg2
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;sudo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;install&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;libxss1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;libxshmfence1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;libxext&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;libxrender&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;libxslt1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;libgconf&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;libnotify4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;libnspr4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;libnss3&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;libnss3&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;libnss3&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;libxtst&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;libgtk2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;libcanberra&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gtk&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;software&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;properties&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;common&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;gnupg2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;I am not sure what half of these are for, but the reference for why I needed to install them is here: &lt;a href="https://github.com/allamand/docker-vscode/blob/master/Dockerfile"&gt;docker-vscode Dockerfile&lt;/a&gt;. I attempted to install the least amount of packages to get vscode running. Prior to installing these packages, vscode was not working.&lt;/p&gt;
 &lt;h3&gt;Configuring SSH in the container&lt;/h3&gt;
@@ -53,11 +146,10 @@ sudo apt install xauth ssh
 &lt;p&gt;Open the SSH config file:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;sudo vim /etc/ssh/sshd_config&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Only the changes will be shown below. Please look for these lines in the &lt;code&gt;sshd_config&lt;/code&gt; file and change them appropriately(some of them also require that the &lt;code&gt;#&lt;/code&gt; be removed, otherwise the line remains commented):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PasswordAuthentication yes
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;PasswordAuthentication yes
 X11Forwarding yes
 X11DisplayOffset 10
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Exit the &lt;code&gt;vim&lt;/code&gt; editor and now restart the SSH service:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;sudo systemctl restart sshd&lt;/code&gt;&lt;/p&gt;
@@ -71,12 +163,11 @@ X11DisplayOffset 10
 &lt;p&gt;Now that we have the container IP, run the following command(&lt;strong&gt;from the host&lt;/strong&gt;):&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ssh ubuntu@&amp;lt;container-IP&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;The SSH prompt should say the following:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;The authenticity of host &amp;#39;&amp;lt;container-IP&amp;gt; (&amp;lt;container-IP&amp;gt;)&amp;#39; can&amp;#39;t be established.
-ED25519 key fingerprint is SHA256:fXFuBKAXm2HgFGuKVFpu+bRIR/2tzxBIWVH+dkQh9KE.
-This key is not known by any other names
-Are you sure you want to continue connecting (yes/no/[fingerprint])?
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;The&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;authenticity&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;host&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;lt;container-IP&amp;gt; (&amp;lt;container-IP&amp;gt;)&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;can&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;be&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;established&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;ED25519&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;fingerprint&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;is&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;SHA256&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;fXFuBKAXm2HgFGuKVFpu&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;bRIR&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;tzxBIWVH&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;dkQh9KE&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;This&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;is&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;known&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;by&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;any&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;other&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;names&lt;/span&gt;
+&lt;span class="k"&gt;Are&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;you&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;you&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;want&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;continue&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;connecting&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;yes&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;no&lt;/span&gt;&lt;span class="o"&gt;/[&lt;/span&gt;&lt;span class="n"&gt;fingerprint&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="vm"&gt;?&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Enter: &lt;code&gt;yes&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Then you will be prompted to enter the password for user &lt;code&gt;ubuntu&lt;/code&gt;, enter: 'ubuntu'&lt;/p&gt;
@@ -121,44 +212,40 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 &lt;/ol&gt;
 &lt;h3&gt;Install instructions&lt;/h3&gt;
 &lt;p&gt;We can create/start/attach our container using the LXC Ubuntu template:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo lxc-create --name py35 --template ubuntu
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo lxc-create --name py35 --template ubuntu
 sudo lxc-start --name py35 --daemon
 sudo lxc-attach --name py35
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;I have called my container: &lt;code&gt;py35&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;You should now either be connected as the 'root' user (within the container) or if you had to go through the login process, as the 'ubuntu' user. The rest of this tutorial will assume that you are the 'ubuntu' user.&lt;/p&gt;
 &lt;p&gt;The Ubuntu template lacks the the required package/s to add the 'deadsnakes' PPA, which is what we will use to get the latest Python version (which we will then use with virtualenv). Let's add the PPA:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get update
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:fkrull/deadsnakes
 sudo apt-get update
 sudo apt-get install python3.5
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Check if it successfully installed:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;python3.5 --version&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Install virtualenv:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;sudo pip3 install virtualenv&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;I will now create a new folder for my virtualenv project. I will call this folder "project1". Then I will create the virtualenv itself:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /home/ubuntu/project1
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir /home/ubuntu/project1
 virtualenv -p /usr/bin/python3.5 /home/ubuntu/project1/
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Going through the virtualenv process, you should also have the latest &lt;code&gt;pip&lt;/code&gt; installed.&lt;/p&gt;
 &lt;p&gt;Let us test that everything worked:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd /home/ubuntu/project1/
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cd /home/ubuntu/project1/
 source /home/ubuntu/project1/bin/activate
 python --version
 # should output 3.5.2
 pip --version
 # should output 8.1.2
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;Containers = lazy answer?&lt;/h3&gt;
 &lt;p&gt;Above, I mentioned that using containers for different Python versions is a lazy answer. The simple reason for this is that even if you use containers, you are still stuck with the system-version. So the only way to bump up/down your Python version is to move to a newer/older Ubuntu release. This still doesn't guarantee you will get the version you wish. My instructions above get you the version you want, whilst keeping your Host protected from different Python installs.&lt;/p&gt;
@@ -168,10 +255,9 @@ pip --version
 &lt;p&gt;I also mentioned 7 basic commands you will need to get started with LXC. I will list them and walk-through each below.&lt;/p&gt;
 &lt;h3&gt;Container Basics&lt;/h3&gt;
 &lt;p&gt;Let us start by creating and starting a container:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo lxc-create -n myfirstcont -t ubuntu
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo lxc-create -n myfirstcont -t ubuntu
 sudo lxc-start -n myfirstcont -d
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The first command will create a container called &lt;code&gt;myfirstcont&lt;/code&gt; from the &lt;em&gt;remote&lt;/em&gt; Ubuntu template.&lt;/p&gt;
 &lt;p&gt;After the first command has successfully executed, you can start the container using the second command (lxc-start).&lt;/p&gt;
@@ -200,19 +286,17 @@ sudo lxc-start -n myfirstcont -d
 &lt;p&gt;&lt;code&gt;sudo mount --bind /Project/path/to/hostfolder /var/lib/lxc/myfirstcont/rootfs/home/ubuntu/myfolder&lt;/code&gt;&lt;/p&gt;
 &lt;h3&gt;Installing small Python library in a container&lt;/h3&gt;
 &lt;p&gt;If you have not destroyed the container you created above, let us go ahead and restart the container:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo lxc-start -n myfirstcont -d
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo lxc-start -n myfirstcont -d
 sudo lxc-attach -n myfirstcont
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;You should be attached as the root-user within the container.&lt;/p&gt;
 &lt;p&gt;Now run:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get update
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get update
 apt-get upgrade
 apt-get install -y python3-pip
 pip3 install pelican markdown
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;You have now successfully created an LXC container for the static site-generator &lt;a href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; .&lt;/p&gt;
 &lt;h3&gt;LXD as an easier LXC-manager&lt;/h3&gt;

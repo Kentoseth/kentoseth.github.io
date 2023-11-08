@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="robots"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/theme/stylesheet/style.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/pygments/monokai.min.css" id="pygments-light-theme" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/brands.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/solid.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/feeds/all.atom.xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom" type="application/atom+xml"/>
+<!-- Chrome, Firefox OS and Opera -->
+<meta content="#333333" name="theme-color"/>
+<!-- Windows Phone -->
+<meta content="#333333" name="msapplication-navbutton-color"/>
+<!-- iOS Safari -->
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<!-- Microsoft EDGE -->
+<meta content="#333333" name="msapplication-TileColor"/>
+<meta content="Mohamed H." name="author">
+<meta content="A quick explanation on why and how to create a base LXC container to build other containers from." name="description">
+<meta content="ubuntu, python" name="keywords"/>
+<meta content="Kentoseth - Thoughts on programming, culture, FOSS and more" property="og:site_name">
+<meta content="Creating a 'base' LXC container to build other containers from" property="og:title">
+<meta content="A quick explanation on why and how to create a base LXC container to build other containers from." property="og:description">
+<meta content="en_US" property="og:locale">
+<meta content="https://kentoseth.github.io/posts/2023/Aug/04/creating-a-base-lxc-container-to-build-other-containers-from/" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="2023-08-04 02:00:00+02:00" property="article:published_time"/>
+<meta content="" property="article:modified_time"/>
+<meta content="https://kentoseth.github.io/author/mohamed-h.html" property="article:author"/>
+<meta content="LXC" property="article:section">
+<meta content="ubuntu" property="article:tag"/>
+<meta content="python" property="article:tag"/>
+<meta content="/images/avatar.jpg" property="og:image"/>
+<title>Kentoseth - Thoughts on programming, culture, FOSS and more – Creating a 'base' LXC container to build other containers from</title>
+</meta></meta></meta></meta></meta></meta></meta><link href="https://kentoseth.github.io/posts/2023/Aug/04/creating-a-base-lxc-container-to-build-other-containers-from/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kentoseth - Thoughts on programming, culture, FOSS and more", "item": "https://kentoseth.github.io"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://kentoseth.github.io/posts"}, {"@type": "ListItem", "position": 3, "name": "2023", "item": "https://kentoseth.github.io/posts/2023"}, {"@type": "ListItem", "position": 4, "name": "Aug", "item": "https://kentoseth.github.io/posts/2023/Aug"}, {"@type": "ListItem", "position": 5, "name": "04", "item": "https://kentoseth.github.io/posts/2023/Aug/04"}, {"@type": "ListItem", "position": 6, "name": "Creating a base lxc container to build other containers from", "item": "https://kentoseth.github.io/posts/2023/Aug/04/creating-a-base-lxc-container-to-build-other-containers-from"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://kentoseth.github.io/posts/2023/Aug/04/creating-a-base-lxc-container-to-build-other-containers-from/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Mohamed H."}, "publisher": {"@type": "Organization", "name": "Kentoseth - Thoughts on programming, culture, FOSS and more"}, "headline": "Creating a 'base' LXC container to build other containers from", "about": "LXC", "datePublished": "2023-08-04 02:00"}</script></head>
+<body class="light-theme">
+<aside>
+<div>
+<a href="https://kentoseth.github.io">
+<img alt="Kentoseth" src="/images/avatar.jpg" title="Kentoseth"/>
+</a>
+<h1>
+<a href="https://kentoseth.github.io">Kentoseth</a>
+</h1>
+<p>Coding. Culture. Linux. More.</p>
+<nav>
+<ul class="list">
+<li>
+<a href="https://kentoseth.github.io/pages/about-me/" target="_self">
+                  About me
+                </a>
+</li>
+<li>
+<a href="https://kentoseth.github.io/pages/projects/" target="_self">
+                  Projects
+                </a>
+</li>
+<li>
+<a href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_self">Email</a>
+</li>
+<li>
+<a href="/categories.html" target="_self">Categories</a>
+</li>
+</ul>
+</nav>
+<form action="https://tinyletter.com/Kentoseth" method="post" onsubmit="window.open('https://tinyletter.com/Kentoseth', 'popupwindow', 
+        'scrollbars=yes,width=800,height=600');return true" style="border:1px solid #ccc;padding:3px;text-align:center;" target="popupwindow">
+<p><label for="tlemail">Join my Newsletter</label></p>
+<p><input id="tlemail" name="email" style="width:140px" type="text"/></p>
+<input name="embed" type="hidden" value="1"/>
+<input type="submit" value="Subscribe"/>
+<p><a href="https://tinyletter.com" rel="noopener noreferrer" target="_blank">powered by TinyLetter</a></p>
+</form>
+<ul class="social">
+<li>
+<a class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
+<i class="fab fa-github-alt"></i>
+</a>
+</li>
+<li>
+<a class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
+<i class="fab fa-gitlab"></i>
+</a>
+</li>
+<li>
+<a class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+<i class="fas fa-envelope"></i>
+</a>
+</li>
+<li>
+<a class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
+<i class="fas fa-rss"></i>
+</a>
+</li>
+<li>
+<a class="sc-mastodon" href="https://fosstodon.org/@kentoseth" rel="me" target="_blank">
+<i class="fab fa-mastodon"></i>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<main>
+<nav>
+<a href="https://kentoseth.github.io">Home</a>
+<a href="/categories">Categories</a>
+<a href="/tags">Tags</a>
+<a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
+</nav>
+<article class="single">
+<header>
+<h1 id="creating-a-base-lxc-container-to-build-other-containers-from">Creating a 'base' LXC container to build other containers from</h1>
+<p>
+      Posted on Fri 04 August 2023 in <a href="https://kentoseth.github.io/category/lxc.html">LXC</a>
+</p>
+</header>
+<div>
+<p>بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+<p>In my previous post about <a href="https://www.kentoseth.com/posts/2023/mar/20/adding-an-lxc-container-withto-virt-manager-virtual-machine-manager/">Adding an LXC container with/to virt-manager (Virtual Machine Manager)</a>, I mentioned at the end of the article that creating a 'base' container is a good idea for making new containers that have a skeleton or template to build on top of.</p>
+<p>This short guide will explain how to setup that base container with some packages to make it useable for software development for Python and JavaScript.</p>
+<p>It is worth mentioning here that a good reason for using LXC containers for software development is to isolate all the packages (and the bloat it contains) into its own environment, thus keeping your PC relatively bloat-free.</p>
+<h2>Create the LXC container</h2>
+<p>Run this command in any terminal software (like Yakuake, Konsole, Xterm or GNOME Terminal):</p>
+<p><code>sudo lxc-create --template download --name base</code> (interactive, so you choose the options step-by-step)</p>
+<p>or this:</p>
+<p><code>sudo lxc-create -n base -t download -- --dist ubuntu --release focal --arch amd64</code></p>
+<p>A container called <code>base</code> based on Ubuntu 22.04 should now exist.</p>
+<h2>Starting, Connecting and adding a user password</h2>
+<p>Start the container:</p>
+<p><code>sudo lxc-start -n base</code></p>
+<p>Connect to it:</p>
+<p><code>sudo lxc-attach -n base</code></p>
+<p>The terminal prompt should now say: <code>root@base:/#</code></p>
+<p>Set a root password by typing (and then following the prompts): <code>passwd</code></p>
+<h2>Adding base packages</h2>
+<p>Update the base container:</p>
+<p><code>apt update &amp;&amp; apt upgrade</code></p>
+<p>Add some packages to make the container functional:</p>
+<p><code>apt install wget git ssh curl zip nano nodejs npm python3-pip postgresql libpq-dev</code></p>
+<p>The decision on which base packages to add is based on the user.</p>
+<h2>Cloning 'base' for new project containers</h2>
+<p>To clone the base container for a new project, run this command at the host level (not within the base container):</p>
+<p><code>sudo lxc-copy -n base -N new-project</code></p>
+<p>where <code>new-project</code> = the name of your new container.</p>
+<h3>Using Lapce IDE to connect to containers</h3>
+<p>One of the drawbacks of isolating software development projects in containers is the limited tooling it results in (no code auto-complete, etc.), but a few IDEs (Integrated Development Environments) support connecting to 'remote' development environments via SSH, including <a href="https://lapce.dev/">Lapce</a>.</p>
+<p>In my next article I will explain how to connect Lapce to a development container via SSH.</p>
+</div>
+<div class="tag-cloud">
+<p>
+<a href="https://kentoseth.github.io/tag/ubuntu.html">ubuntu</a>
+<a href="https://kentoseth.github.io/tag/python.html">python</a>
+</p>
+</div>
+<hr/>
+<h3>If you don't know how to use RSS and want email updates on my new content, consider
+         <a href="https://tinyletter.com/Kentoseth" rel="noopener noreferrer" target="_blank">
+          Joining my Newsletter</a></h3>
+<p><em>The original content of this blog is a Waqf solely for the Pleasure of Allah. You are hereby granted full permission to copy, download, distribute, publish and share this content without modification under condition that full attribution is given to this author by creating a link either above or below the content that links back to the original source of the content. For any questions or ambiguity, you are requested to contact me via email for clarification.</em></p>
+</article>
+<footer>
+<p>© 2023 </p>
+<p>
+Built with <a href="https://getpelican.com" target="_blank">Pelican</a> using <a href="https://github.com/alexandrevicenzi/Flex" target="_blank">Flex</a> theme
+</p> </footer>
+</main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Kentoseth - Thoughts on programming, culture, FOSS and more ",
+  "url" : "https://kentoseth.github.io",
+  "image": "/images/avatar.jpg",
+  "description": "Content focused on Islam, Islamic Studies, Languages, Linux, FOSS, infosec and culture"
+}
+</script>
+</body>
+</html>

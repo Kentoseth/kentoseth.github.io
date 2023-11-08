@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Kentoseth - Thoughts on programming, culture, FOSS and more - Infosec</title><link href="https://kentoseth.github.io/" rel="alternate"></link><link href="https://kentoseth.github.io/feeds/infosec.atom.xml" rel="self"></link><id>https://kentoseth.github.io/</id><updated>2022-01-21T02:00:00+02:00</updated><subtitle>Coding. Culture. Linux. More.</subtitle><entry><title>Report Brigading: Exploiting reporting systems in automated systems and self-moderated communities</title><link href="https://kentoseth.github.io/posts/2022/Jan/21/report-brigading-exploiting-reporting-systems-in-automated-systems-and-self-moderated-communities/" rel="alternate"></link><published>2022-01-21T02:00:00+02:00</published><updated>2022-01-21T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2022-01-21:/posts/2022/Jan/21/report-brigading-exploiting-reporting-systems-in-automated-systems-and-self-moderated-communities/</id><summary type="html">&lt;p&gt;Highlighting how YouTube, Reddit, Discord and other platforms can be exploited/manipulated via their reporting features.&lt;/p&gt;</summary><content type="html">&lt;p&gt;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ&lt;/p&gt;
+&lt;p&gt;Entities like YouTube (as part of Google) strive to automate everything, including reporting systems. Other entities, like Discord (a gaming chat platform), make communities self-moderate. In both cases, this reduces the need for staff to deal with reports/abuse/moderation and thereby increases profits.&lt;/p&gt;
+&lt;p&gt;I will now explain how to manipulate/game these reporting systems to achieve various goals.&lt;/p&gt;
+&lt;h3&gt;Some reasons why reporting systems are manipulated by various threat actors&lt;/h3&gt;
+&lt;p&gt;Many times I see exploits being detailed, but the motivations are never explained. Primarily, the first reason to conduct such attacks is due to money. If your streaming/video channel is getting fewer views than a competing 'vlogger', then that means you are getting less ad-derived revenue. You could attempt positive changes like new content strategies, or alternatively resort to negative tactics and attack your competitors. This negative approach to competitors is also seen in other technological areas where IP theft is rife (chip design, biotechnology, medical technology, etc.)&lt;/p&gt;
+&lt;p&gt;The second reason is driven by our own biases, dislike and hatred for the 'other' and is as old as humanity itself. These attacks are based on racial, ethnic, nationalistic, religious, intra-religious, cultural and other lines.&lt;/p&gt;
+&lt;h3&gt;Gathering sizeable numbers to legitimize the attack&lt;/h3&gt;
+&lt;p&gt;My assumption is that YouTube and other platforms are aware of 'brigading' (which is the usage of large numbers of people/bots to carry out various activities), but this is still an important vector in your attack. With enough non-bot-like users reporting from various geographies, the reports will be taken more seriously. While it is unclear if YouTube's AI self-reporting is 'smart' enough to spot this, it is relevant on various other platforms like: Twitch, Discord, Twitter, Reddit etc.&lt;/p&gt;
+&lt;p&gt;So gather your group, identify your target and then exploit the reporting systems:&lt;/p&gt;
+&lt;h3&gt;The Discord/Reddit case&lt;/h3&gt;
+&lt;p&gt;Discord uses a system where users create 'servers' (essentially communities) and have to self-moderate these communities. A similar model exists on Reddit ('subreddits').&lt;/p&gt;
+&lt;p&gt;I start with Discord/Reddit due to the need to explain a certain aspect of the attack process when you cannot report legitimate violations.&lt;/p&gt;
+&lt;p&gt;The reporting can be done using 2 different options:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Report legitimate violations: the targets here are copyright, pornography, racism, terrorism, homophobia and discrimination in various forms. The vagueness of the ToS of these entities enables attackers to be as broad as they desire&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Infiltrate, incite, bait and report: this type of attack is the more effective one (&lt;sup&gt;1&lt;/sup&gt;). In this attack, you join your target community, embed yourself as sincere, start to slowly chorus with the slightly more extreme-minded individuals, ensure that your ToS violations target the 'other' that the community hates (like a right-wing group against LGBT+), gradually increase the incitement and then begin mass-reporting your own and other discussions focused on the ToS violations once they are severe enough. If the target community has no hatred for the 'other', then copyright, pornography and other non-discrimination methods can be used so long as they violate ToS&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt; Infiltration/Incitement is a known attack method used by various government intelligence agencies to incite marginalized groups and drive them to commit serious crimes or at least use their own incitement as evidence of the agenda of these groups.&lt;/p&gt;
+&lt;h3&gt;The YouTube case&lt;/h3&gt;
+&lt;p&gt;Platforms with content providers require a slightly different strategy. Here, you cannot infiltrate, incite or report content creators for what commenters say or do. The ToS violations still apply, but you will target victims on 2 levels:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Ad-demonetization: There are many documented cases of demonetization happening, as documented &lt;a href="https://www.polygon.com/2018/5/10/17268102/youtube-demonetization-pewdiepie-logan-paul-casey-neistat-philip-defranco"&gt;here in 2018&lt;/a&gt;. Exploitation here can happen via abusing the licensing system of content and hitting channels with copyright strikes (like a 'fails' channel publishing videos that they did not create)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Repeated strikes lead to bans: The same DMCA/copyright strikes can be targeted here, but more fruitful reporting would be against content that is not "age-restricted". YouTube and other platforms need to appeal to mainstream advertisers and as such, child-friendly and socially/politically favourable content will be prioritized. At the same time, any content crossing these boundaries would be ripe for reporting.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;How to fix&lt;/h3&gt;
+&lt;p&gt;The problem won't be fixed due to the sheer volume of labour needed to moderate content. Even when moderation is prioritized, the &lt;a href="https://www.theguardian.com/technology/2019/sep/17/revealed-catastrophic-effects-working-facebook-moderator"&gt;effects can be chilling to these workers&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Stay tuned for more infosec articles in the near future!&lt;/p&gt;</content><category term="Infosec"></category><category term="discord"></category><category term="youtube"></category><category term="reddit"></category><category term="exploit"></category></entry></feed>

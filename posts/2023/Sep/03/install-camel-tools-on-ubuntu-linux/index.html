@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="robots"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/theme/stylesheet/style.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/pygments/monokai.min.css" id="pygments-light-theme" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/brands.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/solid.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/feeds/all.atom.xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom" type="application/atom+xml"/>
+<!-- Chrome, Firefox OS and Opera -->
+<meta content="#333333" name="theme-color"/>
+<!-- Windows Phone -->
+<meta content="#333333" name="msapplication-navbutton-color"/>
+<!-- iOS Safari -->
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<!-- Microsoft EDGE -->
+<meta content="#333333" name="msapplication-TileColor"/>
+<meta content="Mohamed H." name="author">
+<meta content="How to install the Arabic NLP software called CAMeL Tools on Ubuntu Linux." name="description">
+<meta content="ubuntu, pyton, nlp, arabic" name="keywords"/>
+<meta content="Kentoseth - Thoughts on programming, culture, FOSS and more" property="og:site_name">
+<meta content="Install CAMeL Tools On Ubuntu Linux" property="og:title">
+<meta content="How to install the Arabic NLP software called CAMeL Tools on Ubuntu Linux." property="og:description">
+<meta content="en_US" property="og:locale">
+<meta content="https://kentoseth.github.io/posts/2023/Sep/03/install-camel-tools-on-ubuntu-linux/" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="2023-09-03 02:00:00+02:00" property="article:published_time"/>
+<meta content="" property="article:modified_time"/>
+<meta content="https://kentoseth.github.io/author/mohamed-h.html" property="article:author"/>
+<meta content="Linux" property="article:section">
+<meta content="ubuntu" property="article:tag"/>
+<meta content="pyton" property="article:tag"/>
+<meta content="nlp" property="article:tag"/>
+<meta content="arabic" property="article:tag"/>
+<meta content="/images/avatar.jpg" property="og:image"/>
+<title>Kentoseth - Thoughts on programming, culture, FOSS and more – Install CAMeL Tools On Ubuntu Linux</title>
+</meta></meta></meta></meta></meta></meta></meta><link href="https://kentoseth.github.io/posts/2023/Sep/03/install-camel-tools-on-ubuntu-linux/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kentoseth - Thoughts on programming, culture, FOSS and more", "item": "https://kentoseth.github.io"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://kentoseth.github.io/posts"}, {"@type": "ListItem", "position": 3, "name": "2023", "item": "https://kentoseth.github.io/posts/2023"}, {"@type": "ListItem", "position": 4, "name": "Sep", "item": "https://kentoseth.github.io/posts/2023/Sep"}, {"@type": "ListItem", "position": 5, "name": "03", "item": "https://kentoseth.github.io/posts/2023/Sep/03"}, {"@type": "ListItem", "position": 6, "name": "Install camel tools on ubuntu linux", "item": "https://kentoseth.github.io/posts/2023/Sep/03/install-camel-tools-on-ubuntu-linux"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://kentoseth.github.io/posts/2023/Sep/03/install-camel-tools-on-ubuntu-linux/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Mohamed H."}, "publisher": {"@type": "Organization", "name": "Kentoseth - Thoughts on programming, culture, FOSS and more"}, "headline": "Install CAMeL Tools On Ubuntu Linux", "about": "Linux", "datePublished": "2023-09-03 02:00"}</script></head>
+<body class="light-theme">
+<aside>
+<div>
+<a href="https://kentoseth.github.io">
+<img alt="Kentoseth" src="/images/avatar.jpg" title="Kentoseth"/>
+</a>
+<h1>
+<a href="https://kentoseth.github.io">Kentoseth</a>
+</h1>
+<p>Coding. Culture. Linux. More.</p>
+<nav>
+<ul class="list">
+<li>
+<a href="https://kentoseth.github.io/pages/about-me/" target="_self">
+                  About me
+                </a>
+</li>
+<li>
+<a href="https://kentoseth.github.io/pages/projects/" target="_self">
+                  Projects
+                </a>
+</li>
+<li>
+<a href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_self">Email</a>
+</li>
+<li>
+<a href="/categories.html" target="_self">Categories</a>
+</li>
+</ul>
+</nav>
+<form action="https://tinyletter.com/Kentoseth" method="post" onsubmit="window.open('https://tinyletter.com/Kentoseth', 'popupwindow', 
+        'scrollbars=yes,width=800,height=600');return true" style="border:1px solid #ccc;padding:3px;text-align:center;" target="popupwindow">
+<p><label for="tlemail">Join my Newsletter</label></p>
+<p><input id="tlemail" name="email" style="width:140px" type="text"/></p>
+<input name="embed" type="hidden" value="1"/>
+<input type="submit" value="Subscribe"/>
+<p><a href="https://tinyletter.com" rel="noopener noreferrer" target="_blank">powered by TinyLetter</a></p>
+</form>
+<ul class="social">
+<li>
+<a class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
+<i class="fab fa-github-alt"></i>
+</a>
+</li>
+<li>
+<a class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
+<i class="fab fa-gitlab"></i>
+</a>
+</li>
+<li>
+<a class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+<i class="fas fa-envelope"></i>
+</a>
+</li>
+<li>
+<a class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
+<i class="fas fa-rss"></i>
+</a>
+</li>
+<li>
+<a class="sc-mastodon" href="https://fosstodon.org/@kentoseth" rel="me" target="_blank">
+<i class="fab fa-mastodon"></i>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<main>
+<nav>
+<a href="https://kentoseth.github.io">Home</a>
+<a href="/categories">Categories</a>
+<a href="/tags">Tags</a>
+<a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
+</nav>
+<article class="single">
+<header>
+<h1 id="install-camel-tools-on-ubuntu-linux">Install CAMeL Tools On Ubuntu Linux</h1>
+<p>
+      Posted on Sun 03 September 2023 in <a href="https://kentoseth.github.io/category/linux.html">Linux</a>
+</p>
+</header>
+<div>
+<p>بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+<p>This guide will explain how to install the Arabic NLP software called <a href="https://github.com/CAMeL-Lab/camel_tools">CAMeL Tools</a> on Ubuntu Linux.</p>
+<p>CAMeL Tools is a suite of Arabic natural language processing tools developed by the CAMeL Lab at New York University Abu Dhabi.</p>
+<p>These instructions are based on the assumption that you have used my <a href="https://www.kentoseth.com/posts/2023/aug/04/creating-a-base-lxc-container-to-build-other-containers-from/">LXC base container tutorial</a>.</p>
+<p>(Please note that at the time of writing this article CAMeL Tools only supports Python versions 3.7-3.10. The installation of data packages outside of these versions will not work)</p>
+<h2>Creating &amp; accessing the CAMeL Tools container.</h2>
+<p>Run this command on your host machine using any terminal software (like Yakuake, Konsole, Xterm or GNOME Terminal)::</p>
+<p><code>sudo lxc-copy -n base -N camel</code></p>
+<p>Now start the container: </p>
+<p><code>sudo lxc-start -n camel</code></p>
+<p>Now attach the container to gain access to it:</p>
+<p><code>sudo lxc-attach -n camel</code></p>
+<p>The container should now be attached as:</p>
+<p><code>root@camel</code></p>
+<h2>Installing Ubuntu Packages</h2>
+<p>Update the container:</p>
+<p><code>apt update &amp;&amp; apt upgrade</code></p>
+<p>Install the following required system packages for CAMeL Tools:</p>
+<p><code>apt install rustc cmake libboost-all-dev</code></p>
+<h2>Installing CAMeL Tools and data packages:</h2>
+<p>Install CAMeL Tools:</p>
+<p><code>pip install camel-tools</code></p>
+<p>Depending on the speed of the internet, the installation may take a while due to the volume of large Python packages being installed.</p>
+<p>Once completed, now install the data packages. In this example, the morphology data packages are being installed:</p>
+<p><code>camel_data -i light</code></p>
+<h3>Use-cases</h3>
+<p>A guided tour of CAMeL Tools is available online showing many examples, found <a href="https://colab.research.google.com/drive/1Y3qCbD6Gw1KEw-lixQx1rI6WlyWnrnDS?usp=sharing#scrollTo=MtzSgEBl088z">here</a>.</p>
+<p>For my personal usage, the detailed morphological analysis of CAMeL Tools will be used for Arabic study using the Quran and Hadith.</p>
+<p>For any errors, send me an email or contact me via <a href="https://fosstodon.org/@kentoseth">Mastodon</a>.</p>
+</div>
+<div class="tag-cloud">
+<p>
+<a href="https://kentoseth.github.io/tag/ubuntu.html">ubuntu</a>
+<a href="https://kentoseth.github.io/tag/pyton.html">pyton</a>
+<a href="https://kentoseth.github.io/tag/nlp.html">nlp</a>
+<a href="https://kentoseth.github.io/tag/arabic.html">arabic</a>
+</p>
+</div>
+<hr/>
+<h3>If you don't know how to use RSS and want email updates on my new content, consider
+         <a href="https://tinyletter.com/Kentoseth" rel="noopener noreferrer" target="_blank">
+          Joining my Newsletter</a></h3>
+<p><em>The original content of this blog is a Waqf solely for the Pleasure of Allah. You are hereby granted full permission to copy, download, distribute, publish and share this content without modification under condition that full attribution is given to this author by creating a link either above or below the content that links back to the original source of the content. For any questions or ambiguity, you are requested to contact me via email for clarification.</em></p>
+</article>
+<footer>
+<p>© 2023 </p>
+<p>
+Built with <a href="https://getpelican.com" target="_blank">Pelican</a> using <a href="https://github.com/alexandrevicenzi/Flex" target="_blank">Flex</a> theme
+</p> </footer>
+</main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Kentoseth - Thoughts on programming, culture, FOSS and more ",
+  "url" : "https://kentoseth.github.io",
+  "image": "/images/avatar.jpg",
+  "description": "Content focused on Islam, Islamic Studies, Languages, Linux, FOSS, infosec and culture"
+}
+</script>
+</body>
+</html>

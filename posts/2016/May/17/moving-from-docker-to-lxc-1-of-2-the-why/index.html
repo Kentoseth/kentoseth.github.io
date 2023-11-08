@@ -1,171 +1,132 @@
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/stylesheet/style.min.css">
-
-
-    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-          href="https://kentoseth.github.io/theme/pygments/monokai.min.css">
-
-
-  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/solid.css">
-
-    <link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet">
-
-    <link href="https://kentoseth.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom">
-
-
-
-
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#333333">
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#333333">
-    <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Microsoft EDGE -->
-    <meta name="msapplication-TileColor" content="#333333">
-
-<meta name="author" content="Mohamed H." />
-<meta name="description" content="Why I switched from Docker to LXC" />
-<meta name="keywords" content="ubuntu, LXC, docker">
-
-
-<meta property="og:site_name" content="Kentoseth - Thoughts on programming, culture, FOSS and more"/>
-<meta property="og:title" content="Moving from Docker to LXC: 1 of 2 (The why)"/>
-<meta property="og:description" content="Why I switched from Docker to LXC"/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://kentoseth.github.io/posts/2016/May/17/moving-from-docker-to-lxc-1-of-2-the-why/"/>
-<meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2016-05-17 02:00:00+02:00"/>
-<meta property="article:modified_time" content=""/>
-<meta property="article:author" content="https://kentoseth.github.io/author/mohamed-h.html">
-<meta property="article:section" content="LXC"/>
-<meta property="article:tag" content="ubuntu"/>
-<meta property="article:tag" content="LXC"/>
-<meta property="article:tag" content="docker"/>
-<meta property="og:image" content="/images/avatar.jpg">
-
-  <title>Kentoseth - Thoughts on programming, culture, FOSS and more &ndash; Moving from Docker to LXC: 1 of 2 (The why)</title>
-
-</head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="robots"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/theme/stylesheet/style.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/pygments/monokai.min.css" id="pygments-light-theme" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/brands.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/solid.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/feeds/all.atom.xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom" type="application/atom+xml"/>
+<!-- Chrome, Firefox OS and Opera -->
+<meta content="#333333" name="theme-color"/>
+<!-- Windows Phone -->
+<meta content="#333333" name="msapplication-navbutton-color"/>
+<!-- iOS Safari -->
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<!-- Microsoft EDGE -->
+<meta content="#333333" name="msapplication-TileColor"/>
+<meta content="Mohamed H." name="author">
+<meta content="Why I switched from Docker to LXC" name="description">
+<meta content="ubuntu, LXC, docker" name="keywords"/>
+<meta content="Kentoseth - Thoughts on programming, culture, FOSS and more" property="og:site_name">
+<meta content="Moving from Docker to LXC: 1 of 2 (The why)" property="og:title">
+<meta content="Why I switched from Docker to LXC" property="og:description">
+<meta content="en_US" property="og:locale">
+<meta content="https://kentoseth.github.io/posts/2016/May/17/moving-from-docker-to-lxc-1-of-2-the-why/" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="2016-05-17 02:00:00+02:00" property="article:published_time"/>
+<meta content="" property="article:modified_time"/>
+<meta content="https://kentoseth.github.io/author/mohamed-h.html" property="article:author"/>
+<meta content="LXC" property="article:section">
+<meta content="ubuntu" property="article:tag"/>
+<meta content="LXC" property="article:tag"/>
+<meta content="docker" property="article:tag"/>
+<meta content="/images/avatar.jpg" property="og:image"/>
+<title>Kentoseth - Thoughts on programming, culture, FOSS and more – Moving from Docker to LXC: 1 of 2 (The why)</title>
+</meta></meta></meta></meta></meta></meta></meta><link href="https://kentoseth.github.io/posts/2016/May/17/moving-from-docker-to-lxc-1-of-2-the-why/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kentoseth - Thoughts on programming, culture, FOSS and more", "item": "https://kentoseth.github.io"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://kentoseth.github.io/posts"}, {"@type": "ListItem", "position": 3, "name": "2016", "item": "https://kentoseth.github.io/posts/2016"}, {"@type": "ListItem", "position": 4, "name": "May", "item": "https://kentoseth.github.io/posts/2016/May"}, {"@type": "ListItem", "position": 5, "name": "17", "item": "https://kentoseth.github.io/posts/2016/May/17"}, {"@type": "ListItem", "position": 6, "name": "Moving from docker to lxc 1 of 2 the why", "item": "https://kentoseth.github.io/posts/2016/May/17/moving-from-docker-to-lxc-1-of-2-the-why"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://kentoseth.github.io/posts/2016/May/17/moving-from-docker-to-lxc-1-of-2-the-why/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Mohamed H."}, "publisher": {"@type": "Organization", "name": "Kentoseth - Thoughts on programming, culture, FOSS and more"}, "headline": "Moving from Docker to LXC: 1 of 2 (The why)", "about": "LXC", "datePublished": "2016-05-17 02:00"}</script></head>
 <body class="light-theme">
-  <aside>
-    <div>
-      <a href="https://kentoseth.github.io">
-        <img src="/images/avatar.jpg" alt="Kentoseth" title="Kentoseth">
-      </a>
-
-      <h1>
-        <a href="https://kentoseth.github.io">Kentoseth</a>
-      </h1>
-
+<aside>
+<div>
+<a href="https://kentoseth.github.io">
+<img alt="Kentoseth" src="/images/avatar.jpg" title="Kentoseth"/>
+</a>
+<h1>
+<a href="https://kentoseth.github.io">Kentoseth</a>
+</h1>
 <p>Coding. Culture. Linux. More.</p>
-
-      <nav>
-        <ul class="list">
-
-
-              <li>
-                <a target="_self"
-                   href="https://kentoseth.github.io/pages/about-me/">
+<nav>
+<ul class="list">
+<li>
+<a href="https://kentoseth.github.io/pages/about-me/" target="_self">
                   About me
                 </a>
-              </li>
-              <li>
-                <a target="_self"
-                   href="https://kentoseth.github.io/pages/projects/">
+</li>
+<li>
+<a href="https://kentoseth.github.io/pages/projects/" target="_self">
                   Projects
                 </a>
-              </li>
-
-            <li>
-              <a target="_self" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" >Email</a>
-            </li>
-            <li>
-              <a target="_self" href="/categories.html" >Categories</a>
-            </li>
-        </ul>
-      </nav>
-
-        <form style="border:1px solid #ccc;padding:3px;text-align:center;" 
-        action="https://tinyletter.com/Kentoseth" method="post" target="popupwindow" 
-        onsubmit="window.open('https://tinyletter.com/Kentoseth', 'popupwindow', 
-        'scrollbars=yes,width=800,height=600');return true">
-        <p><label for="tlemail">Join my Newsletter</label></p>
-        <p><input type="text" style="width:140px" name="email" id="tlemail" /></p>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" />
-        <p><a href="https://tinyletter.com" target="_blank" rel="noopener noreferrer">powered by TinyLetter</a></p>
-        </form>
-
-      <ul class="social">
-          <li>
-            <a  class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
-              <i class="fab fa-github-alt"></i>
-            </a>
-          </li>
-          <li>
-            <a  class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
-              <i class="fab fa-gitlab"></i>
-            </a>
-          </li>
-          <li>
-            <a  class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
-              <i class="fas fa-envelope"></i>
-            </a>
-          </li>
-          <li>
-            <a  class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
-              <i class="fas fa-rss"></i>
-            </a>
-          </li>
-          <li>
-            <a rel="me" class="sc-mastodon" href="https://fosstodon.org/@kentoseth" target="_blank">
-              <i class="fab fa-mastodon"></i>
-            </a>
-          </li>
-      </ul>
-    </div>
-
-  </aside>
-  <main>
-
-    <nav>
-      <a href="https://kentoseth.github.io">Home</a>
-
-      <a href="/categories">Categories</a>
-      <a href="/tags">Tags</a>
-
-      <a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
-
-    </nav>
-
+</li>
+<li>
+<a href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_self">Email</a>
+</li>
+<li>
+<a href="/categories.html" target="_self">Categories</a>
+</li>
+</ul>
+</nav>
+<form action="https://tinyletter.com/Kentoseth" method="post" onsubmit="window.open('https://tinyletter.com/Kentoseth', 'popupwindow', 
+        'scrollbars=yes,width=800,height=600');return true" style="border:1px solid #ccc;padding:3px;text-align:center;" target="popupwindow">
+<p><label for="tlemail">Join my Newsletter</label></p>
+<p><input id="tlemail" name="email" style="width:140px" type="text"/></p>
+<input name="embed" type="hidden" value="1"/>
+<input type="submit" value="Subscribe"/>
+<p><a href="https://tinyletter.com" rel="noopener noreferrer" target="_blank">powered by TinyLetter</a></p>
+</form>
+<ul class="social">
+<li>
+<a class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
+<i class="fab fa-github-alt"></i>
+</a>
+</li>
+<li>
+<a class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
+<i class="fab fa-gitlab"></i>
+</a>
+</li>
+<li>
+<a class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+<i class="fas fa-envelope"></i>
+</a>
+</li>
+<li>
+<a class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
+<i class="fas fa-rss"></i>
+</a>
+</li>
+<li>
+<a class="sc-mastodon" href="https://fosstodon.org/@kentoseth" rel="me" target="_blank">
+<i class="fab fa-mastodon"></i>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<main>
+<nav>
+<a href="https://kentoseth.github.io">Home</a>
+<a href="/categories">Categories</a>
+<a href="/tags">Tags</a>
+<a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
+</nav>
 <article class="single">
-  <header>
-      
-    <h1 id="moving-from-docker-to-lxc-1-of-2-the-why">Moving from Docker to LXC: 1 of 2 (The why)</h1>
-    <p>
+<header>
+<h1 id="moving-from-docker-to-lxc-1-of-2-the-why">Moving from Docker to LXC: 1 of 2 (The why)</h1>
+<p>
       Posted on Tue 17 May 2016 in <a href="https://kentoseth.github.io/category/lxc.html">LXC</a>
-
-    </p>
-  </header>
-
-
-  <div>
-    <p>Ever since discovering Docker, I've been a huge fan of the whole concept of containers and how they separate concerns.</p>
+</p>
+</header>
+<div>
+<p>Ever since discovering Docker, I've been a huge fan of the whole concept of containers and how they separate concerns.</p>
 <p>Up until recently, I always saw a container as a "container", and did not understand that Docker is very specific about what they interpret a container to be. Then 1 day, I wished to try to install a bunch of different applications to get a mail-server running (namely: Postfix, Dovecot and Roundcube).</p>
 <p>Much to my dismay, I discovered that it was a real PITA to install these things into a single Docker container. Digging deeper into my issues, I was led to the discovery that Dockers philosophy is driven by the whole "micro-services" concept. What this means is that Docker views each container as something that does a single process and a single process alone. You can make the process as big (or small) as you wish, but the goal of this philosophy is to encourage small services vs. a monolith (or so I interpreted it as that). Think about it as: confining your single search box into its own process vs. the big box of bad that is "WordPress, Apache, MySQL and PHP combined".</p>
 <p>Well things weren't going too great, so after wrangling lots of minds on #Docker and asking a few friends/colleagues via various mediums, it was brought to my attention that perhaps LXC would be a better option for what I wished to do. I could dump entire monoliths into LXC and that would be fine.</p>
@@ -186,42 +147,29 @@
 <p>That infographic I linked to above explains things a million times more clearly than the wads of text I had to read through (whilst learning about containers since a year or 2 ago).</p>
 <p>Just remember that: micro-services are based on an architectural decision to address the issues at a Google/Amazon level</p>
 <p>This blog, a drop-in for virtualenv for Python environments or your dads WordPress business-site probably don't need a Docker container (and some would argue that they probably don't need any containerization - LXC included - at all).</p>
-<hr>
+<hr/>
 <p>Moving forward, I will be (and have been) learning/using LXC as my go-to for containers.</p>
 <p>In part 2 of this 2-part blog, I will do a basic walk-through of installing LXC, creating a bare/minimal container(Ubuntu) and then slapping an example Python library/software (possibly Pelican, Twisted or some other library) onto a container built on top of the bare/minimal Ubuntu container.</p>
-  </div>
-  <div class="tag-cloud">
-    <p>
-      <a href="https://kentoseth.github.io/tag/ubuntu.html">ubuntu</a>
-      <a href="https://kentoseth.github.io/tag/lxc.html">LXC</a>
-      <a href="https://kentoseth.github.io/tag/docker.html">docker</a>
-    </p>
-  </div>
-
-
-
-
-  <hr>
-
-  <h3>If you don't know how to use RSS and want email updates on my new content, consider
-         <a href="https://tinyletter.com/Kentoseth" target="_blank" rel="noopener noreferrer">
+</div>
+<div class="tag-cloud">
+<p>
+<a href="https://kentoseth.github.io/tag/ubuntu.html">ubuntu</a>
+<a href="https://kentoseth.github.io/tag/lxc.html">LXC</a>
+<a href="https://kentoseth.github.io/tag/docker.html">docker</a>
+</p>
+</div>
+<hr/>
+<h3>If you don't know how to use RSS and want email updates on my new content, consider
+         <a href="https://tinyletter.com/Kentoseth" rel="noopener noreferrer" target="_blank">
           Joining my Newsletter</a></h3>
-
-  <p><em>The original content of this blog is a Waqf solely for the Pleasure of Allah. You are hereby granted full permission to copy, download, distribute, publish and share this content without modification under condition that full attribution is given to this author by creating a link either above or below the content that links back to the original source of the content. For any questions or ambiguity, you are requested to contact me via email for clarification.</em></p>
-
-
+<p><em>The original content of this blog is a Waqf solely for the Pleasure of Allah. You are hereby granted full permission to copy, download, distribute, publish and share this content without modification under condition that full attribution is given to this author by creating a link either above or below the content that links back to the original source of the content. For any questions or ambiguity, you are requested to contact me via email for clarification.</em></p>
 </article>
-
-    <footer>
-<p>&copy; 2021 </p>
+<footer>
+<p>© 2023 </p>
 <p>
 Built with <a href="https://getpelican.com" target="_blank">Pelican</a> using <a href="https://github.com/alexandrevicenzi/Flex" target="_blank">Flex</a> theme
-</p>    </footer>
-  </main>
-
-
-
-
+</p> </footer>
+</main>
 <script type="application/ld+json">
 {
   "@context" : "http://schema.org",
@@ -229,10 +177,8 @@ Built with <a href="https://getpelican.com" target="_blank">Pelican</a> using <a
   "name": " Kentoseth - Thoughts on programming, culture, FOSS and more ",
   "url" : "https://kentoseth.github.io",
   "image": "/images/avatar.jpg",
-  "description": "Thoughts on programming, culture, FOSS and more."
+  "description": "Content focused on Islam, Islamic Studies, Languages, Linux, FOSS, infosec and culture"
 }
 </script>
-
-
 </body>
 </html>

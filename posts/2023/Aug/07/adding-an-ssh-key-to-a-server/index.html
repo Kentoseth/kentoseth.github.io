@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="robots"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/theme/stylesheet/style.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/pygments/monokai.min.css" id="pygments-light-theme" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/brands.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/solid.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/feeds/all.atom.xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom" type="application/atom+xml"/>
+<!-- Chrome, Firefox OS and Opera -->
+<meta content="#333333" name="theme-color"/>
+<!-- Windows Phone -->
+<meta content="#333333" name="msapplication-navbutton-color"/>
+<!-- iOS Safari -->
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<!-- Microsoft EDGE -->
+<meta content="#333333" name="msapplication-TileColor"/>
+<meta content="Mohamed H." name="author">
+<meta content="A simple guide on how to generate and add an SSH key to a Linux server." name="description">
+<meta content="ssh, ubuntu" name="keywords"/>
+<meta content="Kentoseth - Thoughts on programming, culture, FOSS and more" property="og:site_name">
+<meta content="Adding an SSH key to a server" property="og:title">
+<meta content="A simple guide on how to generate and add an SSH key to a Linux server." property="og:description">
+<meta content="en_US" property="og:locale">
+<meta content="https://kentoseth.github.io/posts/2023/Aug/07/adding-an-ssh-key-to-a-server/" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="2023-08-07 02:00:00+02:00" property="article:published_time"/>
+<meta content="" property="article:modified_time"/>
+<meta content="https://kentoseth.github.io/author/mohamed-h.html" property="article:author"/>
+<meta content="Linux" property="article:section">
+<meta content="ssh" property="article:tag"/>
+<meta content="ubuntu" property="article:tag"/>
+<meta content="/images/avatar.jpg" property="og:image"/>
+<title>Kentoseth - Thoughts on programming, culture, FOSS and more – Adding an SSH key to a server</title>
+</meta></meta></meta></meta></meta></meta></meta><link href="https://kentoseth.github.io/posts/2023/Aug/07/adding-an-ssh-key-to-a-server/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kentoseth - Thoughts on programming, culture, FOSS and more", "item": "https://kentoseth.github.io"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://kentoseth.github.io/posts"}, {"@type": "ListItem", "position": 3, "name": "2023", "item": "https://kentoseth.github.io/posts/2023"}, {"@type": "ListItem", "position": 4, "name": "Aug", "item": "https://kentoseth.github.io/posts/2023/Aug"}, {"@type": "ListItem", "position": 5, "name": "07", "item": "https://kentoseth.github.io/posts/2023/Aug/07"}, {"@type": "ListItem", "position": 6, "name": "Adding an ssh key to a server", "item": "https://kentoseth.github.io/posts/2023/Aug/07/adding-an-ssh-key-to-a-server"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://kentoseth.github.io/posts/2023/Aug/07/adding-an-ssh-key-to-a-server/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Mohamed H."}, "publisher": {"@type": "Organization", "name": "Kentoseth - Thoughts on programming, culture, FOSS and more"}, "headline": "Adding an SSH key to a server", "about": "Linux", "datePublished": "2023-08-07 02:00"}</script></head>
+<body class="light-theme">
+<aside>
+<div>
+<a href="https://kentoseth.github.io">
+<img alt="Kentoseth" src="/images/avatar.jpg" title="Kentoseth"/>
+</a>
+<h1>
+<a href="https://kentoseth.github.io">Kentoseth</a>
+</h1>
+<p>Coding. Culture. Linux. More.</p>
+<nav>
+<ul class="list">
+<li>
+<a href="https://kentoseth.github.io/pages/about-me/" target="_self">
+                  About me
+                </a>
+</li>
+<li>
+<a href="https://kentoseth.github.io/pages/projects/" target="_self">
+                  Projects
+                </a>
+</li>
+<li>
+<a href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_self">Email</a>
+</li>
+<li>
+<a href="/categories.html" target="_self">Categories</a>
+</li>
+</ul>
+</nav>
+<form action="https://tinyletter.com/Kentoseth" method="post" onsubmit="window.open('https://tinyletter.com/Kentoseth', 'popupwindow', 
+        'scrollbars=yes,width=800,height=600');return true" style="border:1px solid #ccc;padding:3px;text-align:center;" target="popupwindow">
+<p><label for="tlemail">Join my Newsletter</label></p>
+<p><input id="tlemail" name="email" style="width:140px" type="text"/></p>
+<input name="embed" type="hidden" value="1"/>
+<input type="submit" value="Subscribe"/>
+<p><a href="https://tinyletter.com" rel="noopener noreferrer" target="_blank">powered by TinyLetter</a></p>
+</form>
+<ul class="social">
+<li>
+<a class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
+<i class="fab fa-github-alt"></i>
+</a>
+</li>
+<li>
+<a class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
+<i class="fab fa-gitlab"></i>
+</a>
+</li>
+<li>
+<a class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+<i class="fas fa-envelope"></i>
+</a>
+</li>
+<li>
+<a class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
+<i class="fas fa-rss"></i>
+</a>
+</li>
+<li>
+<a class="sc-mastodon" href="https://fosstodon.org/@kentoseth" rel="me" target="_blank">
+<i class="fab fa-mastodon"></i>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<main>
+<nav>
+<a href="https://kentoseth.github.io">Home</a>
+<a href="/categories">Categories</a>
+<a href="/tags">Tags</a>
+<a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
+</nav>
+<article class="single">
+<header>
+<h1 id="adding-an-ssh-key-to-a-server">Adding an SSH key to a server</h1>
+<p>
+      Posted on Mon 07 August 2023 in <a href="https://kentoseth.github.io/category/linux.html">Linux</a>
+</p>
+</header>
+<div>
+<p>بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+<p>This guide will explain how to add an SSH key to a remote server/container that has Linux installed on it. The user will then be able to connect from the host machine (where the key was generated) to the remote server. </p>
+<p>The instructions should work on most Linux distros.</p>
+<h2>Generate your SSH key on your local PC</h2>
+<p>Run this command in any terminal software (like Yakuake, Konsole, Xterm or GNOME Terminal):</p>
+<p><code>ssh-keygen -t rsa -b 4096 -C "add any comment you wish here"</code></p>
+<p>Follow the prompts and remember to enter the full file-path for the key + its name when asked where to save the key to:</p>
+<p><code>/path/to/.ssh/my_new_key</code></p>
+<p>In the <code>.ssh/</code> folder, 2 files should now exist:</p>
+<ul>
+<li>
+<p><code>my_new_key</code></p>
+</li>
+<li>
+<p><code>my_new_key.pub</code></p>
+</li>
+</ul>
+<h2>Add SSH key to remote server/container</h2>
+<p>Now connect to your remote server. Without an existing key, the way to connect to a remote server will be via a password, like:</p>
+<p><code>ssh root@&lt;some-ip-address&gt;</code></p>
+<p>It is advisable to restrict root access and create a user. In this guide we will assume the new user is called 'ubuntu'.</p>
+<p>As the 'ubuntu' user run these commands:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span>
+mkdir<span class="w"> </span>.ssh
+chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>.ssh/
+
+
+<span class="nb">cd</span><span class="w"> </span>.ssh/
+touch<span class="w"> </span>authorized_keys
+chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>authorized_keys
+</code></pre></div>
+<p>Now open the <code>my_new_key.pub</code> file on your <strong>local PC</strong>. </p>
+<p>Then run this command on the <strong>server</strong> to open and edit the <code>authorized_keys</code> file:</p>
+<p><code>nano authorized_keys</code></p>
+<p>Copy and paste the entire contents of <code>my_new_key.pub</code> into <code>authorized_keys</code></p>
+<p>Close the file by pressing <code>CTRL + X</code> and saving.</p>
+<p>Test the connection by running this command on your local PC:</p>
+<p><code>ssh -i ~/.ssh/my_new_key -p 22 ubuntu@&lt;server-IP-address&gt;</code></p>
+<h3>Bonus: adding the SSH info to your local PC SSH config file</h3>
+<p>On your local PC, open the following file <code>.ssh/config</code> using any text editor. Add the following text to this config file:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">IdentitiesOnly</span><span class="w"> </span><span class="nx">yes</span>
+
+<span class="nx">Host</span><span class="w"> </span><span class="nx">new</span><span class="o">-</span><span class="nx">server</span>
+<span class="w"> </span><span class="nx">HostName</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">server</span><span class="o">-</span><span class="nx">IP</span><span class="o">-</span><span class="nx">address</span><span class="p">&gt;</span>
+<span class="w"> </span><span class="nx">Port</span><span class="w"> </span><span class="mi">22</span>
+<span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="nx">ubuntu</span>
+<span class="w"> </span><span class="nx">IdentityFile</span><span class="w"> </span><span class="o">~/</span><span class="p">.</span><span class="nx">ssh</span><span class="o">/</span><span class="nx">my_new_key</span>
+
+
+<span class="nx">Host</span><span class="w"> </span><span class="o">*</span>
+<span class="w"> </span><span class="nx">ForwardAgent</span><span class="w"> </span><span class="nx">no</span>
+<span class="w"> </span><span class="nx">IdentitiesOnly</span><span class="w"> </span><span class="nx">yes</span>
+</code></pre></div>
+<p>It should now be possible to SSH to the server like so:</p>
+<p><code>ssh ubuntu@new-server</code></p>
+<p>For any errors, send me an email or contact me via <a href="https://fosstodon.org/@kentoseth">Mastodon</a>.</p>
+</div>
+<div class="tag-cloud">
+<p>
+<a href="https://kentoseth.github.io/tag/ssh.html">ssh</a>
+<a href="https://kentoseth.github.io/tag/ubuntu.html">ubuntu</a>
+</p>
+</div>
+<hr/>
+<h3>If you don't know how to use RSS and want email updates on my new content, consider
+         <a href="https://tinyletter.com/Kentoseth" rel="noopener noreferrer" target="_blank">
+          Joining my Newsletter</a></h3>
+<p><em>The original content of this blog is a Waqf solely for the Pleasure of Allah. You are hereby granted full permission to copy, download, distribute, publish and share this content without modification under condition that full attribution is given to this author by creating a link either above or below the content that links back to the original source of the content. For any questions or ambiguity, you are requested to contact me via email for clarification.</em></p>
+</article>
+<footer>
+<p>© 2023 </p>
+<p>
+Built with <a href="https://getpelican.com" target="_blank">Pelican</a> using <a href="https://github.com/alexandrevicenzi/Flex" target="_blank">Flex</a> theme
+</p> </footer>
+</main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Kentoseth - Thoughts on programming, culture, FOSS and more ",
+  "url" : "https://kentoseth.github.io",
+  "image": "/images/avatar.jpg",
+  "description": "Content focused on Islam, Islamic Studies, Languages, Linux, FOSS, infosec and culture"
+}
+</script>
+</body>
+</html>

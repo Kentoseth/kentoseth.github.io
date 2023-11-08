@@ -1,14 +1,536 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Kentoseth - Thoughts on programming, culture, FOSS and more - Language</title><link href="https://kentoseth.github.io/" rel="alternate"></link><link href="https://kentoseth.github.io/feeds/language.atom.xml" rel="self"></link><id>https://kentoseth.github.io/</id><updated>2021-07-28T03:00:00+02:00</updated><subtitle>Coding. Culture. Linux. More.</subtitle><entry><title>Update1: Using OCR, CAT and crowdsourcing to translate Classical Arabic works</title><link href="https://kentoseth.github.io/posts/2021/Jul/28/update1-using-ocr-cat-and-crowdsourcing-to-translate-classical-arabic-works/" rel="alternate"></link><published>2021-07-28T03:00:00+02:00</published><updated>2021-07-28T03:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-07-28:/posts/2021/Jul/28/update1-using-ocr-cat-and-crowdsourcing-to-translate-classical-arabic-works/</id><summary type="html">&lt;p&gt;An update on using a combination of OCR and CAT software and the power of crowdsourced translations to translate Classical Arabic books&lt;/p&gt;</summary><content type="html">&lt;p&gt;In my last article on &lt;a href="https://kentoseth.tk/posts/2021/jan/12/using-ocr-cat-and-crowdsourcing-to-translate-classical-arabic-works/"&gt;Using OCR, CAT and crowdsourcing to translate Classical Arabic works&lt;/a&gt; I spoke about various tools for digitizing Classical Arabic books and then translating them. Since then I have made a series of discoveries and this update is to document those discoveries.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Kentoseth - Thoughts on programming, culture, FOSS and more - Language</title><link href="https://kentoseth.github.io/" rel="alternate"></link><link href="https://kentoseth.github.io/feeds/language.atom.xml" rel="self"></link><id>https://kentoseth.github.io/</id><updated>2023-11-10T03:00:00+02:00</updated><subtitle>Coding. Culture. Linux. More.</subtitle><entry><title>Update 2: OCR &amp; CAT of Classical Arabic works</title><link href="https://kentoseth.github.io/posts/2023/Nov/10/update-2-ocr-cat-of-classical-arabic-works/" rel="alternate"></link><published>2023-11-10T03:00:00+02:00</published><updated>2023-11-10T03:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2023-11-10:/posts/2023/Nov/10/update-2-ocr-cat-of-classical-arabic-works/</id><summary type="html">&lt;p&gt;Sharing further ideas related to OCR, CAT and defining a purpose behind translations of Classical Arabic books.&lt;/p&gt;</summary><content type="html">&lt;p&gt;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ&lt;/p&gt;
+&lt;p&gt;In my previous articles &lt;a href="https://www.kentoseth.com/posts/2021/jan/12/using-ocr-cat-and-crowdsourcing-to-translate-classical-arabic-works/"&gt;here&lt;/a&gt;, &lt;a href="https://www.kentoseth.com/posts/2021/jul/28/update1-using-ocr-cat-and-crowdsourcing-to-translate-classical-arabic-works/"&gt;here&lt;/a&gt; and &lt;a href="https://www.kentoseth.com/posts/2022/jul/17/blog-updates-dragomen-writing-style-other-ongoing-projects/"&gt;here&lt;/a&gt;, I discussed various aspects related to translating and digitizing classical Arabic books.&lt;/p&gt;
+&lt;p&gt;This article is an update that presents a couple of new and evolving ideas I have had since writing those articles.&lt;/p&gt;
+&lt;h3&gt;Tools update&lt;/h3&gt;
+&lt;p&gt;As tooling has been central to my previous discussions, it is worth mentioning some new updates on that front.&lt;/p&gt;
+&lt;p&gt;Although I previously had an on-off view regarding the tool &lt;a href="https://weblate.org/en/"&gt;Weblate&lt;/a&gt;, I have found that it is adequate enough to use for translations. It offers Git-like features and also backs up to Git repositories.&lt;/p&gt;
+&lt;p&gt;In the OCR field, a tool called &lt;a href="https://gitlab.com/scripta/escriptorium"&gt;eScriptorium&lt;/a&gt; is currently the best at (my subjective opinion) scanning Arabic texts. It is an Open Source project built on top of another Open Source project called &lt;a href="https://kraken.re/"&gt;Kraken&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The models to be used for the eScriptorium are available here:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://zenodo.org/records/7051646"&gt;Printed Urdu Base Model Trained on the OpenITI Corpus&lt;/a&gt;
+&lt;a href="https://zenodo.org/records/7051644"&gt;Printed Persian Base Model Trained on the OpenITI Corpus&lt;/a&gt;
+&lt;a href="https://zenodo.org/records/7050342"&gt;Printed Ottoman Base Model Trained on the OpenITI Corpus&lt;/a&gt;
+&lt;a href="https://zenodo.org/records/7050296"&gt;Printed Arabic Base Model Trained on the OpenITI Corpus&lt;/a&gt;
+&lt;a href="https://zenodo.org/records/7050270"&gt;Printed Arabic-Script Base Model Trained on the OpenITI Corpus&lt;/a&gt; (here is a quote regarding the difference between this model and the Arabic model above: &lt;em&gt;The former has been trained only on Arabic language prints, the latter is trained on multiple languages that all use the Arabic script (Arabic, Persian, Urdu, Ottoman).&lt;/em&gt;)&lt;/p&gt;
+&lt;p&gt;The power of large language models cannot be understated. Tools like GPT (especially GPT-4) provide very accurate translations, even of niche subjects like Usul ul-Fiqh or Uloom ul-Hadith. GPT-based translation tools already exist: &lt;a href="https://github.com/jesselau76/ebook-GPT-translator"&gt;ebook-GPT-translator&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It should be noted that to get true accuracy, the machine-translated text has to be proofread by an expert.&lt;/p&gt;
+&lt;p&gt;Two other questions arise as well:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;how literal should one be in the translations? &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;and are translations even necessary?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;The philosophical side to translations&lt;/h3&gt;
+&lt;p&gt;To answer the latter question, I will clearly say that translations are necessary. As an Arabic learner however, I believe that translations of introductory (by introductory I do not mean 'primers' - primers offer very little textual substance and many translations exist of most primers already) texts should be the primary focus. Beyond that, I believe that translations should be as close to literal as possible while retaining normal language. The reasons for this are: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;It preserves the original Arabic meaning&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It saves on dictionary lookup time&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It turns every translated book into a dual-purpose book (for learning Arabic and for learning the underlying science of the book itself)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Partial translations&lt;/h4&gt;
+&lt;p&gt;As students progress towards intermediate books, the use of partial translations may be more effective for translators (due to the volume of texts that can be translated). The key flaw in this idea is its subjective nature. It is difficult for a translator to determine which words are easy and which words are hard in any given book (and the respective learning levels of the audience).&lt;/p&gt;
+&lt;p&gt;If this option is chosen, translators can focus more on the meanings and morphology of certain words. Arabic dictionary definitions can also be included to get students to read word definitions according to the Arabs.&lt;/p&gt;
+&lt;h4&gt;More effective than translating?&lt;/h4&gt;
+&lt;p&gt;While there is some research regarding the amount of diacritics to use (full or partial), it is undeniable that adding diacritics to any religious text would enable better reading and clear up any ambiguities in the text.&lt;/p&gt;
+&lt;p&gt;In terms of Arabic natural language processing (NLP), diacritics is not much explored. Objectively, I can say that diacritics is challenging. Subjectively, I would say that due to bulk of Arabic NLP researchers being Arab, they may feel that diacritics is an unnecessary crutch in order to read Arabic.&lt;/p&gt;
+&lt;p&gt;The current &lt;a href="https://paperswithcode.com/sota/arabic-text-diacritization-on-tashkeela-1"&gt;state-of-the-art (SoTA) neural network model&lt;/a&gt; for adding diacritics to Arabic texts (trained on the Tashkeela corpus) is the &lt;a href="https://github.com/almodhfer/Arabic_Diacritization"&gt;CBHG model&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The GPT models (specifically GPT-4) show enormous promise regarding diacritics. When doing a rudimentary test using &lt;a href="https://github.com/AliOsm/shakkelha"&gt;Shakkelha&lt;/a&gt; and GPT-4, I found that both models were equivalent in prediction and accuracy. The only error that I picked up in both models was the failure to predict &lt;u&gt;passive&lt;/u&gt; verbs.&lt;/p&gt;
+&lt;p&gt;I will soon be publishing an article where I used old data from Maktaba Shamela (7000 books) to analyze the percentage of diacritics within each book. The books were already split into categories. I split this further by only extracting books that have greater than 50% diacritics within them.&lt;/p&gt;
+&lt;h3&gt;The AI (LLM) field&lt;/h3&gt;
+&lt;p&gt;A lot of activity is going on in the LLM (famously known as 'AI') research field. If Open Source LLM research continues to advance as it is, it might be possible to fully diacriticise and translate many classical Arabic texts with a moderate GPU at home. The only thing then left would be for annotators to check for errors.&lt;/p&gt;
+&lt;p&gt;Waiting on the promise of other research is not sensible though. Researchers (even amateurs like myself) should continue to explore alternative paths to achieve their goals and advance the fields of knowledge.&lt;/p&gt;
+&lt;h3&gt;Manuscript Research/Verification&lt;/h3&gt;
+&lt;p&gt;In my previous article here I discussed the issue of circular digital book verification. I was unaware that my concerns about digitization were expressed by other past scholars regarding publishers and the books being published. I discovered that this field is called: Tahqeeq&lt;/p&gt;
+&lt;p&gt;Mufti Husain Kadodia wrote an excellent &lt;a href="https://attahawi.com/2009/05/12/understanding-arabic-book-publications-an-enlightening-conversation-with-shaykh-husain-kadodia/"&gt;article about this field in recent times&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here are some keywords and their definitions (lifted verbatim from the article or my own summary):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Muhaqqaq - researched, revised, and properly edited; refers to the books&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tahqeeq - The name of the field, meaning verification&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Muhaqqiq - The researcher/verifier&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Makhtut/makhtutaat (manuscript/s)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Takhrij - &lt;a href="https://alqudwahacademy.sg/hadithextraction/"&gt;science of identifying and locating references and origins of Prophetic narrations&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tijarati tahqiqqaat - revenue research&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The historicity of book publication is perhaps as important as the contents within the books. The pursuit of greed in humans is also not a new phenomenon. Greed existed in the past too. The astute reader would also pick up the cynical irony in book publishers of Islamic books acting shady (is nothing sacred?).&lt;/p&gt;
+&lt;p&gt;I am left in a state of mild bewilderment because, although a book may be mutawaatir in print now, this was not how books were written previously. Although the printing press is not a new technology, it did not reach the Muslim world until relatively recently (roughly in the past 300 years while being &amp;gt;600 years old). It was the job of scribes (usually trained scholars) to verbatim copy Islamic books from manuscript to manuscript.&lt;/p&gt;
+&lt;h3&gt;End&lt;/h3&gt;
+&lt;p&gt;While the last section may make the reader feel bleak, I believe the Mufti was only expressing the bad side of the industry. The Mufti does sells Islamic books (&lt;a href="https://t.me/tahawibooks"&gt;their Telegram channel&lt;/a&gt; no longer seems accessible). It may be possible that can provide a full picture of this field from its early history until now.&lt;/p&gt;
+&lt;p&gt;Communities to join:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://idhn.org/"&gt;Islamicate Digital Humanities Network (IDHN)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.sigarab.org/"&gt;SIGARAB - ACL Special Interest Group on Arabic Natural Language Processing&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://arbml.github.io/website/"&gt;ARBML&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I am yet to find an Islamic studies community that is moderate/tolerant, focused on research and neither sectarian nor polemical.&lt;/p&gt;</content><category term="Language"></category><category term="culture"></category><category term="languages"></category><category term="ideas"></category><category term="OCR"></category><category term="CAT"></category><category term="Arabic"></category></entry><entry><title>List of publishers who translate(d) classical Islamic texts to English</title><link href="https://kentoseth.github.io/posts/2023/Oct/15/list-of-publishers-who-translated-classical-islamic-texts-to-english/" rel="alternate"></link><published>2023-10-15T02:00:00+02:00</published><updated>2023-10-15T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2023-10-15:/posts/2023/Oct/15/list-of-publishers-who-translated-classical-islamic-texts-to-english/</id><summary type="html">&lt;p&gt;A list of publishing companies who have translated classical Islamic (Arabic) texts into English.&lt;/p&gt;</summary><content type="html">&lt;p&gt;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ&lt;/p&gt;
+&lt;p&gt;Below is a working list of publishing companies who have translated classical Islamic (Arabic) texts into English. This list does not include individual translators who have independently translated Islamic (Arabic) texts to English nor does it include publishers of non-English translations nor does it include publishers of original works.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://turath.co.uk/"&gt;Turath Publishing&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.whitethreadpress.com/"&gt;White Thread Press&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.diwanpress.com/"&gt;Diwan Press&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://darussalam.com/"&gt;Darussalam Publishers&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://its.org.uk/"&gt;Islamic Texts Society&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://global.oup.com/academic/?cc=us&amp;amp;lang=en&amp;amp;"&gt;Oxford University Press&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://qurancomplex.gov.sa/en/"&gt;King Fahd Printing Complex&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://ukiapublications.com/"&gt;UK Islamic Academy&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://iiph.com/"&gt;International Islamic Publishing House&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://fonsvitae.com/"&gt;Fons Vitae&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.kazi.org/"&gt;Kazi Publications&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://brill.com/"&gt;Brill&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://press.uchicago.edu/ucp/books/series/BYU-ITS.html"&gt;Brigham Young University&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This list is not exhaustive at all. Within the translated books from the publishers above, one will find references to other publishing companies (some of whom no longer exist due to publishing translated books 50-200 years ago).&lt;/p&gt;
+&lt;p&gt;2 websites that may offer more names of publishers are:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://kalamullah.com/"&gt;Kalamullah&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.australianislamiclibrary.org/"&gt;Australian Islamic Library&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Lastly I should mention that no attempt has been made to verify the leanings of the publishers. From Ahlus Sunnah to Orientalists, the above list has them all.&lt;/p&gt;
+&lt;p&gt;For any errors or suggestions, send me an email or contact me via &lt;a href="https://fosstodon.org/@kentoseth"&gt;Mastodon&lt;/a&gt;.&lt;/p&gt;</content><category term="Language"></category><category term="persian"></category><category term="farsi"></category><category term="letters"></category><category term="alphabet"></category></entry><entry><title>Persian Alphabet for Arabic speakers</title><link href="https://kentoseth.github.io/posts/2023/Oct/15/persian-alphabet-for-arabic-speakers/" rel="alternate"></link><published>2023-10-15T02:00:00+02:00</published><updated>2023-10-15T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2023-10-15:/posts/2023/Oct/15/persian-alphabet-for-arabic-speakers/</id><summary type="html">&lt;p&gt;A summary of the Persian alphabet for people who know Arabic.&lt;/p&gt;</summary><content type="html">&lt;p&gt;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ&lt;/p&gt;
+&lt;p&gt;The following article is a short summary on the Persian alphabet based on the following website: &lt;a href="https://www.easypersian.com/"&gt;Easy Persian&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Persian, otherwise known as Farsi, has the same letters as the Arabic language (plus a few extra) and is read from right to left (an RtL language).&lt;/p&gt;
+&lt;p&gt;I will list the letters, as well as their pronunciations, as some differ from Arabic in how they are said.&lt;/p&gt;
+&lt;h2&gt;Vowel sounds&lt;/h2&gt;
+&lt;p&gt;The vowel structure is also similar with the presence of the Fat7a, Kasra and Dhamma ( َ ,  ِ , ُ ) for short vowel sounds and the Alif, Ya and Waw (ا, ي, و) for long vowel sounds. There is no double vowel sound (an or  ً).&lt;/p&gt;
+&lt;p&gt;The Sukun (  ْ ) and Tashdid are also present (  ّ ), as in the case of Arabic.&lt;/p&gt;
+&lt;h2&gt;Letters (with vowel sounds)&lt;/h2&gt;
+&lt;p&gt;The letters with vowels have the following sound structure:&lt;/p&gt;
+&lt;p&gt;fat7a: aah (like far) - an open mouth sound
+kasra: eh (like pear - the fruit)
+dhamma: or/aww (like the expression aww when seeing a cute child)&lt;/p&gt;
+&lt;p&gt;alif: aah (like when opening the mouth at the dentist/doctor) &lt;sup&gt;(1)&lt;/sup&gt;
+yaa: ee (like seen)
+waw: oo (like cool)&lt;/p&gt;
+&lt;p&gt;I will now explain how the letters are said (&lt;u&gt;based on the vowel sounds explained above&lt;/u&gt;) in comparison to Arabic:&lt;/p&gt;
+&lt;p&gt;ا: same as Arabic 
+ﺏ: same as Arabic
+ﭖ: the letter P in English
+ﺕ, ﻁ, : all pronounced as the letter ﺕ in Arabic
+ﺙ, ﺫ, ﺱ, ﺹ,  : all pronounced as the letter ﺱ in Arabic
+ﺝ: same as Arabic
+ﭺ: 'che' sound like check
+ﺡ, ﻩ : all pronounced as the letter ﻩ in Arabic
+ﺥ: same as Arabic
+ﺩ: same as Arabic
+ﺫ, ﺯ, ﺽ, ﻅ : all pronounced as the letter ﺯ in Arabic
+ﮊ: 'zhe' sound like bonjour (for those who don't know French, it is similar to a 'sh' sound with an added 'z' in front of the 'sh')
+ﺵ: same as Arabic
+ﻉ: same as أ (alif) in Arabic
+ﻍ : same as Arabic
+ﻑ : same as Arabic
+ﻕ : same as ﻍ in Arabic
+ک : same as ك in Arabic
+ﮒ : the letter G in English (golf)
+ﻝ : same as Arabic
+ﻡ : same as Arabic
+ﻥ : same as Arabic
+ﻭ : v in English (van)
+ى: same as Arabic&lt;/p&gt;
+&lt;p&gt;(1) it is hard to distinguish between the fat7a and alif sounds, but based on how wide the mouth is opened, there is a subtle difference&lt;/p&gt;
+&lt;p&gt;For any errors, send me an email or contact me via &lt;a href="https://fosstodon.org/@kentoseth"&gt;Mastodon&lt;/a&gt;.&lt;/p&gt;</content><category term="Language"></category><category term="persian"></category><category term="farsi"></category><category term="letters"></category><category term="alphabet"></category></entry><entry><title>Common Language Theory</title><link href="https://kentoseth.github.io/posts/2023/Sep/20/common-language-theory/" rel="alternate"></link><published>2023-09-20T02:00:00+02:00</published><updated>2023-09-20T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2023-09-20:/posts/2023/Sep/20/common-language-theory/</id><summary type="html">&lt;p&gt;Developing a theory to enable learning of multiple languages.&lt;/p&gt;</summary><content type="html">&lt;p&gt;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ&lt;/p&gt;
+&lt;p&gt;In this introductory article, I will discuss a theory I have developed for learning multiple languages in order to use them in a speaking context.&lt;/p&gt;
+&lt;p&gt;A similar theory may or may not exist in theoretical linguistics, but as I am not in the linguistics field per se, this theory is based on my own experience learning the Arabic language and through speaking to many Arabic natives.&lt;/p&gt;
+&lt;h2&gt;What the Common Language Theory will not help with&lt;/h2&gt;
+&lt;p&gt;In order to understand what this Common Language Theory (referred to as CLT in the rest of this article) is, the reader should know what it is not. The CLT will not help to read nor write text of the language being learned, especially with non-Latin characters. It will only enable reading of the learned-language (like non-Latin characters) by way of the frequency of phrases used. &lt;/p&gt;
+&lt;h2&gt;What is the CLT designed for?&lt;/h2&gt;
+&lt;p&gt;The CLT is designed primarily for speaking and engagement. Although I have learnt Arabic extensively (reading, writing, understanding and speaking), I found a series of patterns emerge when using certain words, phrases and sentences when speaking with Arabic native speakers. The patterns are not based merely on usage, but also on the frequency of these words, phrases and sentences being used.&lt;/p&gt;
+&lt;p&gt;This led me to believe that when engaging in simple conversations with native speakers (and within various contexts), it is not required for the learner to go through the whole process of learning grammar, morphology and all other related aspects of a certain language.&lt;/p&gt;
+&lt;p&gt;Much like how toddlers learn their native language through interaction and engagement, this theory is aimed at developing a series of words, phrases and sentences that can easily enable a non-native speaker to speak with natives relatively quickly.&lt;/p&gt;
+&lt;h2&gt;An introductory scenario as an example&lt;/h2&gt;
+&lt;p&gt;In order to demonstrate a working example, I will provide a dialogue that is applicable whenever a person meets another person for the first time. In this example, I will use Arabic and English. Arabic will represent the foreign language as English is my native language. I will use a Latin transliteration to write the Arabic text.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Non-native:&lt;/strong&gt; Assalamu Alaikum - Peace be upon you&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Native:&lt;/strong&gt; Wa alaikum salam - and peace be upon you&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Non-native:&lt;/strong&gt; Kayfa haaluk (كَيفَ حالُك)? - how are you?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Native:&lt;/strong&gt; Alhamdulillah bikhayr (بِخَير) wa anta? - All Praise to Allah I am well and you?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Non-native:&lt;/strong&gt; bikhayr alhamdulillah - I am well, All Praise to Allah&lt;/p&gt;
+&lt;p&gt;(It is at this point that a native speaker may be intrigued by your ability to converse in their language. They may either ask you a question or you can follow up with a question to them)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Native:&lt;/strong&gt; hal tatakallam alarabiyyah (lughatul arabiyyah) (هَل تَتَكَلَّم العَرَبِيّة)? - Do you speak Arabic (the Arabic language)?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Non-native:&lt;/strong&gt; na3m&lt;sup&gt;(1)&lt;/sup&gt;, atakallam Qaleel &lt;sup&gt;(2)&lt;/sup&gt; - I speak a little&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Native:&lt;/strong&gt; min ayna anta? - where are you from?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Non-native:&lt;/strong&gt; ana min oorubbaa wa anta? - I am from Europe and you?&lt;/p&gt;
+&lt;p&gt;(If you are in an Arab country, it goes without saying that the Arabic-speaking person is most likely from that country. However, they could also be immigrants themselves...)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Native:&lt;/strong&gt; ana min Sooriya - I am from Syria&lt;/p&gt;
+&lt;p&gt;(It is important to avoid being 'led' in the conversation as you will inevitably be asked a question or hear a phrase which you don't understand)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Non-native:&lt;/strong&gt; hal tatakallam alingleeziyyah? - Do you speak English?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Native:&lt;/strong&gt; na3m/laa/qaleel - yes/no/a little&lt;/p&gt;
+&lt;p&gt;(Two important points to note here is that 1) The conversation may not flow as indicated above and 2) If it does, then &lt;u&gt;context&lt;/u&gt; will apply next. Both these issues will be addressed below)&lt;/p&gt;
+&lt;p&gt;(1) the 3 represents the 'ain'/ع throat letter
+(2) the Q represents ق pronounced from the throat like 'qaw'&lt;/p&gt;
+&lt;h2&gt;What to do when getting stuck&lt;/h2&gt;
+&lt;p&gt;You are likely to come across many scenarios where you don't understand what the native speaker is saying. In these situations, it is important to know how to say the following phrases to be able to continue the conversation in the foreign language whilst being able to understand at the same time.&lt;/p&gt;
+&lt;p&gt;la fahimtuk (لا فَهِمتُك) - I did not understand you
+fahimt (فَهِمتُ) - Understood
+marratan ukhraa bi-buT'aa&lt;sup&gt;(3)&lt;/sup&gt; min fadhlik (مَرّةً أُخرى مِن فَضلِك) - can you repeat slowly please (the literal meaning is: once again slowly please)
+hal yumkinuka an tatakallam hadha fil ingliziyyah? - can you say that in English?
+kayfa aQool&lt;sup&gt;(4)&lt;/sup&gt; hadha ... fil arabiyyah? - how do I say this ... in Arabic? (insert English phrase at ...)
+madha ta3nee - what do you mean?
+maa ma3naa ... ? - what means ... ? (you can insert the word you don't know, eg. maa ma3naa kitaabun?)
+hal yumkinunaa an natakallam fil ingliziyyah al'aan? - can we speak in English now?&lt;/p&gt;
+&lt;p&gt;(3) The T represents the letter ط pronounced like 'saw', hence 'taw'
+(4) the Q represents ق pronounced from the throat like 'qaw'&lt;/p&gt;
+&lt;h3&gt;Context 1: the most important verbs&lt;/h3&gt;
+&lt;p&gt;In daily conversation, it is normal to use verbs in the first person, I, the second person, you, and less commonly the third person, he and she. It is also less common but applicable to use the first person, we.&lt;/p&gt;
+&lt;p&gt;It is difficult to objectively create a list of frequently used verbs. A simple internet search also reveals many websites testing anywhere from 50 to 100 verbs. This is too much for a beginner to learn. Therefore, I will list no more than 15 to 20 verbs based on their usage alone as well as their usage together in basic conversation. Certain languages (like Arabic) have morphological changes. Therefore, I will list these verbs in a table (based on the example).&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;VERB&lt;/th&gt;
+&lt;th&gt;I&lt;/th&gt;
+&lt;th&gt;you (M)&lt;/th&gt;
+&lt;th&gt;you (F)&lt;/th&gt;
+&lt;th&gt;he&lt;/th&gt;
+&lt;th&gt;she&lt;/th&gt;
+&lt;th&gt;we&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;want(-ed)&lt;/td&gt;
+&lt;td&gt;أُرِيدُ&lt;br/&gt;أَرَدْتُ&lt;/td&gt;
+&lt;td&gt;تُرِيدُ&lt;br/&gt;أَرَدْتَ&lt;/td&gt;
+&lt;td&gt;تُرِيدِينَ&lt;br/&gt;أَرَدْتِ&lt;/td&gt;
+&lt;td&gt;يُرِيدُ&lt;br/&gt;أَرَادَ&lt;/td&gt;
+&lt;td&gt;تُرِيدُ&lt;br/&gt;أَرَدْتْ&lt;/td&gt;
+&lt;td&gt;نُرِيدُ&lt;br/&gt;أَرَدْنا&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;know(knew)&lt;/td&gt;
+&lt;td&gt;أَعْرِفُ&lt;br/&gt;عَرَفْتُ&lt;/td&gt;
+&lt;td&gt;تَعْرِفُ&lt;br/&gt;عَرَفْتَ&lt;/td&gt;
+&lt;td&gt;تَعْرِفِينَ&lt;br/&gt;عَرَفْتِ&lt;/td&gt;
+&lt;td&gt;يَعْرِفُ&lt;br/&gt;عَرَفَ&lt;/td&gt;
+&lt;td&gt;تَعْرِفُ&lt;br/&gt;عَرَفَتْ&lt;/td&gt;
+&lt;td&gt;نَعْرِفُ&lt;br/&gt;عَرَفْنا&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;understand(understood)&lt;/td&gt;
+&lt;td&gt;أَفْهَمُ&lt;br/&gt;فَهِمْتُ&lt;/td&gt;
+&lt;td&gt;تَفْهَمُ&lt;br/&gt;فَهِمْتَ&lt;/td&gt;
+&lt;td&gt;تَفْهَمِينَ&lt;br/&gt;فَهِمْتِ&lt;/td&gt;
+&lt;td&gt;يَفْهَمُ&lt;br/&gt;فَهِمَ&lt;/td&gt;
+&lt;td&gt;تَفْهَمُ&lt;br/&gt;ْفَهِمَت&lt;/td&gt;
+&lt;td&gt;نَفْهَمُ&lt;br/&gt;فَهِمْنَا&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;speak/talk(spoke)&lt;/td&gt;
+&lt;td&gt;أَتَكَلَّمُ&lt;br/&gt;تَكَلَّمْتُ&lt;/td&gt;
+&lt;td&gt;تَتَكَلَّمُ&lt;br/&gt;تَكَلَّمْتَ&lt;/td&gt;
+&lt;td&gt;تَتَكَلَّمِينَ&lt;br/&gt;تَكَلَّمْتِ&lt;/td&gt;
+&lt;td&gt;يَتَكَلَّمُ&lt;br/&gt;تَكَلَّمَ&lt;/td&gt;
+&lt;td&gt;تَتَكَلَّمُ&lt;br/&gt;ْتَكَلَّمَت&lt;/td&gt;
+&lt;td&gt;نَتَكَلَّمُ&lt;br/&gt;تَكَلَّمْنا&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;learn(-ed)&lt;/td&gt;
+&lt;td&gt;أَتَعَلَّمُ&lt;br/&gt;تَعَلَّمْتُ&lt;/td&gt;
+&lt;td&gt;تَتَعَلَّمُ&lt;br/&gt;تَعَلَّمْتَ&lt;/td&gt;
+&lt;td&gt;تَتَعَلَّمِينَ&lt;br/&gt;تَعَلَّمْتِ&lt;/td&gt;
+&lt;td&gt;يَتَعَلَّمُ&lt;br/&gt;تَعَلَّمَ&lt;/td&gt;
+&lt;td&gt;تَتَعَلَّمُ&lt;br/&gt;ْتَعَلَّمَت&lt;/td&gt;
+&lt;td&gt;نَتَعَلَّمُ&lt;br/&gt;تَعَلَّمْنا&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;go(went)&lt;/td&gt;
+&lt;td&gt;أَذْهَبُ&lt;br/&gt;ذَهَبْتُ&lt;/td&gt;
+&lt;td&gt;تَذْهَبُ&amp;lt;br/ذَهَبْتَ&lt;/td&gt;
+&lt;td&gt;تَذْهَبِينَ&lt;br/&gt;ذَهَبْتَ&lt;/td&gt;
+&lt;td&gt;يَذْهَبُ&lt;br/&gt;ذَهَبْتِ&lt;/td&gt;
+&lt;td&gt;تَذْهَبُ&lt;br/&gt;ْذَهَبَت&lt;/td&gt;
+&lt;td&gt;نَذْهَبُ&lt;br/&gt;ذَهَبْنا&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;have(had)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;to be(was)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;take(took)&lt;/td&gt;
+&lt;td&gt;أَتَّخِذُ&lt;br/&gt;اِتَّخَذْتُ&lt;/td&gt;
+&lt;td&gt;تَتَّخِذُ&lt;br/&gt;اِتَّخَذْتَ&lt;/td&gt;
+&lt;td&gt;تَتَّخِذِينَ&lt;br/&gt;اِتَّخَذْتِ&lt;/td&gt;
+&lt;td&gt;يَتَّخِذُ&lt;br/&gt;اِتَّخَذَ&lt;/td&gt;
+&lt;td&gt;تَتَّخِذُ&lt;br/&gt;اِتَّخَذْتْ&lt;/td&gt;
+&lt;td&gt;نَتَّخِذُ&lt;br/&gt;اِتَّخَذْنا&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;use(-d)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;ask(-ed)&lt;/td&gt;
+&lt;td&gt;أَسْأَلُ&lt;br/&gt;سَأَلْتُ&lt;/td&gt;
+&lt;td&gt;تَسْأَلُ&lt;br/&gt;سَأَلْتَ&lt;/td&gt;
+&lt;td&gt;تَسْأَلِينَ&lt;br/&gt;سَأَلْتِ&lt;/td&gt;
+&lt;td&gt;يَسْأَلُ&lt;br/&gt;سَأَلَ&lt;/td&gt;
+&lt;td&gt;تَسْأَلُ&lt;br/&gt;ْسَأَلَت&lt;/td&gt;
+&lt;td&gt;نَسْأَلُ&lt;br/&gt;سَأَلْنا&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;think(thought)&lt;/td&gt;
+&lt;td&gt;أَظُنُّ&lt;br/&gt;ظَنَنْتُ&lt;/td&gt;
+&lt;td&gt;تَظُنُّ&lt;br/&gt;ظَنَنْتَ&lt;/td&gt;
+&lt;td&gt;تَظُنِّينَ&lt;br/&gt;ظَنَنْتِ&lt;/td&gt;
+&lt;td&gt;يَظُنُّ&lt;br/&gt;ظَنَّ&lt;/td&gt;
+&lt;td&gt;تَظُنُّ&lt;br/&gt;ظَنَّتْ&lt;/td&gt;
+&lt;td&gt;نَظُنُّ&lt;br/&gt;ظَنَّا&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;td&gt;find(found)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;td&gt;say(said)&lt;/td&gt;
+&lt;td&gt;أَقُولُ&lt;br/&gt;قُلْتُ&lt;/td&gt;
+&lt;td&gt;تَقُولُ&lt;br/&gt;قُلْتَ&lt;/td&gt;
+&lt;td&gt;تَقُولِينَ&lt;br/&gt;قُلْتِ&lt;/td&gt;
+&lt;td&gt;يَقُولُ&lt;br/&gt;قَالَ&lt;/td&gt;
+&lt;td&gt;تَقُولُ&lt;br/&gt;قَالَتْ&lt;/td&gt;
+&lt;td&gt;نَقُولُ&lt;br/&gt;قُلْنَا&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;study(-ied)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;come(came)&lt;/td&gt;
+&lt;td&gt;أَجِيءُ&lt;br/&gt;جِئْتُ&lt;/td&gt;
+&lt;td&gt;تَجِيءُ&lt;br/&gt;جِئْتَ&lt;/td&gt;
+&lt;td&gt;تَجِيئِينَ&lt;br/&gt;جِئْتِ&lt;/td&gt;
+&lt;td&gt;يَجِيءُ&lt;br/&gt;جَاءَ&lt;/td&gt;
+&lt;td&gt;تَجِيءُ&lt;br/&gt;جَاءَتْ&lt;/td&gt;
+&lt;td&gt;نَجِيءُ&lt;br/&gt;جِئْنَا&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;send(sent)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;td&gt;see(saw)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;work(-ed)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;tell(told)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Arabic also has two special verbs used in certain questions. The meaning of these two verbs is:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;can or is it possible to (يمكن)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Able or able to (يستطيع)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;These verbs also require conjugation as above. This is left to the reader.&lt;/p&gt;
+&lt;p&gt;Knowing these verbs and their conjugations alone is minimally beneficial. It is important to know how to combine these verbs together as well as use them with the appropriate nouns.&lt;/p&gt;
+&lt;h3&gt;Context 2: A much longer intro by a fascinated native&lt;/h3&gt;
+&lt;p&gt;(Full translations won't be provided as the reader should be able to piece together the meanings)&lt;/p&gt;
+&lt;p&gt;N = Native
+ NN = Non-native&lt;/p&gt;
+&lt;p&gt;N: limadha tata3allama alarabiyyah? (why ...?)
+NN: ureedu an afhamu&lt;sup&gt;(5)&lt;/sup&gt; alQur'an
+N: &lt;/p&gt;
+&lt;p&gt;(5) Arabic uses a particle called 'an' which means 'to' and is placed between two verbs. The two verbs need to match in their conjugation. So, a literal meaning here would be: I want to (I) understand.&lt;/p&gt;
+&lt;p&gt;For any errors, send me an email or contact me via &lt;a href="https://fosstodon.org/@kentoseth"&gt;Mastodon&lt;/a&gt;.&lt;/p&gt;</content><category term="Language"></category><category term="english"></category><category term="arabic"></category><category term="russian"></category><category term="persian"></category><category term="framework"></category></entry><entry><title>Installing INCEpTION - an Open Source tool for Linguistic Annotation</title><link href="https://kentoseth.github.io/posts/2022/Jul/25/installing-inception-an-open-source-tool-for-linguistic-annotation/" rel="alternate"></link><published>2022-07-25T03:00:00+02:00</published><updated>2022-07-25T03:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2022-07-25:/posts/2022/Jul/25/installing-inception-an-open-source-tool-for-linguistic-annotation/</id><summary type="html">&lt;p&gt;A guide to install INCEpTION on Linux-based distros.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In a previous post about &lt;a href="https://www.kentoseth.com/posts/2021/mar/05/tarkeeb-the-concept-of-sentence-analysisor-linguistic-annotation-in-arabic/"&gt;Tarkeeb&lt;/a&gt; I mentioned the use of annotation software for rebuilding the Quran Corpus or building any Arabic corpus. I discussed software like &lt;a href="https://github.com/proycon/flat"&gt;Flat&lt;/a&gt; but then mentioned my preferred option for annotation, &lt;a href="https://inception-project.github.io/"&gt;INCEpTION&lt;/a&gt;. Below I will explain how to install INCEpTION on Ubuntu 20.04(you should be able to adjust the commands to install it on most distros).&lt;/p&gt;
+&lt;h3&gt;Installing Java&lt;/h3&gt;
+&lt;p&gt;If you use a system container like &lt;a href="https://linuxcontainers.org/"&gt;LXC&lt;/a&gt;, the standard containers don't come with Java installed. This is a good thing, as it allows you to choose &lt;a href="https://adoptopenjdk.net/"&gt;OpenJDK&lt;/a&gt; over Oracle's Java.&lt;/p&gt;
+&lt;p&gt;To install OpenJDK, do the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt update
+sudo apt upgrade
+sudo apt install openjdk-11-jdk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Verifying that Java is installed:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;java --version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If it didn't work, visit &lt;a href="https://adoptopenjdk.net/installation.html"&gt;here&lt;/a&gt; for debugging.&lt;/p&gt;
+&lt;h3&gt;Downloading &amp;amp; Running INCEpTION&lt;/h3&gt;
+&lt;p&gt;Create a directory for the standalone Java executable:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir annotation/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Download &lt;a href="https://inception-project.github.io/downloads/"&gt;INCEpTION&lt;/a&gt; from here. When I installed the software, it worked with version 0.18.0. However, version 0.19.3 should also work(I will update this article if it doesn't).&lt;/p&gt;
+&lt;p&gt;Save the &lt;code&gt;inception-app-webapp-0.19.3-standalone.jar&lt;/code&gt; into the &lt;code&gt;annotation/&lt;/code&gt; folder.&lt;/p&gt;
+&lt;p&gt;On the Downloads page above, the instructions for running the web application are:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;java -jar inception-app-webapp-0.19.3-standalone.jar
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;These instructions assume that you are running the executable locally and can double-click on it. This didn't work for me because I isolated the app into a container.&lt;/p&gt;
+&lt;p&gt;After a bit of yak-shaving, I learned that INCEpTION is built using the &lt;a href="https://spring.io/projects/spring-framework"&gt;Spring Framework&lt;/a&gt;. To run a Spring web application as if it was a remote application and making it accessible outside a container, the following command needs to be used:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;java -Djava.awt.headless=true -Dserver.port=8999 -Dserver.ip=0.0.0.0 -jar inception-app-webapp-0.19.3-standalone.jar
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Binding to &lt;code&gt;0.0.0.0&lt;/code&gt; and a specific port is self-explanatory. I cannot recall why, but running the application as &lt;code&gt;headless&lt;/code&gt; was required to make it work. If you can run it without the &lt;code&gt;headless&lt;/code&gt; command, please email me and explain how/why.&lt;/p&gt;
+&lt;h3&gt;Using INCEpTION&lt;/h3&gt;
+&lt;p&gt;The application should now be accessible on the container IP on the specific port selected. eg. &lt;code&gt;10.0.4.44:8999&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Thereafter you can look at the &lt;a href="https://inception-project.github.io/releases/0.19.3/docs/user-guide.html"&gt;User Guide&lt;/a&gt; for more information on how to use it.&lt;/p&gt;
+&lt;p&gt;I will be adding a future blog post about rebuilding the Quran Corpus with INCEpTION. At the moment I am manually adding some content to the corpus data. This data was added to the existing &lt;a href="https://corpus.quran.com/"&gt;Quran Corpus&lt;/a&gt; and specifically relates to the &lt;a href="https://corpus.quran.com/documentation/dependencygraph.jsp"&gt;Reference Nodes, Hidden Nodes and Empty Nodes&lt;/a&gt;.&lt;/p&gt;</content><category term="Language"></category><category term="annotation-software"></category><category term="inception"></category><category term="quran-corpus"></category></entry><entry><title>Functional Arabic: Phrases for comparison like "more/less than"</title><link href="https://kentoseth.github.io/posts/2022/Mar/27/functional-arabic-phrases-for-comparison-like-moreless-than/" rel="alternate"></link><published>2022-03-27T02:00:00+02:00</published><updated>2022-03-27T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2022-03-27:/posts/2022/Mar/27/functional-arabic-phrases-for-comparison-like-moreless-than/</id><summary type="html">&lt;p&gt;Explaining how to make comparisons in Arabic, using the superlative and comparative.&lt;/p&gt;</summary><content type="html">&lt;p&gt;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ&lt;/p&gt;
+&lt;p&gt;In the English language, comparisons to determine something over the other usually use the "scale of comparison" followed by the word 'than'.&lt;/p&gt;
+&lt;p&gt;These comparisons are used frequently in dialogue when evaluating things against each other.&lt;/p&gt;
+&lt;p&gt;In language terms, these concepts are known as: &lt;a href="https://blogs.transparent.com/arabic/arabic-superlative-and-comparative/"&gt;Superlative and Comparative&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Four common examples are listed below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I eat more food than you&lt;/li&gt;
+&lt;li&gt;I eat less food than you&lt;/li&gt;
+&lt;li&gt;This book is better than yours&lt;/li&gt;
+&lt;li&gt;This book is worse than yours&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In Arabic, the word 'than' does not technically exist. The four examples listed above can be written in Arabic as such:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;اَنا آكُلْ طَعامً أَكْثَرُ مِنْكَ&lt;/li&gt;
+&lt;li&gt;اَنا آكُلْ طَعامً أَقَلُُّ مِنْكَ&lt;/li&gt;
+&lt;li&gt;هذا الْكِتابُ أَفْضَلُ مِنْ كِتابِكَ&lt;/li&gt;
+&lt;li&gt;هذا الْكِتابُ أَسْوَأُُ مِنْ كِتابِكَ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The first thing to note is that the comparison comes after the object(مفعول). A word-for-word translation would be: I eat food more than you&lt;/p&gt;
+&lt;p&gt;In the second set of examples, the comparison explicitly requires an object(كتابك), whereas in English this is not required.&lt;/p&gt;
+&lt;p&gt;Lastly, the scale of comparison words (better, worse, more, less) are nouns(إسم).&lt;/p&gt;
+&lt;p&gt;For any errors, mistakes or corrections, please contact me via email. For discussion and comments you can reach me at my Mastodon handle.&lt;/p&gt;</content><category term="Language"></category><category term="arabic"></category><category term="MSA"></category><category term="fus7a"></category><category term="comparisons"></category></entry><entry><title>Update1: Using OCR, CAT and crowdsourcing to translate Classical Arabic works</title><link href="https://kentoseth.github.io/posts/2021/Jul/28/update1-using-ocr-cat-and-crowdsourcing-to-translate-classical-arabic-works/" rel="alternate"></link><published>2021-07-28T03:00:00+02:00</published><updated>2021-07-28T03:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-07-28:/posts/2021/Jul/28/update1-using-ocr-cat-and-crowdsourcing-to-translate-classical-arabic-works/</id><summary type="html">&lt;p&gt;An update on using a combination of OCR and CAT software and the power of crowdsourced translations to translate Classical Arabic books&lt;/p&gt;</summary><content type="html">&lt;p&gt;In my last article on &lt;a href="https://www.kentoseth.com/posts/2021/jan/12/using-ocr-cat-and-crowdsourcing-to-translate-classical-arabic-works/"&gt;Using OCR, CAT and crowdsourcing to translate Classical Arabic works&lt;/a&gt; I spoke about various tools for digitizing Classical Arabic books and then translating them. Since then I have made a series of discoveries and this update is to document those discoveries.&lt;/p&gt;
 &lt;h3&gt;PDFs, OCR and Scanning&lt;/h3&gt;
 &lt;p&gt;Going through the process of finding PDF texts and then using OCR to obtain a digital form of the text is laborious. I was fortunate to discover that my idea for digitizing Arabic texts was already thought about in the mid-00s by others. The project name and website is &lt;a href="https://shamela.ws/"&gt;Shamela&lt;/a&gt; and not much will be known to English speakers about it because most Arabic-related discussions happen to be in ... Arabic.&lt;/p&gt;
-&lt;p&gt;There is a historical record available &lt;a href="http://kitab-project.org/2020/12/03/al-maktaba-al-shamila-a-short-history/"&gt;here&lt;/a&gt;. Firstly, the history is Shamela is very unclear until today. Based on the link above, the project is founded by an Egyptian and now funded by an &lt;a href="http://www.arrawda.com/"&gt;organization in Saudi Arabia&lt;/a&gt;. The &lt;a href="https://shamela.ws/index.php/page/about-shamela"&gt;about&lt;/a&gt; page does not say much either. Having a historical record of knowing who is creating the digital versions of Classical Arabic works is important for authenticity. While the Quran is well-preserved(Allah has Promised to preserve it), even the Ahadith experienced attempts at fabrication. The attempts at fabrication are what led to compilation efforts like Sahih Bukhari(even though the oral tradition for Hadith is still relied upon to this day). The PDF on the Ar-Rawda website &lt;a href="http://www.arrawdah.com/files/shamela.pdf"&gt;here&lt;/a&gt; provides information about employee names working for Shamela, so we have some basic information. There are 30 people working in the digitizing/verification/data-entry department and 4 programmers working on the software. They all appear to be Egyptians. I will discuss the issue of authenticity a bit more in the next section.&lt;/p&gt;
-&lt;p&gt;This leads me to the second point, regarding &lt;a href="http://kitab-project.org/"&gt;KITAB&lt;/a&gt;. KITAB is a project funded by the European Research Council (ERC) and the Aga Khan University(see KITAB homepage). One of their projects is the &lt;a href="https://github.com/OpenITI"&gt;Open Islamicate Texts Initiative (OpenITI)&lt;/a&gt; which is attempting to verify the digital copies provided on Shamela and other collections(Shamela, Shamela-Ibadiyya, Shamela-Shia, Hindawi, Zaydiyya and more). The full list of collections can be found on the &lt;a href="https://github.com/OpenITI"&gt;OpenITI github page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There is a historical record available &lt;a href="http://kitab-project.org/2020/12/03/al-maktaba-al-shamila-a-short-history/"&gt;here&lt;/a&gt;. Firstly, the history is Shamela is very unclear until today. Based on the link above, the project is founded by an Egyptian and now funded by an &lt;a href="http://www.arrawda.com/"&gt;organization in Saudi Arabia&lt;/a&gt;. The &lt;a href="https://shamela.ws/index.php/page/about-shamela"&gt;about&lt;/a&gt; page does not say much either. Having a historical record of knowing who is creating the digital versions of Classical Arabic works is important for authenticity. While the Quran is well-preserved (Allah has Promised to preserve it), even the Ahadith experienced attempts at fabrication. The attempts at fabrication are what led to compilation efforts like Sahih Bukhari (even though the oral tradition for Hadith is still relied upon to this day). The PDF on the Ar-Rawda website &lt;a href="http://www.arrawdah.com/files/shamela.pdf"&gt;here&lt;/a&gt; provides information about employee names working for Shamela, so we have some basic information. There are 30 people working in the digitizing/verification/data-entry department and 4 programmers working on the software. They all appear to be Egyptians. I will discuss the issue of authenticity a bit more in the next section.&lt;/p&gt;
+&lt;p&gt;This leads me to the second point, regarding &lt;a href="http://kitab-project.org/"&gt;KITAB&lt;/a&gt;. KITAB is a project funded by the European Research Council (ERC) and the Aga Khan University (see KITAB homepage). One of their projects is the &lt;a href="https://github.com/OpenITI"&gt;Open Islamicate Texts Initiative (OpenITI)&lt;/a&gt; which is attempting to verify the digital copies provided on Shamela and other collections (Shamela, Shamela-Ibadiyya, Shamela-Shia, Hindawi, Zaydiyya and more). The full list of collections can be found on the &lt;a href="https://github.com/OpenITI"&gt;OpenITI github page&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Book Verifications(and tagging)&lt;/h3&gt;
 &lt;p&gt;The way OpenITI does verification is confusing to outsiders. Their &lt;a href="https://docs.google.com/document/d/1twaKWlfiu92pLbFEF5JDRsgo9HQsuOZKSsO4uTjGP_g/edit"&gt;Google Doc&lt;/a&gt; isn't too clear but I was able to gather some basic information from &lt;a href="https://github.com/OpenITI/Annotation/issues/2058"&gt;tickets like these on GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Also, their documentation is scattered all over the place and concealed within Google Doc links, making them non-indexable to search engines. Even with these drawbacks, their structure for storing books and book metadata is excellent. The structure is broken down like so:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;All authors are listed under their date-of-death(Hijri calendar). Example: 0179MalikIbnAnas&lt;/li&gt;
+&lt;li&gt;All authors are listed under their date-of-death (Hijri calendar). Example: 0179MalikIbnAnas&lt;/li&gt;
 &lt;li&gt;Within each folder, the various books of the author are listed in their folders. Example: 0179MalikIbnAnas.Muwatta + author information stored in a YAML file. Example: 0179MalikIbnAnas.yml&lt;/li&gt;
 &lt;li&gt;Within each book folder will be the various books. Their format is like so: date_of_death+author_name+book_name+source+source_URL+language. An example is: 0179MalikIbnAnas.Muwatta.Shamela0001699-ara1 . The source URL is: &lt;a href="https://shamela.ws/index.php/book/1699"&gt;https://shamela.ws/index.php/book/1699&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Each version of the book has its own YAML file. Example: 0179MalikIbnAnas.Muwatta.Shamela0001699-ara1.yml&lt;/li&gt;
@@ -22,7 +544,7 @@
 &lt;li&gt;Reviewing this tagging/annotation&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;Authenticity - who checks the scanners?&lt;/h3&gt;
-&lt;p&gt;I found the process of verifying the Shamela(and other) books by using digitally-scanned copies of their hard-copy counterparts to be circular. The reason being that the point of failure lies in the anonymous scanners of the hard-copy books.&lt;/p&gt;
+&lt;p&gt;I found the process of verifying the Shamela (and other) books by using digitally-scanned copies of their hard-copy counterparts to be circular. The reason being that the point of failure lies in the anonymous scanners of the hard-copy books.&lt;/p&gt;
 &lt;p&gt;Why is this a point of failure?&lt;/p&gt;
 &lt;p&gt;To answer this, I provide a series of questions:&lt;/p&gt;
 &lt;ul&gt;
@@ -35,7 +557,7 @@
 &lt;p&gt;My query to you is about how you authenticate or verify the books that you are digitizing?&lt;/p&gt;
 &lt;p&gt;What method do you follow? Do you keep a digital PDF and a hard copy of each book?&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;There(rather short) response was:&lt;/p&gt;
+&lt;p&gt;Their (rather short) response was:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Yes. In books we digitize, we keep a pdf and text copies. No hard copies here&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -43,25 +565,25 @@
 &lt;p&gt;The reason the OpenITI team are able to verify books according to version is because the Shamela team are essentially just finding these scanned copies online themselves and then digitizing it. Hence the circular problem. The text and digitally-scanned copy will match, but it doesn't seem like OpenITI or even Shamela are asking: do the digitally-scanned copies match their hard-copy versions?&lt;/p&gt;
 &lt;h3&gt;Connecting the physical to the digital&lt;/h3&gt;
 &lt;p&gt;While it may be daunting, verifying the hard-copies against the digitally-scanned ones would close the loop on authenticity. The OpenITI team is taking care of making sure there are digitally-scanned copies that match up to the text, what remains is to connect the digitally-scanned copy to its hard-copy counterpart.&lt;/p&gt;
-&lt;p&gt;A simple method of verifying(and reaping rewards for practicing the Sunnah) would be to use an &lt;a href="https://hadithanswers.com/the-significance-of-odd-numbers/"&gt;odd number&lt;/a&gt; (&lt;a href="https://www.abuaminaelias.com/dailyhadithonline/2021/05/31/allah-loves-witr/"&gt;other reference&lt;/a&gt; like 3 and finding 3 randomly-chosen points in the text, then comparing these to the digital-scan and then to the hard-copy.&lt;/p&gt;
-&lt;p&gt;I initially considered the number 33, but besides tasbih-fatimi, I found no significance to that number specifically(although it is an odd number too).&lt;/p&gt;
+&lt;p&gt;A simple method of verifying (and reaping rewards for practicing the Sunnah) would be to use an &lt;a href="https://hadithanswers.com/the-significance-of-odd-numbers/"&gt;odd number&lt;/a&gt; (&lt;a href="https://www.abuaminaelias.com/dailyhadithonline/2021/05/31/allah-loves-witr/"&gt;other reference&lt;/a&gt;) like 3 and finding 3 randomly-chosen points in the text, then comparing these to the digital-scan and then to the hard-copy.&lt;/p&gt;
+&lt;p&gt;I initially considered the number 33, but besides tasbih-fatimi, I found no significance to that number specifically (although it is an odd number too).&lt;/p&gt;
 &lt;h3&gt;CAT tools - OmegaT, AI/ML and ethics&lt;/h3&gt;
 &lt;p&gt;Regarding CAT tools, &lt;a href="https://weblate.org/en/"&gt;Weblate&lt;/a&gt; is not a suitable option. It is geared towards Open Source projects and not books. I spent a lot of(perhaps pointless) time looking at the various CAT tools available.&lt;/p&gt;
 &lt;p&gt;I did learn a lot about CAT-related software:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Various types of CAT tools exist, some using only human-driven data and some using a mix of Machine Translations(MT) that are then edited by humans&lt;/li&gt;
-&lt;li&gt;Human-driven data is stored in Translation Memories(called TMs), which are also now being used for Machine Learning in something called: &lt;a href="https://site.matecat.com/adaptive-mt-modernmt/"&gt;Adaptive MT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Human-driven data is stored in Translation Memories (called TMs), which are also now being used for Machine Learning in something called: &lt;a href="https://site.matecat.com/adaptive-mt-modernmt/"&gt;Adaptive MT&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;The industry has had its own 'cloud' moment in the form of &lt;a href="https://site.matecat.com/benefits/"&gt;Matecat&lt;/a&gt; and others that followed, which are able to benefit from the massive corpora created by users&lt;/li&gt;
 &lt;li&gt;Adding this "Adaptive MT" was something a lot of the proprietary players did to either keep up with the competition or to just add marketing spin to their products(I didn't find any studies to indicate its effectiveness for translators, although it is marketed as such)&lt;/li&gt;
 &lt;li&gt;There is some strange and possibly unethical funding model with some of these Open Source projects(which I will discuss below)&lt;/li&gt;
 &lt;li&gt;There is only 1 major Open Source tool in comparison to the proprietary ones and it is called: &lt;a href="http://www.omegat.org/"&gt;OmegaT&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The situation behind what &lt;em&gt;I would personally consider unethical(and not proven in a court of law)&lt;/em&gt; is the way in which some Open Source projects were funded and how their business models evolved. What I discovered was that both MateCat and ModernMT were partially or fully-funded by the EU and research grants, but these projects evolved into subscription-services. &lt;em&gt;My personal view&lt;/em&gt; is that using research/grant money intended to build out an Open Source product and then 'forking' it into your own paid-for proprietary cloud service once a proven business model exists is somewhat unethical(evidenced by &lt;a href="https://github.com/modernmt/modernmt/issues/580#issuecomment-770790049"&gt;ModernMT's roadmap&lt;/a&gt; that essentially puts the Open Source project into maintenance mode).&lt;/p&gt;
-&lt;p&gt;The idea behind Adaptive MT sounds really cool to have for an undertaking like translating Classical Arabic works, but I reasoned that it won't be of much use because there isn't much existing data to train the MT(via TMs or Translation Memories).&lt;/p&gt;
+&lt;p&gt;The situation behind what &lt;em&gt;I would personally consider unethical (and not proven in a court of law)&lt;/em&gt; is the way in which some Open Source projects were funded and how their business models evolved. What I discovered was that both MateCat and ModernMT were partially or fully-funded by the EU and research grants, but these projects evolved into subscription-services. &lt;em&gt;My personal view&lt;/em&gt; is that using research/grant money intended to build out an Open Source product and then 'forking' it into your own paid-for proprietary cloud service once a proven business model exists is somewhat unethical (evidenced by &lt;a href="https://github.com/modernmt/modernmt/issues/580#issuecomment-770790049"&gt;ModernMT's roadmap&lt;/a&gt; that essentially puts the Open Source project into maintenance mode).&lt;/p&gt;
+&lt;p&gt;The idea behind Adaptive MT sounds really cool to have for an undertaking like translating Classical Arabic works, but I reasoned that it won't be of much use because there isn't much existing data to train the MT (via TMs or Translation Memories).&lt;/p&gt;
 &lt;p&gt;I previously discussed that 1 of the goals of the translation was to crowdsource the effort so that lots of content can be translated simultaneously. The advantages of web-based tools over OmegaT are the minimal install requirements and more polished UIs. On the other hand, offline collaboration becomes possible with software like OmegaT. The &lt;a href="https://omegat.sourceforge.io/manual-standard/en/howtos.html#howto.setupteamproject"&gt;Team Project&lt;/a&gt; also requires a server to be setup, but this would be the case for a web-based tool as well.&lt;/p&gt;
 &lt;h3&gt;Creating an umbrella for the different projects&lt;/h3&gt;
 &lt;p&gt;I am busy formulating an outline for the different projects and I will place them under an umbrella website. Having a structure is important for being able to know what the goals are and then working towards them with small iterations.&lt;/p&gt;
-&lt;p&gt;I will announce the umbrella website name and the structure in the next update.&lt;/p&gt;</content><category term="Language"></category><category term="culture"></category><category term="languages"></category><category term="ideas"></category><category term="OCR"></category><category term="CAT"></category><category term="Arabic"></category></entry><entry><title>Memon(language): Saying you and your</title><link href="https://kentoseth.github.io/posts/2021/Jun/30/memonlanguage-saying-you-and-your/" rel="alternate"></link><published>2021-06-30T02:00:00+02:00</published><updated>2021-06-30T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-06-30:/posts/2021/Jun/30/memonlanguage-saying-you-and-your/</id><summary type="html">&lt;p&gt;Explaining the you/your pronouns used in the Memon language.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Memoni_language"&gt;Memon(or Memoni as some call it), is a verbal language&lt;/a&gt; that has very little written information that documents the rules of the language. This lack of documentation might even extend to the culture and various habits of the Memon people. In a previous &lt;a href="https://kentoseth.tk/posts/2020/oct/10/expanding-blog-scope/"&gt;blog post&lt;/a&gt; I mentioned how I planned to expand the scope of this blog. Today I am proud to present the first article about the Memon language.&lt;/p&gt;
+&lt;p&gt;I will announce the umbrella website name and the structure in the next update.&lt;/p&gt;</content><category term="Language"></category><category term="culture"></category><category term="languages"></category><category term="ideas"></category><category term="OCR"></category><category term="CAT"></category><category term="Arabic"></category></entry><entry><title>Memon(language): Saying you and your</title><link href="https://kentoseth.github.io/posts/2021/Jun/30/memonlanguage-saying-you-and-your/" rel="alternate"></link><published>2021-06-30T02:00:00+02:00</published><updated>2021-06-30T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-06-30:/posts/2021/Jun/30/memonlanguage-saying-you-and-your/</id><summary type="html">&lt;p&gt;Explaining the you/your pronouns used in the Memon language.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Memoni_language"&gt;Memon(or Memoni as some call it), is a verbal language&lt;/a&gt; that has very little written information that documents the rules of the language. This lack of documentation might even extend to the culture and various habits of the Memon people. In a previous &lt;a href="https://www.kentoseth.com/posts/2020/oct/10/expanding-blog-scope/"&gt;blog post&lt;/a&gt; I mentioned how I planned to expand the scope of this blog. Today I am proud to present the first article about the Memon language.&lt;/p&gt;
 &lt;p&gt;One caveat about my efforts to document Memon is that the verbal tradition diverges from area to area and the different "types of Memons"(basically a reference to which tribe you originate from in India). My reference point(s) for documenting Memon are the people around me who fluently speak the language.&lt;/p&gt;
 &lt;p&gt;Today I will discuss the pronouns: you and your&lt;/p&gt;
 &lt;h3&gt;Pronouns: you and your&lt;/h3&gt;
@@ -93,47 +615,8 @@ Pronounced: tawjaw naa-law lak(pronounced like flip) he-daa / eyejaw naa-law lak
 &lt;p&gt;Documenting the masculine/feminine will prove tricky. It is not clear whether it is the general context that determines whether to use 'jo' or 'ji' or if certain words are feminine by nature(like Arabic has). I will keep trying to find examples to pick out a pattern(or lack thereof).&lt;/p&gt;
 &lt;h3&gt;Next post: Interrogative pronouns&lt;/h3&gt;
 &lt;p&gt;In the next blog post, I will discuss the interrogative pronouns like: what, when, where, how and who&lt;/p&gt;
-&lt;p&gt;For any mistakes in this article, please email me and I will fix them.&lt;/p&gt;</content><category term="Language"></category><category term="memon"></category><category term="pronouns"></category><category term="you"></category><category term="your"></category></entry><entry><title>Installing INCEpTION - an Open Source tool for Linguistic Annotation</title><link href="https://kentoseth.github.io/posts/2021/Apr/25/installing-inception-an-open-source-tool-for-linguistic-annotation/" rel="alternate"></link><published>2021-04-25T03:00:00+02:00</published><updated>2021-04-25T03:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-04-25:/posts/2021/Apr/25/installing-inception-an-open-source-tool-for-linguistic-annotation/</id><summary type="html">&lt;p&gt;A guide to install INCEpTION on Linux-based distros&lt;/p&gt;</summary><content type="html">&lt;p&gt;In a previous post about &lt;a href="https://kentoseth.tk/posts/2021/mar/05/tarkeeb-the-concept-of-sentence-analysisor-linguistic-annotation-in-arabic/"&gt;Tarkeeb&lt;/a&gt; I mentioned the use of annotation software for rebuilding the Quran Corpus or building any Arabic corpus. I discussed software like &lt;a href="https://github.com/proycon/flat"&gt;Flat&lt;/a&gt; but then mentioned my preferred option for annotation, &lt;a href="https://inception-project.github.io/"&gt;INCEpTION&lt;/a&gt;. Below I will explain how to install INCEpTION on Ubuntu 20.04(you should be able to adjust the commands to install it on most distros).&lt;/p&gt;
-&lt;h3&gt;Installing Java&lt;/h3&gt;
-&lt;p&gt;If you use a system container like &lt;a href="https://linuxcontainers.org/"&gt;LXC&lt;/a&gt;, the standard containers don't come with Java installed. This is a good thing, as it allows you to choose &lt;a href="https://adoptopenjdk.net/"&gt;OpenJDK&lt;/a&gt; over Oracle's Java.&lt;/p&gt;
-&lt;p&gt;To install OpenJDK, do the following:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt update
-sudo apt upgrade
-sudo apt install openjdk-11-jdk
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Verifying that Java is installed:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;java --version
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;If it didn't work, visit &lt;a href="https://adoptopenjdk.net/installation.html"&gt;here&lt;/a&gt; for debugging.&lt;/p&gt;
-&lt;h3&gt;Downloading &amp;amp; Running INCEpTION&lt;/h3&gt;
-&lt;p&gt;Create a directory for the standalone Java executable:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir annotation/
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Download &lt;a href="https://inception-project.github.io/downloads/"&gt;INCEpTION&lt;/a&gt; from here. When I installed the software, it worked with version 0.18.0. However, version 0.19.3 should also work(I will update this article if it doesn't).&lt;/p&gt;
-&lt;p&gt;Save the &lt;code&gt;inception-app-webapp-0.19.3-standalone.jar&lt;/code&gt; into the &lt;code&gt;annotation/&lt;/code&gt; folder.&lt;/p&gt;
-&lt;p&gt;On the Downloads page above, the instructions for running the web application are:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;java -jar inception-app-webapp-0.19.3-standalone.jar
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;These instructions assume that you are running the executable locally and can double-click on it. This didn't work for me because I isolated the app into a container.&lt;/p&gt;
-&lt;p&gt;After a bit of yak-shaving, I learned that INCEpTION is built using the &lt;a href="https://spring.io/projects/spring-framework"&gt;Spring Framework&lt;/a&gt;. To run a Spring web application as if it was a remote application and making it accessible outside a container, the following command needs to be used:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;java -Djava.awt.headless=true -Dserver.port=8999 -Dserver.ip=0.0.0.0 -jar inception-app-webapp-0.19.3-standalone.jar
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Binding to &lt;code&gt;0.0.0.0&lt;/code&gt; and a specific port is self-explanatory. I cannot recall why, but running the application as &lt;code&gt;headless&lt;/code&gt; was required to make it work. If you can run it without the &lt;code&gt;headless&lt;/code&gt; command, please email me and explain how/why.&lt;/p&gt;
-&lt;h3&gt;Using INCEpTION&lt;/h3&gt;
-&lt;p&gt;The application should now be accessible on the container IP on the specific port selected. eg. &lt;code&gt;10.0.4.44:8999&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Thereafter you can look at the &lt;a href="https://inception-project.github.io/releases/0.19.3/docs/user-guide.html"&gt;User Guide&lt;/a&gt; for more information on how to use it.&lt;/p&gt;
-&lt;p&gt;I will be adding a future blog post about rebuilding the Quran Corpus with INCEpTION. At the moment I am manually adding some content to the corpus data. This data was added to the existing &lt;a href="https://corpus.quran.com/"&gt;Quran Corpus&lt;/a&gt; and specifically relates to the &lt;a href="https://corpus.quran.com/documentation/dependencygraph.jsp"&gt;Reference Nodes, Hidden Nodes and Empty Nodes&lt;/a&gt;.&lt;/p&gt;</content><category term="Language"></category><category term="annotation-software"></category><category term="inception"></category><category term="quran-corpus"></category></entry><entry><title>The problem with anglicisation of scholar names</title><link href="https://kentoseth.github.io/posts/2021/Mar/06/the-problem-with-anglicisation-of-scholar-names/" rel="alternate"></link><published>2021-03-06T02:00:00+02:00</published><updated>2021-03-06T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-03-06:/posts/2021/Mar/06/the-problem-with-anglicisation-of-scholar-names/</id><summary type="html">&lt;p&gt;Discussing the drawbacks of anglicisation and why a standard would be good&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you have an interest in early Middle Eastern history or Islamic history, you will come across lots of names of renowned people who shaped history during their time on earth.&lt;/p&gt;
-&lt;p&gt;In a previous article, I listed the &lt;a href="https://kentoseth.tk/posts/2021/feb/19/lists-of-scholars-who-learned-from-each-other/"&gt;names of early Islamic scholars who learned from each other&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For any mistakes in this article, please email me and I will fix them.&lt;/p&gt;</content><category term="Language"></category><category term="memon"></category><category term="pronouns"></category><category term="you"></category><category term="your"></category></entry><entry><title>The problem with anglicisation of scholar names</title><link href="https://kentoseth.github.io/posts/2021/Mar/06/the-problem-with-anglicisation-of-scholar-names/" rel="alternate"></link><published>2021-03-06T02:00:00+02:00</published><updated>2021-03-06T02:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2021-03-06:/posts/2021/Mar/06/the-problem-with-anglicisation-of-scholar-names/</id><summary type="html">&lt;p&gt;Discussing the drawbacks of anglicisation and why a standard would be good&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you have an interest in early Middle Eastern history or Islamic history, you will come across lots of names of renowned people who shaped history during their time on earth.&lt;/p&gt;
+&lt;p&gt;In a previous article, I listed the &lt;a href="https://www.kentoseth.com/posts/2021/feb/19/lists-of-scholars-who-learned-from-each-other/"&gt;names of early Islamic scholars who learned from each other&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I copied the names from a book verbatim. As an unaware reader, you might assume this is the only way that these names are spelled. However, this is definitely not the case.&lt;/p&gt;
 &lt;p&gt;Anglicisation is defined from &lt;a href="https://en.wikipedia.org/wiki/Anglicisation"&gt;Wikipedia&lt;/a&gt; as:&lt;/p&gt;
 &lt;blockquote&gt;

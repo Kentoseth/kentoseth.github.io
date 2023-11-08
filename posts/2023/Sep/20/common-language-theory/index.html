@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="robots"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/theme/stylesheet/style.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/pygments/monokai.min.css" id="pygments-light-theme" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/brands.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/solid.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/feeds/all.atom.xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom" type="application/atom+xml"/>
+<!-- Chrome, Firefox OS and Opera -->
+<meta content="#333333" name="theme-color"/>
+<!-- Windows Phone -->
+<meta content="#333333" name="msapplication-navbutton-color"/>
+<!-- iOS Safari -->
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<!-- Microsoft EDGE -->
+<meta content="#333333" name="msapplication-TileColor"/>
+<meta content="Mohamed H." name="author">
+<meta content="Developing a theory to enable learning of multiple languages." name="description">
+<meta content="english, arabic, russian, persian, framework" name="keywords"/>
+<meta content="Kentoseth - Thoughts on programming, culture, FOSS and more" property="og:site_name">
+<meta content="Common Language Theory" property="og:title">
+<meta content="Developing a theory to enable learning of multiple languages." property="og:description">
+<meta content="en_US" property="og:locale">
+<meta content="https://kentoseth.github.io/posts/2023/Sep/20/common-language-theory/" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="2023-09-20 02:00:00+02:00" property="article:published_time"/>
+<meta content="" property="article:modified_time"/>
+<meta content="https://kentoseth.github.io/author/mohamed-h.html" property="article:author"/>
+<meta content="Language" property="article:section">
+<meta content="english" property="article:tag"/>
+<meta content="arabic" property="article:tag"/>
+<meta content="russian" property="article:tag"/>
+<meta content="persian" property="article:tag"/>
+<meta content="framework" property="article:tag"/>
+<meta content="/images/avatar.jpg" property="og:image"/>
+<title>Kentoseth - Thoughts on programming, culture, FOSS and more – Common Language Theory</title>
+</meta></meta></meta></meta></meta></meta></meta><link href="https://kentoseth.github.io/posts/2023/Sep/20/common-language-theory/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kentoseth - Thoughts on programming, culture, FOSS and more", "item": "https://kentoseth.github.io"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://kentoseth.github.io/posts"}, {"@type": "ListItem", "position": 3, "name": "2023", "item": "https://kentoseth.github.io/posts/2023"}, {"@type": "ListItem", "position": 4, "name": "Sep", "item": "https://kentoseth.github.io/posts/2023/Sep"}, {"@type": "ListItem", "position": 5, "name": "20", "item": "https://kentoseth.github.io/posts/2023/Sep/20"}, {"@type": "ListItem", "position": 6, "name": "Common language theory", "item": "https://kentoseth.github.io/posts/2023/Sep/20/common-language-theory"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://kentoseth.github.io/posts/2023/Sep/20/common-language-theory/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Mohamed H."}, "publisher": {"@type": "Organization", "name": "Kentoseth - Thoughts on programming, culture, FOSS and more"}, "headline": "Common Language Theory", "about": "Language", "datePublished": "2023-09-20 02:00"}</script></head>
+<body class="light-theme">
+<aside>
+<div>
+<a href="https://kentoseth.github.io">
+<img alt="Kentoseth" src="/images/avatar.jpg" title="Kentoseth"/>
+</a>
+<h1>
+<a href="https://kentoseth.github.io">Kentoseth</a>
+</h1>
+<p>Coding. Culture. Linux. More.</p>
+<nav>
+<ul class="list">
+<li>
+<a href="https://kentoseth.github.io/pages/about-me/" target="_self">
+                  About me
+                </a>
+</li>
+<li>
+<a href="https://kentoseth.github.io/pages/projects/" target="_self">
+                  Projects
+                </a>
+</li>
+<li>
+<a href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_self">Email</a>
+</li>
+<li>
+<a href="/categories.html" target="_self">Categories</a>
+</li>
+</ul>
+</nav>
+<form action="https://tinyletter.com/Kentoseth" method="post" onsubmit="window.open('https://tinyletter.com/Kentoseth', 'popupwindow', 
+        'scrollbars=yes,width=800,height=600');return true" style="border:1px solid #ccc;padding:3px;text-align:center;" target="popupwindow">
+<p><label for="tlemail">Join my Newsletter</label></p>
+<p><input id="tlemail" name="email" style="width:140px" type="text"/></p>
+<input name="embed" type="hidden" value="1"/>
+<input type="submit" value="Subscribe"/>
+<p><a href="https://tinyletter.com" rel="noopener noreferrer" target="_blank">powered by TinyLetter</a></p>
+</form>
+<ul class="social">
+<li>
+<a class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
+<i class="fab fa-github-alt"></i>
+</a>
+</li>
+<li>
+<a class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
+<i class="fab fa-gitlab"></i>
+</a>
+</li>
+<li>
+<a class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+<i class="fas fa-envelope"></i>
+</a>
+</li>
+<li>
+<a class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
+<i class="fas fa-rss"></i>
+</a>
+</li>
+<li>
+<a class="sc-mastodon" href="https://fosstodon.org/@kentoseth" rel="me" target="_blank">
+<i class="fab fa-mastodon"></i>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<main>
+<nav>
+<a href="https://kentoseth.github.io">Home</a>
+<a href="/categories">Categories</a>
+<a href="/tags">Tags</a>
+<a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
+</nav>
+<article class="single">
+<header>
+<h1 id="common-language-theory">Common Language Theory</h1>
+<p>
+      Posted on Wed 20 September 2023 in <a href="https://kentoseth.github.io/category/language.html">Language</a>
+</p>
+</header>
+<div>
+<p>بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+<p>In this introductory article, I will discuss a theory I have developed for learning multiple languages in order to use them in a speaking context.</p>
+<p>A similar theory may or may not exist in theoretical linguistics, but as I am not in the linguistics field per se, this theory is based on my own experience learning the Arabic language and through speaking to many Arabic natives.</p>
+<h2>What the Common Language Theory will not help with</h2>
+<p>In order to understand what this Common Language Theory (referred to as CLT in the rest of this article) is, the reader should know what it is not. The CLT will not help to read nor write text of the language being learned, especially with non-Latin characters. It will only enable reading of the learned-language (like non-Latin characters) by way of the frequency of phrases used. </p>
+<h2>What is the CLT designed for?</h2>
+<p>The CLT is designed primarily for speaking and engagement. Although I have learnt Arabic extensively (reading, writing, understanding and speaking), I found a series of patterns emerge when using certain words, phrases and sentences when speaking with Arabic native speakers. The patterns are not based merely on usage, but also on the frequency of these words, phrases and sentences being used.</p>
+<p>This led me to believe that when engaging in simple conversations with native speakers (and within various contexts), it is not required for the learner to go through the whole process of learning grammar, morphology and all other related aspects of a certain language.</p>
+<p>Much like how toddlers learn their native language through interaction and engagement, this theory is aimed at developing a series of words, phrases and sentences that can easily enable a non-native speaker to speak with natives relatively quickly.</p>
+<h2>An introductory scenario as an example</h2>
+<p>In order to demonstrate a working example, I will provide a dialogue that is applicable whenever a person meets another person for the first time. In this example, I will use Arabic and English. Arabic will represent the foreign language as English is my native language. I will use a Latin transliteration to write the Arabic text.</p>
+<p><strong>Non-native:</strong> Assalamu Alaikum - Peace be upon you</p>
+<p><strong>Native:</strong> Wa alaikum salam - and peace be upon you</p>
+<p><strong>Non-native:</strong> Kayfa haaluk (كَيفَ حالُك)? - how are you?</p>
+<p><strong>Native:</strong> Alhamdulillah bikhayr (بِخَير) wa anta? - All Praise to Allah I am well and you?</p>
+<p><strong>Non-native:</strong> bikhayr alhamdulillah - I am well, All Praise to Allah</p>
+<p>(It is at this point that a native speaker may be intrigued by your ability to converse in their language. They may either ask you a question or you can follow up with a question to them)</p>
+<p><strong>Native:</strong> hal tatakallam alarabiyyah (lughatul arabiyyah) (هَل تَتَكَلَّم العَرَبِيّة)? - Do you speak Arabic (the Arabic language)?</p>
+<p><strong>Non-native:</strong> na3m<sup>(1)</sup>, atakallam Qaleel <sup>(2)</sup> - I speak a little</p>
+<p><strong>Native:</strong> min ayna anta? - where are you from?</p>
+<p><strong>Non-native:</strong> ana min oorubbaa wa anta? - I am from Europe and you?</p>
+<p>(If you are in an Arab country, it goes without saying that the Arabic-speaking person is most likely from that country. However, they could also be immigrants themselves...)</p>
+<p><strong>Native:</strong> ana min Sooriya - I am from Syria</p>
+<p>(It is important to avoid being 'led' in the conversation as you will inevitably be asked a question or hear a phrase which you don't understand)</p>
+<p><strong>Non-native:</strong> hal tatakallam alingleeziyyah? - Do you speak English?</p>
+<p><strong>Native:</strong> na3m/laa/qaleel - yes/no/a little</p>
+<p>(Two important points to note here is that 1) The conversation may not flow as indicated above and 2) If it does, then <u>context</u> will apply next. Both these issues will be addressed below)</p>
+<p>(1) the 3 represents the 'ain'/ع throat letter
+(2) the Q represents ق pronounced from the throat like 'qaw'</p>
+<h2>What to do when getting stuck</h2>
+<p>You are likely to come across many scenarios where you don't understand what the native speaker is saying. In these situations, it is important to know how to say the following phrases to be able to continue the conversation in the foreign language whilst being able to understand at the same time.</p>
+<p>la fahimtuk (لا فَهِمتُك) - I did not understand you
+fahimt (فَهِمتُ) - Understood
+marratan ukhraa bi-buT'aa<sup>(3)</sup> min fadhlik (مَرّةً أُخرى مِن فَضلِك) - can you repeat slowly please (the literal meaning is: once again slowly please)
+hal yumkinuka an tatakallam hadha fil ingliziyyah? - can you say that in English?
+kayfa aQool<sup>(4)</sup> hadha ... fil arabiyyah? - how do I say this ... in Arabic? (insert English phrase at ...)
+madha ta3nee - what do you mean?
+maa ma3naa ... ? - what means ... ? (you can insert the word you don't know, eg. maa ma3naa kitaabun?)
+hal yumkinunaa an natakallam fil ingliziyyah al'aan? - can we speak in English now?</p>
+<p>(3) The T represents the letter ط pronounced like 'saw', hence 'taw'
+(4) the Q represents ق pronounced from the throat like 'qaw'</p>
+<h3>Context 1: the most important verbs</h3>
+<p>In daily conversation, it is normal to use verbs in the first person, I, the second person, you, and less commonly the third person, he and she. It is also less common but applicable to use the first person, we.</p>
+<p>It is difficult to objectively create a list of frequently used verbs. A simple internet search also reveals many websites testing anywhere from 50 to 100 verbs. This is too much for a beginner to learn. Therefore, I will list no more than 15 to 20 verbs based on their usage alone as well as their usage together in basic conversation. Certain languages (like Arabic) have morphological changes. Therefore, I will list these verbs in a table (based on the example).</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>VERB</th>
+<th>I</th>
+<th>you (M)</th>
+<th>you (F)</th>
+<th>he</th>
+<th>she</th>
+<th>we</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>want(-ed)</td>
+<td>أُرِيدُ<br/>أَرَدْتُ</td>
+<td>تُرِيدُ<br/>أَرَدْتَ</td>
+<td>تُرِيدِينَ<br/>أَرَدْتِ</td>
+<td>يُرِيدُ<br/>أَرَادَ</td>
+<td>تُرِيدُ<br/>أَرَدْتْ</td>
+<td>نُرِيدُ<br/>أَرَدْنا</td>
+</tr>
+<tr>
+<td>2</td>
+<td>know(knew)</td>
+<td>أَعْرِفُ<br/>عَرَفْتُ</td>
+<td>تَعْرِفُ<br/>عَرَفْتَ</td>
+<td>تَعْرِفِينَ<br/>عَرَفْتِ</td>
+<td>يَعْرِفُ<br/>عَرَفَ</td>
+<td>تَعْرِفُ<br/>عَرَفَتْ</td>
+<td>نَعْرِفُ<br/>عَرَفْنا</td>
+</tr>
+<tr>
+<td>3</td>
+<td>understand(understood)</td>
+<td>أَفْهَمُ<br/>فَهِمْتُ</td>
+<td>تَفْهَمُ<br/>فَهِمْتَ</td>
+<td>تَفْهَمِينَ<br/>فَهِمْتِ</td>
+<td>يَفْهَمُ<br/>فَهِمَ</td>
+<td>تَفْهَمُ<br/>ْفَهِمَت</td>
+<td>نَفْهَمُ<br/>فَهِمْنَا</td>
+</tr>
+<tr>
+<td>4</td>
+<td>speak/talk(spoke)</td>
+<td>أَتَكَلَّمُ<br/>تَكَلَّمْتُ</td>
+<td>تَتَكَلَّمُ<br/>تَكَلَّمْتَ</td>
+<td>تَتَكَلَّمِينَ<br/>تَكَلَّمْتِ</td>
+<td>يَتَكَلَّمُ<br/>تَكَلَّمَ</td>
+<td>تَتَكَلَّمُ<br/>ْتَكَلَّمَت</td>
+<td>نَتَكَلَّمُ<br/>تَكَلَّمْنا</td>
+</tr>
+<tr>
+<td>5</td>
+<td>learn(-ed)</td>
+<td>أَتَعَلَّمُ<br/>تَعَلَّمْتُ</td>
+<td>تَتَعَلَّمُ<br/>تَعَلَّمْتَ</td>
+<td>تَتَعَلَّمِينَ<br/>تَعَلَّمْتِ</td>
+<td>يَتَعَلَّمُ<br/>تَعَلَّمَ</td>
+<td>تَتَعَلَّمُ<br/>ْتَعَلَّمَت</td>
+<td>نَتَعَلَّمُ<br/>تَعَلَّمْنا</td>
+</tr>
+<tr>
+<td>6</td>
+<td>go(went)</td>
+<td>أَذْهَبُ<br/>ذَهَبْتُ</td>
+<td>تَذْهَبُ&lt;br/ذَهَبْتَ</td>
+<td>تَذْهَبِينَ<br/>ذَهَبْتَ</td>
+<td>يَذْهَبُ<br/>ذَهَبْتِ</td>
+<td>تَذْهَبُ<br/>ْذَهَبَت</td>
+<td>نَذْهَبُ<br/>ذَهَبْنا</td>
+</tr>
+<tr>
+<td>7</td>
+<td>have(had)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>to be(was)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>take(took)</td>
+<td>أَتَّخِذُ<br/>اِتَّخَذْتُ</td>
+<td>تَتَّخِذُ<br/>اِتَّخَذْتَ</td>
+<td>تَتَّخِذِينَ<br/>اِتَّخَذْتِ</td>
+<td>يَتَّخِذُ<br/>اِتَّخَذَ</td>
+<td>تَتَّخِذُ<br/>اِتَّخَذْتْ</td>
+<td>نَتَّخِذُ<br/>اِتَّخَذْنا</td>
+</tr>
+<tr>
+<td>10</td>
+<td>use(-d)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>ask(-ed)</td>
+<td>أَسْأَلُ<br/>سَأَلْتُ</td>
+<td>تَسْأَلُ<br/>سَأَلْتَ</td>
+<td>تَسْأَلِينَ<br/>سَأَلْتِ</td>
+<td>يَسْأَلُ<br/>سَأَلَ</td>
+<td>تَسْأَلُ<br/>ْسَأَلَت</td>
+<td>نَسْأَلُ<br/>سَأَلْنا</td>
+</tr>
+<tr>
+<td>12</td>
+<td>think(thought)</td>
+<td>أَظُنُّ<br/>ظَنَنْتُ</td>
+<td>تَظُنُّ<br/>ظَنَنْتَ</td>
+<td>تَظُنِّينَ<br/>ظَنَنْتِ</td>
+<td>يَظُنُّ<br/>ظَنَّ</td>
+<td>تَظُنُّ<br/>ظَنَّتْ</td>
+<td>نَظُنُّ<br/>ظَنَّا</td>
+</tr>
+<tr>
+<td>13</td>
+<td>find(found)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>say(said)</td>
+<td>أَقُولُ<br/>قُلْتُ</td>
+<td>تَقُولُ<br/>قُلْتَ</td>
+<td>تَقُولِينَ<br/>قُلْتِ</td>
+<td>يَقُولُ<br/>قَالَ</td>
+<td>تَقُولُ<br/>قَالَتْ</td>
+<td>نَقُولُ<br/>قُلْنَا</td>
+</tr>
+<tr>
+<td>15</td>
+<td>study(-ied)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>come(came)</td>
+<td>أَجِيءُ<br/>جِئْتُ</td>
+<td>تَجِيءُ<br/>جِئْتَ</td>
+<td>تَجِيئِينَ<br/>جِئْتِ</td>
+<td>يَجِيءُ<br/>جَاءَ</td>
+<td>تَجِيءُ<br/>جَاءَتْ</td>
+<td>نَجِيءُ<br/>جِئْنَا</td>
+</tr>
+<tr>
+<td>17</td>
+<td>send(sent)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>18</td>
+<td>see(saw)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>19</td>
+<td>work(-ed)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>20</td>
+<td>tell(told)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Arabic also has two special verbs used in certain questions. The meaning of these two verbs is:</p>
+<ol>
+<li>
+<p>can or is it possible to (يمكن)</p>
+</li>
+<li>
+<p>Able or able to (يستطيع)</p>
+</li>
+</ol>
+<p>These verbs also require conjugation as above. This is left to the reader.</p>
+<p>Knowing these verbs and their conjugations alone is minimally beneficial. It is important to know how to combine these verbs together as well as use them with the appropriate nouns.</p>
+<h3>Context 2: A much longer intro by a fascinated native</h3>
+<p>(Full translations won't be provided as the reader should be able to piece together the meanings)</p>
+<p>N = Native
+ NN = Non-native</p>
+<p>N: limadha tata3allama alarabiyyah? (why ...?)
+NN: ureedu an afhamu<sup>(5)</sup> alQur'an
+N: </p>
+<p>(5) Arabic uses a particle called 'an' which means 'to' and is placed between two verbs. The two verbs need to match in their conjugation. So, a literal meaning here would be: I want to (I) understand.</p>
+<p>For any errors, send me an email or contact me via <a href="https://fosstodon.org/@kentoseth">Mastodon</a>.</p>
+</div>
+<div class="tag-cloud">
+<p>
+<a href="https://kentoseth.github.io/tag/english.html">english</a>
+<a href="https://kentoseth.github.io/tag/arabic.html">arabic</a>
+<a href="https://kentoseth.github.io/tag/russian.html">russian</a>
+<a href="https://kentoseth.github.io/tag/persian.html">persian</a>
+<a href="https://kentoseth.github.io/tag/framework.html">framework</a>
+</p>
+</div>
+<hr/>
+<h3>If you don't know how to use RSS and want email updates on my new content, consider
+         <a href="https://tinyletter.com/Kentoseth" rel="noopener noreferrer" target="_blank">
+          Joining my Newsletter</a></h3>
+<p><em>The original content of this blog is a Waqf solely for the Pleasure of Allah. You are hereby granted full permission to copy, download, distribute, publish and share this content without modification under condition that full attribution is given to this author by creating a link either above or below the content that links back to the original source of the content. For any questions or ambiguity, you are requested to contact me via email for clarification.</em></p>
+</article>
+<footer>
+<p>© 2023 </p>
+<p>
+Built with <a href="https://getpelican.com" target="_blank">Pelican</a> using <a href="https://github.com/alexandrevicenzi/Flex" target="_blank">Flex</a> theme
+</p> </footer>
+</main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Kentoseth - Thoughts on programming, culture, FOSS and more ",
+  "url" : "https://kentoseth.github.io",
+  "image": "/images/avatar.jpg",
+  "description": "Content focused on Islam, Islamic Studies, Languages, Linux, FOSS, infosec and culture"
+}
+</script>
+</body>
+</html>

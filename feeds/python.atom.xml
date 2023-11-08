@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Kentoseth - Thoughts on programming, culture, FOSS and more - Python</title><link href="https://kentoseth.github.io/" rel="alternate"></link><link href="https://kentoseth.github.io/feeds/python.atom.xml" rel="self"></link><id>https://kentoseth.github.io/</id><updated>2022-04-17T03:00:00+02:00</updated><subtitle>Coding. Culture. Linux. More.</subtitle><entry><title>Python Pelican: How to view draft content on a website</title><link href="https://kentoseth.github.io/posts/2022/Apr/17/python-pelican-how-to-view-draft-content-on-a-website/" rel="alternate"></link><published>2022-04-17T03:00:00+02:00</published><updated>2022-04-17T03:00:00+02:00</updated><author><name>Mohamed H.</name></author><id>tag:kentoseth.github.io,2022-04-17:/posts/2022/Apr/17/python-pelican-how-to-view-draft-content-on-a-website/</id><summary type="html">&lt;p&gt;Finding draft content on Pelican, a static site generator written in the Python programming language.&lt;/p&gt;</summary><content type="html">&lt;p&gt;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; is a static site generator written in the Python programming language.&lt;/p&gt;
+&lt;p&gt;Pelican has a feature where draft content can be published to the internet.&lt;/p&gt;
+&lt;p&gt;Draft content should have the following attribute within the &lt;code&gt;.md&lt;/code&gt; files (assuming content is written in Markdown):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Status: draft&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;After generating the content, the draft content should appear in:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;../output/drafts/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In order to view the draft content on the internet, the exact filename will be required. In my example, I created a file called: &lt;code&gt;who-are-the-successful-people.html&lt;/code&gt;. The draft can be viewed at:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.kentoseth.com/drafts/who-are-the-successful-people.html"&gt;https://www.kentoseth.com/drafts/who-are-the-successful-people.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The generic way to view drafts would then be:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Site URL&lt;/code&gt; + &lt;code&gt;/drafts/&lt;/code&gt; + &lt;code&gt;pagename.html&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Site URL/drafts/pagename.html&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A Pelican plugin also exists that can enable a "browsable drafts listing for your Pelican website". This would make it possible to view all drafts under &lt;code&gt;Site URL/drafts/&lt;/code&gt;. A useful option if you have many WIP (work-in-progress) articles.&lt;/p&gt;
+&lt;p&gt;The plugin can be found at: &lt;a href="https://pypi.org/project/pelican-drafts/"&gt;Pelican Drafts&lt;/a&gt;&lt;/p&gt;</content><category term="Python"></category><category term="pelican"></category><category term="blog"></category></entry></feed>

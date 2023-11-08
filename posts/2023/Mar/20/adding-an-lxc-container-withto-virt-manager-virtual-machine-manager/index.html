@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="robots"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/theme/stylesheet/style.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/pygments/monokai.min.css" id="pygments-light-theme" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/brands.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/solid.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/feeds/all.atom.xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom" type="application/atom+xml"/>
+<!-- Chrome, Firefox OS and Opera -->
+<meta content="#333333" name="theme-color"/>
+<!-- Windows Phone -->
+<meta content="#333333" name="msapplication-navbutton-color"/>
+<!-- iOS Safari -->
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<!-- Microsoft EDGE -->
+<meta content="#333333" name="msapplication-TileColor"/>
+<meta content="Mohamed H." name="author">
+<meta content="How to add an LXC container to the GUI tool called Virtual Machine Manager (virt-manager)." name="description">
+<meta content="virt-manager, GUI" name="keywords"/>
+<meta content="Kentoseth - Thoughts on programming, culture, FOSS and more" property="og:site_name">
+<meta content="Adding an LXC container with/to virt-manager (Virtual Machine Manager)" property="og:title">
+<meta content="How to add an LXC container to the GUI tool called Virtual Machine Manager (virt-manager)." property="og:description">
+<meta content="en_US" property="og:locale">
+<meta content="https://kentoseth.github.io/posts/2023/Mar/20/adding-an-lxc-container-withto-virt-manager-virtual-machine-manager/" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="2023-03-20 02:00:00+02:00" property="article:published_time"/>
+<meta content="" property="article:modified_time"/>
+<meta content="https://kentoseth.github.io/author/mohamed-h.html" property="article:author"/>
+<meta content="LXC" property="article:section">
+<meta content="virt-manager" property="article:tag"/>
+<meta content="GUI" property="article:tag"/>
+<meta content="/images/avatar.jpg" property="og:image"/>
+<title>Kentoseth - Thoughts on programming, culture, FOSS and more – Adding an LXC container with/to virt-manager (Virtual Machine Manager)</title>
+</meta></meta></meta></meta></meta></meta></meta><link href="https://kentoseth.github.io/posts/2023/Mar/20/adding-an-lxc-container-withto-virt-manager-virtual-machine-manager/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kentoseth - Thoughts on programming, culture, FOSS and more", "item": "https://kentoseth.github.io"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://kentoseth.github.io/posts"}, {"@type": "ListItem", "position": 3, "name": "2023", "item": "https://kentoseth.github.io/posts/2023"}, {"@type": "ListItem", "position": 4, "name": "Mar", "item": "https://kentoseth.github.io/posts/2023/Mar"}, {"@type": "ListItem", "position": 5, "name": "20", "item": "https://kentoseth.github.io/posts/2023/Mar/20"}, {"@type": "ListItem", "position": 6, "name": "Adding an lxc container withto virt manager virtual machine manager", "item": "https://kentoseth.github.io/posts/2023/Mar/20/adding-an-lxc-container-withto-virt-manager-virtual-machine-manager"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://kentoseth.github.io/posts/2023/Mar/20/adding-an-lxc-container-withto-virt-manager-virtual-machine-manager/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Mohamed H."}, "publisher": {"@type": "Organization", "name": "Kentoseth - Thoughts on programming, culture, FOSS and more"}, "headline": "Adding an LXC container with/to virt-manager (Virtual Machine Manager)", "about": "LXC", "datePublished": "2023-03-20 02:00"}</script></head>
+<body class="light-theme">
+<aside>
+<div>
+<a href="https://kentoseth.github.io">
+<img alt="Kentoseth" src="/images/avatar.jpg" title="Kentoseth"/>
+</a>
+<h1>
+<a href="https://kentoseth.github.io">Kentoseth</a>
+</h1>
+<p>Coding. Culture. Linux. More.</p>
+<nav>
+<ul class="list">
+<li>
+<a href="https://kentoseth.github.io/pages/about-me/" target="_self">
+                  About me
+                </a>
+</li>
+<li>
+<a href="https://kentoseth.github.io/pages/projects/" target="_self">
+                  Projects
+                </a>
+</li>
+<li>
+<a href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_self">Email</a>
+</li>
+<li>
+<a href="/categories.html" target="_self">Categories</a>
+</li>
+</ul>
+</nav>
+<form action="https://tinyletter.com/Kentoseth" method="post" onsubmit="window.open('https://tinyletter.com/Kentoseth', 'popupwindow', 
+        'scrollbars=yes,width=800,height=600');return true" style="border:1px solid #ccc;padding:3px;text-align:center;" target="popupwindow">
+<p><label for="tlemail">Join my Newsletter</label></p>
+<p><input id="tlemail" name="email" style="width:140px" type="text"/></p>
+<input name="embed" type="hidden" value="1"/>
+<input type="submit" value="Subscribe"/>
+<p><a href="https://tinyletter.com" rel="noopener noreferrer" target="_blank">powered by TinyLetter</a></p>
+</form>
+<ul class="social">
+<li>
+<a class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
+<i class="fab fa-github-alt"></i>
+</a>
+</li>
+<li>
+<a class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
+<i class="fab fa-gitlab"></i>
+</a>
+</li>
+<li>
+<a class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+<i class="fas fa-envelope"></i>
+</a>
+</li>
+<li>
+<a class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
+<i class="fas fa-rss"></i>
+</a>
+</li>
+<li>
+<a class="sc-mastodon" href="https://fosstodon.org/@kentoseth" rel="me" target="_blank">
+<i class="fab fa-mastodon"></i>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<main>
+<nav>
+<a href="https://kentoseth.github.io">Home</a>
+<a href="/categories">Categories</a>
+<a href="/tags">Tags</a>
+<a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
+</nav>
+<article class="single">
+<header>
+<h1 id="adding-an-lxc-container-withto-virt-manager-virtual-machine-manager">Adding an LXC container with/to virt-manager (Virtual Machine Manager)</h1>
+<p>
+      Posted on Mon 20 March 2023 in <a href="https://kentoseth.github.io/category/lxc.html">LXC</a>
+</p>
+</header>
+<div>
+<p>بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+<p><a href="https://virt-manager.org/">Virtual Machine Manager (or virt-manager)</a> is a desktop GUI tool meant to simplify the process of dealing with VMs or containers on Linux desktop machines.</p>
+<p>Before I begin this tutorial I will give my verdict on Virtual Machine Manager regarding LXC containers. This software is terrible at what it is supposed to do for 2 main reasons:</p>
+<ol>
+<li>It has some of the worst documentation of any Open Source project (essentially none on their website)</li>
+<li>It doesn't actually help create an LXC container at all. This tutorial demonstrates how to 'connect' an existing LXC container (which we will create on the command-line) to the GUI software via the most arduous processes possible</li>
+</ol>
+<p>I would urge people to consider alternative GUI options for LXC containers. But if you went through the effort of installing virt-manager (I will use this name to refer to the software in the rest of this tutorial), this guide is for you.</p>
+<p>The source references for my tutorial are: <a href="https://blog.scottlowe.org/2013/11/27/linux-containers-via-lxc-and-libvirt/">Linux Containers via LXC and Libvirt</a></p>
+<p><a href="https://gist.github.com/pyrenaica/7eca3f9f2a543fb280718ab730cf598a">Accessing remote KVM/QEMU vms with virt-manager</a></p>
+<p><a href="https://p5r.uk/blog/2021/unprivileged-lxc-container-libvirt.html">Unprivileged LXC container with libvirt</a></p>
+<p>Make sure LXC, virt-manager and all the packages needed for virt-manager to work with LXC are installed.</p>
+<h2>Create the LXC container</h2>
+<p>Run this command:</p>
+<p><code>sudo lxc-create --template download --name testapp</code> (interactive, so you choose the options step-by-step)</p>
+<p>or this:</p>
+<p><code>sudo lxc-create -n testapp -t download -- --dist ubuntu --release focal --arch amd64</code></p>
+<p>A container called <code>testapp</code> should now exist.</p>
+<h2>Creating the XML file</h2>
+<p>Make a directory/folder for the XML file:</p>
+<p><code>mkdir LXC</code></p>
+<p>Within this directory create an XML file <code>testapp.xml</code> and use the following contents:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;domain</span><span class="w"> </span><span class="na">type=</span><span class="s">'lxc'</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;name&gt;</span>testapp<span class="nt">&lt;/name&gt;</span>
+<span class="w">  </span><span class="nt">&lt;memory</span><span class="w"> </span><span class="na">unit=</span><span class="s">'KiB'</span><span class="nt">&gt;</span>4276800<span class="nt">&lt;/memory&gt;</span>
+<span class="w">  </span><span class="nt">&lt;vcpu</span><span class="w"> </span><span class="na">placement=</span><span class="s">'static'</span><span class="nt">&gt;</span>1<span class="nt">&lt;/vcpu&gt;</span>
+<span class="w">  </span><span class="nt">&lt;os&gt;</span>
+<span class="w">    </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">arch=</span><span class="s">'x86_64'</span><span class="nt">&gt;</span>exe<span class="nt">&lt;/type&gt;</span>
+<span class="w">    </span><span class="nt">&lt;init&gt;</span>/lib/systemd/systemd<span class="nt">&lt;/init&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/os&gt;</span>
+<span class="w">  </span><span class="nt">&lt;clock</span><span class="w"> </span><span class="na">offset=</span><span class="s">'utc'</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;on_poweroff&gt;</span>destroy<span class="nt">&lt;/on_poweroff&gt;</span>
+<span class="w">  </span><span class="nt">&lt;on_reboot&gt;</span>restart<span class="nt">&lt;/on_reboot&gt;</span>
+<span class="w">  </span><span class="nt">&lt;on_crash&gt;</span>destroy<span class="nt">&lt;/on_crash&gt;</span>
+<span class="w">  </span><span class="nt">&lt;devices&gt;</span>
+<span class="w">    </span><span class="nt">&lt;emulator&gt;</span>/usr/lib/libvirt/libvirt_lxc<span class="nt">&lt;/emulator&gt;</span>
+<span class="w">    </span><span class="nt">&lt;filesystem</span><span class="w"> </span><span class="na">type=</span><span class="s">'mount'</span><span class="w"> </span><span class="na">accessmode=</span><span class="s">'passthrough'</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;source</span><span class="w"> </span><span class="na">dir=</span><span class="s">'/var/lib/lxc/testapp/rootfs'</span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;target</span><span class="w"> </span><span class="na">dir=</span><span class="s">'/'</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/filesystem&gt;</span>
+<span class="w">    </span><span class="nt">&lt;interface</span><span class="w"> </span><span class="na">type=</span><span class="s">'network'</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;source</span><span class="w"> </span><span class="na">network=</span><span class="s">'default'</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/interface&gt;</span>
+<span class="w">    </span><span class="nt">&lt;console</span><span class="w"> </span><span class="na">type=</span><span class="s">'pty'</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;target</span><span class="w"> </span><span class="na">type=</span><span class="s">'lxc'</span><span class="w"> </span><span class="na">port=</span><span class="s">'0'</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/console&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/devices&gt;</span>
+<span class="nt">&lt;/domain&gt;</span>
+</code></pre></div>
+<p>Only 2 lines need to be changed when adding new containers:</p>
+<p><code>&lt;name&gt;testapp&lt;/name&gt;</code></p>
+<p>and:</p>
+<p><code>&lt;source dir='/var/lib/lxc/testapp/rootfs'/&gt;</code></p>
+<h2>Setting a root password</h2>
+<p>LXC containers come with no passwords and this is where the pointless need for virt-manager arises (as one needs to run commands which all but defeat the need for a GUI)</p>
+<p>Start the container:</p>
+<p><code>sudo lxc-start -n testapp</code></p>
+<p>Go into the container root:</p>
+<p><code>sudo lxc-attach -n testapp</code></p>
+<p>and now set a root password by typing (and then following the prompts): <code>passwd</code></p>
+<p>Now stop the container:</p>
+<p><code>sudo lxc-stop -n testapp</code></p>
+<h2>Start container within GUI</h2>
+<p>Open virt-manager and you will see <code>testapp</code> under LXC. Select <code>run</code> and once running, select <code>open</code>. This will take you to a command-line interface within virt-manager asking for login details. Enter <code>root</code> for the user and whatever password you used in the previous step.</p>
+<h3>Creating a base container to clone</h3>
+<p>A nifty trick with system containers that I've used for years is to create a 'base' container that contains all the required packages (wget, git, ssh and all the sundry library packages) and then clone this container for other projects. It also saves on bandwidth.</p>
+</div>
+<div class="tag-cloud">
+<p>
+<a href="https://kentoseth.github.io/tag/virt-manager.html">virt-manager</a>
+<a href="https://kentoseth.github.io/tag/gui.html">GUI</a>
+</p>
+</div>
+<hr/>
+<h3>If you don't know how to use RSS and want email updates on my new content, consider
+         <a href="https://tinyletter.com/Kentoseth" rel="noopener noreferrer" target="_blank">
+          Joining my Newsletter</a></h3>
+<p><em>The original content of this blog is a Waqf solely for the Pleasure of Allah. You are hereby granted full permission to copy, download, distribute, publish and share this content without modification under condition that full attribution is given to this author by creating a link either above or below the content that links back to the original source of the content. For any questions or ambiguity, you are requested to contact me via email for clarification.</em></p>
+</article>
+<footer>
+<p>© 2023 </p>
+<p>
+Built with <a href="https://getpelican.com" target="_blank">Pelican</a> using <a href="https://github.com/alexandrevicenzi/Flex" target="_blank">Flex</a> theme
+</p> </footer>
+</main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Kentoseth - Thoughts on programming, culture, FOSS and more ",
+  "url" : "https://kentoseth.github.io",
+  "image": "/images/avatar.jpg",
+  "description": "Content focused on Islam, Islamic Studies, Languages, Linux, FOSS, infosec and culture"
+}
+</script>
+</body>
+</html>

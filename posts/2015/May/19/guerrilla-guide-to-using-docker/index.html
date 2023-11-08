@@ -1,171 +1,132 @@
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/stylesheet/style.min.css">
-
-
-    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-          href="https://kentoseth.github.io/theme/pygments/monokai.min.css">
-
-
-  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/solid.css">
-
-    <link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet">
-
-    <link href="https://kentoseth.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom">
-
-
-
-
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#333333">
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#333333">
-    <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Microsoft EDGE -->
-    <meta name="msapplication-TileColor" content="#333333">
-
-<meta name="author" content="Mohamed H." />
-<meta name="description" content="Rapid quick-start for using Docker." />
-<meta name="keywords" content="ubuntu, python, docker">
-
-
-<meta property="og:site_name" content="Kentoseth - Thoughts on programming, culture, FOSS and more"/>
-<meta property="og:title" content="Guerrilla guide to using Docker"/>
-<meta property="og:description" content="Rapid quick-start for using Docker."/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://kentoseth.github.io/posts/2015/May/19/guerrilla-guide-to-using-docker/"/>
-<meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2015-05-19 02:00:00+02:00"/>
-<meta property="article:modified_time" content=""/>
-<meta property="article:author" content="https://kentoseth.github.io/author/mohamed-h.html">
-<meta property="article:section" content="Docker"/>
-<meta property="article:tag" content="ubuntu"/>
-<meta property="article:tag" content="python"/>
-<meta property="article:tag" content="docker"/>
-<meta property="og:image" content="/images/avatar.jpg">
-
-  <title>Kentoseth - Thoughts on programming, culture, FOSS and more &ndash; Guerrilla guide to using Docker</title>
-
-</head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="robots"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/theme/stylesheet/style.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/pygments/monokai.min.css" id="pygments-light-theme" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/brands.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/solid.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/feeds/all.atom.xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom" type="application/atom+xml"/>
+<!-- Chrome, Firefox OS and Opera -->
+<meta content="#333333" name="theme-color"/>
+<!-- Windows Phone -->
+<meta content="#333333" name="msapplication-navbutton-color"/>
+<!-- iOS Safari -->
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<!-- Microsoft EDGE -->
+<meta content="#333333" name="msapplication-TileColor"/>
+<meta content="Mohamed H." name="author">
+<meta content="Rapid quick-start for using Docker." name="description">
+<meta content="ubuntu, python, docker" name="keywords"/>
+<meta content="Kentoseth - Thoughts on programming, culture, FOSS and more" property="og:site_name">
+<meta content="Guerrilla guide to using Docker" property="og:title">
+<meta content="Rapid quick-start for using Docker." property="og:description">
+<meta content="en_US" property="og:locale">
+<meta content="https://kentoseth.github.io/posts/2015/May/19/guerrilla-guide-to-using-docker/" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="2015-05-19 02:00:00+02:00" property="article:published_time"/>
+<meta content="" property="article:modified_time"/>
+<meta content="https://kentoseth.github.io/author/mohamed-h.html" property="article:author"/>
+<meta content="Docker" property="article:section">
+<meta content="ubuntu" property="article:tag"/>
+<meta content="python" property="article:tag"/>
+<meta content="docker" property="article:tag"/>
+<meta content="/images/avatar.jpg" property="og:image"/>
+<title>Kentoseth - Thoughts on programming, culture, FOSS and more – Guerrilla guide to using Docker</title>
+</meta></meta></meta></meta></meta></meta></meta><link href="https://kentoseth.github.io/posts/2015/May/19/guerrilla-guide-to-using-docker/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kentoseth - Thoughts on programming, culture, FOSS and more", "item": "https://kentoseth.github.io"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://kentoseth.github.io/posts"}, {"@type": "ListItem", "position": 3, "name": "2015", "item": "https://kentoseth.github.io/posts/2015"}, {"@type": "ListItem", "position": 4, "name": "May", "item": "https://kentoseth.github.io/posts/2015/May"}, {"@type": "ListItem", "position": 5, "name": "19", "item": "https://kentoseth.github.io/posts/2015/May/19"}, {"@type": "ListItem", "position": 6, "name": "Guerrilla guide to using docker", "item": "https://kentoseth.github.io/posts/2015/May/19/guerrilla-guide-to-using-docker"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://kentoseth.github.io/posts/2015/May/19/guerrilla-guide-to-using-docker/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Mohamed H."}, "publisher": {"@type": "Organization", "name": "Kentoseth - Thoughts on programming, culture, FOSS and more"}, "headline": "Guerrilla guide to using Docker", "about": "Docker", "datePublished": "2015-05-19 02:00"}</script></head>
 <body class="light-theme">
-  <aside>
-    <div>
-      <a href="https://kentoseth.github.io">
-        <img src="/images/avatar.jpg" alt="Kentoseth" title="Kentoseth">
-      </a>
-
-      <h1>
-        <a href="https://kentoseth.github.io">Kentoseth</a>
-      </h1>
-
+<aside>
+<div>
+<a href="https://kentoseth.github.io">
+<img alt="Kentoseth" src="/images/avatar.jpg" title="Kentoseth"/>
+</a>
+<h1>
+<a href="https://kentoseth.github.io">Kentoseth</a>
+</h1>
 <p>Coding. Culture. Linux. More.</p>
-
-      <nav>
-        <ul class="list">
-
-
-              <li>
-                <a target="_self"
-                   href="https://kentoseth.github.io/pages/about-me/">
+<nav>
+<ul class="list">
+<li>
+<a href="https://kentoseth.github.io/pages/about-me/" target="_self">
                   About me
                 </a>
-              </li>
-              <li>
-                <a target="_self"
-                   href="https://kentoseth.github.io/pages/projects/">
+</li>
+<li>
+<a href="https://kentoseth.github.io/pages/projects/" target="_self">
                   Projects
                 </a>
-              </li>
-
-            <li>
-              <a target="_self" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" >Email</a>
-            </li>
-            <li>
-              <a target="_self" href="/categories.html" >Categories</a>
-            </li>
-        </ul>
-      </nav>
-
-        <form style="border:1px solid #ccc;padding:3px;text-align:center;" 
-        action="https://tinyletter.com/Kentoseth" method="post" target="popupwindow" 
-        onsubmit="window.open('https://tinyletter.com/Kentoseth', 'popupwindow', 
-        'scrollbars=yes,width=800,height=600');return true">
-        <p><label for="tlemail">Join my Newsletter</label></p>
-        <p><input type="text" style="width:140px" name="email" id="tlemail" /></p>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" />
-        <p><a href="https://tinyletter.com" target="_blank" rel="noopener noreferrer">powered by TinyLetter</a></p>
-        </form>
-
-      <ul class="social">
-          <li>
-            <a  class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
-              <i class="fab fa-github-alt"></i>
-            </a>
-          </li>
-          <li>
-            <a  class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
-              <i class="fab fa-gitlab"></i>
-            </a>
-          </li>
-          <li>
-            <a  class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
-              <i class="fas fa-envelope"></i>
-            </a>
-          </li>
-          <li>
-            <a  class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
-              <i class="fas fa-rss"></i>
-            </a>
-          </li>
-          <li>
-            <a rel="me" class="sc-mastodon" href="https://fosstodon.org/@kentoseth" target="_blank">
-              <i class="fab fa-mastodon"></i>
-            </a>
-          </li>
-      </ul>
-    </div>
-
-  </aside>
-  <main>
-
-    <nav>
-      <a href="https://kentoseth.github.io">Home</a>
-
-      <a href="/categories">Categories</a>
-      <a href="/tags">Tags</a>
-
-      <a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
-
-    </nav>
-
+</li>
+<li>
+<a href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_self">Email</a>
+</li>
+<li>
+<a href="/categories.html" target="_self">Categories</a>
+</li>
+</ul>
+</nav>
+<form action="https://tinyletter.com/Kentoseth" method="post" onsubmit="window.open('https://tinyletter.com/Kentoseth', 'popupwindow', 
+        'scrollbars=yes,width=800,height=600');return true" style="border:1px solid #ccc;padding:3px;text-align:center;" target="popupwindow">
+<p><label for="tlemail">Join my Newsletter</label></p>
+<p><input id="tlemail" name="email" style="width:140px" type="text"/></p>
+<input name="embed" type="hidden" value="1"/>
+<input type="submit" value="Subscribe"/>
+<p><a href="https://tinyletter.com" rel="noopener noreferrer" target="_blank">powered by TinyLetter</a></p>
+</form>
+<ul class="social">
+<li>
+<a class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
+<i class="fab fa-github-alt"></i>
+</a>
+</li>
+<li>
+<a class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
+<i class="fab fa-gitlab"></i>
+</a>
+</li>
+<li>
+<a class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+<i class="fas fa-envelope"></i>
+</a>
+</li>
+<li>
+<a class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
+<i class="fas fa-rss"></i>
+</a>
+</li>
+<li>
+<a class="sc-mastodon" href="https://fosstodon.org/@kentoseth" rel="me" target="_blank">
+<i class="fab fa-mastodon"></i>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<main>
+<nav>
+<a href="https://kentoseth.github.io">Home</a>
+<a href="/categories">Categories</a>
+<a href="/tags">Tags</a>
+<a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
+</nav>
 <article class="single">
-  <header>
-      
-    <h1 id="guerrilla-guide-to-using-docker">Guerrilla guide to using Docker</h1>
-    <p>
+<header>
+<h1 id="guerrilla-guide-to-using-docker">Guerrilla guide to using Docker</h1>
+<p>
       Posted on Tue 19 May 2015 in <a href="https://kentoseth.github.io/category/docker.html">Docker</a>
-
-    </p>
-  </header>
-
-
-  <div>
-    <p>This is a quick-start intro to using Docker. For the long-form version of "Getting Started with Docker" please see: <a href="https://docs.docker.com/installation/#installation">Docker Basics</a></p>
+</p>
+</header>
+<div>
+<p>This is a quick-start intro to using Docker. For the long-form version of "Getting Started with Docker" please see: <a href="https://docs.docker.com/installation/#installation">Docker Basics</a></p>
 <p>This tutorial should take you <em>less than 15 minutes</em> to get up and running with Docker (this excludes the time it takes to install Docker itself and downloading of the source files). Also note that this tutorial assumes you are using Ubuntu (or a variant thereof).</p>
 <p>If you haven't installed Docker already, go ahead and use the link above to install it.</p>
 <h3>Images, Containers and Dockerfiles</h3>
@@ -179,29 +140,27 @@
 </blockquote>
 <p>Now, I will walk you through my simple Dockerfile for this (you can download it here: <a href="https://registry.hub.docker.com/u/dockops/ubuntupy/">File</a> )</p>
 <p>Here is the output:</p>
-<div class="highlight"><pre><span></span># 
-# Dockerfile to use as a base for python
-#
-# Combines Ubuntu + Python
-#
-# https://github.com/Kentoseth/Docker/tree/master/UbuntuPy
+<div class="highlight"><pre><span></span><code><span class="c1"># </span>
+<span class="c1"># Dockerfile to use as a base for python</span>
+<span class="c1">#</span>
+<span class="c1"># Combines Ubuntu + Python</span>
+<span class="c1">#</span>
+<span class="c1"># https://github.com/Kentoseth/Docker/tree/master/UbuntuPy</span>
 
-FROM ubuntu:14.04
-MAINTAINER &quot;Moe&quot; &lt;kentoseth@devcroo.com&gt;
+<span class="n">FROM</span><span class="w"> </span><span class="n">ubuntu</span><span class="p">:</span><span class="mf">14.04</span>
+<span class="n">MAINTAINER</span><span class="w"> </span><span class="s2">"Moe"</span><span class="w"> </span><span class="o">&lt;</span><span class="n">kentoseth</span><span class="err">@</span><span class="n">devcroo</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span>
 
-# Prerequisites
+<span class="c1"># Prerequisites</span>
 
-RUN \
-  sudo apt-get update &amp;&amp; \
-  sudo apt-get -y upgrade &amp;&amp; \
-  sudo apt-get install -y python2.7 python2.7-dev python-pip &amp;&amp; \
-  sudo apt-get clean &amp;&amp; \
-  sudo rm -rf /var/lib/apt/lists/*
+<span class="n">RUN</span><span class="w"> </span>\
+<span class="w">  </span><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>\
+<span class="w">  </span><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="w"> </span><span class="n">upgrade</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>\
+<span class="w">  </span><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="w"> </span><span class="n">python2</span><span class="o">.</span><span class="mi">7</span><span class="w"> </span><span class="n">python2</span><span class="o">.</span><span class="mi">7</span><span class="o">-</span><span class="n">dev</span><span class="w"> </span><span class="n">python</span><span class="o">-</span><span class="n">pip</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>\
+<span class="w">  </span><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">clean</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>\
+<span class="w">  </span><span class="n">sudo</span><span class="w"> </span><span class="n">rm</span><span class="w"> </span><span class="o">-</span><span class="n">rf</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">lists</span><span class="o">/*</span>
 
-# END
-</pre></div>
-
-
+<span class="c1"># END</span>
+</code></pre></div>
 <p>Save a file called "Dockerfile" in: /home/[USER]/Docker/</p>
 <p>I will just tell you 2 important things from the above code:</p>
 <ol>
@@ -215,7 +174,7 @@ RUN \
 <p>After the build process is complete, let's view our new Docker image. Run this command:</p>
 <p><code>sudo docker images</code></p>
 <p>and you should get this output:</p>
-<p><img alt="Photo1" src="https://kentoseth.github.io/images/docker/docker2.png"></p>
+<p><img alt="Photo1" src="https://kentoseth.github.io/images/docker/docker2.png"/></p>
 <p>From the above image, you can see I have 3 images. We haven't yet got to the "pelicanpy" yet, but if you've followed my instructions and everything worked, you should have something similar to "ubuntupy" (or myapp/image-name).</p>
 <h3>Creating a container: from 'pybuntu' image</h3>
 <p>Now that we have our image, lets use this image ( <em>static</em> ) to make our container ( <em>dynamic</em> ).</p>
@@ -234,17 +193,15 @@ RUN \
 <li>Lastly, you call on "pybuntu", which is basically telling the container which image to use as the "dynamic" version of that "static" screenshot</li>
 </ul>
 <p>After you're done creating the container, you should see something similar to this:</p>
-<p><img alt="Photo2" src="https://kentoseth.github.io/images/docker/con1.png"></p>
+<p><img alt="Photo2" src="https://kentoseth.github.io/images/docker/con1.png"/></p>
 <p>From the image above, you can now see that you are a "root" user in your container.</p>
 <p>Let's go into our mounted directory:</p>
 <p><code>cd test</code></p>
 <p>Once in, let's create a test python file. We will call it "hello.py". Here is the code:</p>
-<div class="highlight"><pre><span></span>#This is our test Python file
+<div class="highlight"><pre><span></span><code>#This is our test Python file
 
-print(&quot;Hello World!&quot;)
-</pre></div>
-
-
+print("Hello World!")
+</code></pre></div>
 <p>Save your file in your mounted directory (.../mount/test/hello.py)</p>
 <p>Now, within the container terminal, run this:</p>
 <p><code>python hello.py</code></p>
@@ -253,39 +210,26 @@ print(&quot;Hello World!&quot;)
 <p>I will follow up this tutorial with how to use Docker as a drop-in replacement for virtualenv (or any programming virtual environment for that matter) soon.</p>
 <p>Enjoy containerizing everything!</p>
 <p>(&lt;- Email me if you find any faults or can make any improvements)</p>
-  </div>
-  <div class="tag-cloud">
-    <p>
-      <a href="https://kentoseth.github.io/tag/ubuntu.html">ubuntu</a>
-      <a href="https://kentoseth.github.io/tag/python.html">python</a>
-      <a href="https://kentoseth.github.io/tag/docker.html">docker</a>
-    </p>
-  </div>
-
-
-
-
-  <hr>
-
-  <h3>If you don't know how to use RSS and want email updates on my new content, consider
-         <a href="https://tinyletter.com/Kentoseth" target="_blank" rel="noopener noreferrer">
+</div>
+<div class="tag-cloud">
+<p>
+<a href="https://kentoseth.github.io/tag/ubuntu.html">ubuntu</a>
+<a href="https://kentoseth.github.io/tag/python.html">python</a>
+<a href="https://kentoseth.github.io/tag/docker.html">docker</a>
+</p>
+</div>
+<hr/>
+<h3>If you don't know how to use RSS and want email updates on my new content, consider
+         <a href="https://tinyletter.com/Kentoseth" rel="noopener noreferrer" target="_blank">
           Joining my Newsletter</a></h3>
-
-  <p><em>The original content of this blog is a Waqf solely for the Pleasure of Allah. You are hereby granted full permission to copy, download, distribute, publish and share this content without modification under condition that full attribution is given to this author by creating a link either above or below the content that links back to the original source of the content. For any questions or ambiguity, you are requested to contact me via email for clarification.</em></p>
-
-
+<p><em>The original content of this blog is a Waqf solely for the Pleasure of Allah. You are hereby granted full permission to copy, download, distribute, publish and share this content without modification under condition that full attribution is given to this author by creating a link either above or below the content that links back to the original source of the content. For any questions or ambiguity, you are requested to contact me via email for clarification.</em></p>
 </article>
-
-    <footer>
-<p>&copy; 2021 </p>
+<footer>
+<p>© 2023 </p>
 <p>
 Built with <a href="https://getpelican.com" target="_blank">Pelican</a> using <a href="https://github.com/alexandrevicenzi/Flex" target="_blank">Flex</a> theme
-</p>    </footer>
-  </main>
-
-
-
-
+</p> </footer>
+</main>
 <script type="application/ld+json">
 {
   "@context" : "http://schema.org",
@@ -293,10 +237,8 @@ Built with <a href="https://getpelican.com" target="_blank">Pelican</a> using <a
   "name": " Kentoseth - Thoughts on programming, culture, FOSS and more ",
   "url" : "https://kentoseth.github.io",
   "image": "/images/avatar.jpg",
-  "description": "Thoughts on programming, culture, FOSS and more."
+  "description": "Content focused on Islam, Islamic Studies, Languages, Linux, FOSS, infosec and culture"
 }
 </script>
-
-
 </body>
 </html>

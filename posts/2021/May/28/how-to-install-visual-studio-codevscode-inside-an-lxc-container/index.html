@@ -1,171 +1,132 @@
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/stylesheet/style.min.css">
-
-
-    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-          href="https://kentoseth.github.io/theme/pygments/monokai.min.css">
-
-
-  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://kentoseth.github.io/theme/font-awesome/css/solid.css">
-
-    <link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet">
-
-    <link href="https://kentoseth.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom">
-
-
-
-
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#333333">
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#333333">
-    <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Microsoft EDGE -->
-    <meta name="msapplication-TileColor" content="#333333">
-
-<meta name="author" content="Mohamed H." />
-<meta name="description" content="How to install VSCode(a GUI app) inside an LXC container" />
-<meta name="keywords" content="ubuntu, LXC, vscode">
-
-
-<meta property="og:site_name" content="Kentoseth - Thoughts on programming, culture, FOSS and more"/>
-<meta property="og:title" content="How to install Visual Studio Code(VSCode) inside an LXC container"/>
-<meta property="og:description" content="How to install VSCode(a GUI app) inside an LXC container"/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://kentoseth.github.io/posts/2021/May/28/how-to-install-visual-studio-codevscode-inside-an-lxc-container/"/>
-<meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2021-05-28 02:00:00+02:00"/>
-<meta property="article:modified_time" content=""/>
-<meta property="article:author" content="https://kentoseth.github.io/author/mohamed-h.html">
-<meta property="article:section" content="LXC"/>
-<meta property="article:tag" content="ubuntu"/>
-<meta property="article:tag" content="LXC"/>
-<meta property="article:tag" content="vscode"/>
-<meta property="og:image" content="/images/avatar.jpg">
-
-  <title>Kentoseth - Thoughts on programming, culture, FOSS and more &ndash; How to install Visual Studio Code(VSCode) inside an LXC container</title>
-
-</head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="robots"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/theme/stylesheet/style.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/pygments/monokai.min.css" id="pygments-light-theme" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/fontawesome.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/brands.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/theme/font-awesome/css/solid.css" rel="stylesheet" type="text/css"/>
+<link href="https://kentoseth.github.io/static/custom.css" rel="stylesheet"/>
+<link href="https://kentoseth.github.io/feeds/all.atom.xml" rel="alternate" title="Kentoseth - Thoughts on programming, culture, FOSS and more Atom" type="application/atom+xml"/>
+<!-- Chrome, Firefox OS and Opera -->
+<meta content="#333333" name="theme-color"/>
+<!-- Windows Phone -->
+<meta content="#333333" name="msapplication-navbutton-color"/>
+<!-- iOS Safari -->
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<!-- Microsoft EDGE -->
+<meta content="#333333" name="msapplication-TileColor"/>
+<meta content="Mohamed H." name="author">
+<meta content="How to install VSCode(a GUI app) inside an LXC container" name="description">
+<meta content="ubuntu, LXC, vscode" name="keywords"/>
+<meta content="Kentoseth - Thoughts on programming, culture, FOSS and more" property="og:site_name">
+<meta content="How to install Visual Studio Code(VSCode) inside an LXC container" property="og:title">
+<meta content="How to install VSCode(a GUI app) inside an LXC container" property="og:description">
+<meta content="en_US" property="og:locale">
+<meta content="https://kentoseth.github.io/posts/2021/May/28/how-to-install-visual-studio-codevscode-inside-an-lxc-container/" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="2021-05-28 02:00:00+02:00" property="article:published_time"/>
+<meta content="" property="article:modified_time"/>
+<meta content="https://kentoseth.github.io/author/mohamed-h.html" property="article:author"/>
+<meta content="LXC" property="article:section">
+<meta content="ubuntu" property="article:tag"/>
+<meta content="LXC" property="article:tag"/>
+<meta content="vscode" property="article:tag"/>
+<meta content="/images/avatar.jpg" property="og:image"/>
+<title>Kentoseth - Thoughts on programming, culture, FOSS and more – How to install Visual Studio Code(VSCode) inside an LXC container</title>
+</meta></meta></meta></meta></meta></meta></meta><link href="https://kentoseth.github.io/posts/2021/May/28/how-to-install-visual-studio-codevscode-inside-an-lxc-container/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kentoseth - Thoughts on programming, culture, FOSS and more", "item": "https://kentoseth.github.io"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://kentoseth.github.io/posts"}, {"@type": "ListItem", "position": 3, "name": "2021", "item": "https://kentoseth.github.io/posts/2021"}, {"@type": "ListItem", "position": 4, "name": "May", "item": "https://kentoseth.github.io/posts/2021/May"}, {"@type": "ListItem", "position": 5, "name": "28", "item": "https://kentoseth.github.io/posts/2021/May/28"}, {"@type": "ListItem", "position": 6, "name": "How to install visual studio codevscode inside an lxc container", "item": "https://kentoseth.github.io/posts/2021/May/28/how-to-install-visual-studio-codevscode-inside-an-lxc-container"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://kentoseth.github.io/posts/2021/May/28/how-to-install-visual-studio-codevscode-inside-an-lxc-container/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Mohamed H."}, "publisher": {"@type": "Organization", "name": "Kentoseth - Thoughts on programming, culture, FOSS and more"}, "headline": "How to install Visual Studio Code(VSCode) inside an LXC container", "about": "LXC", "datePublished": "2021-05-28 02:00"}</script></head>
 <body class="light-theme">
-  <aside>
-    <div>
-      <a href="https://kentoseth.github.io">
-        <img src="/images/avatar.jpg" alt="Kentoseth" title="Kentoseth">
-      </a>
-
-      <h1>
-        <a href="https://kentoseth.github.io">Kentoseth</a>
-      </h1>
-
+<aside>
+<div>
+<a href="https://kentoseth.github.io">
+<img alt="Kentoseth" src="/images/avatar.jpg" title="Kentoseth"/>
+</a>
+<h1>
+<a href="https://kentoseth.github.io">Kentoseth</a>
+</h1>
 <p>Coding. Culture. Linux. More.</p>
-
-      <nav>
-        <ul class="list">
-
-
-              <li>
-                <a target="_self"
-                   href="https://kentoseth.github.io/pages/about-me/">
+<nav>
+<ul class="list">
+<li>
+<a href="https://kentoseth.github.io/pages/about-me/" target="_self">
                   About me
                 </a>
-              </li>
-              <li>
-                <a target="_self"
-                   href="https://kentoseth.github.io/pages/projects/">
+</li>
+<li>
+<a href="https://kentoseth.github.io/pages/projects/" target="_self">
                   Projects
                 </a>
-              </li>
-
-            <li>
-              <a target="_self" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" >Email</a>
-            </li>
-            <li>
-              <a target="_self" href="/categories.html" >Categories</a>
-            </li>
-        </ul>
-      </nav>
-
-        <form style="border:1px solid #ccc;padding:3px;text-align:center;" 
-        action="https://tinyletter.com/Kentoseth" method="post" target="popupwindow" 
-        onsubmit="window.open('https://tinyletter.com/Kentoseth', 'popupwindow', 
-        'scrollbars=yes,width=800,height=600');return true">
-        <p><label for="tlemail">Join my Newsletter</label></p>
-        <p><input type="text" style="width:140px" name="email" id="tlemail" /></p>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" />
-        <p><a href="https://tinyletter.com" target="_blank" rel="noopener noreferrer">powered by TinyLetter</a></p>
-        </form>
-
-      <ul class="social">
-          <li>
-            <a  class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
-              <i class="fab fa-github-alt"></i>
-            </a>
-          </li>
-          <li>
-            <a  class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
-              <i class="fab fa-gitlab"></i>
-            </a>
-          </li>
-          <li>
-            <a  class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
-              <i class="fas fa-envelope"></i>
-            </a>
-          </li>
-          <li>
-            <a  class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
-              <i class="fas fa-rss"></i>
-            </a>
-          </li>
-          <li>
-            <a rel="me" class="sc-mastodon" href="https://fosstodon.org/@kentoseth" target="_blank">
-              <i class="fab fa-mastodon"></i>
-            </a>
-          </li>
-      </ul>
-    </div>
-
-  </aside>
-  <main>
-
-    <nav>
-      <a href="https://kentoseth.github.io">Home</a>
-
-      <a href="/categories">Categories</a>
-      <a href="/tags">Tags</a>
-
-      <a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
-
-    </nav>
-
+</li>
+<li>
+<a href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_self">Email</a>
+</li>
+<li>
+<a href="/categories.html" target="_self">Categories</a>
+</li>
+</ul>
+</nav>
+<form action="https://tinyletter.com/Kentoseth" method="post" onsubmit="window.open('https://tinyletter.com/Kentoseth', 'popupwindow', 
+        'scrollbars=yes,width=800,height=600');return true" style="border:1px solid #ccc;padding:3px;text-align:center;" target="popupwindow">
+<p><label for="tlemail">Join my Newsletter</label></p>
+<p><input id="tlemail" name="email" style="width:140px" type="text"/></p>
+<input name="embed" type="hidden" value="1"/>
+<input type="submit" value="Subscribe"/>
+<p><a href="https://tinyletter.com" rel="noopener noreferrer" target="_blank">powered by TinyLetter</a></p>
+</form>
+<ul class="social">
+<li>
+<a class="sc-github-alt" href="https://github.com/Kentoseth" target="_blank">
+<i class="fab fa-github-alt"></i>
+</a>
+</li>
+<li>
+<a class="sc-gitlab" href="https://gitlab.com/Kentoseth" target="_blank">
+<i class="fab fa-gitlab"></i>
+</a>
+</li>
+<li>
+<a class="sc-envelope" href="mailto:kentoseth@devcroo.com?Subject=Blog%20Hello%20there" target="_blank">
+<i class="fas fa-envelope"></i>
+</a>
+</li>
+<li>
+<a class="sc-rss" href="https://kentoseth.tk/feeds/all.atom.xml" target="_blank">
+<i class="fas fa-rss"></i>
+</a>
+</li>
+<li>
+<a class="sc-mastodon" href="https://fosstodon.org/@kentoseth" rel="me" target="_blank">
+<i class="fab fa-mastodon"></i>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<main>
+<nav>
+<a href="https://kentoseth.github.io">Home</a>
+<a href="/categories">Categories</a>
+<a href="/tags">Tags</a>
+<a href="https://kentoseth.github.io/feeds/all.atom.xml">Atom</a>
+</nav>
 <article class="single">
-  <header>
-      
-    <h1 id="how-to-install-visual-studio-codevscode-inside-an-lxc-container">How to install Visual Studio Code(VSCode) inside an LXC container</h1>
-    <p>
+<header>
+<h1 id="how-to-install-visual-studio-codevscode-inside-an-lxc-container">How to install Visual Studio Code(VSCode) inside an LXC container</h1>
+<p>
       Posted on Fri 28 May 2021 in <a href="https://kentoseth.github.io/category/lxc.html">LXC</a>
-
-    </p>
-  </header>
-
-
-  <div>
-    <p><a href="https://code.visualstudio.com/">Visual Studio Code or vscode</a> is a really great editor. One of its most advanced features that most other editors don't have is the <a href="https://code.visualstudio.com/docs/remote/remote-overview">VS Code Remote Development</a> which can enable a bloat-free development-environment by leveraging Docker or other container solutions.</p>
+</p>
+</header>
+<div>
+<p><a href="https://code.visualstudio.com/">Visual Studio Code or vscode</a> is a really great editor. One of its most advanced features that most other editors don't have is the <a href="https://code.visualstudio.com/docs/remote/remote-overview">VS Code Remote Development</a> which can enable a bloat-free development-environment by leveraging Docker or other container solutions.</p>
 <p>However, licensing issues(explained <a href="https://code.visualstudio.com/docs/remote/faq#_license-and-privacy">here</a> and <a href="https://github.com/microsoft/vscode/wiki/Differences-between-the-repository-and-Visual-Studio-Code">here</a>) means that the only version of vscode that works with the "remote development extension" is the binary(or closed-source) version.</p>
 <p>I found a <a href="https://github.com/microsoft/vscode-remote-release/issues/1858">bug report</a> discussing this and why the open-source version(known as Code) does not support the powerful "remote development extension". Wearing a (small) tinfoil hat, I figured that it would be a good idea to isolate vscode itself into a container for 2 purposes:</p>
 <ol>
@@ -198,18 +159,14 @@
 (Note 2: <code>sudo</code> may not be needed for unprivileged containers, so if you don't need it, don't use it)</p>
 <h3>Installing required packages in the container</h3>
 <p>The container requires a number of packages in order to run a GUI application like vscode. For basic programs like <code>xclock</code>, not as many packages were needed, but for vscode, the installation might feel 'bloated'. Install the following(<strong>after 'attaching' the container and being in the container shell</strong>):</p>
-<div class="highlight"><pre><span></span>sudo apt update
+<div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt upgrade
 sudo apt install xauth ssh
-</pre></div>
-
-
+</code></pre></div>
 <p>(<code>xauth</code> might already be installed)</p>
 <p>Now install some of the other required packages:</p>
-<div class="highlight"><pre><span></span>sudo apt-get install libxss1 libxshmfence1 libxext-dev libxrender-dev libxslt1.1 libgconf-2-4 libnotify4 libnspr4 libnss3 libnss3-dev libnss3-tools libxtst-dev libgtk2.0-0 libcanberra-gtk-module software-properties-common gnupg2
-</pre></div>
-
-
+<div class="highlight"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">libxss1</span><span class="w"> </span><span class="n">libxshmfence1</span><span class="w"> </span><span class="n">libxext</span><span class="o">-</span><span class="n">dev</span><span class="w"> </span><span class="n">libxrender</span><span class="o">-</span><span class="n">dev</span><span class="w"> </span><span class="n">libxslt1</span><span class="o">.</span><span class="mi">1</span><span class="w"> </span><span class="n">libgconf</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="w"> </span><span class="n">libnotify4</span><span class="w"> </span><span class="n">libnspr4</span><span class="w"> </span><span class="n">libnss3</span><span class="w"> </span><span class="n">libnss3</span><span class="o">-</span><span class="n">dev</span><span class="w"> </span><span class="n">libnss3</span><span class="o">-</span><span class="n">tools</span><span class="w"> </span><span class="n">libxtst</span><span class="o">-</span><span class="n">dev</span><span class="w"> </span><span class="n">libgtk2</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="w"> </span><span class="n">libcanberra</span><span class="o">-</span><span class="n">gtk</span><span class="o">-</span><span class="n">module</span><span class="w"> </span><span class="n">software</span><span class="o">-</span><span class="n">properties</span><span class="o">-</span><span class="n">common</span><span class="w"> </span><span class="n">gnupg2</span>
+</code></pre></div>
 <p>I am not sure what half of these are for, but the reference for why I needed to install them is here: <a href="https://github.com/allamand/docker-vscode/blob/master/Dockerfile">docker-vscode Dockerfile</a>. I attempted to install the least amount of packages to get vscode running. Prior to installing these packages, vscode was not working.</p>
 <h3>Configuring SSH in the container</h3>
 <p>First we will give the <code>ubuntu</code> user a password. I found that even though the container <code>ubuntu</code> user seems to have 'ubuntu' as a password, this password didn't work when trying to SSH into the container(from the host). Run(<strong>while in the container</strong>):</p>
@@ -219,12 +176,10 @@ sudo apt install xauth ssh
 <p>Open the SSH config file:</p>
 <p><code>sudo vim /etc/ssh/sshd_config</code></p>
 <p>Only the changes will be shown below. Please look for these lines in the <code>sshd_config</code> file and change them appropriately(some of them also require that the <code>#</code> be removed, otherwise the line remains commented):</p>
-<div class="highlight"><pre><span></span>PasswordAuthentication yes
+<div class="highlight"><pre><span></span><code>PasswordAuthentication yes
 X11Forwarding yes
 X11DisplayOffset 10
-</pre></div>
-
-
+</code></pre></div>
 <p>Exit the <code>vim</code> editor and now restart the SSH service:</p>
 <p><code>sudo systemctl restart sshd</code></p>
 <p>You can confirm SSH is working by running:</p>
@@ -237,13 +192,11 @@ X11DisplayOffset 10
 <p>Now that we have the container IP, run the following command(<strong>from the host</strong>):</p>
 <p><code>ssh ubuntu@&lt;container-IP&gt;</code></p>
 <p>The SSH prompt should say the following:</p>
-<div class="highlight"><pre><span></span>The authenticity of host &#39;&lt;container-IP&gt; (&lt;container-IP&gt;)&#39; can&#39;t be established.
-ED25519 key fingerprint is SHA256:fXFuBKAXm2HgFGuKVFpu+bRIR/2tzxBIWVH+dkQh9KE.
-This key is not known by any other names
-Are you sure you want to continue connecting (yes/no/[fingerprint])?
-</pre></div>
-
-
+<div class="highlight"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n">authenticity</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="k">host</span><span class="w"> </span><span class="s1">'&lt;container-IP&gt; (&lt;container-IP&gt;)'</span><span class="w"> </span><span class="n">can</span><span class="err">'</span><span class="n">t</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">established</span><span class="p">.</span>
+<span class="n">ED25519</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="n">fingerprint</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nl">SHA256</span><span class="p">:</span><span class="n">fXFuBKAXm2HgFGuKVFpu</span><span class="o">+</span><span class="n">bRIR</span><span class="o">/</span><span class="mi">2</span><span class="n">tzxBIWVH</span><span class="o">+</span><span class="n">dkQh9KE</span><span class="p">.</span>
+<span class="n">This</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">known</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="ow">any</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="k">names</span>
+<span class="k">Are</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">sure</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">want</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">continue</span><span class="w"> </span><span class="n">connecting</span><span class="w"> </span><span class="p">(</span><span class="n">yes</span><span class="o">/</span><span class="k">no</span><span class="o">/[</span><span class="n">fingerprint</span><span class="o">]</span><span class="p">)</span><span class="vm">?</span>
+</code></pre></div>
 <p>Enter: <code>yes</code></p>
 <p>Then you will be prompted to enter the password for user <code>ubuntu</code>, enter: 'ubuntu'</p>
 <p>You should now be in the container via SSH if successful.</p>
@@ -263,7 +216,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 <p>After entering the password 'ubuntu', we should now be in the container once again. Now run this command(<strong>while in the container</strong>):</p>
 <p><code>code-insiders --disable-gpu</code></p>
 <p>vscode will now start and the display should look like:</p>
-<p><img alt="vscode-start" src="https://kentoseth.github.io/images/vscode/vscode.png"></p>
+<p><img alt="vscode-start" src="https://kentoseth.github.io/images/vscode/vscode.png"/></p>
 <h3>Conclusion and next steps</h3>
 <p>In the next article, I will investigate how to opt-out of Windows tracking in vscode(I thought it was supposed to be opt-in as per GDPR). I will also look at what network calls are made before/after opting-out to see how much data is still harvested by this proprietary binary and perhaps also add some rules to block the application from making any network calls at all.</p>
 <h3>References</h3>
@@ -271,39 +224,26 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 <a href="https://unix.stackexchange.com/questions/12755/how-to-forward-x-over-ssh-to-run-graphics-applications-remotely">How to forward X over SSH to run graphics applications remotely?</a>
 <a href="http://www.benue.com/blog/2018/03/16/how-to-run-gui-applications-in-an-lxc-container/">How to run GUI applications in an LXC Container</a>
 <a href="https://askubuntu.com/questions/47642/how-to-start-a-gui-software-on-a-remote-linux-pc-via-ssh">How to start a GUI software on a remote Linux PC via SSH</a></p>
-  </div>
-  <div class="tag-cloud">
-    <p>
-      <a href="https://kentoseth.github.io/tag/ubuntu.html">ubuntu</a>
-      <a href="https://kentoseth.github.io/tag/lxc.html">LXC</a>
-      <a href="https://kentoseth.github.io/tag/vscode.html">vscode</a>
-    </p>
-  </div>
-
-
-
-
-  <hr>
-
-  <h3>If you don't know how to use RSS and want email updates on my new content, consider
-         <a href="https://tinyletter.com/Kentoseth" target="_blank" rel="noopener noreferrer">
+</div>
+<div class="tag-cloud">
+<p>
+<a href="https://kentoseth.github.io/tag/ubuntu.html">ubuntu</a>
+<a href="https://kentoseth.github.io/tag/lxc.html">LXC</a>
+<a href="https://kentoseth.github.io/tag/vscode.html">vscode</a>
+</p>
+</div>
+<hr/>
+<h3>If you don't know how to use RSS and want email updates on my new content, consider
+         <a href="https://tinyletter.com/Kentoseth" rel="noopener noreferrer" target="_blank">
           Joining my Newsletter</a></h3>
-
-  <p><em>The original content of this blog is a Waqf solely for the Pleasure of Allah. You are hereby granted full permission to copy, download, distribute, publish and share this content without modification under condition that full attribution is given to this author by creating a link either above or below the content that links back to the original source of the content. For any questions or ambiguity, you are requested to contact me via email for clarification.</em></p>
-
-
+<p><em>The original content of this blog is a Waqf solely for the Pleasure of Allah. You are hereby granted full permission to copy, download, distribute, publish and share this content without modification under condition that full attribution is given to this author by creating a link either above or below the content that links back to the original source of the content. For any questions or ambiguity, you are requested to contact me via email for clarification.</em></p>
 </article>
-
-    <footer>
-<p>&copy; 2021 </p>
+<footer>
+<p>© 2023 </p>
 <p>
 Built with <a href="https://getpelican.com" target="_blank">Pelican</a> using <a href="https://github.com/alexandrevicenzi/Flex" target="_blank">Flex</a> theme
-</p>    </footer>
-  </main>
-
-
-
-
+</p> </footer>
+</main>
 <script type="application/ld+json">
 {
   "@context" : "http://schema.org",
@@ -311,10 +251,8 @@ Built with <a href="https://getpelican.com" target="_blank">Pelican</a> using <a
   "name": " Kentoseth - Thoughts on programming, culture, FOSS and more ",
   "url" : "https://kentoseth.github.io",
   "image": "/images/avatar.jpg",
-  "description": "Thoughts on programming, culture, FOSS and more."
+  "description": "Content focused on Islam, Islamic Studies, Languages, Linux, FOSS, infosec and culture"
 }
 </script>
-
-
 </body>
 </html>
